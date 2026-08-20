@@ -1,0 +1,77 @@
+title: Joint Fundraising
+new-page: true
+view-if: fundraising_timer <= 0 and (not historical_mode)
+on-arrival: fundraising_timer = 6; month_actions += 1
+frequency: 300
+is-card: true
+card-image: img/poster_2.jpg
+tags: inter_party_affairs
+
+= Joint Fundraising
+
+For better or for worse, the party cannot exist without money, and nor can our allies. We can contribute to our allies’ finances, or ask if they might be willing to contribute to ours.
+
+- @offer_uspd: Offer to help the USPD with their funds.
+- @request_uspd: Ask the USPD for help with our own funds.
+- @offer_ddp: Offer to help the DDP with their funds.
+- @request_ddp: Ask the DDP for help with our own funds.
+- @offer_z: Offer to help the Centre Party with their funds.
+- @request_z: Ask the Zentrum for help with our own funds.
+- @offer_dvp: Offer to help the DVP with their funds.
+- @request_dvp: Ask the DVP for help with our own funds.
+- @maintain
+
+@maintain
+
+We do not seek out nor offer financial aid to any of our allies.
+
+@offer_uspd
+view-if: resources >= 1
+on-arrival: resources -= 1; uspd_relation += 5
+
+Our friends in the USPD appreciate this, but though some in our own rank-and-file grumble at using our dues to fund another party.
+
+@request_uspd 
+subtitle: 1 resources gained.
+view-if: uspd_relation >= 55
+on-arrival: resources += 1; uspd_relation -= 3
+
+Some of the USPD rank-and-file grumble at this, but now, we have access to additional resources. 
+@offer_ddp
+view-if: resources >= 1
+on-arrival: resources -= 1; ddp_relation += 5
+
+Our friends in the DDP appreciate this, but though some in our own rank-and-file grumble at using our dues to fund another party.
+
+@request_ddp 
+subtitle: 1 resources gained.
+view-if: ddp_relation >= 55
+on-arrival: resources += 1; ddp_relation -= 3
+
+Some of the DDP rank-and-file grumble at this, but now, we have access to additional resources. 
+@offer_z
+view-if: resources >= 1
+on-arrival: resources -= 1; z_relation += 5
+
+Our friends in the Zentrum appreciate this, but though some in our own rank-and-file grumble at using our dues to fund another party.
+
+@request_z
+subtitle: 1 resources gained.
+view-if: z_relation >= 55
+on-arrival: resources += 1; z_relation -= 3
+
+Some of the Z rank-and-file grumble at this, but now, we have access to additional resources. 
+@offer_dvp
+view-if: resources >= 1
+on-arrival: resources -= 1; dvp_relation += 5
+
+Our friends in the DVP appreciate this, but though some in our own rank-and-file grumble at using our dues to fund another party.
+
+@request_dvp 
+subtitle: 1 resources gained.
+view-if: dvp_relation >= 55
+on-arrival: resources += 1; dvp_relation -= 3
+
+Some of the DDP rank-and-file grumble at this, but now, we have access to additional resources. 
+
+
