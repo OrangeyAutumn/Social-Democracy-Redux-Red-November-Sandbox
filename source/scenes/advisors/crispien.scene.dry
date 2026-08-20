@@ -1,16 +1,16 @@
 title: Arthur Crispien
 is-pinned-card: true
 tags: advisor, left
-card-image: img/portraits/LeviPaul.jpg
+card-image: img/portraits/CrispienArthur.jpg
 view-if: crispien_advisor = 1
 new-page: true 
 
 = Arthur Crispien
 
-Crispien is a former leader of the USPD who was expelled over his opposition to the merger between the USPD and KPD.
+Crispien is a former leader of the USPD who was expelled over his opposition to the merger between the USPD and USPD.
 
 - @left_unity
-- @kpd_cooperation
+- @uspd_cooperation
 - @campaign_pacifism
 - @root: Return to main
 
@@ -23,14 +23,15 @@ on-arrival: advisor_action_timer = 6; left_dissent -= 10; labor_dissent -= 5; ce
 
 We have reduced dissent among the party's factions.
 
-@kpd_cooperation
-title: Cooperation with the KPD
-subtitle: Any cooperation between the parties requires compromise from the KPD as well as the SPD.
+@uspd_cooperation
+title: Cooperation with the USPD
+subtitle: Any cooperation between the parties requires compromise from the USPD as well as the SPD.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 5; kpd_relation += 6*(1-dissent); reformist_dissent += 3; communist_coalition += 1 if kpd_cooperation_seen <= 1; kpd_cooperation_seen += 1
+on-arrival: advisor_action_timer = 6; left_strength += 5; uspd_relation += 6*(1-dissent); reformist_dissent += 3; spartacist_coalition += 1 if uspd_cooperation_seen <= 1; uspd_cooperation_seen += 1
 
-Levi attempts to reach out to his former colleagues to dissuade the KPD from their current extreme Stalinist path. Some concessions are extracted.
+Crispien attempts to reach out to his former colleagues in the USPD. Some concessions are extracted.
+
 @campaign_pacifism
 title: Rally for pacifism.
 subtitle: Campaign for internationalism and against militarism.
