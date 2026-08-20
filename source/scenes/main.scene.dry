@@ -10,14 +10,17 @@ if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
-max-cards: 3
+max-cards: 6
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
 
 - @party
+- @inter_party
 - @govt
+- @cabinet
+- @landtags
 - @pres
 - #advisor
 - @shuffle_leadership_pinned
@@ -34,14 +37,17 @@ if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
-max-cards: 4
+max-cards: 9
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
 
 - @party
+- @inter_party
 - @govt
+- @cabinet
+- @landtags
 - @pres
 - #advisor
 - @shuffle_leadership_pinned
@@ -54,6 +60,13 @@ is-deck: true
 
 - #party_affairs
 
+@inter_party
+title: Party Affairs
+card-image: img/Vorwaerts_nr_1.png
+is-deck: true
+
+- #inter_party_affairs
+
 @govt
 title: Government Affairs
 view-if: time >= 6 or spd_in_government
@@ -61,6 +74,22 @@ card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
+
+@cabinet
+title: Cabinet Affairs
+view-if: time >= 6 or spd_in_government
+card-image: img/reichstag_2.jpg
+is-deck: true
+
+- #cabinet_affairs
+
+@landtags
+title: Landtags
+view-if: time >= 6 or spd_in_government
+card-image: img/reichstag_2.jpg
+is-deck: true
+
+- #landtags
 
 @pres
 title: Presidential Affairs
