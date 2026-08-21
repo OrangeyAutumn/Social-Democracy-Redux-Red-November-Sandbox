@@ -93,7 +93,7 @@ Q.weimar_willingness = 0
 
 // inter-party relations
 Q.z_relation = 45;
-Q.uspd_relation = 15;
+Q.uspd_relation = 45;
 Q.ddp_relation = 60;
 Q.dvp_relation = 28;
 // DNVP and NSDAP are invariably hostile
