@@ -4,7 +4,7 @@ view-if: year == 1936 and month >= 7
 max-visits: 1
 tags: event
 new-page: true
-go-to: govt_menu if foreign_minister_party != "SPD" and spd_in_government and foreign_minister_party != "KPD"; foreign_menu if foreign_minister_party = "SPD"; non_govt_menu if not spd_in_government; kpd_menu if foreign_minister_party = "KPD"
+go-to: govt_menu if foreign_minister_party != "SPD" and spd_in_government and foreign_minister_party != "USPD"; foreign_menu if foreign_minister_party = "SPD"; non_govt_menu if not spd_in_government; uspd_menu if foreign_minister_party = "USPD"
 on-arrival: spanish_civil_war = 1; republic_strength = 6; national_strength = 5; republic_strength -= 1 if third_period; republic_strength += 1 if z_relation >= 60; republic_strength += 1 if west_relation >= 5; national_strength += 1 if victory_republic; national_strength += 1 if not abysinnia; national_strength += 1 if reichswehr_loyalty <= 0.1; national_strength += 1 if nsdap_votes + dnvp_votes >= 35
 
 = Spanish Civil War
@@ -62,12 +62,12 @@ We manage to persuade a very reluctant Center Party into allowing aid to the Rep
 @persuade_z
 choose-if: z_relation >= 35
 unavailable-subtitle: The Center Party is unwilling to compromise in the slightest.
-on-arrival: left_dissent += 3; weimar_dissent += 1 if weimar_plan_adopted; new_middle_spd -= 1; republic_strength += 1 if not third_period; kpd_coalition_dissent += 1
+on-arrival: left_dissent += 3; weimar_dissent += 1 if weimar_plan_adopted; new_middle_spd -= 1; republic_strength += 1 if not third_period; uspd_coalition_dissent += 1
 
 We persuade the Center Party into accepting the compromise of postponing the issue of aid. Let's hope the Republicans can survive in the meantime even without our help.
 
 @allow_foreign
-on-arrival: non_intervention = 1; capital_strike_progress -= 0.5; coup_progress -= 0.5; west_relation += 1; left_dissent += 5; kpd_coalition_dissent += 2; kpd_relation -= 3; workers_spd -= 2; new_middle_spd -= 2; republic_strength -= 1; republic_strength += 1 if not third_period; national_strength -= 1 if abysinnia
+on-arrival: non_intervention = 1; capital_strike_progress -= 0.5; coup_progress -= 0.5; west_relation += 1; left_dissent += 5; uspd_coalition_dissent += 2; uspd_relation -= 3; workers_spd -= 2; new_middle_spd -= 2; republic_strength -= 1; republic_strength += 1 if not third_period; national_strength -= 1 if abysinnia
 
 We allow the Foreign Ministry to go ahead with its plans to agree to the French-proposed non-intervention pact, angering the left flank of our party[? if in_popular_front : and the communists ?]. Let's just hope that Germany's refusal to support the Republicans does not win the Nationalists the war.
 
@@ -75,7 +75,7 @@ We allow the Foreign Ministry to go ahead with its plans to agree to the French-
 
 Many in our party are calling for us to send military aid to the Republicans. However, such an action would be a direct violation of the Treaty of Versailles and may strain our relations with France.
 
-[? if in_popular_front or in_left_front : The KPD supports sending aid to the communists [? if in_popular_front : though the Center Party is opposed. ?] ?][? if in_weimar_coalition: The Center Party is opposed to sending aid. ?][? if in_grand_coalition : The Center Party and the DVP are opposed to sending aid. ?]
+[? if in_popular_front or in_left_front : The USPD supports sending aid to the communists [? if in_popular_front : though the Center Party is opposed. ?] ?][? if in_weimar_coalition: The Center Party is opposed to sending aid. ?][? if in_grand_coalition : The Center Party and the DVP are opposed to sending aid. ?]
 
 - @aid: Send aid to the Republicans.
 - @neutrality: We will remain neutral, at least for now.
@@ -91,13 +91,13 @@ We go ahead with our plans to send aid to the Spanish Republicans, upsetting our
 
 @neutrality
 subtitle: We will not involve ourselves, not yet at least.
-on-arrival: left_dissent += 3; new_middle_spd -= 1; kpd_coalition_dissent += 1; z_relation += 2; republic_strength += 1 if not third_period
+on-arrival: left_dissent += 3; new_middle_spd -= 1; uspd_coalition_dissent += 1; z_relation += 2; republic_strength += 1 if not third_period
 
 Whether it be by choice or being unable, we do not send aid to the Republicans. This decision is well received by our bourgeois partners, but criticized by [? if in_popular_front or in_left_front : our communist coalition partners as well as ?] the Left of our party.
 
 @nonintervention
 subtitle: We will commit fully to neutrality.
-on-arrival: nonintervention = 1; capital_strike_progress -= 1; coup_progress -= 1; west_relation += 1; left_dissent += 7; z_relation += 5; dvp_relation += 4; coalition_dissent -= 1; kpd_coalition_dissent += 2; kpd_relation -= 4; workers_spd -= 2; new_middle_spd -= 2; republic_strength -= 1; republic_strength += 1 if not third_period; national_strength -= 1 if abysinnia
+on-arrival: nonintervention = 1; capital_strike_progress -= 1; coup_progress -= 1; west_relation += 1; left_dissent += 7; z_relation += 5; dvp_relation += 4; coalition_dissent -= 1; uspd_coalition_dissent += 2; uspd_relation -= 4; workers_spd -= 2; new_middle_spd -= 2; republic_strength -= 1; republic_strength += 1 if not third_period; national_strength -= 1 if abysinnia
 
 Rather than involve ourselves, we sign the French proposed non-intervention pact, pledging neutrality in the Spanish Civil War. This move is highly criticized by the Left of our party and the communists, but is met with approval abroad and from our bourgeois allies. Let's just hope that our refusal to support the Republicans does not win the Nationalists the war.
 
@@ -123,7 +123,7 @@ We have definitively broken with the [+ chancellor +] government, and have voted
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
-@kpd_menu
+@uspd_menu
 
 Many in our party are calling for us to send military aid to the Republicans. The Communists, whom we govern with and whom control the Foreign Ministry, plan to send military aid to Spain, as do the Soviets.
 
@@ -131,12 +131,12 @@ Many in our party are calling for us to send military aid to the Republicans. Th
 - @foreign_oppose: No, this must be stopped.
 
 @foreign_support
-on-arrival: budget -= 1; reichswehr_loyalty -= 0.05; spain_involved = 1; aid_level = 3; left_dissent -= 4; dvp_relation -= 4; z_relation -= 2; coup_progress += 1 if coup_progress >= 4; coup_progress += 1; west_relation -= 1; soviet_relation += 1; nationalism -= democratization; democratization += 1; pro_republic += 3; socialism += 2; workers_spd += 2*(1-dissent); new_middle_spd += 1*(1-dissent); workers_kpd += 2; republic_strength += 2
+on-arrival: budget -= 1; reichswehr_loyalty -= 0.05; spain_involved = 1; aid_level = 3; left_dissent -= 4; dvp_relation -= 4; z_relation -= 2; coup_progress += 1 if coup_progress >= 4; coup_progress += 1; west_relation -= 1; soviet_relation += 1; nationalism -= democratization; democratization += 1; pro_republic += 3; socialism += 2; workers_spd += 2*(1-dissent); new_middle_spd += 1*(1-dissent); workers_uspd += 2; republic_strength += 2
 
-We support the KPD's sending of military aid to the Republicans, and allow it to take place. Republican forces are bolstered, though the aid disproportionately goes to the socialists, and most of all the PCE.
+We support the USPD's sending of military aid to the Republicans, and allow it to take place. Republican forces are bolstered, though the aid disproportionately goes to the socialists, and most of all the PCE.
 
 @foreign_oppose
-on-arrival: kpd_coalition_dissent += 1; kpd_relation -= 5; left_dissent += 5; new_middle_spd -= 1; z_relation += 2; republic_strength += 1
+on-arrival: uspd_coalition_dissent += 1; uspd_relation -= 5; left_dissent += 5; new_middle_spd -= 1; z_relation += 2; republic_strength += 1
 
 We block the planned sending of aid to the Republicans, disappointing the Communists, as well as the Left flank of our party. 
 
