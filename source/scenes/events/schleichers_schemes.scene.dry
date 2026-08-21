@@ -33,7 +33,7 @@ Are we sure that we wish to do this? The vast majority of the party is against t
 @accept_2
 title: Accept Schleicher's schemes.
 subtitle: We will support the suspension of the Reichstag.
-on-arrival: schleicher_support = spd_r; workers_spd -= 3; new_middle_spd -= 3; reformist_dissent += 20; left_dissent += 30; center_dissent += 30; neorevisionist_dissent += 25; pro_republic -= 10; schleicher_support += z_r if z_relation >= 50; schleicher_support += other_r + dvp_r if dvp_relation >= 25; schleicher_support += dnvp_r if kpd_relation <= 10 and left_strength + center_strength < labor_strength; labor_dissent -= 10; {!
+on-arrival: schleicher_support = spd_r; workers_spd -= 3; new_middle_spd -= 3; reformist_dissent += 20; left_dissent += 30; center_dissent += 30; neorevisionist_dissent += 25; pro_republic -= 10; schleicher_support += z_r if z_relation >= 50; schleicher_support += other_r + dvp_r if dvp_relation >= 25; schleicher_support += dnvp_r if uspd_relation <= 10 and left_strength + center_strength < labor_strength; labor_dissent -= 10; {!
 Q.strasser_percent = Q.socialism;
 Q.hitler_percent = Q.nationalism;
 Q.hitler_percent += (100-Q.pro_republic);
@@ -61,7 +61,7 @@ go-to: schleicher_success if schleicher_support >= 50; schleicher_failed if schl
 
 With the exception of the trade unions, every faction of the SPD is horrified by this betrayal of democracy.
 
-[? if kpd_relation <= 10 and left_strength + center_strength < labor_strength: Somehow, the DNVP has agreed to Schleicher's proposal, forming a temporary alliance with the general against Nazis and Communists. ?][? if z_relation >= 50 : The Center Party also supports Schleicher's plan. ?][? if dvp_relation >= 25 : In addition, the DVP and some other smaller parties support this proposal. ?][? if kpd_relation > 10 or left_strength + center_strength >= labor_strength: The DNVP, despite being courted by Schleicher, is not interested in joining this alliance. DNVP chairman Hugenberg seems to prefer working with Hitler to any alliance that includes the SPD. ?]
+[? if uspd_relation <= 10 and left_strength + center_strength < labor_strength: Somehow, the DNVP has agreed to Schleicher's proposal, forming a temporary alliance with the general against Nazis and Communists. ?][? if z_relation >= 50 : The Center Party also supports Schleicher's plan. ?][? if dvp_relation >= 25 : In addition, the DVP and some other smaller parties support this proposal. ?][? if uspd_relation > 10 or left_strength + center_strength >= labor_strength: The DNVP, despite being courted by Schleicher, is not interested in joining this alliance. DNVP chairman Hugenberg seems to prefer working with Hitler to any alliance that includes the SPD. ?]
 
 [? if strasser_percent >= 0.25 and schleicher_support >= 50 : Seeing the writing on the wall, many Nazi deputies surrounding Strasser vote for Schleicher's motion alongside us, despite Hitler's continued opposition. Does this signal a Nazi split? ?]
 
