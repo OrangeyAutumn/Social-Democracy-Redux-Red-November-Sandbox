@@ -3,7 +3,8 @@ new-page: true
 is-card: true
 tags: cabinet_affairs
 card-image: img/muller_cabinet.jpg
-#subtitle: With the Chancellorship, we have a range of powers we can deploy to our advantage.
+subtitle: With the Chancellorship, we have a range of powers we can deploy to our advantage.
+
 - @coalition: We can improve relations with our coalition partners.
 - @shuffle_cabinet: We can reshuffle the cabinet.
 - @snap_elections: We can call snap elections.
