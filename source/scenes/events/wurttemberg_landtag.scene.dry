@@ -278,7 +278,7 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Left Coalition (SPD + USPD): [+ left_coalition +] 
+Left Coalition (SPD + USPD): [+ left_coalition +]%
 
 USPD-tolerated SPD Minority ((SPD alone): [+ uspd_tolerated_spd_minority +]%;
 
@@ -305,3 +305,144 @@ Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]%
 There are some potential coalition arrangements.
 
 @coalition_menu
+
+- @left_Coalition: Left_Coalition is possible?
+- @USPD_tolerated_spd_minority: A USPD-tolerated SPD Minority?
+- @USPD_tolerated_social_liberal_coalition: A USPD-tolerated Social-Liberal Coalition?
+- @social_liberal_coalition: A Social-Liberal Coalition?
+- @social_christian_coalition: A Social-Christian Coalition?
+- @weimar_coalition: A Weimar Coalition?
+- @uspd_tolerated_weimar_coalition: A USPD-tolerated Weimar Coalition?
+- @grand_coalition: A Grand Coalition?
+- @bourgeois_coalition: A Bourgeois Coalition forms?
+- @right_wing_coalition: A Right-wing Coalition forms?
+
+@left_Coalition: Left_Coalition is possible?
+view-if: [+ left_coalition +] >= 50
+
+- @success
+- @failure
+
+@success
+choose-if: President != Hindenburg and President != Hitler
+unavailable_subtitle: The current President would immediately *Reichsexecute* such a government if it were to form.
+
+@failure
+
+This coalition is not possible.
+go-to: @coalition_menu
+
+@USPD_tolerated_spd_minority
+view-if: [+ uspd_tolerated_spd_minority +] >= 50
+
+- @success
+- @failure
+
+@success
+choose-if: uspd_relation >= 45
+unavailable_subtitle: We do not have sufficient relations with the USPD.
+
+@failure
+
+Is a different coalition possible?
+go-to: @coalition_menu
+
+@USPD_tolerated_social_liberal_coalition
+view-if: [+ uspd_tolerated_social_liberal_coalition +] >= 50
+
+- @success
+- @failure
+
+@success
+choose-if: usdp_relation >50 and ddp_relation >50
+unavailable_subtitle: We do not have sufficient relations with the two parties.
+
+@failure
+
+Is a different coalition possible?
+go-to: @coalition_menu
+
+@social_liberal_coalition
+view-if: [+ social_liberal_coalition +] >= 50
+
+- @success
+- @failure
+
+@success
+choose-if: ddp_relation >= 45
+unavailable_subtitle: We do not have sufficient relations with the DDP.
+
+@failure
+
+Is a different coalition possible?
+go-to: @coalition_menu
+
+@social_christian_coalition
+view-if: [+ social_christian_coalition +] >= 50
+
+- @success
+- @failure
+
+@success
+choose-if: z_relation >= 45
+unavailable_subtitle: We do not have sufficient relations with the Zentrum.
+
+@failure
+
+Is a different coalition possible?
+go-to: @coalition_menu
+
+@uspd_tolerated_weimar_coalition
+view-if: [+ uspd_tolerated_weimar_coalition +] >= 50
+
+- @success
+- @failure
+
+@success
+choose-if: z_relation >= 45 and ddp_relation >= 45 and uspd_relation >= 50
+unavailable_subtitle: We do not have sufficient relations with the three parties.
+
+@failure
+
+Is a different coalition possible?
+go-to: @coalition_menu
+
+@weimar_coalition
+view-if: [+ weimar_coalition +] >= 50
+
+- @success
+- @failure
+
+@success
+choose-if: z_relation >= 45 and ddp_relation >= 45
+unavailable_subtitle: We do not have sufficient relations with the two parties.
+
+@failure
+
+Is a different coalition possible?
+go-to: @coalition_menu
+
+@grand_coalition
+view-if: [+ grand_coalition +] >= 50
+
+- @success
+- @failure
+
+@success
+choose-if: z_relation >= 30 and ddp_relation >= 30 and dvp_relation >= 30
+unavailable_subtitle: We do not have sufficient relations with the three parties.
+
+@failure
+
+Is a different coalition possible?
+go-to: @coalition_menu
+
+@bourgeois_coalition: A Bourgeois Coalition forms?
+view-if: [+ bourgeois_coalition +] >= 50
+
+A Bourgeois Coalition is formed.
+
+@right_coalition: A Bourgeois Coalition forms?
+view-if: [+ right_coalition +] >= 50
+
+A Right Coalition is formed.
