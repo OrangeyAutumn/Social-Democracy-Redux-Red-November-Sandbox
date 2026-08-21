@@ -13,6 +13,8 @@ Hamburg is a stronghold of the left in Germany, and we intend to keep it that wa
 
 We can enact policies in Hamburg.
 
+- @build_ties_ddp: Push our state party to strengthen ties with the state DDP.
+- @build_ties_usdp: Push our state party to strengthen ties with the state DDP.
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
 - @persecute_sa: Use our state offices to target and prosecute the state SA.
 - @persecute_rfb: Use our state offices to target and prosecute the state RFB.
@@ -22,6 +24,15 @@ We can enact policies in Hamburg.
 - @easy_discard
 - @cancel_advisor_action
 
+@build_ties_ddp
+on-arrival: ddp_relation += 5
+
+Our state party, at our request, seeks to strengthen ties with the state DPD. We can only hope these efforts will become felt at the federal level too.
+
+@build_ties_uspd
+on-arrival: uspd_relation += 5
+
+Our state party, at our request, seeks to strengthen ties with the state USPD. We can only hope these efforts will become felt at the federal level too.
 
 @bureaucracy
 on-arrival: hamburg_nsdap -= 0.02 if hamburg_nsdap >= 0.6; hamburg_nsdap -= 0.02 if year < 1930 and hamburg_nsdap >= 0.6; hamburg_dnvp += 0.02 if year < 1930 and hamburg_dnvp < 1.2; hamburg_dnvp -= 0.03 if year >= 1930 and hamburg_dnvp >= 0.8; hamburg_other += 0.02 if year >= 1930 and hamburg_other < 1.2; hamburg_dvp += 0.01 if year >= 1930; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
