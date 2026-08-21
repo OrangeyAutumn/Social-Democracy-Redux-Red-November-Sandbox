@@ -9,15 +9,15 @@ if (Q.princes_initiated) {
 } else {
     Q.petition_support = Q.spd_votes*((Q.left_strength*(1+(Q.left_dissent/100)))/100);
 }
-Q.petition_support += Q.kpd_votes;
+Q.petition_support += Q.uspd_votes;
 Q.petition_support += Q.workers*(Q.socialism/150);
-var relation_multiplier = (1+(Q.kpd_relation/100))/2;
+var relation_multiplier = (1+(Q.uspd_relation/100))/2;
 relation_multiplier = Math.max(0.25, Math.min(0.75, relation_multiplier));
 Q.petition_support = Q.petition_support*relation_multiplier;
 Q.petition_support = Q.petition_support.toFixed(1);
 Q.petition_proportion = (Q.petition_support/10).toFixed(1);
 
-Q.kpd_relation += 5;
+Q.uspd_relation += 5;
 Q.socialism += 5;
 !}
 new-page: true
@@ -54,13 +54,13 @@ Despite our previous opposition, we have chosen to in the end campaign in favor 
 
 @neutral
 
-It will be up to the communists to win this referendum, which now has little chance of success especially with the recent opinion of the government that the KPD's proposed law, being unconstitutional, would require a majority of all eligible voters, not just those voting in the referendum.
+It will be up to the communists to win this referendum, which now has little chance of success especially with the recent opinion of the government that the USPD's proposed law, being unconstitutional, would require a majority of all eligible voters, not just those voting in the referendum.
 
 @vote_against
 view-if: not princes_initiated
 on-arrival: workers_spd -= 3; unemployed_spd -= 3; left_dissent += 10; marx_relation += 2
 
-We vote against the proposed bill, though many on our party's left break party discipline to vote in favor anyway. With only the KPD and these dissidents backing the proposal, it, as expected, fails. Now, a referendum will be held, one of almost certain defeat for the communists as the government finds the referendum to be unconstitutional and thus require an absolute majority of all eligible voters to pass.
+We vote against the proposed bill, though many on our party's left break party discipline to vote in favor anyway. With only the USPD and these dissidents backing the proposal, it, as expected, fails. Now, a referendum will be held, one of almost certain defeat for the communists as the government finds the referendum to be unconstitutional and thus require an absolute majority of all eligible voters to pass.
 
 @luther_and_hindenburg_suck
 view-if: princes_initiated and president == "Hindenburg"
@@ -104,7 +104,7 @@ The DVP has withdrawn its confidence in the Koch-Weser cabinet over the decision
 
 @unconstitutional
 view-if: not princes_initiated
-on-arrival: coalition_dissent -= 1; z_relation += 4; dvp_relation += 4; kpd_relation -= 10; left_dissent += 10; workers_spd -= 3; unemployed_spd -= 3; workers_kpd += 3; unemployed_kpd += 3
+on-arrival: coalition_dissent -= 1; z_relation += 4; dvp_relation += 4; uspd_relation -= 10; left_dissent += 10; workers_spd -= 3; unemployed_spd -= 3; workers_uspd += 3; unemployed_uspd += 3
 
 We agree with Hindenburg's opinion that the referendum is unconstitutional. This provokes outrage within the party, but has greatly pleased the bourgeois parties.
 
