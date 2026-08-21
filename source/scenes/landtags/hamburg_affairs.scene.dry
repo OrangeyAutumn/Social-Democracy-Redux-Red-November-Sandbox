@@ -1,15 +1,15 @@
 title: Hamburg Affairs
 new-page: true
 is-card: true
-view-if: spd_hamburg = 1 and hamburgn_affairs_timer <= 0
-on-arrival: hamburgn_affairs_timer += 6; month_actions += 1
+view-if: spd_hamburg = 1 and hamburg_affairs_timer <= 0
+on-arrival: hamburg_affairs_timer += 6; month_actions += 1
 tags: lantags
 card-image: img/braun.jpg
-#subtitle: The state government of Hamburg is a bulwark of democracy...
+#subtitle: The state government of Hamburg is a bulwark of the left...
 
 = Hamburg Affairs
 
-Hamburg, by far the largest and most important state in Germany, is governed by our party, in a coalition with the Center and Democratic parties. It is the most stable and democratic state government in Germany, led by the able Otto Braun.
+Hamburg is a stronghold of the left in Germany, and we intend to keep it that way.
 
 We can enact policies in Hamburg.
 
@@ -24,7 +24,7 @@ We can enact policies in Hamburg.
 
 
 @bureaucracy
-on-arrival: hamburg_nsdap -= 0.02 if hamburg_nsdap >= 0.6; hamburg_nsdap -= 0.02 if year < 1930 and hamburg_nsdap >= 0.6; hamburg_dnvp += 0.02 if year < 1930 and hamburg_dnvp < 1.2; hamburg_dnvp -= 0.03 if year >= 1930 and hamburg_dnvp >= 0.8; hamburg_other += 0.02 if year >= 1930 and hamburg_other < 1.2; hamburg_dvp += 0.01 if year >= 1930; hamburgn_police_loyalty += 0.05; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
+on-arrival: hamburg_nsdap -= 0.02 if hamburg_nsdap >= 0.6; hamburg_nsdap -= 0.02 if year < 1930 and hamburg_nsdap >= 0.6; hamburg_dnvp += 0.02 if year < 1930 and hamburg_dnvp < 1.2; hamburg_dnvp -= 0.03 if year >= 1930 and hamburg_dnvp >= 0.8; hamburg_other += 0.02 if year >= 1930 and hamburg_other < 1.2; hamburg_dvp += 0.01 if year >= 1930; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
 
 The bureaucracy is deeply reactionary, and many abuse their power to favor the political right. By removing the pro-monarchy and pro-dictatorship elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
