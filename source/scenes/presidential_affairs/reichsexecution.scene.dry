@@ -51,12 +51,12 @@ on-arrival: uspd_bavaria = 0; right_bavaria = 0; spd_bavaria = 1
 We have performed a *Reichsexekution* against the government of Bavaria, removing it of extremist forces.
 
 
-@reichsexekute_württemberg
-view-if: uspd_württemberg or right_württemberg
+@reichsexekute_wurttemberg
+view-if: uspd_wurttemberg or right_wurttemberg
 tags: reichsexekutions
 title: Reichsexekute Württemberg.
 subtitle: This will anger the non-extreme parties of the state government!
-on-arrival: uspd_württemberg = 0; right_württemberg = 0; spd_württemberg = 1
+on-arrival: uspd_württemberg = 0; right_wurttemberg = 0; spd_wurttemberg = 1
 
 We have performed a *Reichsexekution* against the government of Württemberg, removing it of extremist forces.
 
