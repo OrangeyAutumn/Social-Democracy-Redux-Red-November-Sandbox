@@ -1,7 +1,7 @@
 title: Red Autumn
 subtitle: The communists attempt to rally the workers
 view-if: schleichers_scheme_success and year >= 1933 and month >= 10 and month < 12
-on-arrival: rfb_militancy += 0.05; rfb_strength += 200; sa_strength -= 50; rb_strength -= 150; workers_kpd += 5; unemployed_nsdap -= 3; unemployed_kpd += 3; strife += 1; old_middle_nsdap -= 3; rural_nsdap -= 3; new_middle_nsdap -= 2; old_middle_dnvp -= 2; rural_dnvp -= 2; old_middle_dne += 5; rural_dne += 5; new_middle_dne += 4;
+on-arrival: rfb_militancy += 0.05; rfb_strength += 200; sa_strength -= 50; rb_strength -= 150; workers_uspd += 5; unemployed_nsdap -= 3; unemployed_uspd += 3; strife += 1; old_middle_nsdap -= 3; rural_nsdap -= 3; new_middle_nsdap -= 2; old_middle_dnvp -= 2; rural_dnvp -= 2; old_middle_dne += 5; rural_dne += 5; new_middle_dne += 4;
 tags: event
 max-visits: 1
 new-page: true
@@ -26,10 +26,10 @@ This decree gives [+ chancellor +] wide-ranging powers with which to suppress th
 - @lib: We will have to hope for the best.
 
 @fight
-on-arrival: spd_rebel = 1; kpd_relation += 10; rb_strength *= 0.8; rfb_strength += 100; workers_spd -= 10; workers_dne += 10
+on-arrival: spd_rebel = 1; uspd_relation += 10; rb_strength *= 0.8; rfb_strength += 100; workers_spd -= 10; workers_dne += 10
 go-to: civil_war
 
-We mobilize what's left of the Reichsbanner and ADGB to resist this blatant crackdown  However, the ADGB refuses to follow along. [? if kpd_party_leader != "Conciliators" : The KPD, seeing its leaders jailed, is more inclined to join us in our final fight against fascism, but will it be enough? ?]
+We mobilize what's left of the Reichsbanner and ADGB to resist this blatant crackdown  However, the ADGB refuses to follow along. [? if uspd_party_leader != "Conciliators" : The KPD, seeing its leaders jailed, is more inclined to join us in our final fight against fascism, but will it be enough? ?]
 
 @lib
 on-arrival: {!
@@ -38,12 +38,12 @@ Q.rb_banned = 1;
 Q.rb_strength -= 250; 
 Q.rfb_banned = 1; 
 Q.rfb_militancy -= 0.1; 
-Q.workers_kpd -= 6;
+Q.workers_uspd -= 6;
 Q.workers_dne += 6;
 Q.new_middle_dne += 10;
 Q.old_middle_dne += 10;
 Q.unemployed_dne += 8;
-Q.unemployed_kpd -= 8;
+Q.unemployed_uspd -= 8;
 Q.catholics_dne += 5;
 Q.catholics_spd -= 8;
 Q.catholics -= 1;
