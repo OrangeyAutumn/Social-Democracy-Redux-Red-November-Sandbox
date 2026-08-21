@@ -27,8 +27,12 @@ We can enact policies in Schaumburg-Lippe.
 @build_ties_ddp
 on-arrival: ddp_relation += 5
 
+Our state party, at our request, seeks to strengthen ties with the state DDP. We can only hope these efforts will become felt at the federal level too.
+
 @build_ties_dnvp
 on-arrival: dnvp_relation += 5
+
+Our state party, at our request, seeks to strengthen ties with the state DNVP, to the bafflement of our federal party. We severely doubt any of these efforts will become felt at the federal level too.
 
 @bureaucracy
 on-arrival: schaumburg_lippe_nsdap -= 0.02 if schaumburg_lippe_nsdap >= 0.6; schaumburg_lippe_nsdap -= 0.02 if year < 1930 and schaumburg_lippe_nsdap >= 0.6; schaumburg_lippe_dnvp += 0.02 if year < 1930 and schaumburg_lippe_dnvp < 1.2; schaumburg_lippe_dnvp -= 0.03 if year >= 1930 and schaumburg_lippe_dnvp >= 0.8; schaumburg_lippe_other += 0.02 if year >= 1930 and schaumburg_lippe_other < 1.2; schaumburg_lippe_dvp += 0.01 if year >= 1930; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
