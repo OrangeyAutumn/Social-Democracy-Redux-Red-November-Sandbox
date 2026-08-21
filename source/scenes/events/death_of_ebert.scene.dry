@@ -126,11 +126,11 @@ The DVP and DNVP run Karl Jarres as the "Reichsblock" candidate. The Center Part
 
 @cl2
 
-- @large_campaign: We will launch a large-scale campaign for Braun.
-- @small_campaign: We will launch a small-scale campaign for Braun.
+- @liebknecht_large_campaign: We will launch a large-scale campaign for Braun.
+- @liebknecht_small_campaign: We will launch a small-scale campaign for Braun.
 - @round1: Let the voting begin...
 
-@large_campaign
+@liebknecht_large_campaign
 subtitle: -2 resources
 choose-if: resources >= 2
 view-if: liebknecht_percent <= 0.7
@@ -140,7 +140,7 @@ max-visits: 1
 
 We launch a large-scale campaign for Liebknecht to ensure turnout from our party members.
 
-@small_campaign
+@liebknecht_small_campaign
 subtitle: -1 resource
 on-arrival: resources -= 1; liebknecht_percent += 0.15
 choose-if: resources >= 1
