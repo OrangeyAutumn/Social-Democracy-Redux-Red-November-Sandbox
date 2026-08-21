@@ -13,8 +13,6 @@ Bavaria has historically been the most difficult state for our party, with a pow
 
 We can enact policies in Bavaria.
 
-- @negotiate_concordat
-- @sign_concordat
 - @land_reform
 - @agricultural_finance
 - @pro_consumer
@@ -69,15 +67,3 @@ We have increased financial support for small farmers, providing access to credi
 on-arrival: budget -= 1; pro_consumer += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); workers_sol += 4; coalition_dissent += 1 if black_thursday_seen; economic_growth += 0.2
 
 We have increased state purchasing of food staples to provide to urban workers and the poor. This benefits workers more than it benefits farmers, as we are negotiating for lower purchase prices.
-
-@negotiate_concordat
-view-if: bavarian_concordat_progress < 1
-on-arrival: bavarian_concordat_progress += 1; z_relation += 2*(1-dissent);
-
-We are making progress towards negotiating a concordat between Bavaria and the Catholic church.
-
-@sign_concordat
-view-if: bavarian_concordat_progress >= 1 and bavarian _concordat = 0
-on-arrival: bavarian_concordat = 1; z_relation += 5; catholics_spd += 3*(1-dissent)
-
-We have signed a Concordat between Bavaria and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Bavaria. This sets the stage for the negotiation of a national Concordat covering all of Germany.
