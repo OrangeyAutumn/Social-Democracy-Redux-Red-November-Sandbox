@@ -48,7 +48,7 @@ We have increased our campaigning among the unemployed. [? if welfare < 0: The w
 
 @catholics
 subtitle: -1 resources
-choose-if: resources >= 1 and 
+choose-if: resources >= 1 
 unavailable-subtitle: Not enough resources.
 view-if: z_relation >= 55
 on-arrival: catholics_spd += 6*(1-dissent); resources -= 1
