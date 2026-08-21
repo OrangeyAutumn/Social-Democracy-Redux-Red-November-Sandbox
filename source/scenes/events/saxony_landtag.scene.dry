@@ -117,25 +117,26 @@ Q.stsl_change_spd = sign_spd + Q.change_spd_sl;//.toFixed(1);
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
-if (Q.nsdap_sl >= Q.spd_sl && Q.nsdap_sl >= Q.kpd_sl) {
+if (Q.nsdap_sl >= Q.spd_sl && Q.nsdap_sl >= Q.uspd_sl) {
     Q.largest_party = 'NSDAP';
 }
 
-if (Q.kpd_sl >= Q.spd_sl && Q.kpd_sl >= Q.nsdap_sl) {
-    Q.largest_party = 'KPD';
+if (Q.uspd_sl >= Q.spd_sl && Q.uspd_sl >= Q.nsdap_sl) {
+    Q.largest_party = 'USPD';
 }
 // coalitions
+Q.s_uspd_tolerated_spd_minority = Q.spd_sl + Q.uspd_sl + Q.sapd_sl;
 Q.s_weimar_coalition = Q.spd_sl + Q.ddp_sl + Q.z_sl;
 Q.s_grand_coalition = Q.spd_sl + Q.ddp_sl + Q.z_sl + Q.dvp_sl;
 Q.s_anticommunist_coalition = Q.aspd_sl + Q.ddp_sl + Q.dvp_sl + Q.other_sl + Q.dnvp_sl + Q.nsdap_sl;
 Q.s_center_right_coalition = Q.z_sl + Q.ddp_sl + Q.dvp_sl + Q.other_sl + Q.dnvp_sl;
 Q.s_right_coalition = Q.z_sl + Q.dvp_sl + Q.other_sl + Q.dnvp_sl;
 Q.s_far_right_coalition = Q.dnvp_sl + Q.nsdap_sl;
-Q.s_left_coalition = Q.spd_sl + Q.kpd_sl;
+Q.s_left_coalition = Q.spd_sl + Q.uspd_sl;
 // this is an absurd concept lol
-Q.s_popular_front_coalition = Q.spd_sl + Q.kpd_sl + Q.ddp_sl;
-Q.s_anti_democratic_coalition = Q.kpd_sl + Q.nsdap_sl + Q.dnvp_sl;
-// aka everyone except nazi, kpd, dnvp
+Q.s_popular_front_coalition = Q.spd_sl + Q.uspd_sl + Q.ddp_sl;
+Q.s_anti_democratic_coalition = Q.uspd_sl + Q.nsdap_sl + Q.dnvp_sl;
+// aka everyone except nazi, uspd, dnvp
 Q.s_neo_weimar_coalition = Q.spd_sl + Q.ddp_sl + Q.z_sl + Q.dvp_sl + Q.other_sl;
 // Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
 Q.s_other_nazi = Math.round(Q.other_sl*(1-(Q.pro_republic/100)));
@@ -152,10 +153,10 @@ on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_sl >= 15)
 on-display: {!
 if (Q.sapd_formed == 1) {
     data = [
-        {    "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_sl*0.96),
+        {    "id": "uspd",
+            "legend": "USPD",
+            "name": "USPD",
+            "seats": Math.round(Q.uspd_sl*0.96),
         },
         {
             "id": "sapd",
@@ -215,10 +216,10 @@ if (Q.sapd_formed == 1) {
 }
 else {
     data = [
-        {   "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_sl*0.96),
+        {   "id": "uspd",
+            "legend": "USPD",
+            "name": "USPD",
+            "seats": Math.round(Q.uspd_sl*0.96),
         },
         {
             "id": "spd",
@@ -299,7 +300,7 @@ go-to: coalition_menu
 
 [? if sapd_formed == 1 : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_sl +]% {!</td><td>!} [+ stsl_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD: {!</td><td>!} [+ kpd_sl +]% {!</td><td>!} [+ stsl_change_kpd +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} USPD: {!</td><td>!} [+ uspd_sl +]% {!</td><td>!} [+ stsl_change_uspd +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#FF6F61'> </div> !} ASPD: {!</td><td>!} [+ aspd_sl +]% {!</td><td>!} [+ stsl_change_aspd +] {!</td></tr>!}
 
@@ -318,6 +319,10 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
+Left Coalition (SPD + USPD): [+ s_left_coalition +] 
+
+USPD-tolerated SPD Minority ((SPD alone): [+ s_uspd_tolerated_spd_minority +]%;
+
 Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ s_weimar_coalition +]%
 
 Grand Coalition (SPD + Z + [+ ddp_name +] + DVP): [+ s_grand_coalition +]%
@@ -326,7 +331,7 @@ Anticommunist Coalition (ASPD + [+ ddp_name +] + Z + DVP + Others + DNVP + NSDAP
 
 [? if nazi_urgency <= 1 and nsdap_sl >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
-[? if s_anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Landtag. A stable governing majority will be almost impossible. ?]
+[? if s_anti_democratic_coalition >= 50 : Together, the anti-democratic USPD, DNVP, and NSDAP have a majority in the Landtag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
 
@@ -334,6 +339,7 @@ There are some potential coalition arrangements.
 
 - @socdem_saxony
 - @spd_majority
+- @s_uspd_tolerated_spd_minority
 - @bourgeois_saxony
 - @anticommunist_coalition
 - @red_saxony
@@ -344,9 +350,19 @@ There are some potential coalition arrangements.
 title: A progressive coalition.
 subtitle: SPD + ASPD[? if sapd_formed : + SAPD?] ([+ s_progressive_coalition +]%)
 view-if: s_progressive_coalition >= 50 and spd_sl < 50
-on-arrival: workers_spd += 2*(1-dissent); left_dissent -= 5; reformist_dissent -= 5
+on-arrival: workers_spd += 2*(1-dissent); left_dissent -= 5; reformist_dissent -= 5; @socdem_saxony = 1; @spd_majority = 0; @s_uspd_tolerated_spd_minority = 0; @bourgeois_saxony = 0; @anticommunist_coalition = 0; @red_saxony = 0; @no_majority_saxony = 0; @brown_saxony = 0
 
 A moderate socialist coalition is formed with the backing of the ASPD[? if sapd_formed : and SAPD?].
+
+@s_uspd_tolerated_spd_minority
+title: An SPD Minority government with USPD toleration.
+subtitle: SPD + USPD ([+ s_uspd_tolerated_spd_minority +]%)
+view-if: s_uspd_tolerated_spd_minority >= 50
+choose-if: uspd_relation >= 45 and Q.hindenburg_relation >= 40;
+unavailable_subtitle: We do not have sufficient relations with either President Hindenburg or the USPD.
+on-arrival: @socdem_saxony = 0; @spd_majority = 0; @s_uspd_tolerated_spd_minority = 1; @bourgeois_saxony = 0; @anticommunist_coalition = 0; @red_saxony = 0; @no_majority_saxony = 0; @brown_saxony = 0
+
+We have formed a minority government in toleration with the USPD.
 
 @bourgeois_saxony
 title: A center-right bourgeois coalition.
@@ -354,7 +370,7 @@ subtitle: [+ ddp_name +] + Z + DVP + Others + DNVP ([+ s_center_right_coalition 
 view-if: s_center_right_coalition >= 50 or s_anticommunist_coalition >= 50
 choose-if: s_center_right_coalition >= 50 and (year < 1930 or dnvp_reform)
 unavailable-subtitle: Toleration from the NSDAP and/or ASPD is required.
-on-arrival: saxon_dispute = 1
+on-arrival: saxon_dispute = 1; @socdem_saxony = 0; @spd_majority = 0; @s_uspd_tolerated_spd_minority = 0; @bourgeois_saxony = 1; @anticommunist_coalition = 0; @red_saxony = 0; @no_majority_saxony = 0; @brown_saxony = 0
 
 Surprisingly, the center-right bourgeois parties are capable of a lone majority! [? if s_elections <= 1 : Max Heldt is replaced by a candidate from the DVP, Bünger. ?]
 
@@ -364,21 +380,21 @@ subtitle: ASPD + [+ ddp_name +] + Z + DVP + Others + DNVP + NSDAP ([+ s_anticomm
 view-if: s_anticommunist_coalition >= 50 or s_elections <= 1
 choose-if: s_anticommunist_coalition >= 50 and s_center_right_coalition < 50 and s_progressive_coalition < 50 and (year < 1930 or ((dnvp_reform and nazi_reform) or (s_neo_weimar_coalition < 50)))
 unavailable-subtitle: ASPD + [+ ddp_name +] + Z + DVP + Others + DNVP + NSDAP ([+ s_anticommunist_coalition +]%)[? if s_center_right_coalition >= 50 : - the bourgeois don't need the Nazis. ?][? if year >= 1930 : The bourgeois and the reactionaries are no longer open to cooperation. ?]
-on-arrival: saxon_dispute = 1; saxony_nsdap += 0.05 if saxony_nsdap < 1.2; reformist_strength -= 2; nazi_saxony = 1 if nsdap_sl >= s_center_right_coalition; saxony_nsdap += 0.05 if nazi_saxony; saxony_spd -= 0.05 if nazi_saxony; kpd_relation += 5 if nazi_saxony; nazi_urgency += 1 if nazi_saxony;
+on-arrival: saxon_dispute = 1; saxony_nsdap += 0.05 if saxony_nsdap < 1.2; reformist_strength -= 2; nazi_saxony = 1 if nsdap_sl >= s_center_right_coalition; saxony_nsdap += 0.05 if nazi_saxony; saxony_spd -= 0.05 if nazi_saxony; uspd_relation += 5 if nazi_saxony; nazi_urgency += 1 if nazi_saxony; @socdem_saxony = 0; @spd_majority = 0; @s_uspd_tolerated_spd_minority = 0; @bourgeois_saxony = 0; @anticommunist_coalition = 1; @red_saxony = 0; @no_majority_saxony = 0; @brown_saxony = 0; @socdem_saxony = 1; @spd_majority = 0; @s_uspd_tolerated_spd_minority = 0; @bourgeois_saxony = 0; @anticommunist_coalition = 0; @red_saxony = 0; @no_majority_saxony = 0; @brown_saxony = 0
 
 With the bourgeois parties in Saxony deeply distrusting the regional SPD due to its intense left-wing leanings and a history of class war in the state unlike that of other states, an anticommunist coalition is formed. 
 
 [? if nsdap_sl < s_center_right_coalition : The Nazis are content to simply tolerate the cabinet, luckily, though they are still legitimized through the bourgeois reliance on them to prevent new elections. ?][? if nsdap_sl >= s_center_right_coalition : The Nazis have entered into government, unwilling to be simply tolerating partners of the bourgeois. Immediately, left-wing parties are suppressed. ?]
 
 @red_saxony
-title: A "United Front" with the KPD.
-subtitle: KPD + SPD ([+ s_left_coalition +]%)
+title: A "United Front" with the USPD.
+subtitle: USPD + SPD ([+ s_left_coalition +]%)
 view-if: s_left_coalition >= 50
-choose-if: kpd_relation >= 40 and communist_coalition >= 2
-unavailable-subtitle: The KPD doesn't trust us enough.
-on-arrival: saxony_kpd += 0.2 if saxony_kpd < 1.5; coup_progress += 2; capital_strike_progress += 2; red_saxony = 1; saxony_nsdap -= 0.1 if saxony_nsdap >= 0.7; workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent)
+choose-if: uspd_relation >= 40
+unavailable-subtitle: The USPD doesn't trust us enough.
+on-arrival: saxony_uspd += 0.2 if saxony_uspd < 1.5; coup_progress += 2; capital_strike_progress += 2; red_saxony = 1; saxony_nsdap -= 0.1 if saxony_nsdap >= 0.7; workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent); @socdem_saxony = 0; @spd_majority = 0; @s_uspd_tolerated_spd_minority = 0; @bourgeois_saxony = 0; @anticommunist_coalition = 0; @red_saxony = 1; @no_majority_saxony = 0; @brown_saxony = 0
 
-Together with the KPD, we have won a majority. The bourgeois parties are up in arms at the prospect of a return to socialist Saxony, and scramble to oppose the government.
+Together with the USPD, we have won a majority. The bourgeois parties are up in arms at the prospect of a return to socialist Saxony, and scramble to oppose the government.
 
 @spd_majority
 title: The SPD may govern alone.
@@ -389,7 +405,7 @@ on-arrival: saxony_spd -= 0.1; workers_spd += 3*(1-dissent); unemployed_spd += 3
 We have won a majority in Saxony alone.
 
 @no_majority_saxony
-view-if: (nsdap_sl < 50) and (s_left_coalition < 50 or kpd_relation < 40 or communist_coalition <2) and (s_anticommunist_coalition < 50 or s_center_right_coalition >= 50 or (year >= 1930 and not nazi_reform and not dnvp_reform)) and (s_center_right_coalition < 50 or (year >= 1930 and not dnvp_reform)) and (spd_sl < 50) and (s_progressive_coalition < 50)
+view-if: (nsdap_sl < 50) and (s_left_coalition < 50 or uspd_relation < 40 or communist_coalition <2) and (s_anticommunist_coalition < 50 or s_center_right_coalition >= 50 or (year >= 1930 and not nazi_reform and not dnvp_reform)) and (s_center_right_coalition < 50 or (year >= 1930 and not dnvp_reform)) and (spd_sl < 50) and (s_progressive_coalition < 50)
 title: There is no clear majority.
 
 There is no clear majority in the Landtag. As Saxony allows new elections to be called by simple majority vote in the Landtag, something must be done to prevent new elections.
@@ -403,22 +419,22 @@ Ultimately, the decision is up to the regional SPD branch, though we can guide t
 - @and: And the Saxon SPD decides...
 
 @and
-go-to: hung_landtag if s_popular_front_coalition >= 50 and kpd_saxony_warmed; new_elections_saxony if s_neo_weimar_coalition < 50; refused_toleration if s_neo_weimar_coalition >= 50 and left_strength >= 20; accepted_toleration if s_neo_weimar_coalition >= 50 and left_strength < 20
+go-to: hung_landtag if s_popular_front_coalition >= 50 and uspd_saxony_warmed; new_elections_saxony if s_neo_weimar_coalition < 50; refused_toleration if s_neo_weimar_coalition >= 50 and left_strength >= 20; accepted_toleration if s_neo_weimar_coalition >= 50 and left_strength < 20
 
 @new_elections_saxony
-on-arrival: saxony_election_month = month+3; saxony_election_year = year; saxony_election_year += 1 if saxony_election_month > 12; saxony_election_month -= 12 if saxony_election_month > 12; saxony_dvp -= 0.1 if saxony_dvp >= 0.3; saxony_other -= 0.25 if saxony_other >= 0.7; saxony_ddp -= 0.1 if saxony_ddp >= 0.5; saxony_nsdap += 0.1 if saxony_nsdap < 1.4; saxony_kpd += 0.05 if saxony_kpd < 1.1
-go-to: kpd_did_this if s_left_coalition >= 50
+on-arrival: saxony_election_month = month+3; saxony_election_year = year; saxony_election_year += 1 if saxony_election_month > 12; saxony_election_month -= 12 if saxony_election_month > 12; saxony_dvp -= 0.1 if saxony_dvp >= 0.3; saxony_other -= 0.25 if saxony_other >= 0.7; saxony_ddp -= 0.1 if saxony_ddp >= 0.5; saxony_nsdap += 0.1 if saxony_nsdap < 1.4; saxony_uspd += 0.05 if saxony_uspd < 1.1
+go-to: uspd_did_this if s_left_coalition >= 50
 
 It turns out that it is not only out of our hands but the Saxon SPD's as well. New elections are called, as there is no viable majority.
 
-@kpd_did_this
-on-arrival: kpd_saxony_warmed = 1; saxony_kpd -= 0.3; saxony_spd += 0.3
+@uspd_did_this
+on-arrival: uspd_saxony_warmed = 1; saxony_uspd -= 0.3; saxony_spd += 0.3
 
-The KPD's vote alongside the Nazis to dissolve the Landtag seems to have backfired, and many of their voters in the state turn to us instead.
+The USPD's vote alongside the Nazis to dissolve the Landtag seems to have backfired, and many of their voters in the state turn to us instead.
 
 @hung_landtag
 
-Though there is no majority in favor of any government, the KPD has reversed course due to their poor performance from turning against us and vote against dissolving the Landtag. Though the state remains ungovernable, this will not mean new elections, and the previous government will remain in caretaker capacity.
+Though there is no majority in favor of any government, the USPD has reversed course due to their poor performance from turning against us and vote against dissolving the Landtag. Though the state remains ungovernable, this will not mean new elections, and the previous government will remain in caretaker capacity.
 
 @refused_toleration
 on-arrival: dvp_relation -= 5; reformist_dissent += 5; center_dissent += 2; saxony_election_month += 5; saxony_election_year += 1 if saxony_election_month > 12; saxony_election_month -= 12 if saxony_election_month > 12; saxony_dvp -= 0.1 if saxony_dvp >= 0.5; saxony_other -= 0.25 if saxony_other >= 0.9; saxony_ddp -= 0.1 if saxony_ddp >= 0.7; saxony_nsdap += 0.1 if saxony_nsdap < 1.3; saxony_spd -= 0.1 if saxony_spd >= 0.8;
@@ -451,7 +467,7 @@ We oppose this anti-toleration stance the Saxon SPD has taken, assuaging the con
 ## TODO: add post_event changes to thuringia_other thuringia_nsdap etc both on their own and from nazi_thuringia
 
 @accepted_toleration
-on-arrival: saxon_dispute = 1; saxolation_timer = 10-(left_strength/10); saxony_kpd += 0.05 if saxony_kpd < 1.1; saxony_spd -= 0.05 if saxony_spd >= 1; saxony_toleration = 1; left_dissent += 5; reformist_strength += 5
+on-arrival: saxon_dispute = 1; saxolation_timer = 10-(left_strength/10); saxony_uspd += 0.05 if saxony_uspd < 1.1; saxony_spd -= 0.05 if saxony_spd >= 1; saxony_toleration = 1; left_dissent += 5; reformist_strength += 5
 
 ## TODO : saxolation
 
@@ -461,6 +477,6 @@ The Saxon SPD, following the direction of the party away from the left, has deci
 title: NSDAP majority
 subtitle: NSDAP ([+ nsdap_sl +]%)
 view-if: nsdap_sl >= 50
-on-arrival: saxony_nsdap += 0.25; workers_nsdap += 4; old_middle_nsdap += 5; rural_nsdap += 2
+on-arrival: saxony_nsdap += 0.25; workers_nsdap += 4; old_middle_nsdap += 5; rural_nsdap += 2; @socdem_saxony = 0; @spd_majority = 0; @s_uspd_tolerated_spd_minority = 0; @bourgeois_saxony = 0; @anticommunist_coalition = 0; @red_saxony = 0; @no_majority_saxony = 0; @brown_saxony = 1
 
 The Nazis have won a majority in Saxony and immediately go about persecuting socialists within the state and consolidating power.
