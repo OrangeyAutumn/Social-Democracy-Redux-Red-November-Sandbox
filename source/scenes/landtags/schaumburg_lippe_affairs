@@ -13,6 +13,8 @@ Schaumburg-Lippe is a stronghold of the left in Germany, and we intend to keep i
 
 We can enact policies in Schaumburg-Lippe.
 
+- @build_ties_ddp: Push our state party to strengthen ties with the state DDP.
+- @build_ties_dnvp: Push our state party to strengthen ties with the state... DNVP?
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
 - @persecute_sa: Use our state offices to target and prosecute the state SA.
 - @persecute_rfb: Use our state offices to target and prosecute the state RFB.
@@ -22,6 +24,11 @@ We can enact policies in Schaumburg-Lippe.
 - @easy_discard
 - @cancel_advisor_action
 
+@build_ties_ddp
+on-arrival: ddp_relation += 5
+
+@build_ties_dnvp
+on-arrival: dnvp_relation += 5
 
 @bureaucracy
 on-arrival: schaumburg_lippe_nsdap -= 0.02 if schaumburg_lippe_nsdap >= 0.6; schaumburg_lippe_nsdap -= 0.02 if year < 1930 and schaumburg_lippe_nsdap >= 0.6; schaumburg_lippe_dnvp += 0.02 if year < 1930 and schaumburg_lippe_dnvp < 1.2; schaumburg_lippe_dnvp -= 0.03 if year >= 1930 and schaumburg_lippe_dnvp >= 0.8; schaumburg_lippe_other += 0.02 if year >= 1930 and schaumburg_lippe_other < 1.2; schaumburg_lippe_dvp += 0.01 if year >= 1930; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
