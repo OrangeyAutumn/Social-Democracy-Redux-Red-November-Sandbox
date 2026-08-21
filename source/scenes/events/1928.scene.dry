@@ -13,7 +13,7 @@ for (var party of Q.parties) {
     } 
 }
 Q.thuringia_spd += 0.25; // 1.15;
-Q.thuringia_kpd -= 0.3;
+Q.thuringia_uspd -= 0.3;
 Q.thuringia_ddp += 0.2;
 Q.thuringia_z += 0.1;
 Q.thuringia_dvp -= 0.1;
