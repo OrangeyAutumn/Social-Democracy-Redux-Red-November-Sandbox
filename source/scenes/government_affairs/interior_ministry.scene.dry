@@ -1,4 +1,4 @@
-title: Investigating Domestic Enemies
+title: The Interior Ministry
 on-arrival: month_actions += 1
 view-if: spd_in_government = 1 and interior_minister_party = "SPD"
 #card-image: img/portraits/SeveringCarl.jpg
@@ -7,7 +7,7 @@ view-if: spd_in_government = 1 and interior_minister_party = "SPD"
 
 # this is not a card...
 
-= Investigating Domestic Enemies
+= The Interior Ministry
 
 As we have control over the Interior Ministry, we can direct police and intelligence services to investigate internal enemies. We can proscribe various organizations.
 
@@ -22,7 +22,67 @@ As we have control over the Interior Ministry, we can direct police and intellig
 - @unban_rfb: Unban the RFB.
 - @persecute_rfb
 - @investigate_coup: Investigate the rumors of a coup plot.
+- @banning_menu: With our constitutional reforms, the Interior Ministry now has the power to ban parties it deems extremist.
 - @root: Take no action for now.
+
+@banning_menu
+
+view-if: constitutional_protection == 1
+
+- @ban_uspd: Ban USPD
+- @unban_uspd: Unban USPD
+- @ban_dnvp: Ban DNVP
+- @unban_dnvp: Unban DNVP
+- @ban_nsdap: Ban NSDAP
+- @unban_nsdap: Unban NSDAP
+
+@ban_uspd
+view-if: uspd_banned == 0 and constitutional_protection == 1
+on-arrival: {!
+Q.uspd_banned = 1;
+!}
+
+Banned the USPD.
+
+@unban_uspd
+view-if: uspd_banned != 0 and constitutional_protection == 1
+on-arrival: {!
+Q.uspd_banned = 0;
+!}
+
+Unbanned the USPD.
+
+@ban_dnvp
+view-if: dnvp_banned == 0 and constitutional_protection == 1
+on-arrival: {!
+Q.dnvp_banned = 1;
+!}
+
+Banned the DNVP.
+
+@unban_dnvp
+view-if: dnvp_banned != 0 and constitutional_protection == 1
+on-arrival: {!
+Q.dnvp_banned = 0;
+!}
+
+Unbanned the DNVP.
+
+@ban_nsdap
+view-if: nsdap_banned == 0 and constitutional_protection == 1
+on-arrival: {!
+Q.nsdap_banned = 1;
+!}
+
+Banned the NSDAP.
+
+@unban_nsdap
+view-if: nsdap_banned != 0 and constitutional_protection == 1
+on-arrival: {!
+Q.nsdap_banned = 0;
+!}
+
+Unbanned the NSDAP.
 
 @ban_sa
 view-if: nazi_urgency >= 3 and sa_banned == 0
