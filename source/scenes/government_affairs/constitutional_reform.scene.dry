@@ -145,11 +145,14 @@ achievement: raterrepublik
 We have successfully passed a constitutional amendment to effectively make works councils the dominant body of governance in the country. 
 
 @constitutional_bans
+view-if: constitutional_protection == 0
 choose-if: reform_support >= pass_threshold
 unavailable-subtitle: We do not have enough support for this policy. [? if pro_republic < 65 : We should have an additional margin for the referendum since we need a majority of voters, and many voters who do not support the republic will not participate. ?] [? if z_relation <= 49 and president != "Braun" : The Center Party does not trust us enough to support this policy. ?]
-on-arrival: constitutional_reform += 1; presidential_powers = 1
+on-arrival: {!
+Q.constitutional_protection = 1;
+!}
 
-# Temporarily disable this for now - how would this interact with the already-extant law for the protection of the republic? This 
+We have successfully passed a constitutional amendment to allow banning unconstitutional parties.
 
 @constitutional_convention
 
