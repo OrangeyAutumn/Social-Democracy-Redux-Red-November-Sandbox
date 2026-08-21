@@ -29,7 +29,7 @@ This decree gives [+ chancellor +] wide-ranging powers with which to suppress th
 on-arrival: spd_rebel = 1; uspd_relation += 10; rb_strength *= 0.8; rfb_strength += 100; workers_spd -= 10; workers_dne += 10
 go-to: civil_war
 
-We mobilize what's left of the Reichsbanner and ADGB to resist this blatant crackdown  However, the ADGB refuses to follow along. [? if uspd_party_leader != "Conciliators" : The KPD, seeing its leaders jailed, is more inclined to join us in our final fight against fascism, but will it be enough? ?]
+We mobilize what's left of the Reichsbanner and ADGB to resist this blatant crackdown  However, the ADGB refuses to follow along. [? if uspd_party_leader != "Conciliators" : The USPD, seeing its leaders jailed, is more inclined to join us in our final fight against fascism, but will it be enough? ?]
 
 @lib
 on-arrival: {!
