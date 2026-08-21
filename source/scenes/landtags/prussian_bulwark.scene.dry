@@ -15,11 +15,15 @@ We can enact policies in Prussia.
 
 - @police_loyalty: Bolster the loyalty of the police.
 - @police_strength: Recruit additional police.
+- @recruit_rsb: Use our state offices to promote recruitment for the Reichsbanner.
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
+- @persecute_sa: Use our state offices to target and prosecute the state SA.
 - @ban_sa: Ban the SA, the Nazi paramilitary group.
 - @unban_sa: Reverse the SA ban.
+- @persecute_rfb: Use our state offices to target and prosecute the state RFB.
 - @ban_rfb: Ban the RFB, the Communist paramilitary.
 - @unban_rfb: Reverse the RFB ban.
+- @persecute_sh: Use our state offices to target and prosecute the state Stalhelm.
 - @ban_sh: Ban the Stahlhelm, the Nationalist paramilitary.
 - @unban_sh: Reverse the Stahlhelm ban.
 - @negotiate_concordat: Negotiate a concordat with the Vatican.
@@ -95,3 +99,23 @@ view-if: prussian_concordat_progress >= 1 and prussian_concordat = 0
 on-arrival: prussian_concordat = 1; z_relation += 5; catholics_spd += 3*(1-dissent)
 
 We have signed a Concordat between the Free State of Prussia and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Prussia. This sets the stage for the negotiation of a national Concordat covering all of Germany.
+
+@persecute_sa 
+on-arrival: sa_strength -= 500; uspd_relation += 3
+
+As it turns out, the Nazi SA has many allies in the police and bureaucracy, undermining our efforts. Nevertheless, the SA is substantially weakened by our efforts.
+
+@persecute_sh 
+on-arrival: sa_strength -= 250; dvp_relation -= 5; uspd_relation += 3
+
+Unsurprisingly, the Stalhelm has many allies in the police and bureaucracy, undermining our efforts. Nevertheless, our efforts bear some fruit.
+
+@persecute_rfb 
+on-arrival: rfb_strength -= 1000; uspd_relation -= 10; z_relation += 3; dvp_relation += 3
+
+The reactionary elements in the police and bureaucracy enthusiastically carry out these orders – rather more enthusiastically than we’d like, in fact. Nevertheless, our efforts bear clear fruit.
+
+@recruit_rsb
+On-arrival: rb_strength += 250; rb_militancy += 0.05; z_relation -= 2; dvp_relation -= 3
+
+We have used our state offices to promote recruitment to the Reichsbanner. The other state parties decry this as an abuse of office, but we ignore their protests.
