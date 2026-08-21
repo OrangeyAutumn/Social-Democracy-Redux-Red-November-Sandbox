@@ -2,7 +2,7 @@ title: The Death of Ebert
 subtitle: The President has died...
 new-page: true
 view-if: year = 1925 and month >= 3 and not ebert_dead
-on-arrival: round25 = 0; ebert_dead = 1; president = "Simons (acting)"; jarres_campaign = 1; marx_campaign = 1; held_campaign = 1; thalmann_campaign = 1; ludendorff_campaign = 1; hellpach_campaign = 1;
+on-arrival: round25 = 0; ebert_dead = 1; president = "Simons (acting)"; jarres_campaign = 1; marx_campaign = 1; held_campaign = 1; liebknecht_campaign = 1; ludendorff_campaign = 1; hellpach_campaign = 1;
 tags: event
 go-to: pres_menu
 
@@ -16,13 +16,13 @@ Now, new presidential elections have been scheduled. It is expected that a wide 
 
 - @back_gessler: Back Otto Gessler as a joint democratic candidate.
 - @back_braun: Run Otto Braun, to represent the SPD.
-- @back_thalmann: Back Ernst Thälmann of the KPD.
+- @back_liebknecht: Back Karl Liebknecht of the USPD.
 
 @back_gessler
 subtitle: -1 resource - The party's left-wing will likely revolt.
 choose-if: left_strength+labor_strength < reformist_strength and dvp_relation >= 50 and resources >= 1
 unavailable-subtitle: -1 resource. [? if left_strength+labor_strength < reformist_strength : The party refuses. ?][? if dvp_relation < 50 : The DVP itself is unwilling. ?][? if resources < 1 : The DVP wants us to front the resources for a campaign. ?]
-on-arrival: gessler_campaign = 1; hergt25_campaign = 1; jarres_campaign = 0; marx_campaign = 0; hellpach_campaign = 0; resources -= 1; left_dissent += 20; workers_spd -= 6; workers_kpd += 6; unemployed_spd -= 6; unemployed_kpd += 6; old_middle_dvp -= 5; rural_dvp -= 5
+on-arrival: gessler_campaign = 1; hergt25_campaign = 1; jarres_campaign = 0; marx_campaign = 0; hellpach_campaign = 0; resources -= 1; left_dissent += 20; workers_spd -= 6; workers_uspd += 6; unemployed_spd -= 6; unemployed_uspd += 6; old_middle_dvp -= 5; rural_dvp -= 5
 
 Somehow, we have managed to engineer a Gessler coalition. The left is understandably outraged, and the communist campaign is bolstered.
 
@@ -41,23 +41,23 @@ We have entered Otto Braun into the race, and he has resigned as Minister-Presid
 @campaign_gessler
 go-to: cg2
 
-The KPD has entered into the race the little known Ernst Thälmann, while the DNVP runs Oskar Hergt, who has attempted to peel away the DVP's more right-wing members from Gessler. The BVP, unwilling to commit to any of the main candidates, has run Heinrich Held, their leader. Meanwhile, the recently reformed National Socialists are backing Ludendorff.
+The USPD has entered into the race the little known Ernst Liebknecht, while the DNVP runs Oskar Hergt, who has attempted to peel away the DVP's more right-wing members from Gessler. The BVP, unwilling to commit to any of the main candidates, has run Heinrich Held, their leader. Meanwhile, the recently reformed National Socialists are backing Ludendorff.
 
 @cg2
 
-- @attack_thalmann_g: Attempt to win back our left-wing, and attack Thälmann.
+- @attack_liebknecht_g: Attempt to win back our left-wing, and attack Liebknecht.
 - @democracy_rally_g: Rally for democracy, and against monarchism.
 - @donate_dvp: Provide more campaign resources for the right to spend.
 - @round1: Let the voting begin...
 
-@attack_thalmann_g
-subtitle: -1 resource - this may have the effect of popularizing Thälmann!
-on-arrival: resources -= 1; kpd_relation -= 5; workers_kpd += 3; unemployed_kpd += 5; left_dissent -= 5; left_strength -= 5; old_middle_dvp -= 3; old_middle_dnvp += 3; dvp_relation -= 5
+@attack_liebknecht_g
+subtitle: -1 resource - this may have the effect of popularizing Liebknecht!
+on-arrival: resources -= 1; uspd_relation -= 5; workers_uspd += 3; unemployed_uspd += 5; left_dissent -= 5; left_strength -= 5; old_middle_dvp -= 3; old_middle_dnvp += 3; dvp_relation -= 5
 go-to: cg2
 choose-if: resources >= 1
 max-visits: 1
 
-We attack Thälmann for every fault we can find, and make concessions to our left. In doing so, we bolster Hergt's ammunition that Gessler is but a puppet of Marxists, and popularize the previously unknown figure. Still, the left-wing rebellion seems to be over, reluctantly.
+We attack Liebknecht for every fault we can find, and make concessions to our left. In doing so, we bolster Hergt's ammunition that Gessler is but a puppet of Marxists, and popularize the previously unknown figure. Still, the left-wing rebellion seems to be over, reluctantly.
 
 @democracy_rally_g
 subtitle: -1 resource - this may have the effect of legitimizing the DVP's monarchists!
@@ -81,7 +81,7 @@ We contribute to the campaign by helping the DVP recover their right flank with 
 on-arrival: braun_percent = 0.7
 go-to: cb2
 
-The KPD has entered into the race the little known Ernst Thälmann, while the DVP and DNVP run Karl Jarres as the "Reichsblock" candidate. The Center Party has run Wilhelm Marx, their party leader, while the BVP, unwilling to commit to any of the main candidates, has run Heinrich Held. The DDP is running Willy Hellpach and meanwhile, the recently reformed National Socialists are backing Ludendorff.
+The USPD has entered into the race their leader Karl Liebknecht, while the DVP and DNVP run Karl Jarres as the "Reichsblock" candidate. The Center Party has run Wilhelm Marx, their party leader, while the BVP, unwilling to commit to any of the main candidates, has run Heinrich Held. The DDP is running Willy Hellpach and meanwhile, the recently reformed National Socialists are backing Ludendorff.
 
 @cb2
 
@@ -109,13 +109,46 @@ max-visits: 1
 
 We launch a small-scale campaign for Braun to try and ensure turnout from our party members.
 
-@back_thalmann
-choose-if: never
-unavailable-subtitle: Uhm...who? Oh, he's the KPD candidate? Huh.
-on-arrival: never = 0
-go-to: pres_menu
+@back_liebknecht
+choose-if: uspd_relation >= 45
+unavailable-subtitle: The USPD do not even want our endorsement.
+on-arrival: liebknecht_campaign = 1;
 
-Nuh uh.
+We have backed the USDP candidate, Karl Liebknecht. Now it is time to campaign.
+
+- @campaign_liebknecht: Now, we must campaign.
+
+@campaign_liebknecht
+on-arrival: liebknecht_percent = 0.7
+go-to: cl2
+
+The DVP and DNVP run Karl Jarres as the "Reichsblock" candidate. The Center Party has run Wilhelm Marx, their party leader, while the BVP, unwilling to commit to any of the main candidates, has run Heinrich Held. The DDP is running Willy Hellpach and meanwhile, the recently reformed National Socialists are backing Ludendorff.
+
+@cl2
+
+- @large_campaign: We will launch a large-scale campaign for Braun.
+- @small_campaign: We will launch a small-scale campaign for Braun.
+- @round1: Let the voting begin...
+
+@large_campaign
+subtitle: -2 resources
+choose-if: resources >= 2
+view-if: liebknecht_percent <= 0.7
+on-arrival: resources -= 2; liebknecht_percent += 0.3;
+go-to: cb2
+max-visits: 1
+
+We launch a large-scale campaign for Liebknecht to ensure turnout from our party members.
+
+@small_campaign
+subtitle: -1 resource
+on-arrival: resources -= 1; liebknecht_percent += 0.15
+choose-if: resources >= 1
+view-if: liebknecht_percent <= 0.7
+go-to: cl2
+max-visits: 1
+
+We launch a small-scale campaign for Braun to try and ensure turnout from our party members.
 
 @round1
 on-arrival: round25 += 1
@@ -124,7 +157,7 @@ set-jump: post_election
 
 @post_election
 on-arrival: {!
-Q.thalmann_votes = 0;
+Q.liebknecht_votes = 0;
 Q.braun_votes = 0;
 Q.hellpach_votes = 0;
 Q.marx_votes = 0;
@@ -135,7 +168,7 @@ Q.gessler_votes = 0;
 Q.hergt_votes = 0;
 Q.hindenburg_votes = 0;
 
-Q.presidents_25 = ['thalmann', 'braun', 'hellpach', 'marx', 'held', 'jarres', 'ludendorff', 'gessler', 'hergt', 'hindenburg'];
+Q.presidents_25 = ['liebknecht', 'braun', 'hellpach', 'marx', 'held', 'jarres', 'ludendorff', 'gessler', 'hergt', 'hindenburg'];
 
 // initial phase:
 if (Q.braun_campaign) {
@@ -163,16 +196,16 @@ if (Q.braun_campaign) {
     }
     Q.braun_votes += ((Math.floor(Math.random() * 11))/500);
 }
-if (Q.thalmann_campaign) {
-    Q.thalmann_votes += Q.kpd_normalized*0.9;
-    Q.thalmann_votes += ((Math.floor(Math.random() * 11))/500);
-    Q.thalmann_votes += Q.socialism/4000;
+if (Q.liebknecht_campaign) {
+    Q.liebknecht_votes += Q.uspd_normalized*0.9;
+    Q.liebknecht_votes += ((Math.floor(Math.random() * 11))/500);
+    Q.liebknecht_votes += Q.socialism/4000;
     if (Q.gessler_campaign) {
         var left_dissent_percent = (Q.left_strength*(1+(Q.left_dissent/100)))/100;
-        Q.thalmann_votes += Q.spd_normalized*(left_dissent_percent/2);
+        Q.liebknecht_votes += Q.spd_normalized*(left_dissent_percent/2);
     }
     if (Q.round25 > 1) {
-        Q.thalmann_votes = Q.thalmann_votes*0.85;
+        Q.liebknecht_votes = Q.liebknecht_votes*0.85;
     }
 }
 if (Q.hellpach_campaign) {
@@ -287,7 +320,7 @@ go-to: hindenburg_wins if hindenburg_majority == 1; marx_wins if marx_majority =
 
 Results:
 
-[? if thalmann_campaign : Thälmann - [+ thalmann_votes_disp +]% ?]
+[? if liebknecht_campaign : Liebknecht - [+ liebknecht_votes_disp +]% ?]
 
 [? if braun_campaign : Braun - [+ braun_votes_disp +]% ?]
 
@@ -308,24 +341,24 @@ Results:
 [? if ludendorff_campaign : Ludendorff - [+ ludendorff_votes_disp +]% ?]
 
 @hindenburg_wins
-on-arrival: former_president = "Hindenburg"; president = "Hindenburg"; pro_republic -= 5; nationalism += 5; workers_spd -= 6; unemployed_spd -= 6; workers_kpd += 4; unemployed_kpd += 4; west_relation -= 2; east_relation -= 2; dvp_relation -= 5; kpd_relation += 5; left_strength += 5; jarres_campaign = 0; marx_campaign = 0; held_campaign = 0; thalmann_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; braun_campaign = 0; z_support_braun = 0; ddp_support_braun = 0; bvp_support_hindenburg = 0
+on-arrival: former_president = "Hindenburg"; president = "Hindenburg"; pro_republic -= 5; nationalism += 5; workers_spd -= 6; unemployed_spd -= 6; workers_uspd += 4; unemployed_uspd += 4; west_relation -= 2; east_relation -= 2; dvp_relation -= 5; uspd_relation += 5; left_strength += 5; jarres_campaign = 0; marx_campaign = 0; held_campaign = 0; liebknecht_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; braun_campaign = 0; z_support_braun = 0; ddp_support_braun = 0; bvp_support_hindenburg = 0
 
 Paul von Hindenburg has won the election with the backing of all the reactionary right organized under the **Reichsblock** behind him. Though many in our party anticipate an immediate restructuring of Germany along authoritarian and aristocratic lines, he seems, for now, to be following the constitution. Regardless, this signals a dark turn for German democracy. Who knows what Hindenburg may do in power?
 
 @marx_wins
-on-arrival: former_president = "Marx"; president = "Marx"; marx_relation += 10; pro_republic += 5; nationalism -= 5; z_relation += 5; ddp_relation += 5; reformist_strength += 5; jarres_campaign = 0; marx_campaign = 0; held_campaign = 0; thalmann_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; braun_campaign = 0; z_support_braun = 0; ddp_support_braun = 0; bvp_support_hindenburg = 0
+on-arrival: former_president = "Marx"; president = "Marx"; marx_relation += 10; pro_republic += 5; nationalism -= 5; z_relation += 5; ddp_relation += 5; reformist_strength += 5; jarres_campaign = 0; marx_campaign = 0; held_campaign = 0; liebknecht_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; braun_campaign = 0; z_support_braun = 0; ddp_support_braun = 0; bvp_support_hindenburg = 0
 
 Wilhelm Marx has won the election with the backing of all the republican left organized under the **Volksblock** behind him. This is a victory for German democracy and the continued normalization of the republic.
 
 @braun_wins
-on-arrival: president = "Braun"; pro_republic += 8; socialism += 4; nationalism -= 2; dvp_relation -= 5; left_dissent -= 5; center_dissent -= 5; reformist_dissent -= 5; labor_dissent -= 5; workers_spd += 5*(1-dissent); new_middle_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); rural_spd += 2*(1-dissent); jarres_campaign = 0; marx_campaign = 0; held_campaign = 0; thalmann_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; braun_campaign = 0; z_support_braun = 0; ddp_support_braun = 0; bvp_support_hindenburg = 0
+on-arrival: president = "Braun"; pro_republic += 8; socialism += 4; nationalism -= 2; dvp_relation -= 5; left_dissent -= 5; center_dissent -= 5; reformist_dissent -= 5; labor_dissent -= 5; workers_spd += 5*(1-dissent); new_middle_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); rural_spd += 2*(1-dissent); jarres_campaign = 0; marx_campaign = 0; held_campaign = 0; liebknecht_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; braun_campaign = 0; z_support_braun = 0; ddp_support_braun = 0; bvp_support_hindenburg = 0
 
 Otto Braun has won the election! This has only been possible thanks to the backing of the **Volksblock**, the Center and Democratic parties. Regardless, the continuation of Social Democratic rule over Germany is a significant victory, and the party is jubilant.
 
 @gessler_wins
-on-arrival: president = "Gessler"; pro_republic += 2; socialism -= 5; left_dissent += 5; dvp_relation += 10; jarres_campaign = 0; marx_campaign = 0; held_campaign = 0; thalmann_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; braun_campaign = 0; z_support_braun = 0; ddp_support_braun = 0; bvp_support_hindenburg = 0
+on-arrival: president = "Gessler"; pro_republic += 2; socialism -= 5; left_dissent += 5; dvp_relation += 10; jarres_campaign = 0; marx_campaign = 0; held_campaign = 0; liebknecht_campaign = 0; ludendorff_campaign = 0; hellpach_campaign = 0; gessler_campaign = 0; braun_campaign = 0; z_support_braun = 0; ddp_support_braun = 0; bvp_support_hindenburg = 0
 
-Otto Gessler has won the election as the candidate of the democratic parties, including the DVP. We have in this campaign pulled the DVP away from the DNVP and the right as a whole towards the center, but also created a whole on the left that the KPD is eager to fill. 
+Otto Gessler has won the election as the candidate of the democratic parties, including the DVP. We have in this campaign pulled the DVP away from the DNVP and the right as a whole towards the center, but also created a whole on the left that the USPD is eager to fill. 
 
 @no_majority_round1
 go-to: braun_consolidation if braun_campaign; gessler_consolidation if gessler_campaign
@@ -342,14 +375,24 @@ Meanwhile, the **Reichsblock** of the right begins to desperately search for a c
 
 @braun2_menu
 
+- @convince_uspd: Convince the USPD to back Braun.
 - @convince_ddp: Convince the DDP to back Braun.
 - @convince_z: Convince the Center Party to back Braun.
+- @back_liebknecht: Drop out and endorse Karl Liebknecht as the candidate of an **Einheitsblock**.
 - @back_marx: Drop out and endorse Wilhelm Marx as the candidate of the **Volksblock**.
 - @finished_campaign_braun: Let the voting begin...
 
+@convince_uspd
+view-if: braun_campaign
+choose-if: uspd_relation >= 45 or (uspd_relation >= 60 and z_support_braun)
+unavailable-subtitle: The DDP is unwilling to back Otto Braun.
+on-arrival: uspd_support_braun = 1; marx_campaign = 0
+max-visits: 1
+go-to: braun2_menu
+
 @convince_ddp
 view-if: braun_campaign
-choose-if: ddp_relation >= 60 or (ddp_relation >= 57 and z_support_braun)
+choose-if: ddp_relation >= 60 or (ddp_relation >= 45 and z_support_braun) or (ddp_relation >= 55 and z_support_braun and uspd_support_braun)
 unavailable-subtitle: The DDP is unwilling to back Otto Braun.
 on-arrival: ddp_support_braun = 1; ddp_support_marx = 0
 max-visits: 1
@@ -359,7 +402,7 @@ We have convinced the DDP to endorse Braun!
 
 @convince_z
 view-if: braun_campaign
-choose-if: z_relation >= 55
+choose-if: z_relation >= 55 or (z_relation >= 60 and uspd_support_braun)
 unavailable-subtitle: The Center Party is unwilling to back Otto Braun.
 max-visits: 1
 
@@ -385,6 +428,13 @@ go-to: braun2_menu
 
 Using our relations to win them over, the Center Party has agreed to back Otto Braun. The Bavarian People's Party however, with about 3% of the vote behind it, has not, and turns to Hindenburg.
 
+@back_liebknecht
+view-if: liebknecht_campaign and not spd_support_liebknecht
+on-arrival: spd_prussia = 1; ddp_support_braun = 0; ddp_support_marx = 1; spd_support_liebknecht = 1; left_dissent -= 5; workers_spd += 1; braun_campaign = 0
+go-to: braun2_menu
+
+We have dropped out and endorsed Wilhelm Marx, who is now the candidate of the **Volksblock**. In return, the Center Party has voted Otto Braun as M-P of Prussia.
+
 @back_marx
 view-if: marx_campaign and not spd_support_marx
 on-arrival: spd_prussia = 1; ddp_support_braun = 0; ddp_support_marx = 1; spd_support_marx = 1; left_dissent += 5; workers_spd -= 1; braun_campaign = 0
@@ -394,27 +444,62 @@ We have dropped out and endorsed Wilhelm Marx, who is now the candidate of the *
 
 @finished_campaign_braun
 on-arrival: held_campaign = 0; jarres_campaign = 0; ludendorff_campaign = 0; dvp_support_hindenburg = 1; hindenburg_campaign = 1; bvp_support_hindenburg = 1 if z_relation < 55 and spd_support_marx; bvp_support_marx = 1 if z_relation > 65 or not spd_support_marx; nationalism += 5
-go-to: marx_campaign if spd_support_marx; bc2 if braun_campaign
+go-to: marx_campaign if spd_support_marx; bc2 if braun_campaign; liebknecht_campaign if spd_support_liebknecht
 
 Just as we conclude our own decisions with regards to the presidential campaign, we receive news of the entry of Paul von Hindenburg into the race. Considered by the right-wing a war hero, Paul von Hindenburg was a Field Marshal in the German Empire and managed to win the Battle of Tannenberg against Russia. To us, however, he is a reactionary junker and one of the primary peddlers of the stab-in-the-back myth, the same which recently cost Friedrich Ebert his life. 
 
 He has received the backing of the DVP, the DNVP[? if bvp_support_hindenburg :, the BVP?], the NSDAP, and the various minor parties of the center-right. A victory for him could mean the end of democracy as we know it.
 
+@liebknecht_campaign
+
+- @attack_marx_m: Attempt to win over sympathetic progressives by attacking Marx.
+- @democracy_rally_m: Rally for democracy, and against monarchism.
+- @donate_uspd: Provide more campaign resources for the left to spend.
+- @round1: Let the voting begin...
+
+@attack_marx_m
+subtitle: -1 resource - this may backfire!
+on-arrival: resources -= 1; z_relation -= 5; workers_uspd += 2; unemployed_uspd += 2; left_dissent -= 5; left_strength -= 5; nationalism += 2; pro_republic -= 2
+go-to: liebknecht_campaign
+choose-if: resources >= 1
+max-visits: 1
+
+We attack Marx for every fault we can find, and make concessions to our reformist wing.
+
+@democracy_rally_m
+subtitle: -1 resource
+choose-if: resources >= 1
+on-arrival: resources -= 1; pro_republic += 6; nationalism -= 3; workers_dnvp -= 2; new_middle_dnvp -= 2; left_dissent -= 2
+go-to: liebknecht_campaign
+max-visits: 1
+
+We rally for democracy and against Paul von Hindenburg and the monarchists backing him, while carefully omitting Liebknecht's own stances.
+
+@donate_uspd
+subtitle: -1 resource - this may anger our reformist-wing further!
+choose-if: resources >= 1
+on-arrival: resources -= 1; reformist_dissent += 2
+go-to: liebknecht_campaign
+max-visits: 1
+
+Let's hope that it's enough.
+
+
 @marx_campaign
 
-- @attack_thalmann_m: Attempt to win back our left-wing, and attack Thälmann.
+- @attack_liebknecht_m: Attempt to win back our left-wing, and attack Liebknecht.
 - @democracy_rally_m: Rally for democracy, and against monarchism.
 - @donate_z: Provide more campaign resources for the right to spend.
 - @round1: Let the voting begin...
 
-@attack_thalmann_m
-subtitle: -1 resource - this may have the effect of popularizing Thälmann!
-on-arrival: resources -= 1; kpd_relation -= 5; workers_kpd += 2; unemployed_kpd += 2; left_dissent -= 5; left_strength -= 5; nationalism += 2; pro_republic -= 2
+@attack_liebknecht_m
+subtitle: -1 resource - this may have the effect of popularizing Liebknecht!
+on-arrival: resources -= 1; uspd_relation -= 5; workers_uspd += 2; unemployed_uspd += 2; left_dissent -= 5; left_strength -= 5; nationalism += 2; pro_republic -= 2
 go-to: marx_campaign
 choose-if: resources >= 1
 max-visits: 1
 
-We attack Thälmann for every fault we can find, and make concessions to our left wing. In doing so, we may be inadvertantly advertising Thälmann, all the while causing further uncertainty amongst right-wing swing voters. Still, any major risk of the party's left refusing to vote Marx seems gone, for now.
+We attack Liebknecht for every fault we can find, and make concessions to our left wing. In doing so, we may be inadvertantly advertising Liebknecht, all the while causing further uncertainty amongst right-wing swing voters. Still, any major risk of the party's left refusing to vote Marx seems gone, for now.
 
 @democracy_rally_m
 subtitle: -1 resource
@@ -589,4 +674,4 @@ We back Wilhelm Marx from the Center Party. In return, the Center Party votes Ot
 - @round1: Let the voting begin...
 
 @round2_results
-go-to: hindenburg_wins if hindenburg_plurality; braun_wins if braun_plurality; marx_wins if marx_plurality; gessler_wins if gessler_plurality
+go-to: hindenburg_wins if hindenburg_plurality; braun_wins if braun_plurality; marx_wins if marx_plurality; gessler_wins if gessler_plurality; 
