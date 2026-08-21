@@ -29,7 +29,7 @@ Through Article 48, we can modify much more than we might be able to otherwise. 
 @dissolve_reichstag
 view-if: not spd_caretaker and not in_emergency_government
 subtitle: This would provoke quite the response!
-on-arrival: reenable_legislature = 1 if legislature_enabled; legislature_enabled = 0 if legislature_enabled; time_to_election = 3; in_emergency_government = 1; coup_progress += 1; z_relation -= 5 if in_grand_coalition or in_popular_front or in_weimar_coalition; dvp_relation -= 5 if in_grand_coalition; kpd_relation -= 5 if in_left_front or in_popular_front; ddp_relation -= 5 if in_grand_coalition or in_popular_front or in_weimar_coalition; in_weimar_coalition = 0; in_grand_coalition = 0; in_popular_front = 0; in_left_front = 0
+on-arrival: reenable_legislature = 1 if legislature_enabled; legislature_enabled = 0 if legislature_enabled; time_to_election = 3; in_emergency_government = 1; coup_progress += 1; z_relation -= 5 if in_grand_coalition or in_popular_front or in_weimar_coalition; dvp_relation -= 5 if in_grand_coalition; uspd_relation -= 5 if in_left_front or in_popular_front; ddp_relation -= 5 if in_grand_coalition or in_popular_front or in_weimar_coalition; in_weimar_coalition = 0; in_grand_coalition = 0; in_popular_front = 0; in_left_front = 0
 call: set_next_election_time
 
 - #govt_affairs
