@@ -24,7 +24,7 @@ We can enact policies in Saxonyy.
 
 
 @bureaucracy
-on-arrival: saxony_nsdap -= 0.02 if saxony_nsdap >= 0.6; saxony_nsdap -= 0.02 if year < 1930 and saxony_nsdap >= 0.6; saxony_dnvp += 0.02 if year < 1930 and saxony_dnvp < 1.2; saxony_dnvp -= 0.03 if year >= 1930 and saxony_dnvp >= 0.8; saxony_other += 0.02 if year >= 1930 and saxony_other < 1.2; saxony_dvp += 0.01 if year >= 1930; saxonyn_police_loyalty += 0.05; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
+on-arrival: saxony_nsdap -= 0.02 if saxony_nsdap >= 0.6; saxony_nsdap -= 0.02 if year < 1930 and saxony_nsdap >= 0.6; saxony_dnvp += 0.02 if year < 1930 and saxony_dnvp < 1.2; saxony_dnvp -= 0.03 if year >= 1930 and saxony_dnvp >= 0.8; saxony_other += 0.02 if year >= 1930 and saxony_other < 1.2; saxony_dvp += 0.01 if year >= 1930; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
 
 The bureaucracy is deeply reactionary, and many abuse their power to favor the political right. By removing the pro-monarchy and pro-dictatorship elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
