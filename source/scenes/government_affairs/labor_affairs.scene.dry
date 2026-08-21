@@ -18,6 +18,7 @@ With control of the Labor Ministry, we can set national standards for labor. Our
 # works councils are part of another card...
 
 @labor_affairs_menu
+
 - @industrial_relations: Intervene in the ongoing industrial conflict
 - @labor_rights_menu: Pursue policies to protect workers' rights
 - @addressing_unemployment_menu: Pursue policies to bring down unemployment
