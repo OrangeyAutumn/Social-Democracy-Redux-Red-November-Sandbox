@@ -104,7 +104,7 @@ if (Q.uspd_wl >= Q.spd_wl && Q.uspd_wl >= Q.nsdap_wl) {
 Q.wl_uspd_tolerated_spd_minority = Q.spd_wl + Q.uspd_wl + Q.sapd_wl;
 Q.wl_uspd_tolerated_social_liberal_coalition = Q.spd_wl + Q.uspd_wl + Q.sapd_wl + Q.ddp_wl;
 Q.wl_social_liberal_coalition = Q.spd_wl + Q.ddp_wl
-Q.wl_social_christian_coalition = Q.spd_wl + Q.z_wl + - 3
+Q.wl_social_christian_coalition = Q.spd_wl + Q.z_wl - 3
 Q.wl_weimar_coalition = Q.spd_wl + Q.ddp_wl + Q.z_wl - 3;
 Q.wl_conditional_uspd_tolerated_weimar_coalition = Q.spd_wl + Q.uspd_wl + Q.z_wl + Q.ddp_wl - 3 + Q.sapd_wl;
 Q.wl_grand_coalition = Q.spd_wl + Q.ddp_wl + Q.z_wl + Q.dvp_wl;
