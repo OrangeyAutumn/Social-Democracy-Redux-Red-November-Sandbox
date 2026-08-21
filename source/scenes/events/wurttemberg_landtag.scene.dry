@@ -3,7 +3,7 @@ new-page: true
 tags: event
 priority: -1
 view-if: landtags_enabled and ((year = wurttemberg_election_year and month >= wurttemberg_election_month) or (year > wurttemberg_election_year)) and not supreme_soviet
-on-arrival: dvp_willing = 0; dvp_willing = 1 if ((dvp_wlelation+spd_votes+(pro_republic/6)) >= ((100-pro_republic)+capital_strike_progress+(coup_progress/2))); z_willing = 0; z_willing = 1 if z_wlelation >= 50 or (z_wlelation >= 25 and bourgeois_coalition < 50)
+on-arrival: dvp_willing = 0; dvp_willing = 1 if ((dvp_wlelation+spd_votes+(pro_republic/6)) >= ((100-pro_republic)+capital_strike_progress+(coup_progress/2))); z_willing = 0; z_willing = 1 if z_wlelation >= 50 or (z_wlelation >= 25 and wl_bourgeois_coalition < 50)
 on-departure: in_election = 0; wurttemberg_election_year += 4; wurttemberg_election_month -= 1; wurttemberg_election_year -= 1 if wurttemberg_election_month < 1; wurttemberg_election_month += 12 if wurttemberg_election_month < 1; w_elections += 1; wurttemberg_election_time = time + 47;
 set-jump: wurttemberg_election_1928
 
@@ -101,25 +101,25 @@ if (Q.uspd_wl >= Q.spd_wl && Q.uspd_wl >= Q.nsdap_wl) {
     Q.largest_party = 'USPD';
 }
 // coalitions
-Q.uspd_tolerated_spd_minority = Q.spd_wl + Q.uspd_wl + Q.sapd_wl;
-Q. uspd_tolerated_social_liberal_coalition = Q.spd_wl + Q.uspd_wl + Q.sapd_wl + Q.ddp_wl;
-Q.social_liberal_coalition = Q.spd_wl + Q.ddp_wl
-Q.social_christian_coalition = Q.spd_wl + Q.z_wl + - 3
-Q.weimar_coalition = Q.spd_wl + Q.ddp_wl + Q.z_wl - 3;
-Q.conditional_uspd_tolerated_weimar_coalition = Q.spd_wl + Q.uspd_wl + Q.z_wl + Q.ddp_wl - 3 + Q.sapd_wl;
-Q.grand_coalition = Q.spd_wl + Q.ddp_wl + Q.z_wl + Q.dvp_wl;
-Q.bourgeois_coalition = Q.ddp_wl + Q.z_wl + Q.dvp_wl + Q.other_wl;
-Q.center_right_coalition = Q.z_wl + Q.ddp_wl + Q.dvp_wl + Q.other_wl + Q.dnvp_wl;
-Q.right_coalition = Q.z_wl + Q.dvp_wl + Q.other_wl + Q.dnvp_wl;
-Q.far_right_coalition = Q.dnvp_wl + Q.nsdap_wl;
-Q.left_coalition = Q.spd_wl + Q.uspd_wl + Q.sapd_wl;
+Q.wl_uspd_tolerated_spd_minority = Q.spd_wl + Q.uspd_wl + Q.sapd_wl;
+Q. wl_uspd_tolerated_social_liberal_coalition = Q.spd_wl + Q.uspd_wl + Q.sapd_wl + Q.ddp_wl;
+Q.wl_social_liberal_coalition = Q.spd_wl + Q.ddp_wl
+Q.wl_social_christian_coalition = Q.spd_wl + Q.z_wl + - 3
+Q.wl_weimar_coalition = Q.spd_wl + Q.ddp_wl + Q.z_wl - 3;
+Q.conditional_wl_uspd_tolerated_weimar_coalition = Q.spd_wl + Q.uspd_wl + Q.z_wl + Q.ddp_wl - 3 + Q.sapd_wl;
+Q.wl_grand_coalition = Q.spd_wl + Q.ddp_wl + Q.z_wl + Q.dvp_wl;
+Q.wl_bourgeois_coalition = Q.ddp_wl + Q.z_wl + Q.dvp_wl + Q.other_wl;
+Q.center_wl_right_coalition = Q.z_wl + Q.ddp_wl + Q.dvp_wl + Q.other_wl + Q.dnvp_wl;
+Q.wl_right_coalition = Q.z_wl + Q.dvp_wl + Q.other_wl + Q.dnvp_wl;
+Q.far_wl_right_coalition = Q.dnvp_wl + Q.nsdap_wl;
+Q.wl_left_coalition = Q.spd_wl + Q.uspd_wl + Q.sapd_wl;
 // this is an absurd concept lol
 Q.popular_front_coalition = Q.spd_wl + Q.uspd_wl + Q.z_wl + Q.ddp_wl - 3 + Q.sapd_wl;
 Q.anti_democratic_coalition = Q.uspd_wl + Q.nsdap_wl + Q.dnvp_wl;
 // aka everyone except nazi, uspd, dnvp
-Q.neo_weimar_coalition = Q.spd_wl + Q.ddp_wl + Q.z_wl + Q.dvp_wl + Q.other_wl;
+Q.neo_wl_weimar_coalition = Q.spd_wl + Q.ddp_wl + Q.z_wl + Q.dvp_wl + Q.other_wl;
 // Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
-Q.hitler_right_coalition = Q.z_wl + Q.dnvp_wl + Q.nsdap_wl;
+Q.hitler_wl_right_coalition = Q.z_wl + Q.dnvp_wl + Q.nsdap_wl;
 Q.progressive_coalition = Q.spd_wl + Q.uspd_wl + Q.ddp_wl + Q.sapd_wl;
 !}
 on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_wl >= 15)
@@ -278,25 +278,25 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Left Coalition (SPD + USPD): [+ left_coalition +]%
+Left Coalition (SPD + USPD): [+ wl_left_coalition +]%
 
-USPD-tolerated SPD Minority ((SPD alone): [+ uspd_tolerated_spd_minority +]%;
+USPD-tolerated SPD Minority ((SPD alone): [+ wl_uspd_tolerated_spd_minority +]%;
 
-USPD-tolerated Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ uspd_tolerated_social_liberal_coalition +]% 
+USPD-tolerated Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ wl_uspd_tolerated_social_liberal_coalition +]% 
 
-Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ social_liberal_coalition +]%
+Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ wl_social_liberal_coalition +]%
 
-Social-Christian Coalition (SPD + Z): [+ social_christian_coalition +]%
+Social-Christian Coalition (SPD + Z): [+ wl_social_christian_coalition +]%
 
-Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ weimar_coalition +]%
+Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ wl_weimar_coalition +]%
 
-USPD-tolerated Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ uspd_tolerated_weimar_coalition +]%
+USPD-tolerated Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ wl_uspd_tolerated_weimar_coalition +]%
 
-Grand Coalition (SPD + Z + BVP + [+ ddp_name +] + DVP): [+ grand_coalition +]%
+Grand Coalition (SPD + Z + BVP + [+ ddp_name +] + DVP): [+ wl_grand_coalition +]%
 
-Bourgeois Coalition (Z + BVP + [+ ddp_name +] + DVP + Others): [+ bourgeois_coalition +]%
+Bourgeois Coalition (Z + BVP + [+ ddp_name +] + DVP + Others): [+ wl_bourgeois_coalition +]%
 
-Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]%
+Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ wl_right_coalition +]%
 
 [? if nazi_urgency <= 1 and nsdap_wl >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
@@ -306,49 +306,39 @@ There are some potential coalition arrangements.
 
 @coalition_menu
 
-- @left_Coalition: Left_Coalition is possible?
-- @USPD_tolerated_spd_minority: A USPD-tolerated SPD Minority?
-- @USPD_tolerated_social_liberal_coalition: A USPD-tolerated Social-Liberal Coalition?
-- @social_liberal_coalition: A Social-Liberal Coalition?
-- @social_christian_coalition: A Social-Christian Coalition?
-- @weimar_coalition: A Weimar Coalition?
-- @uspd_tolerated_weimar_coalition: A USPD-tolerated Weimar Coalition?
-- @grand_coalition: A Grand Coalition?
-- @bourgeois_coalition: A Bourgeois Coalition forms?
+- @wl_left_coalition: Left_Coalition is possible?
+- @wl_uspd_tolerated_spd_minority: A USPD-tolerated SPD Minority?
+- @wl_uspd_tolerated_social_liberal_coalition: A USPD-tolerated Social-Liberal Coalition?
+- @wl_social_liberal_coalition: A Social-Liberal Coalition?
+- @wl_social_christian_coalition: A Social-Christian Coalition?
+- @wl_weimar_coalition: A Weimar Coalition?
+- @wl_uspd_tolerated_weimar_coalition: A USPD-tolerated Weimar Coalition?
+- @wl_grand_coalition: A Grand Coalition?
+- @wl_bourgeois_coalition: A Bourgeois Coalition forms?
 - @right_wing_coalition: A Right-wing Coalition forms?
 
-@left_Coalition: Left_Coalition is possible?
-view-if: [+ left_coalition +] >= 50
-
-- @success
-- @failure
-
-@success
-choose-if: President != Hindenburg and President != Hitler
+@wl_left_coalition: Left_Coalition is possible?
+title: A Left coalition.
+subtitle: SPD + USPD ([+ wl_left_coalition +]%)
+view-if: wl_left_coalition >= 50
+choose-if: President != Hindenburg
 unavailable_subtitle: The current President would immediately *Reichsexecute* such a government if it were to form.
+on-arrival: in_wurttemburg_left = 1; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 3*(1-dissent)
 
-@failure
+The SPD enters a coalition with the USPD.
 
-This coalition is not possible.
-go-to: @coalition_menu
-
-@USPD_tolerated_spd_minority
-view-if: [+ uspd_tolerated_spd_minority +] >= 50
-
-- @success
-- @failure
-
-@success
+@wl_uspd_tolerated_spd_minority
+title: A Left coalition.
+subtitle: SPD + USPD ([+ wl_left_coalition +]%)
+view-if: [+ wl_uspd_tolerated_spd_minority +] >= 50
 choose-if: uspd_relation >= 45
 unavailable_subtitle: We do not have sufficient relations with the USPD.
+on-arrival: in_wurttemburg_left = 1; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 3*(1-dissent)
 
-@failure
+The SPD forms a minority government with the toleration of the USPD.
 
-Is a different coalition possible?
-go-to: @coalition_menu
-
-@USPD_tolerated_social_liberal_coalition
-view-if: [+ uspd_tolerated_social_liberal_coalition +] >= 50
+@wl_uspd_tolerated_social_liberal_coalition
+view-if: [+ wl_uspd_tolerated_social_liberal_coalition +] >= 50
 
 - @success
 - @failure
@@ -362,23 +352,19 @@ unavailable_subtitle: We do not have sufficient relations with the two parties.
 Is a different coalition possible?
 go-to: @coalition_menu
 
-@social_liberal_coalition
-view-if: [+ social_liberal_coalition +] >= 50
-
-- @success
-- @failure
-
-@success
+@wl_social_liberal_coalition
+title: A "Social-Liberal" coalition.
+subtitle: SPD + [+ ddp_name +] ([+ wl_social_liberal_coalition +]%)
 choose-if: ddp_relation >= 45
 unavailable_subtitle: We do not have sufficient relations with the DDP.
+view-if: wl_social_liberal_coalition >= 50 or in_wurttemburg_soclib
+choose-if: wl_social_liberal_coalition >= 50 or (in_wurttemburg_soclib and not nsdap_hl >= 50)
+on-arrival: in_wurttemburg_soclib = 1; in_wurttemburg_groko = 0; in_wurttemburg_left = 0; in_wurttemburg_spd = 0; in_wurttemburg_nsdap = 0; workers_spd += 2*(1-dissent)
 
-@failure
+The SPD enters a coalition with the [+ ddp_name +].
 
-Is a different coalition possible?
-go-to: @coalition_menu
-
-@social_christian_coalition
-view-if: [+ social_christian_coalition +] >= 50
+@wl_social_christian_coalition
+view-if: [+ wl_social_christian_coalition +] >= 50
 
 - @success
 - @failure
@@ -392,8 +378,8 @@ unavailable_subtitle: We do not have sufficient relations with the Zentrum.
 Is a different coalition possible?
 go-to: @coalition_menu
 
-@uspd_tolerated_weimar_coalition
-view-if: [+ uspd_tolerated_weimar_coalition +] >= 50
+@wl_uspd_tolerated_weimar_coalition
+view-if: [+ wl_uspd_tolerated_weimar_coalition +] >= 50
 
 - @success
 - @failure
@@ -407,8 +393,8 @@ unavailable_subtitle: We do not have sufficient relations with the three parties
 Is a different coalition possible?
 go-to: @coalition_menu
 
-@weimar_coalition
-view-if: [+ weimar_coalition +] >= 50
+@wl_weimar_coalition
+view-if: [+ wl_weimar_coalition +] >= 50
 
 - @success
 - @failure
@@ -422,8 +408,8 @@ unavailable_subtitle: We do not have sufficient relations with the two parties.
 Is a different coalition possible?
 go-to: @coalition_menu
 
-@grand_coalition
-view-if: [+ grand_coalition +] >= 50
+@wl_grand_coalition
+view-if: [+ wl_grand_coalition +] >= 50
 
 - @success
 - @failure
@@ -437,12 +423,12 @@ unavailable_subtitle: We do not have sufficient relations with the three parties
 Is a different coalition possible?
 go-to: @coalition_menu
 
-@bourgeois_coalition: A Bourgeois Coalition forms?
-view-if: [+ bourgeois_coalition +] >= 50
+@wl_bourgeois_coalition: A Bourgeois Coalition forms?
+view-if: [+ wl_bourgeois_coalition +] >= 50
 
 A Bourgeois Coalition is formed.
 
-@right_coalition: A Bourgeois Coalition forms?
-view-if: [+ right_coalition +] >= 50
+@wl_right_coalition: A Bourgeois Coalition forms?
+view-if: [+ wl_right_coalition +] >= 50
 
 A Right Coalition is formed.
