@@ -70,6 +70,15 @@ go-to: rm_main
 
 Breitscheid has been removed as an advisor. The Centrist faction disapproves.
 
+@remove_vogel
+title: Remove Vogel
+view-if: vogel_advisor = 1
+tags: remove_advisor
+on-arrival: vogel_advisor = 0; center_dissent += 5; center_strength -= 2; n_advisors -= 1
+go-to: rm_main
+
+Vogel has been removed as an advisor. The Centrist faction disapproves.
+
 # reformists
 
 
@@ -149,6 +158,15 @@ go-to: rm_main
 Woytinsky has been removed as an advisor. The Labor faction disapproves.
 
 # left
+
+@remove_crispien
+title: Remove Crispien
+view-if: crispien_advisor = 1
+tags: remove_advisor
+on-arrival: crispien_advisor = 0; left_dissent += 5; left_strength -= 2; n_advisors -= 1
+go-to: rm_main
+
+Crispien has been removed as an advisor. The Leftist faction disapproves.
 
 @remove_levi
 title: Remove Levi
@@ -351,6 +369,18 @@ go-to: advisor_menu
 
 Otto Wels is now an advisor.
 
+@add_vogel
+title: Hans Vogel
+subtitle: Hans Vogel is a talented organiser and rising force within the party.
+is-card: true
+card-image: img/portraits/VogelHans.jpg
+tags: center_advisor
+view-if: vogel_advisor = 0 and n_advisors < 3 and centrists_resign = 0
+on-arrival: wels_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
+go-to: advisor_menu
+
+Hans Vogel is now an advisor.
+
 @add_muller
 title: Hermann Müller
 subtitle: Hermann Müller is the last Social Democratic Chancellor.
@@ -429,6 +459,18 @@ Antonie Pfülf is now an advisor.
 
 
 # left
+
+@add_crispien
+title: Arthur Crispien
+subtitle: Arthur Crispien is a former USPD member who was purged for opposing the merger between the USPD and KPD.
+is-card: true
+card-image: img/portraits/CrispienArthur.jpg
+view-if: crispien_advisor = 0 and n_advisors < 3 and left_split = 0
+on-arrival: crispien_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
+go-to: advisor_menu
+tags: left_advisor
+
+Arthur Crispien is now an advisor.
 
 @add_levi
 title: Paul Levi
