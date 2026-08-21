@@ -334,7 +334,7 @@ on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 0; in_hamburg_spd = 
 
 The SPD enters a coalition with the [+ ddp_name +] and DVP. [? if h_grand_coalition < 50 : This is despite it lacking a majority. ?]
 
-@h_left_coalition: Left_Coalition is possible?
+@h_left_coalition
 title: A Left coalition.
 subtitle: SPD + USPD ([+ h_left_coalition +]%)
 view-if: h_left_coalition >= 50
