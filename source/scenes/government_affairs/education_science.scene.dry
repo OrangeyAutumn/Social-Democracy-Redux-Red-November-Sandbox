@@ -133,12 +133,12 @@ Are you sure about this? The Weimar Coalition had an agreement to not touch reli
 - @cancel_advisor_action
 
 @secularize_2
-on-arrival: secularized = 1; catholics_spd -= 15; z_relation -= 15; dvp_relation += 6*(1-dissent); ddp_relation += 6*(1-dissent); kpd_relation += 6*(1-dissent); new_middle_spd += 3*(1-dissent); workers_spd += 3*(1-dissent); education_science += 0.5; new_middle_ddp += 4; new_middle_dvp += 4
+on-arrival: secularized = 1; catholics_spd -= 15; z_relation -= 15; dvp_relation += 6*(1-dissent); ddp_relation += 6*(1-dissent); uspd_relation += 6*(1-dissent); new_middle_spd += 3*(1-dissent); workers_spd += 3*(1-dissent); education_science += 0.5; new_middle_ddp += 4; new_middle_dvp += 4
 go-to: vote_of_no_confidence.vonc_menu if in_weimar_coalition or in_grand_coalition or in_popular_front or in_emergency_government
 
 # instant VONC from zentrum
 
-The SPD, DDP, DVP, and KPD vote in favor of secular education, overcoming the opposition of the religiously-oriented Center Party and DNVP. We have funded secular community schools to replace some previous denominational schools.
+The SPD, DDP, DVP, and USPD vote in favor of secular education, overcoming the opposition of the religiously-oriented Center Party and DNVP. We have funded secular community schools to replace some previous denominational schools.
 
 [? if in_weimar_coalition or in_grand_coalition or in_popular_front or in_emergency_government: Of course, the Center Party is in revolt at this proposal, and have called for a vote of no confidence in our government. ?]
 
@@ -183,6 +183,7 @@ Many socialists believe that education in Germany is not fit for the modern era.
 
 What should be the major focus of our new curriculum?
 
+- @soc_major
 - @dem_major
 - @science_major
 - @human_major
@@ -192,6 +193,14 @@ What should be the major focus of our new curriculum?
 - @cancel_advisor_action
 
 # note: education_science is a variable that affects how much education affects economic growth.
+
+@soc_major
+title: Socialist curriculum
+subtitle: Skepticism of authority, class analysis, and collectivism
+on-arrival: curriculum_timer = 50; major_curriculum = "socialist"; pro_republic += 5*(1-dissent); workers_spd += 3*(1-dissent); democratization += 1; uspd_relation += 10; z_relation -= 10; z_relation -= 10; dvp_relation -= 15; coalition_dissent += 2 if in_weimar_coalition; coalition_dissent +=3 in_grand_coalition; pacifism += 1; education_science += 0.3
+go-to: curriculum_minor
+
+We should teach prepare the future generation for the socialist future, by teaching them to critically evaluate politics and current events, to exercise their rights in the workplace and to respect the rights of other citizens. Traditionalists of all stripes are outraged at this curriculum.
 
 @dem_major
 title: Democratic curriculum
@@ -204,7 +213,7 @@ We should teach students how to be citizens of a democratic republic, by teachin
 @science_major
 title: Scientific curriculum
 subtitle: Modern science, mathematics, and technical skills
-on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; coalition_dissent += 1 if in_weimar_coalition; z_relation -= 5; ddp_relation += 4*(1-dissent); kpd_relation += 3*(1-dissent); new_middle_spd += 3*(1-dissent); workers_spd += 2*(1-dissent)
+on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; coalition_dissent += 1 if in_weimar_coalition; z_relation -= 5; ddp_relation += 4*(1-dissent); uspd_relation += 3*(1-dissent); new_middle_spd += 3*(1-dissent); workers_spd += 2*(1-dissent)
 go-to: curriculum_minor
 
 Our educational system should reflect the modern age, and we should teach science and rational thinking. Religious conservatives tend to react negatively against this. 
@@ -240,11 +249,19 @@ The traditional curriculum had a focus on ancient history and language (particul
 
 And what should be a secondary focus of the curriculum?
 
+- @soc_minor
 - @dem_minor
 - @science_minor
 - @human_minor
 - @vocational_minor
 - @trad_minor
+
+@soc_minor
+title: Socialist curriculum
+subtitle: Skepticism of authority, class analysis, and collectivism
+on-arrival: minor_curriculum = "socialist"; pro_republic += 5*(1-dissent); workers_spd += 3*(1-dissent); democratization += 1; uspd_relation += 5; ddp_relation -= 5; z_relation -= 5; dvp_relation -= 10; coalition_dissent += 1 if in_weimar_coalition; coalition_dissent +=2 in_grand_coalition; pacifism += 1; education_science += 0.3
+
+We should teach prepare the future generation for the socialist future, by teaching them to critically evaluate politics and current events, to exercise their rights in the workplace and to respect the rights of other citizens. Traditionalists of all stripes are outraged at this curriculum.
 
 @dem_minor
 title: Democratic curriculum
@@ -258,7 +275,7 @@ We should teach students how to be citizens of a democratic republic, by teachin
 title: Scientific curriculum
 subtitle: Modern science, mathematics, and technical skills
 view-if: major_curriculum != "scientific"
-on-arrival: minor_curriculum = "scientific"; education_science += 0.5; z_relation -= 3; ddp_relation += 3*(1-dissent); kpd_relation += 2*(1-dissent); new_middle_spd += 2*(1-dissent); workers_spd += 2*(1-dissent)
+on-arrival: minor_curriculum = "scientific"; education_science += 0.5; z_relation -= 3; ddp_relation += 3*(1-dissent); uspd_relation += 2*(1-dissent); new_middle_spd += 2*(1-dissent); workers_spd += 2*(1-dissent)
 
 Our educational system should reflect the modern age, and we should teach science and rational thinking. Religious conservatives tend to react negatively against this. 
 
