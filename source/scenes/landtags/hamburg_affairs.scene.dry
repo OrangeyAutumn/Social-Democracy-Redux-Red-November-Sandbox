@@ -14,7 +14,7 @@ Hamburg is a stronghold of the left in Germany, and we intend to keep it that wa
 We can enact policies in Hamburg.
 
 - @build_ties_ddp: Push our state party to strengthen ties with the state DDP.
-- @build_ties_usdp: Push our state party to strengthen ties with the state DDP.
+- @build_ties_usdp: Push our state party to strengthen ties with the state USDP.
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
 - @persecute_sa: Use our state offices to target and prosecute the state SA.
 - @persecute_rfb: Use our state offices to target and prosecute the state RFB.
@@ -27,7 +27,7 @@ We can enact policies in Hamburg.
 @build_ties_ddp
 on-arrival: ddp_relation += 5
 
-Our state party, at our request, seeks to strengthen ties with the state DPD. We can only hope these efforts will become felt at the federal level too.
+Our state party, at our request, seeks to strengthen ties with the state DDP. We can only hope these efforts will become felt at the federal level too.
 
 @build_ties_uspd
 on-arrival: uspd_relation += 5
