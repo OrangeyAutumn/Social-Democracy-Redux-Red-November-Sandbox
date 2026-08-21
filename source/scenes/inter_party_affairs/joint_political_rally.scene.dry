@@ -111,7 +111,7 @@ Our speakers denounce the military establishment and all the spending entering t
 [? if pacifism >= 3 : Since we have consistently made pacifism a theme of our campaign, the workers are enthusiastic about our message. ?]
 
 @wtb
-view-if: uspd_relation >= 55, wtb_adopted = 1
+view-if: uspd_relation >= 55; wtb_adopted = 1
 choose-if: return_to_normalcy = 0
 unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
 on-arrival: wtb_support += 1; workers_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent); rural_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent);
