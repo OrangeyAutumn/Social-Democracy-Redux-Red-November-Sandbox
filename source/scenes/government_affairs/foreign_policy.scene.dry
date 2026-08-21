@@ -81,7 +81,7 @@ The Soviets are slightly upset, but they seemed to expect this answer.
 
 
 @uspd
-on-arrival: uspd_relation += 8*(1-dissent); communist_coalition += 1 if uspd_foreign_seen == 0; uspd_foreign_seen = 1
+on-arrival: uspd_relation += 8*(1-dissent); spartacist_coalition += 1 if uspd_foreign_seen == 0; uspd_foreign_seen = 1
 
 We also mention the USPD in our conversations with the Soviet ambassador. They claim that the USPD is entirely independent of the Soviet government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the USPD.
 
