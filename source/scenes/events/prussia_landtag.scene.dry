@@ -92,31 +92,36 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
-if (Q.nsdap_pl >= Q.spd_pl && Q.nsdap_pl >= Q.kpd_pl) {
+if (Q.nsdap_pl >= Q.spd_pl && Q.nsdap_pl >= Q.uspd_pl) {
     Q.largest_party = 'NSDAP';
 }
 
-if (Q.kpd_pl >= Q.spd_pl && Q.kpd_pl >= Q.nsdap_pl) {
-    Q.largest_party = 'KPD';
+if (Q.uspd_pl >= Q.spd_pl && Q.uspd_pl >= Q.nsdap_pl) {
+    Q.largest_party = 'USPD';
 }
 // coalitions
+Q.p_uspd_tolerated_spd_minority = Q.spd_pl + Q.uspd_pl + Q.sapd_pl;
+Q.p_uspd_tolerated_social_liberal_coalition = Q.spd_pl + Q.uspd_pl + Q.sapd_pl + Q.ddp_pl;
+Q.p_social_liberal_coalition = Q.spd_pl + Q.ddp_pl
+Q.p_social_christian_coalition = Q.spd_pl + Q.z_pl + - 3
+Q.p_conditional_uspd_tolerated_weimar_coalition = Q.spd_pl + Q.uspd_pl + Q.z_pl + Q.ddp_pl - 3 + Q.sapd_pl;
 Q.p_weimar_coalition = Q.spd_pl + Q.ddp_pl + Q.z_pl;
 Q.p_grand_coalition = Q.spd_pl + Q.ddp_pl + Q.z_pl + Q.dvp_pl;
 Q.p_bourgeois_coalition = Q.ddp_pl + Q.z_pl + Q.dvp_pl + Q.other_pl;
 Q.p_center_right_coalition = Q.z_pl + Q.ddp_pl + Q.dvp_pl + Q.other_pl + Q.dnvp_pl;
 Q.p_right_coalition = Q.z_pl + Q.dvp_pl + Q.other_pl + Q.dnvp_pl;
 Q.p_far_right_coalition = Q.dnvp_pl + Q.nsdap_pl;
-Q.p_left_coalition = Q.spd_pl + Q.kpd_pl;
+Q.p_left_coalition = Q.spd_pl + Q.uspd_pl;
 // this is an absurd concept lol
-Q.p_popular_front_coalition = Q.spd_pl + Q.kpd_pl + Q.z_pl + Q.ddp_pl;
-Q.p_anti_democratic_coalition = Q.kpd_pl + Q.nsdap_pl + Q.dnvp_pl;
-// aka everyone except nazi, kpd, dnvp
+Q.p_popular_front_coalition = Q.spd_pl + Q.uspd_pl + Q.z_pl + Q.ddp_pl;
+Q.p_anti_democratic_coalition = Q.uspd_pl + Q.nsdap_pl + Q.dnvp_pl;
+// aka everyone except nazi, uspd, dnvp
 Q.p_neo_weimar_coalition = Q.spd_pl + Q.ddp_pl + Q.z_pl + Q.dvp_pl + Q.other_pl;
 // Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
 Q.p_other_nazi = Math.round(Q.other_pl*(1-(Q.pro_republic/100)));
 Q.p_hitler_right_coalition = Q.z_pl + Q.dnvp_pl + Q.nsdap_pl + Q.dvp_pl + Q.other_nazi;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.p_progressive_coalition = Q.spd_pl + Q.sapd_pl + Q.kpd_pl + Q.ddp_pl;
+Q.p_progressive_coalition = Q.spd_pl + Q.sapd_pl + Q.uspd_pl + Q.ddp_pl;
 // nationaal front
 Q.p_national_front_pl = Q.nsdap_pl + Q.dnvp_pl + Q.dvp_pl + Q.other_pl;
 if (Q.z_national) {
@@ -127,10 +132,10 @@ on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_pl >= 15)
 on-display: {!
 if (Q.sapd_formed == 1) {
     data = [
-        {    "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_pl*4.5),
+        {    "id": "uspd",
+            "legend": "USPD",
+            "name": "USPD",
+            "seats": Math.round(Q.uspd_pl*4.5),
         },
         {
             "id": "sapd",
@@ -184,10 +189,10 @@ if (Q.sapd_formed == 1) {
 }
 else {
     data = [
-        {   "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_pl*4.5),
+        {   "id": "uspd",
+            "legend": "USPD",
+            "name": "USPD",
+            "seats": Math.round(Q.uspd_pl*4.5),
         },
         {
             "id": "spd",
@@ -262,7 +267,7 @@ go-to: coalition_menu
 
 [? if sapd_formed == 1 : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_pl +]% {!</td><td>!} [+ stpl_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}KPD: {!</td><td>!} [+ kpd_pl +]% {!</td><td>!} [+ stpl_change_kpd +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}USPD: {!</td><td>!} [+ uspd_pl +]% {!</td><td>!} [+ stpl_change_uspd +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_pl +]% {!</td><td>!} [+ stpl_change_ddp +] {!</td></tr>!}
 
@@ -279,6 +284,18 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
+Left Coalition (SPD + USPD): [+ p_left_coalition +] 
+
+USPD-tolerated SPD Minority ((SPD alone): [+ p_uspd_tolerated_spd_minority +]%;
+
+USPD-tolerated Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ p_uspd_tolerated_social_liberal_coalition +]% 
+
+Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ p_social_liberal_coalition +]%
+
+Social-Christian Coalition (SPD + Z): [+ p_social_christian_coalition +]%
+
+USPD-tolerated Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ p_uspd_tolerated_weimar_coalition +]%
+
 Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ p_weimar_coalition +]%
 
 Grand Coalition (SPD + Z + [+ ddp_name +] + DVP): [+ p_grand_coalition +]%
@@ -289,11 +306,11 @@ Right-wing Coalition (Z + DVP + Others + DNVP): [+ p_right_coalition +]%
 
 [? if nazi_urgency <= 1 and nsdap_pl >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
-[? if p_anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Landtag. A stable governing majority will be almost impossible. ?]
+[? if p_anti_democratic_coalition >= 50 : Together, the anti-democratic USPD, DNVP, and NSDAP have a majority in the Landtag. A stable governing majority will be almost impossible. ?]
 
 [? if spd_prussia : Prussia as a state is currently governed by Minister-President Otto Braun, giving him control over the cabinet, control which cannot be revoked unless a majority for an alternative government is found. This grants the SPD significant power in the state, power the bourgeoisie are keen on stripping. ?]
 
-[? if z_prussia : Prussia as a state is currently governed by Minister-President Adam Stegerwald, giving him control over the cabinet, which cannot be revoked unless a majority for an alternative government is found. This grants the bourgeois significant power in the state, including the power to at will exclude us from government and leave us incapable of fighting back unless we and the KPD can both win a majority and agree on a common candidate. ?]
+[? if z_prussia : Prussia as a state is currently governed by Minister-President Adam Stegerwald, giving him control over the cabinet, which cannot be revoked unless a majority for an alternative government is found. This grants the bourgeois significant power in the state, including the power to at will exclude us from government and leave us incapable of fighting back unless we and the USPD can both win a majority and agree on a common candidate. ?]
 
 There are some potential coalition arrangements.
 
@@ -322,7 +339,7 @@ subtitle: SPD + Z + [+ ddp_name +] ([+ p_weimar_coalition +]%) [? if spd_prussia
 choose-if: (spd_prussia or (z_prussia and z_relation >= 50)) or (p_weimar_coalition >= 50 and z_relation >= 35)
 unavailable-subtitle: SPD + Z + [+ ddp_name +] ([+ p_weimar_coalition +]%) - We lack the votes.
 on-arrival: dvp_relation -= 5 if dvp_prussia
-on-departure: dvp_prussia = 0; kpd_prussia = 0;
+on-departure: dvp_prussia = 0; uspd_prussia = 0;
 
 We have enough votes to form a Weimar Coalition. [? if dvp_prussia : The DVP's exclusion from government has upset them. ?]
 
@@ -352,7 +369,7 @@ title: A "Grand Coalition", including the DVP in government.
 subtitle: SPD + Z + [+ ddp_name +] + DVP ([+ p_grand_coalition +]%)
 choose-if: (spd_prussia or (z_prussia and z_relation >= 45)) or p_grand_coalition >= 50 and dvp_relation >= 40 and z_relation >= 40
 unavailable-subtitle: SPD + Z + [+ ddp_name +] + DVP ([+ p_grand_coalition +]%) - [? if p_grand_coalition < 50 : We lack the votes. ?][? if dvp_relation < 40 : The DVP is unwilling. ?][? if z_relation < 40 : The Center Party is unwilling. ?]
-on-arrival: kpd_prussia = 0; dvp_relation += 5; left_dissent += 5; kpd_relation -= 5; dvp_prussia = 1; democratization -= 1; stalhelm_militancy += 0.05; prussian_police_loyalty -= 0.1; prussia_dvp += 0.05 if prussia_dvp < 1.25; prussia_dnvp -= 0.1 if prussia_dnvp >= 0.7; prussia_nsdap += 0.05 if prussia_nsdap < 1.25
+on-arrival: uspd_prussia = 0; dvp_relation += 5; left_dissent += 5; uspd_relation -= 5; dvp_prussia = 1; democratization -= 1; stalhelm_militancy += 0.05; prussian_police_loyalty -= 0.1; prussia_dvp += 0.05 if prussia_dvp < 1.25; prussia_dnvp -= 0.1 if prussia_dnvp >= 0.7; prussia_nsdap += 0.05 if prussia_nsdap < 1.25
 
 The DVP has been included in government to foster goodwill. The left is upset by this.
 
@@ -382,8 +399,8 @@ title: A right-wing government, headed by Stegerwald.
 subtitle: Z + DVP + Others + DNVP ([+ p_right_coalition +]%)
 unavailable-subtitle:  Z + DVP + Others + DNVP ([+ p_right_coalition +]%) - The DNVP is unwilling.
 view-if: p_right_coalition >= 50 or z_prussia
-choose-if: (p_right_coalition >= 50 or (z_prussia and not (p_left_coalition >= 50 and kpd_relation >= 55 and communist_coalition >= 3))) and (z_relation < 35 or (z_relation < 45 and (p_left_coalition >= 50 and kpd_relation >= 55 and communist_coalition >= 3))) and (dnvp_reform or year < 1930)
-on-departure: z_prussia = 1; spd_prussia = 0; prussia_spd -= 0.1 if prussia_spd >= 0.8; prussia_dnvp += 0.1 if prussia_dnvp < 1.2; prussian_police_loyalty -= 0.25; prussia_other += 0.05 if prussia_other < 1.2; prussia_z -= 0.05 if prussia_z >= 0.8; prussia_dvp -= 0.1 if prussia_dvp >= 0.8; prussia_ddp += 0.05 if prussia_ddp < 1.1; prussia_kpd += 0.05 if prussia_kpd < 1.1; prussia_nsdap -= 0.1 if prussia_nsdap >= 0.7
+choose-if: (p_right_coalition >= 50 or (z_prussia and not (p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3))) and (z_relation < 35 or (z_relation < 45 and (p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3))) and (dnvp_reform or year < 1930)
+on-departure: z_prussia = 1; spd_prussia = 0; prussia_spd -= 0.1 if prussia_spd >= 0.8; prussia_dnvp += 0.1 if prussia_dnvp < 1.2; prussian_police_loyalty -= 0.25; prussia_other += 0.05 if prussia_other < 1.2; prussia_z -= 0.05 if prussia_z >= 0.8; prussia_dvp -= 0.1 if prussia_dvp >= 0.8; prussia_ddp += 0.05 if prussia_ddp < 1.1; prussia_uspd += 0.05 if prussia_uspd < 1.1; prussia_nsdap -= 0.1 if prussia_nsdap >= 0.7
 
 [? if spd_prussia : Otto Braun has been de-seated and replaced by Adam Stegerwald. ?][? if z_prussia : Adam Stegerwald has been re-elected M-P of Prussia. ?]
 
@@ -391,27 +408,27 @@ on-departure: z_prussia = 1; spd_prussia = 0; prussia_spd -= 0.1 if prussia_spd 
 
 @left_prussia
 title: A "United Front" of the left-wing parties.
-subtitle: KPD + SPD ([+ p_left_coalition +]%)
+subtitle: USPD + SPD ([+ p_left_coalition +]%)
 view-if: spd_prussia or p_left_coalition >= 50
-choose-if: (spd_prussia and (p_right_coalition < 50 or z_relation >= 45 or not dnvp_reform or year >= 1930)) or p_left_coalition >= 50 and kpd_relation >= 55 and communist_coalition >= 3
-unavailable-subtitle: KPD + SPD ([+ p_left_coalition +]%) - [? if p_left_coalition < 50 : We lack the votes. ?][? if kpd_relation < 55 or communist_coalition < 3 : The KPD is unwilling. ?]
+choose-if: (spd_prussia and (p_right_coalition < 50 or z_relation >= 45 or not dnvp_reform or year >= 1930)) or p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3
+unavailable-subtitle: USPD + SPD ([+ p_left_coalition +]%) - [? if p_left_coalition < 50 : We lack the votes. ?][? if uspd_relation < 55 or communist_coalition < 3 : The USPD is unwilling. ?]
 on-arrival: dvp_relation -= 10; z_relation -= 5; dvp_relation -= 5 if dvp_prussia; z_relation -= 5 if z_prussia;
-on-departure: dvp_prussia = 0; kpd_prussia = 1; spd_prussia = 1; z_prussia = 0; prussia_kpd += 0.1 if prussia_kpd < 1.3; prussia_spd += 0.05 if prussia_spd < 1.1; coup_progress += 4; capital_strike_progress += 1
+on-departure: dvp_prussia = 0; uspd_prussia = 1; spd_prussia = 1; z_prussia = 0; prussia_uspd += 0.1 if prussia_uspd < 1.3; prussia_spd += 0.05 if prussia_spd < 1.1; coup_progress += 4; capital_strike_progress += 1
 
-We have enough votes to form a United Front with the KPD. [? if dvp_prussia : The DVP's exclusion from government has upset them. ?]
+We have enough votes to form a United Front with the USPD. [? if dvp_prussia : The DVP's exclusion from government has upset them. ?]
 
 [? if p_left_coalition < 50 : We have retained this position thanks to the constructive VONC. ?]
 
 @popular_front_prussia
 title: Is a "Popular Front" possible?
-subtitle: KPD + SPD + [+ ddp_name +] + Z ([+ p_popular_front_coalition +]%)
+subtitle: USPD + SPD + [+ ddp_name +] + Z ([+ p_popular_front_coalition +]%)
 view-if: spd_prussia or p_popular_front_coalition >= 50
-choose-if: (spd_prussia and (p_right_coalition < 50 or z_relation >= 40 or not dnvp_reform or year >= 1930)) or p_popular_front_coalition >= 50 and kpd_relation >= 60 and z_relation >= 60 and communist_coalition >= 3
-unavailable-subtitle: KPD + SPD + [+ ddp_name +] + Z ([+ p_popular_front_coalition +]%) - [? if p_popular_front_coalition < 50 : We lack the votes. ?][? if kpd_relation < 60 or communist_coalition < 3 : The KPD is unwilling. ?][? if z_relation < 60 : The Center Party is unwilling. ?]
+choose-if: (spd_prussia and (p_right_coalition < 50 or z_relation >= 40 or not dnvp_reform or year >= 1930)) or p_popular_front_coalition >= 50 and uspd_relation >= 60 and z_relation >= 60 and communist_coalition >= 3
+unavailable-subtitle: USPD + SPD + [+ ddp_name +] + Z ([+ p_popular_front_coalition +]%) - [? if p_popular_front_coalition < 50 : We lack the votes. ?][? if uspd_relation < 60 or communist_coalition < 3 : The USPD is unwilling. ?][? if z_relation < 60 : The Center Party is unwilling. ?]
 on-arrival: dvp_relation -= 5; dvp_relation -= 5 if dvp_prussia
-on-departure: dvp_prussia = 0; kpd_prussia = 1; spd_prussia = 1; z_prussia = 0; prussia_kpd += 0.05 if prussia_kpd < 1.2; prussia_spd -= 0.05 if prussia_spd >= 0.9; coup_progress += 3; capital_strike_progress += 1
+on-departure: dvp_prussia = 0; uspd_prussia = 1; spd_prussia = 1; z_prussia = 0; prussia_uspd += 0.05 if prussia_uspd < 1.2; prussia_spd -= 0.05 if prussia_spd >= 0.9; coup_progress += 3; capital_strike_progress += 1
 
-We have enough votes to form a Popular Front with the KPD and Z. [? if dvp_prussia : The DVP's exclusion from government has upset them. ?]
+We have enough votes to form a Popular Front with the USPD and Z. [? if dvp_prussia : The DVP's exclusion from government has upset them. ?]
 
 [? if p_popular_front_coalition < 50 : We have retained this position thanks to the constructive VONC. ?]
 
@@ -419,14 +436,14 @@ We have enough votes to form a Popular Front with the KPD and Z. [? if dvp_pruss
 
 @no_majority_braun
 title: Otto Braun's cabinet falls apart.
-view-if: spd_prussia and not ((p_far_right_coalition >= 50) or (spd_prussia and (p_right_coalition < 50 or z_relation >= 40 or not dnvp_reform or year >= 1930)) or p_popular_front_coalition >= 50 and kpd_relation >= 60 and z_relation >= 60 and communist_coalition >= 3) and not ((spd_prussia and (p_right_coalition < 50 or z_relation >= 45 or not dnvp_reform or year >= 1930)) or p_left_coalition >= 50 and kpd_relation >= 55 and communist_coalition >= 3) and not ((p_right_coalition >= 50 or (z_prussia and not (p_left_coalition >= 50 and kpd_relation >= 55 and communist_coalition >= 3))) and (z_relation < 35 or (z_relation < 45 and (p_left_coalition >= 50 and kpd_relation >= 55 and communist_coalition >= 3))) and (dnvp_reform or year < 1930)) and not ((spd_prussia or (z_prussia and z_relation >= 45)) or p_grand_coalition >= 50 and dvp_relation >= 40 and z_relation >= 40) and not ((spd_prussia or (z_prussia and z_relation >= 50)) or (p_weimar_coalition >= 50 and z_relation >= 35))
+view-if: spd_prussia and not ((p_far_right_coalition >= 50) or (spd_prussia and (p_right_coalition < 50 or z_relation >= 40 or not dnvp_reform or year >= 1930)) or p_popular_front_coalition >= 50 and uspd_relation >= 60 and z_relation >= 60 and communist_coalition >= 3) and not ((spd_prussia and (p_right_coalition < 50 or z_relation >= 45 or not dnvp_reform or year >= 1930)) or p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3) and not ((p_right_coalition >= 50 or (z_prussia and not (p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3))) and (z_relation < 35 or (z_relation < 45 and (p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3))) and (dnvp_reform or year < 1930)) and not ((spd_prussia or (z_prussia and z_relation >= 45)) or p_grand_coalition >= 50 and dvp_relation >= 40 and z_relation >= 40) and not ((spd_prussia or (z_prussia and z_relation >= 50)) or (p_weimar_coalition >= 50 and z_relation >= 35))
 on-arrival: prussian_crisis = 1; prussia_nsdap += 0.1; pro_republic -= 5
 
 No clear government can be formed, even despite the constructive VONC. Braun remains as M-P due to the inability to dislodge him, but effectively as the head of an SPD minority government, and the reactionaries may use this as a pretext to perform a *Reichsexekution* on the government.
 
 @no_majority_stegerwald
 title: Adam Stegerwald's cabinet falls apart.
-view-if: z_prussia and not ((p_far_right_coalition >= 50) or (spd_prussia and (p_right_coalition < 50 or z_relation >= 40  or not dnvp_reform or year >= 1930)) or p_popular_front_coalition >= 50 and kpd_relation >= 60 and z_relation >= 60 and communist_coalition >= 3) and not ((spd_prussia and (p_right_coalition < 50 or z_relation >= 45 or not dnvp_reform or year >= 1930)) or p_left_coalition >= 50 and kpd_relation >= 55 and communist_coalition >= 3) and not ((p_right_coalition >= 50 or (z_prussia and not (p_left_coalition >= 50 and kpd_relation >= 55 and communist_coalition >= 3))) and (z_relation < 35 or (z_relation < 45 and (p_left_coalition >= 50 and kpd_relation >= 55 and communist_coalition >= 3)))  and (dnvp_reform or year < 1930)) and not ((spd_prussia or (z_prussia and z_relation >= 45)) or p_grand_coalition >= 50 and dvp_relation >= 40 and z_relation >= 40) and not ((spd_prussia or (z_prussia and z_relation >= 50)) or (p_weimar_coalition >= 50 and z_relation >= 35))
+view-if: z_prussia and not ((p_far_right_coalition >= 50) or (spd_prussia and (p_right_coalition < 50 or z_relation >= 40  or not dnvp_reform or year >= 1930)) or p_popular_front_coalition >= 50 and uspd_relation >= 60 and z_relation >= 60 and communist_coalition >= 3) and not ((spd_prussia and (p_right_coalition < 50 or z_relation >= 45 or not dnvp_reform or year >= 1930)) or p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3) and not ((p_right_coalition >= 50 or (z_prussia and not (p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3))) and (z_relation < 35 or (z_relation < 45 and (p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3)))  and (dnvp_reform or year < 1930)) and not ((spd_prussia or (z_prussia and z_relation >= 45)) or p_grand_coalition >= 50 and dvp_relation >= 40 and z_relation >= 40) and not ((spd_prussia or (z_prussia and z_relation >= 50)) or (p_weimar_coalition >= 50 and z_relation >= 35))
 on-arrival: prussian_crisis = 1; prussia_nsdap += 0.1; pro_republic -= 5
 
 No clear government can be formed, even despite the constructive VONC. Stegerwald remains as M-P due to the inability to dislodge him, but effectively as the head of a Zentrum minority government. Let's just hope he doesn't turn to the Nazis for backing.
@@ -437,7 +454,7 @@ No clear government can be formed, even despite the constructive VONC. Stegerwal
 @actually
 subtitle: Z + NSDAP + DNVP + DVP + Others ([+ p_hitler_right_coalition +]%)
 view-if: black_brown_seen and p_hitler_right_coalition >= 50
-on-arrival: prussia_nsdap += 0.4; prussia_kpd -= 0.25; prussia_spd -= 0.2; sa_militancy += 0.05; prussian_police_loyalty -= 0.4; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4
+on-arrival: prussia_nsdap += 0.4; prussia_uspd -= 0.25; prussia_spd -= 0.2; sa_militancy += 0.05; prussian_police_loyalty -= 0.4; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4
 
 Stegerwald has announced a reorganization of the Prussian cabinet to include multiple Nazi ministers, in order to present a majority. Immediately, the Nazis abuse their positions to suppress the left-wing, and secure power for themselves.
 
@@ -450,8 +467,8 @@ As if Stegerwald would do such a thing. He may be bourgeois, but he is republica
 title: A far-right coalition.
 view-if: p_far_right_coalition >= 50
 subtitle: NSDAP + DNVP ([+ p_far_right_coalition +]%)
-on-arrival: coup_progress += 5; sa_militancy += 0.2; rb_militancy -= 0.1; rfb_militancy -= 0.1; prussia_nsdap += 0.2; spd_prussia = 0; z_prussia = 0; kpd_prussia = 0; dvp_prussia = 0; pro_republic -= 6; socialism -= 3; nationalism += 5; workers_spd -= 4; workers_kpd -= 4; workers -= 2; new_middle_nsdap += 8; old_middle_nsdap += 6; rural_nsdap += 5; workers_nsdap += 3; unemployed_nsdap += 3; prussia_kpd -= 0.25; prussian_police_loyalty -= 1; 
+on-arrival: coup_progress += 5; sa_militancy += 0.2; rb_militancy -= 0.1; rfb_militancy -= 0.1; prussia_nsdap += 0.2; spd_prussia = 0; z_prussia = 0; uspd_prussia = 0; dvp_prussia = 0; pro_republic -= 6; socialism -= 3; nationalism += 5; workers_spd -= 4; workers_uspd -= 4; workers -= 2; new_middle_nsdap += 8; old_middle_nsdap += 6; rural_nsdap += 5; workers_nsdap += 3; unemployed_nsdap += 3; prussia_uspd -= 0.25; prussian_police_loyalty -= 1; 
 
 Disaster has struck - the reactionaries have won a majority, taking away from us the bulwark of democracy we have for so long held dear. Now it is converted into a bulwark of reaction.
 
-Mass persecution of the SPD and even moreso the KPD is commenced within the state. It may never be democratic again.
+Mass persecution of the SPD and even moreso the USPD is commenced within the state. It may never be democratic again.
