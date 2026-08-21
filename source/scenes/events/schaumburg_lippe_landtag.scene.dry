@@ -92,12 +92,12 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
-if (Q.nsdap_schl >= Q.spd_schl && Q.nsdap_schl >= Q.kpd_schl) {
+if (Q.nsdap_schl >= Q.spd_schl && Q.nsdap_schl >= Q.uspd_schl) {
     Q.largest_party = 'NSDAP';
 }
 
-if (Q.kpd_schl >= Q.spd_schl && Q.kpd_schl >= Q.nsdap_schl) {
-    Q.largest_party = 'KPD';
+if (Q.uspd_schl >= Q.spd_schl && Q.uspd_schl >= Q.nsdap_schl) {
+    Q.largest_party = 'USPD';
 }
 // coalitions
 Q.sch_social_liberal = Q.spd_schl + Q.ddp_schl;
@@ -109,17 +109,17 @@ Q.sch_bourgeois_coalition = Q.ddp_schl + Q.z_schl + Q.dvp_schl + Q.other_schl;
 Q.sch_center_right_coalition = Q.z_schl + Q.ddp_schl + Q.dvp_schl + Q.other_schl + Q.dnvp_schl;
 Q.sch_right_coalition = Q.z_schl + Q.dvp_schl + Q.other_schl + Q.dnvp_schl;
 Q.sch_far_right_coalition = Q.dnvp_schl + Q.nsdap_schl;
-Q.sch_left_coalition = Q.spd_schl + Q.kpd_schl;
+Q.sch_left_coalition = Q.spd_schl + Q.uspd_schl;
 // this is an absurd concept lol
-Q.sch_popular_front_coalition = Q.spd_schl + Q.kpd_schl + Q.z_schl + Q.ddp_schl;
-Q.sch_anti_democratic_coalition = Q.kpd_schl + Q.nsdap_schl + Q.dnvp_schl;
-// aka everyone except nazi, kpd, dnvp
+Q.sch_popular_front_coalition = Q.spd_schl + Q.uspd_schl + Q.z_schl + Q.ddp_schl;
+Q.sch_anti_democratic_coalition = Q.uspd_schl + Q.nsdap_schl + Q.dnvp_schl;
+// aka everyone except nazi, uspd, dnvp
 Q.sch_neo_weimar_coalition = Q.spd_schl + Q.ddp_schl + Q.z_schl + Q.dvp_schl + Q.other_schl;
 // Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
 Q.sch_other_nazi = Math.round(Q.other_schl*(1-(Q.pro_republic/100)));
 Q.sch_hitler_right_coalition = Q.z_schl + Q.dnvp_schl + Q.nsdap_schl + Q.dvp_schl + Q.other_nazi;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.sch_progressive_coalition = Q.spd_schl + Q.sapd_schl + Q.kpd_schl + Q.ddp_schl;
+Q.sch_progressive_coalition = Q.spd_schl + Q.sapd_schl + Q.uspd_schl + Q.ddp_schl;
 // nationaal front
 Q.sch_national_front_schl = Q.nsdap_schl + Q.dnvp_schl + Q.dvp_schl + Q.other_schl;
 if (Q.z_national) {
@@ -130,10 +130,10 @@ on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_schl >= 15)
 on-display: {!
 if (Q.sapd_formed == 1) {
     data = [
-        {    "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_schl*0.15),
+        {    "id": "uspd",
+            "legend": "USPD",
+            "name": "USPD",
+            "seats": Math.round(Q.uspd_schl*0.15),
         },
         {
             "id": "sapd",
@@ -181,10 +181,10 @@ if (Q.sapd_formed == 1) {
 }
 else {
     data = [
-        {   "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_schl*0.15),
+        {   "id": "uspd",
+            "legend": "USPD",
+            "name": "USPD",
+            "seats": Math.round(Q.uspd_schl*0.15),
         },
         {
             "id": "spd",
@@ -253,7 +253,7 @@ go-to: coalition_menu
 
 [? if sapd_formed == 1 : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_schl +]% {!</td><td>!} [+ stpl_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}KPD: {!</td><td>!} [+ kpd_schl +]% {!</td><td>!} [+ stpl_change_kpd +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}USPD: {!</td><td>!} [+ uspd_schl +]% {!</td><td>!} [+ stpl_change_uspd +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_schl +]% {!</td><td>!} [+ stpl_change_ddp +] {!</td></tr>!}
 
@@ -280,7 +280,7 @@ Right-wing Coalition (Z + DVP + Others + DNVP): [+ sch_right_coalition +]%
 
 [? if nazi_urgency <= 1 and nsdap_schl >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
-[? if sch_anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Landtag. A stable governing majority will be almost impossible. ?]
+[? if sch_anti_democratic_coalition >= 50 : Together, the anti-democratic USPD, DNVP, and NSDAP have a majority in the Landtag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
 
