@@ -34,6 +34,6 @@ on-arrival: left_dissent += 10; left_strength -= 5; reformist_dissent -= 10; cen
 We oppose this anti-toleration stance the Thuringian SPD has taken, assuaging the concerns of our reformists but upsetting the left.
 
 @toleration
-on-arrival: thuringeration_timer = 10-(left_strength/10); thuringia_spd -= 0.05; thuringia_toleration = 1; thuringia_kpd += 0.05; left_dissent += 3
+on-arrival: thuringeration_timer = 10-(left_strength/10); thuringia_spd -= 0.05; thuringia_toleration = 1; thuringia_uspd += 0.05; left_dissent += 3
 
 The Thuringian SPD provides toleration to the local bourgeois parties as to prevent new elections.
