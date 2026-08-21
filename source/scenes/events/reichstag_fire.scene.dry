@@ -15,10 +15,10 @@ This decree gives [+ chancellor +] wide-ranging powers with which to suppress us
 - @lib: We will have to hope for the best.
 
 @fight
-on-arrival: spd_rebel = 1; kpd_relation += 20
+on-arrival: spd_rebel = 1; uspd_relation += 20
 go-to: civil_war
 
-We mobilize what's left of the Reichsbanner and ADGB to resist this blatant crackdown. [? if kpd_party_leader != "Conciliators" : The KPD, seeing its leaders jailed, is more inclined to join us in our final fight against fascism, but will it be enough? ?]
+We mobilize what's left of the Reichsbanner and ADGB to resist this blatant crackdown. [? if uspd_party_leader != "Conciliators" : The USPD, seeing its leaders jailed, is more inclined to join us in our final fight against fascism, but will it be enough? ?]
 
 @lib
 on-arrival: {!
@@ -31,12 +31,12 @@ Q.rb_strength -= 250;
 Q.rfb_banned = 1; 
 Q.rfb_militancy -= 0.1; 
 Q.sa_militancy += 0.05; 
-Q.workers_kpd -= 10;
+Q.workers_uspd -= 10;
 Q.workers_nsdap += 10;
 Q.new_middle_nsdap += 12;
 Q.old_middle_nsdap += 12;
 Q.unemployed_nsdap += 12;
-Q.unemployed_kpd -= 12;
+Q.unemployed_uspd -= 12;
 Q.catholics_nsdap += 8;
 Q.catholics_spd -= 6;
 Q.catholics -= 1;
