@@ -13,6 +13,11 @@ Bavaria has historically been the most difficult state for our party, with a pow
 
 We can enact policies in Bavaria.
 
+- @negotiate_concordat
+- @sign_concordat
+- @land_reform
+- @agricultural_finance
+- @pro_consumer
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
 - @persecute_sa: Use our state offices to target and prosecute the state SA.
 - @persecute_rfb: Use our state offices to target and prosecute the state RFB.
@@ -47,3 +52,32 @@ The reactionary elements in the police and bureaucracy enthusiastically carry ou
 On-arrival: rb_strength += 250; rb_militancy += 0.05; z_relation -= 2; dvp_relation -= 3
 
 We have used our state offices to promote recruitment to the Reichsbanner. The other state parties decry this as an abuse of office, but we ignore their protests.
+
+@land_reform
+unavailable-subtitle: [? if judicial_reform < 2 : The judiciary would never allow this. ?]
+choose-if: judicial_reform >= 2
+on-arrival: land_reform += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 4*(1-dissent); unemployed -= 1 if unemployed >= 5; dvp_relation -= 5; z_relation -= 4; left_strength += 8; left_dissent -= 5; rural_sol += 3; rural_policy += 1; coup_progress += 1; agriculture_goal_completed += 1; socialism += 1
+
+With our policy of land reform, we are acquiring farmland from large estates, and giving the land to farmworkers' associations and small peasants. In essence, this brings class struggle to the countryside, breaking the semi-feudal property relations present in East Prussia and other areas with large estates. The bourgeois parties and large farmers despise our intrusion into the sacredness of private property, while leftists are cautiously optimistic.
+
+@agricultural_finance
+on-arrival: agricultural_finance += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); peoples_party_support += 1; center_dissent += 5; left_dissent += 4; rural_sol += 4; rural_policy += 1; economic_growth += 0.2;
+
+We have increased financial support for small farmers, providing access to credit and insurance, saving them from privation. The left and center of our party are opposed to our rural policy, seeing these policies as giveaways to petit-bourgeois farmers.
+
+@pro_consumer
+on-arrival: budget -= 1; pro_consumer += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); workers_sol += 4; coalition_dissent += 1 if black_thursday_seen; economic_growth += 0.2
+
+We have increased state purchasing of food staples to provide to urban workers and the poor. This benefits workers more than it benefits farmers, as we are negotiating for lower purchase prices.
+
+@negotiate_concordat
+view-if: bavarian_concordat_progress < 1
+on-arrival: bavarian_concordat_progress += 1; z_relation += 2*(1-dissent);
+
+We are making progress towards negotiating a concordat between Bavaria and the Catholic church.
+
+@sign_concordat
+view-if: bavarian_concordat_progress >= 1 and bavarian _concordat = 0
+on-arrival: bavarian_concordat = 1; z_relation += 5; catholics_spd += 3*(1-dissent)
+
+We have signed a Concordat between Bavaria and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Bavaria. This sets the stage for the negotiation of a national Concordat covering all of Germany.
