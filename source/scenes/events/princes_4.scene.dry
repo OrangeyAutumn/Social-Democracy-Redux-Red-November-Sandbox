@@ -12,10 +12,10 @@ if (Q.princes_initiated) {
 } else {
     Q.petition_support = Q.spd_votes*((Q.left_strength*(1+(Q.left_dissent/100)))/100);
 }
-Q.petition_support += Q.kpd_votes;
+Q.petition_support += Q.uspd_votes;
 Q.petition_support += (Q.workers+Q.princes_bonus)*(Q.socialism/125);
 Q.petition_support += (Q.ddp_votes*(Q.ddp_relation/200));
-var relation_multiplier = (1+(Q.kpd_relation/100))/2;
+var relation_multiplier = (1+(Q.uspd_relation/100))/2;
 relation_multiplier = Math.max(0.4, Math.min(1, relation_multiplier));
 Q.petition_support = Q.petition_support*relation_multiplier;
 if (Q.princes_constitutional) {
@@ -49,12 +49,12 @@ The referendum on the expropriation of the princes has been held, and the result
 
 @defeated
 view-if: petition_support < 50 and (not princes_constitutional or princes_support < 50)
-on-arrival: kpd_relation -= 5; socialism -= 2
+on-arrival: uspd_relation -= 5; socialism -= 2
 
 Unfortunately, the referendum has failed, with only [+ referendum_turnout +]% voting [? if princes_constitutional : and [+ princes_support +] in favor?]. Nonetheless, it has demonstrated the immense support of the workers' parties and shown that the German left is not dead. Perhaps, if this momentum continues, the socialist parties will achieve a victory come the next elections.
 
 @success
 view-if: petition_support >= 50 or (princes_constitutional and princes_support >= 50)
-on-arrival: rural_spd += 5*(1-dissent); unemployed_spd += 3*(1-dissent); unemployed_kpd += 2; workers_spd += 4*(1-dissent); workers_dnvp -= 5; rural_dnvp -= 5; old_middle_dnvp -= 2; old_middle_spd += 2*(1-dissent); nationalism -= 5; socialism += 5; kpd_relation += 5; land_reform += 1; unemployed -= 1
+on-arrival: rural_spd += 5*(1-dissent); unemployed_spd += 3*(1-dissent); unemployed_uspd += 2; workers_spd += 4*(1-dissent); workers_dnvp -= 5; rural_dnvp -= 5; old_middle_dnvp -= 2; old_middle_spd += 2*(1-dissent); nationalism -= 5; socialism += 5; uspd_relation += 5; land_reform += 1; unemployed -= 1
 
 With [+ referendum_turnout +]% voting [? if princes_constitutional : and [+ princes_support +]% in favor of the bill ?] the referendum has succeeded! This is a massive victory for the left [? if president == "Hindenburg" :showing that despite the victory of Hindenburg last year, the socialism prevails over reaction?].
