@@ -1,7 +1,7 @@
 title: Hamburg Affairs
 new-page: true
 is-card: true
-view-if: in_hamburg_left = 1 or in_hamburg_tolerated_spd = 1 or in_hamburg_spd = 1 or in_hamburg_tolerated_soclib: 1 or in_hamburg_soclib: 1 or in_hamburg_socchr: 1 or in_hamburg_tolerated_weimar: 1 or in_hamburg_weimar: 1 or in_hamburg_groko = 1
+view-if: in_hamburg_left = 1 or in_hamburg_tolerated_spd = 1 or in_hamburg_spd = 1 or in_hamburg_tolerated_soclib: 1 or in_hamburg_soclib = 1 or in_hamburg_socchr = 1 or in_hamburg_tolerated_weimar = 1 or in_hamburg_weimar = 1 or in_hamburg_groko = 1
 on-arrival: hamburg_affairs_timer += 6; month_actions += 1
 tags: lantags
 card-image: img/braun.jpg
