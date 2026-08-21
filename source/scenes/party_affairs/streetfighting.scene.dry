@@ -1,7 +1,7 @@
 title: Streetfighting
 new-page: true
 is-card: true
-on-arrival: streetfighting_timer = 6; month_actions += 1; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25; strife += 1; unemployed_kpd -= 3; unemployed_nsdap += 3
+on-arrival: streetfighting_timer = 6; month_actions += 1; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25; strife += 1; unemployed_uspd -= 3; unemployed_nsdap += 3
 view-if: year >= 1930 and sa_strength >= 150 and streetfighting_timer == 0 and not return_to_normalcy
 card-image: img/blutmai_2.jpg
 tags: party_affairs; antifascism
@@ -12,7 +12,7 @@ Battles rage on the streets between the Nazi SA, nationalist Stahlhelm, communis
 
 We must do something to protect the workers against these predations.
 
-# - @battle: Test our defense units in battle against the fascists!
+- @battle: Test our defense units in battle against the fascists!
 - @arm_rb: Increase training and armaments for the Reichsbanner.
 - @if_training: Train union members to fight as part of the Iron Front.
 - @prussian_police_training: Use the Prussian police to help train the Reichsbanner.
@@ -57,9 +57,9 @@ on-arrival: rb_militancy -= 0.02; rb_strength -= 50; pacifism += 1
 By not fighting, the strength of the Reichsbanner atrophies. Pacifists in the party are gaining the upper hand.
 
 @truce_rfb
-choose-if: kpd_relation >= 45
-view-if: kpd_truce == 0
-unavailable-subtitle: The KPD is not interested.
-on-arrival: kpd_truce = 1; kpd_relation += 5; rfb_strength += 50; rb_strength += 50; sa_strength += 50;
+choose-if: uspd_relation >= 30
+view-if: uspd_truce == 0
+unavailable-subtitle: The USPD is not interested.
+on-arrival: uspd_truce = 1; uspd_relation += 5; rfb_strength += 50; rb_strength += 50; sa_strength += 50;
 
-We have made at least a temporary truce with the KPD, so that our respective paramilitaries will stop fighting.
+We have made at least a temporary truce with the USPD, so that our respective paramilitaries will stop fighting.
