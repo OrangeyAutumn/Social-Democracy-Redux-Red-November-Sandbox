@@ -163,12 +163,12 @@ if (Q.other_bl < Q.bavaria_threshold) {
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
-if (Q.nsdap_bl >= Q.spd_bl && Q.nsdap_bl >= Q.kpd_bl) {
+if (Q.nsdap_bl >= Q.spd_bl && Q.nsdap_bl >= Q.uspd_bl) {
     Q.largest_party = 'NSDAP';
 }
 
-if (Q.kpd_bl >= Q.spd_bl && Q.kpd_bl >= Q.nsdap_bl) {
-    Q.largest_party = 'KPD';
+if (Q.uspd_bl >= Q.spd_bl && Q.uspd_bl >= Q.nsdap_bl) {
+    Q.largest_party = 'USPD';
 }
 // coalitions
 Q.b_weimar_coalition = Q.spd_bl + Q.ddp_bl + Q.z_bl;
@@ -177,17 +177,17 @@ Q.b_bourgeois_coalition = Q.z_bl + Q.bb_bl + Q.other_bl + Q.dnvp_bl;
 Q.b_center_right_coalition = Q.z_bl + Q.ddp_bl + Q.dvp_bl + Q.other_bl + Q.dnvp_bl;
 Q.b_right_coalition = Q.z_bl + Q.dvp_bl + Q.other_bl + Q.dnvp_bl;
 Q.b_far_right_coalition = Q.dnvp_bl + Q.nsdap_bl;
-Q.b_left_coalition = Q.spd_bl + Q.kpd_bl;
+Q.b_left_coalition = Q.spd_bl + Q.uspd_bl;
 // this is an absurd concept lol
-Q.b_popular_front_coalition = Q.spd_bl + Q.kpd_bl + Q.ddp_bl;
-Q.b_anti_democratic_coalition = Q.kpd_bl + Q.nsdap_bl + Q.dnvp_bl;
-// aka everyone except nazi, kpd, dnvp
+Q.b_popular_front_coalition = Q.spd_bl + Q.uspd_bl + Q.ddp_bl;
+Q.b_anti_democratic_coalition = Q.uspd_bl + Q.nsdap_bl + Q.dnvp_bl;
+// aka everyone except nazi, uspd, dnvp
 Q.b_neo_weimar_coalition = Q.spd_bl + Q.ddp_bl + Q.z_bl + Q.dvp_bl + Q.other_bl;
 // Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
 Q.b_other_nazi = Math.round(Q.other_bl*(1-(Q.pro_republic/100)));
 Q.b_hitler_right_coalition = Q.z_bl + Q.dnvp_bl + Q.nsdap_bl + Q.dvp_bl + Q.other_nazi;
 // Progressive coalition isn't going to be imblemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.b_progressive_coalition = Q.spd_bl + Q.sapd_bl + Q.kpd_bl + Q.ddp_bl;
+Q.b_progressive_coalition = Q.spd_bl + Q.sapd_bl + Q.uspd_bl + Q.ddp_bl;
 // nationaal front
 Q.b_national_front_bl = Q.nsdap_bl + Q.dnvp_bl + Q.dvp_bl + Q.other_bl;
 if (Q.z_national) {
@@ -198,10 +198,10 @@ on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_bl >= 15)
 on-display: {!
 if (Q.sapd_formed == 1) {
     data = [
-        {    "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_bl*1.28),
+        {    "id": "uspd",
+            "legend": "USPD",
+            "name": "USPD",
+            "seats": Math.round(Q.uspd_bl*1.28),
         },
         {
             "id": "sapd",
@@ -261,10 +261,10 @@ if (Q.sapd_formed == 1) {
 }
 else {
     data = [
-        {   "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_bl*1.28),
+        {   "id": "uspd",
+            "legend": "USPD",
+            "name": "USPD",
+            "seats": Math.round(Q.uspd_bl*1.28),
         },
         {
             "id": "spd",
@@ -345,7 +345,7 @@ go-to: coalition_menu
 
 [? if sapd_formed == 1 : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_bl +]% {!</td><td>!} [+ stbl_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}KPD: {!</td><td>!} [+ kpd_bl +]% {!</td><td>!} [+ stbl_change_kpd +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}USPD: {!</td><td>!} [+ uspd_bl +]% {!</td><td>!} [+ stbl_change_uspd +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_bl +]% {!</td><td>!} [+ stbl_change_ddp +] {!</td></tr>!}
 
@@ -374,7 +374,7 @@ Right-wing Coalition (Z + [+ bvp_name +] + DVP + Others + DNVP): [+ b_right_coal
 
 [? if nazi_urgency <= 1 and nsdap_bl >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
-[? if b_anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
+[? if b_anti_democratic_coalition >= 50 : Together, the anti-democratic USPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
 
@@ -403,13 +403,13 @@ Somehow, the Nazis have won a majority in Bavaria. Epp has been made Minister-Pr
 
 @left_bavaria
 title: A "Popular Front" of all parties on the Bavarian left.
-subtitle: KPD + SPD + [+ ddp_name +] ([+ b_popular_front_coalition +]%)
-unavailable-subtitle: KPD + SPD + [+ ddp_name +] ([+ b_popular_front_coalition +]%) - [? if ddp_relation < 45 : The [+ ddp_name +] won't vote for us. ?][? if kpd_relation < 55 or communist_coalition < 3 : The KPD won't vote for us. ?]
+subtitle: USPD + SPD + [+ ddp_name +] ([+ b_popular_front_coalition +]%)
+unavailable-subtitle: USPD + SPD + [+ ddp_name +] ([+ b_popular_front_coalition +]%) - [? if ddp_relation < 45 : The [+ ddp_name +] won't vote for us. ?][? if uspd_relation < 55 or communist_coalition < 3 : The USPD won't vote for us. ?]
 view-if: b_popular_front_coalition >= 50
-choose-if: ((kpd_relation >= 55 and communist_coalition >= 3) or (spd_bl+ddp_bl >= 50 and ddp_relation >= 45)) and ((ddp_relation >= 45) or (kpd_bl+spd_bl >= 50 and kpd_relation >= 55 and communist_coalition >= 3))
+choose-if: ((uspd_relation >= 55) or (spd_bl+ddp_bl >= 50 and ddp_relation >= 45)) and ((ddp_relation >= 45) or (uspd_bl+spd_bl >= 50 and uspd_relation >= 55 and communist_coalition >= 3))
 on-arrival: spd_bavaria = 1; workers_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); rural_spd += 4*(1-dissent); sh_militancy -= 0.05; rb_militancy += 0.05; coup_progress += 1; capital_strike_progress += 2
 
-Somehow, a "Popular Front" of the KPD, [+ ddp_name +] and us has been able to outvote the right-wing parties for rulership of Bavaria, instating a social democrat as Minister-President.
+Somehow, a "Popular Front" of the USPD, [+ ddp_name +] and us has been able to outvote the right-wing parties for rulership of Bavaria, instating a social democrat as Minister-President.
 
 @spd_bavaria
 title: SPD majority government
