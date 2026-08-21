@@ -21,6 +21,6 @@ Do we realize that this means civil war, against the full force of the state?
 - @give_up: We are not ready for war.
 
 @give_up
-on-arrival: left_dissent += 15; neorevisionist_dissent += 15; labor_dissent += 10; center_dissent += 10; reformist_dissent += 5; workers_spd *= 0.8; unemployed_spd *= 0.8; new_middle_spd *= 0.9; old_middle_spd *= 0.9; rural_spd *= 0.9; workers_spd -= 5; workers_kpd += 5; unemployed_spd -= 5; unemployed_kpd += 5; rb_banned = 1; rb_strength *= 0.6
+on-arrival: left_dissent += 15; neorevisionist_dissent += 15; labor_dissent += 10; center_dissent += 10; reformist_dissent += 5; workers_spd *= 0.8; unemployed_spd *= 0.8; new_middle_spd *= 0.9; old_middle_spd *= 0.9; rural_spd *= 0.9; workers_spd -= 5; workers_uspd += 5; unemployed_spd -= 5; unemployed_uspd += 5; rb_banned = 1; rb_strength *= 0.6
 
-Our compliance in the Nazi consolidation of power is attacked by many, who begin to look to parties like the KPD for true antifascist commitment.
+Our compliance in the Nazi consolidation of power is attacked by many, who begin to look to parties like the USPD for true antifascist commitment.
