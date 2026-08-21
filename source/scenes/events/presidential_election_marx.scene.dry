@@ -12,18 +12,18 @@ set-jump: pres_election
 @pres_election
 on-arrival: reactionary_consolidate = 0; reactionary_consolidate = 1 if nsdap_votes < dnvp_votes + other_votes + dvp_votes
 
-The presidential election is coming up soon. [? if spd_in_government = 0 : While the position of Chancellor is typically more important, recent governments have depended on the president's emergency decree powers, making the office vital. ?] [? if hitler_deported==0 : The Nazis will run Hitler, while the KPD will run Thälmann. A victory for Hitler would mean the end of parliamentary democracy, and the beginning of an era of unspeakable horrors. ?][? if hitler_deported==1 : Since Hitler has been deported, the Nazis will run Hermann Göring in his stead. He is widely seen as a proxy for Hitler, who, despite his legal persecution, retains a popular base who wishes to see him returned to Germany. Meanwhile, the KPD will run Ernst Thälmann. ?] The DNVP too has entered the race, running the intensely antisemitic Theodor Duesterburg, co-leader of Der Stalhelm.
+The presidential election is coming up soon. [? if spd_in_government = 0 : While the position of Chancellor is typically more important, recent governments have depended on the president's emergency decree powers, making the office vital. ?] [? if hitler_deported==0 : The Nazis will run Hitler, while the USPD will run Thälmann. A victory for Hitler would mean the end of parliamentary democracy, and the beginning of an era of unspeakable horrors. ?][? if hitler_deported==1 : Since Hitler has been deported, the Nazis will run Hermann Göring in his stead. He is widely seen as a proxy for Hitler, who, despite his legal persecution, retains a popular base who wishes to see him returned to Germany. Meanwhile, the USPD will run Ernst Thälmann. ?] The DNVP too has entered the race, running the intensely antisemitic Theodor Duesterburg, co-leader of Der Stalhelm.
 
 Then, of course, there is the incumbent President Marx. So long as we continue to support him, he is almost certain to stay in the race to prevent the rise of an extremist president from either the left or the right.
 
 # if hitler is deported, who would nsdap run? Duesterberg? or Goering?
 # Goering runs, essentially as a proxy for Hitler, who is now stateless.
 
-[? if kpd_relation >= 50 : Another strange possibilty is an united front with the Communists, either to support Thälmann or our own candidate. ?]
+[? if uspd_relation >= 50 : Another strange possibilty is an united front with the Communists, either to support Thälmann or our own candidate. ?]
 
 - @support_marx: Support Marx.
 - @support_braun: Run Otto Braun of the SPD.
-- @support_thalmann: Support Ernst Thälmann of the KPD.
+- @support_thalmann: Support Ernst Thälmann of the USPD.
 
 @support_marx
 subtitle: This is the default option.
@@ -56,8 +56,8 @@ Without our support, Wilhelm Marx has dropped out. The miniscule remnants of the
 
 
 @support_thalmann
-choose-if: kpd_relation >= 50 and reformist_strength < left_strength
-unavailable-subtitle: [? if kpd_relation < 50 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this arrangement. ?]
+choose-if: uspd_relation >= 50 and reformist_strength < left_strength
+unavailable-subtitle: [? if uspd_relation < 50 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this arrangement. ?]
 
 Supporting Thälmann is rather unpopular in our party, even if the Communists accept our support. Are we sure?
 
@@ -66,16 +66,16 @@ Supporting Thälmann is rather unpopular in our party, even if the Communists ac
 - @support_marx: Support Marx instead.
 
 @support_thalmann_2
-on-arrival: spd_support_thalmann = 1; reformist_dissent += 15; center_dissent += 10; labor_dissent += 5; neorevisionist_dissent += 10; catholics_spd -= 5; workers_spd -= 3; kpd_relation += 10; communist_coalition += 2; z_relation -= 15; dvp_relation -= 15; ddp_relation -= 10
+on-arrival: spd_support_thalmann = 1; reformist_dissent += 15; center_dissent += 10; labor_dissent += 5; neorevisionist_dissent += 10; catholics_spd -= 5; workers_spd -= 3; uspd_relation += 10; communist_coalition += 2; z_relation -= 15; dvp_relation -= 15; ddp_relation -= 10
 
-Fine. We have thrown our support to Chairman Thälmann of the KPD. 
+Fine. We have thrown our support to Chairman Thälmann of the USPD. 
 
 - @final_election: The final vote...
 
 @braun_campaign
 
 - @convince_z: Convince the Center Party.
-- @convince_kpd: Convince the Communists.
+- @convince_uspd: Convince the Communists.
 - @convince_liberals: Convince the remaining liberals, wherever they are.
 - @final_election: The final vote...
 
@@ -125,34 +125,34 @@ go-to: braun_campaign
 
 Unfortunately, we fail to win their support, so they enter Konrad Adenauer as ther candidate.
 
-@convince_kpd
-choose-if: spd_votes >= kpd_votes
-unavailable-subtitle: The KPD knows that they are more popular than us; they do not see a reason to support our candidate.
+@convince_uspd
+choose-if: spd_votes >= uspd_votes
+unavailable-subtitle: The USPD knows that they are more popular than us; they do not see a reason to support our candidate.
 max-visits: 1
 
-The KPD is supporting their own candidate, Ernst Thälmann. [? if kpd_relation >= 50 and kpd_party_leader != "Conciliators" : However, they are willing to be convinced to drop their campaign and support Braun; how do we convince them? ?][? if kpd_relation < 50 or kpd_party_leader != "Conciliators" : They do not seem willing to be convinced. ?]
+The USPD is supporting their own candidate, Ernst Thälmann. [? if uspd_relation >= 50 and uspd_party_leader != "Conciliators" : However, they are willing to be convinced to drop their campaign and support Braun; how do we convince them? ?][? if uspd_relation < 50 or uspd_party_leader != "Conciliators" : They do not seem willing to be convinced. ?]
 
-- @kpd_resources: Use our resources.
-- @kpd_relations: Use our good relations.
-- @braun_campaign: Forget about the KPD.
+- @uspd_resources: Use our resources.
+- @uspd_relations: Use our good relations.
+- @braun_campaign: Forget about the USPD.
 
-@kpd_resources
-view-if: kpd_relation >= 50 and not historical_mode
+@uspd_resources
+view-if: uspd_relation >= 50 and not historical_mode
 choose-if: resources >= 3
 subtitle: -3 resources
 unavailable-subtitle: Not enough resources (need 3).
-on-arrival: resources -= 3; kpd_support_braun = 1; thalmann_campaign = 0
+on-arrival: resources -= 3; uspd_support_braun = 1; thalmann_campaign = 0
 go-to: braun_campaign
 
-The KPD now endorses Braun in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
+The USPD now endorses Braun in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
 
-@kpd_relations
-view-if: kpd_relation >= 60 or (kpd_party_leader == "Conciliators" and kpd_relation >= 45)
+@uspd_relations
+view-if: uspd_relation >= 60 or (uspd_party_leader == "Conciliators" and uspd_relation >= 45)
 unavailable-subtitle: Our relations are not good enough.
-on-arrival: kpd_support_braun = 1; thalmann_campaign = 0
+on-arrival: uspd_support_braun = 1; thalmann_campaign = 0
 go-to: braun_campaign
 
-The KPD now endorses Braun in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
+The USPD now endorses Braun in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
 
 
 
@@ -199,8 +199,8 @@ if (Q.braun_campaign) {
     Q.braun_votes += Q.sapd_normalized;
     Q.braun_votes += Q.socialism/4000;
     Q.braun_votes += Q.pro_republic/3000;
-    if (Q.kpd_support_braun) {
-        Q.braun_votes += Q.kpd_normalized;
+    if (Q.uspd_support_braun) {
+        Q.braun_votes += Q.uspd_normalized;
         Q.braun_votes += Q.socialism/4000;
     }
     if (Q.z_support_braun) {
@@ -252,7 +252,7 @@ if (Q.hitler_campaign) {
     Q.hitler_votes += ((Math.floor(Math.random() * 11))/350);
 }
 if (Q.thalmann_campaign) {
-    Q.thalmann_votes += Q.kpd_normalized;
+    Q.thalmann_votes += Q.uspd_normalized;
     Q.thalmann_votes += Q.socialism/5000;
     if (Q.spd_support_thalmann) {
         Q.thalmann_votes += Q.spd_normalized;
@@ -379,16 +379,16 @@ Otto Braun of the SPD has won the presidency! This is a moment of celebration fo
 
 @far_right_coup
 view-if: coup_progress >= 10
-on-arrival: nazi_rebel = 1; reichswehr_loyalty -= 0.1 if reichswehr_loyalty <= 0.05; reichswehr_loyalty += 0.1; reichswehr_loyalty += 0.15 if z_support_braun or president == "Marx"; reichswehr_loyalty -= 0.05 if kpd_support_braun; rb_strength += 100
+on-arrival: nazi_rebel = 1; reichswehr_loyalty -= 0.1 if reichswehr_loyalty <= 0.05; reichswehr_loyalty += 0.1; reichswehr_loyalty += 0.15 if z_support_braun or president == "Marx"; reichswehr_loyalty -= 0.05 if uspd_support_braun; rb_strength += 100
 
 Immediately following the election, forces of the Stalhelm and SA organized across the country under the Harzburg Front storm government offices, communications, railway, and other important infrastructure, as reactionary officers begin taking their forces out of barracks and joining in the coup.
 
 - @civil_war: This is civil war.
 
 @thalmann_wins
-on-arrival: president = "Thälmann"; kpd_relation = 80;
+on-arrival: president = "Thälmann"; uspd_relation = 80;
 
-Ernst Thälmann of the KPD has won the presidency. Immediately, the far-right launches a coup attempt against the government. We have no choice but to unite with the KPD against the fascists...
+Ernst Thälmann of the USPD has won the presidency. Immediately, the far-right launches a coup attempt against the government. We have no choice but to unite with the USPD against the fascists...
 
 - @civil_war: This is civil war.
 
@@ -445,7 +445,7 @@ In the second round, any candidate who wins a plurality will win overall. What s
 - @r2_z_braun: Convince the Center Party to back Otto Braun.
 - @r2_dvp_braun: Convince the DVP to back Otto Braun.
 - @r2_dvp_marx: Convince the DVP to back Wilhelm Marx.
-- @r2_kpd_braun: Convince the KPD to back Otto Braun.
+- @r2_uspd_braun: Convince the USPD to back Otto Braun.
 - @round2_voting: Let the voting begin...
 
 @round2_voting
@@ -475,13 +475,13 @@ go-to: r2_menu
 
 We have convinced the DVP to back Wilhelm Marx.
 
-@r2_kpd_braun
-view-if: not kpd_support_braun and braun_campaign
-choose-if: kpd_relation >= 60 or ((kpd_relation >= 50 and (kpd_party_leader == "Conciliators" or hitler_plurality)) or (kpd_relation >= 40 and kpd_party_leader == "Conciliators" and hitler_plurality))
-on-arrival: kpd_support_braun = 1; thalmann_campaign = 0
+@r2_uspd_braun
+view-if: not uspd_support_braun and braun_campaign
+choose-if: uspd_relation >= 60 or ((uspd_relation >= 50 and (uspd_party_leader == "Conciliators" or hitler_plurality)) or (uspd_relation >= 40 and uspd_party_leader == "Conciliators" and hitler_plurality))
+on-arrival: uspd_support_braun = 1; thalmann_campaign = 0
 go-to: r2_menu
 
-We have convinced the KPD to back Otto Braun.
+We have convinced the USPD to back Otto Braun.
 
 @z_support_braun_auto
 on-arrival: adenauer_campaign = 0; z_support_braun = 1
