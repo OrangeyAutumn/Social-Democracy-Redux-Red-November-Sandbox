@@ -92,14 +92,18 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.party_bans) {
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
-if (Q.nsdap_hl >= Q.spd_hl && Q.nsdap_hl >= Q.kpd_hl) {
+if (Q.nsdap_hl >= Q.spd_hl && Q.nsdap_hl >= Q.uspd_hl) {
     Q.largest_party = 'NSDAP';
 }
 
-if (Q.kpd_hl >= Q.spd_hl && Q.kpd_hl >= Q.nsdap_hl) {
-    Q.largest_party = 'KPD';
+if (Q.uspd_hl >= Q.spd_hl && Q.uspd_hl >= Q.nsdap_hl) {
+    Q.largest_party = 'USPD';
 }
 // coalitions
+Q.h_uspd_tolerated_social_liberal_coalition = Q.spd_hl + Q.uspd_hl + Q.sapd_hl + Q.ddp_hl;
+Q.h_social_liberal_coalition = Q.spd_hl + Q.ddp_hl
+Q.h_social_christian_coalition = Q.spd_hl + Q.z_hl + - 3
+Q.h_conditional_uspd_tolerated_weimar_coalition = Q.spd_hl + Q.uspd_hl + Q.z_hl + Q.ddp_hl - 3 + Q.sapd_hl;
 Q.h_weimar_coalition = Q.spd_hl + Q.ddp_hl + Q.z_hl;
 Q.h_grand_coalition = Q.spd_hl + Q.ddp_hl + + Q.dvp_hl;
 Q.h_social_liberal_coalition = Q.spd_hl + Q.ddp_hl;
@@ -107,17 +111,17 @@ Q.h_bourgeois_coalition = Q.ddp_hl + Q.z_hl + Q.dvp_hl + Q.other_hl;
 Q.h_center_right_coalition = Q.z_hl + Q.ddp_hl + Q.dvp_hl + Q.other_hl + Q.dnvp_hl;
 Q.h_right_coalition = Q.z_hl + Q.dvp_hl + Q.other_hl + Q.dnvp_hl;
 Q.h_far_right_coalition = Q.dnvp_hl + Q.nsdap_hl;
-Q.h_left_coalition = Q.spd_hl + Q.kpd_hl;
+Q.h_left_coalition = Q.spd_hl + Q.uspd_hl;
 // this is an absurd concept lol
-Q.h_popular_front_coalition = Q.spd_hl + Q.kpd_hl + Q.z_hl + Q.ddp_hl;
-Q.h_anti_democratic_coalition = Q.kpd_hl + Q.nsdap_hl + Q.dnvp_hl;
-// aka everyone except nazi, kpd, dnvp
+Q.h_popular_front_coalition = Q.spd_hl + Q.uspd_hl + Q.z_hl + Q.ddp_hl;
+Q.h_anti_democratic_coalition = Q.uspd_hl + Q.nsdap_hl + Q.dnvp_hl;
+// aka everyone except nazi, uspd, dnvp
 Q.h_neo_weimar_coalition = Q.spd_hl + Q.ddp_hl + Q.z_hl + Q.dvp_hl + Q.other_hl;
 // Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
 Q.h_other_nazi = Math.round(Q.other_hl*(1-(Q.pro_republic/100)));
 Q.h_hitler_right_coalition = Q.z_hl + Q.dnvp_hl + Q.nsdap_hl + Q.dvp_hl + Q.other_nazi;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.h_progressive_coalition = Q.spd_hl + Q.sapd_hl + Q.kpd_hl + Q.ddp_hl;
+Q.h_progressive_coalition = Q.spd_hl + Q.sapd_hl + Q.uspd_hl + Q.ddp_hl;
 // nationaal front
 Q.h_national_front_hl = Q.nsdap_hl + Q.dnvp_hl + Q.dvp_hl + Q.other_hl;
 if (Q.z_national) {
@@ -128,10 +132,10 @@ on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_hl >= 15)
 on-display: {!
 if (Q.sapd_formed == 1) {
     data = [
-        {    "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_hl*1.6),
+        {    "id": "uspd",
+            "legend": "USPD",
+            "name": "USPD",
+            "seats": Math.round(Q.uspd_hl*1.6),
         },
         {
             "id": "sapd",
@@ -185,10 +189,10 @@ if (Q.sapd_formed == 1) {
 }
 else {
     data = [
-        {   "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_hl*1.6),
+        {   "id": "uspd",
+            "legend": "USPD",
+            "name": "USPD",
+            "seats": Math.round(Q.uspd_hl*1.6),
         },
         {
             "id": "spd",
@@ -263,7 +267,7 @@ go-to: coalition_menu
 
 [? if sapd_formed == 1 : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_hl +]% {!</td><td>!} [+ sthl_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}KPD: {!</td><td>!} [+ kpd_hl +]% {!</td><td>!} [+ sthl_change_kpd +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}USPD: {!</td><td>!} [+ uspd_hl +]% {!</td><td>!} [+ sthl_change_uspd +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_hl +]% {!</td><td>!} [+ sthl_change_ddp +] {!</td></tr>!}
 
@@ -280,6 +284,18 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
+Left Coalition (SPD + USPD): [+ h_left_coalition +] 
+
+USPD-tolerated SPD Minority ((SPD alone): [+ h_uspd_tolerated_spd_minority +]%;
+
+USPD-tolerated Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ h_uspd_tolerated_social_liberal_coalition +]% 
+
+Social-Liberal Coalition (SPD + [+ ddp_name +]): [+ h_social_liberal_coalition +]%
+
+Social-Christian Coalition (SPD + Z): [+ h_social_christian_coalition +]%
+
+USPD-tolerated Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ h_uspd_tolerated_weimar_coalition +]%
+
 Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ h_weimar_coalition +]%
 
 Grand Coalition (SPD + Z + [+ ddp_name +] + DVP): [+ h_grand_coalition +]%
@@ -290,15 +306,21 @@ Right-wing Coalition (Z + DVP + Others + DNVP): [+ h_right_coalition +]%
 
 [? if nazi_urgency <= 1 and nsdap_hl >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
-[? if h_anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Landtag. A stable governing majority will be almost impossible. ?]
+[? if h_anti_democratic_coalition >= 50 : Together, the anti-democratic USPD, DNVP, and NSDAP have a majority in the Landtag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
 
 @coalition_menu
 
 - @grand_coalition
-- @social_liberal
-- @left_front
+- @h_left_coalition
+- @h_uspd_tolerated_spd_minority
+- @h_spd_majority
+- @h_uspd_tolerated_social_liberal_coalition
+- @h_social_liberal_coalition
+- @h_social_christian_coalition
+- @h_weimar_coalition
+- @h_uspd_tolerated_weimar_coalition
 - @spd_majority
 - @nsdap_majority
 - @no_majority
@@ -308,56 +330,99 @@ title: A Grand Coalition, with the bourgeois parties.
 subtitle: SPD + [+ ddp_name +] + DVP ([+ h_grand_coalition +]%)
 view-if: h_grand_coalition >= 50 or h_elections < 1 or in_hamburg_groko
 choose-if: h_grand_coalition >= 50 or ((h_elections < 1 or in_hamburg_groko) and not nsdap_hl >= 50)
-on-arrival: in_hamburg_groko = 1; in_hamburg_soclib = 0; in_hamburg_left = 0; in_spd_hamburg = 0; in_nazi_hamburg = 0;
+on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 0; in_hamburg_spd = 0; in_hamburg_tolerated_soclib: 0; in_hamburg_soclib: 0; in_hamburg_socchr: 0; in_hamburg_tolerated_weimar: 0; in_hamburg_weimar: 1; in_hamburg_groko = 1; in_hamburg_bourgeois: 0; in_hamburg_right: 0; in_hamburg_nsdap = 0; workers_spd += 1*(1-dissent)
 
 The SPD enters a coalition with the [+ ddp_name +] and DVP. [? if h_grand_coalition < 50 : This is despite it lacking a majority. ?]
 
-@social_liberal
+@h_left_coalition: Left_Coalition is possible?
+title: A Left coalition.
+subtitle: SPD + USPD ([+ h_left_coalition +]%)
+view-if: h_left_coalition >= 50
+choose-if: President != Hindenburg
+unavailable_subtitle: The current President would immediately *Reichsexecute* such a government if it were to form.
+on-arrival: in_hamburg_left = 1; in_hamburg_tolerated_spd = 0; in_hamburg_spd = 0; in_hamburg_tolerated_soclib: 0; in_hamburg_soclib: 0; in_hamburg_socchr: 0; in_hamburg_tolerated_weimar: 0; in_hamburg_weimar: 0; in_hamburg_groko = 0; in_hamburg_bourgeois: 0; in_hamburg_right: 0; in_hamburg_nsdap = 0; workers_spd += 3*(1-dissent)
+
+The SPD enters a coalition with the USPD. [? if h_left_coalition < 50 : This is despite it lacking a majority. ?]
+
+@h_uspd_tolerated_spd_minority
+title: An SPD Minority government with USPD toleration.
+subtitle: SPD + USPD ([+ h_uspd_tolerated_spd_minority +]%)
+view-if: h_uspd_tolerated_spd_minority >= 50 or ( in_hamburg_spd and not nsdap_hl >= 50) or (in_hamburg_tolerated_spd and not nsdap_hl >= 50) 
+choose-if: uspd_relation >= 45 and Q.hindenburg_relation >= 40 or ( in_hamburg_spd and not nsdap_hl >= 50) or (in_hamburg_tolerated_spd and not nsdap_hl >= 50) 
+unavailable_subtitle: We do not have sufficient relations with either President Hindenburg or the USPD.
+on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 1; in_hamburg_spd = 0; in_hamburg_tolerated_soclib: 0; in_hamburg_soclib: 0; in_hamburg_socchr: 0; in_hamburg_tolerated_weimar: 0; in_hamburg_weimar: 0; in_hamburg_groko = 0; in_hamburg_bourgeois: 0; in_hamburg_right: 0; in_hamburg_nsdap = 0; workers_spd += 3*(1-dissent)
+
+The SPD forms a minority government with the toleration of the USPD.
+
+@spd_majority
+title: An SPD Majority government at last!
+view-if: spd__wl >= 50 or (in_hamburg_spd and not nsdap_hl >= 50) or (in_hamburg_tolerated_spd and not nsdap_hl >= 50) 
+choose-if: reformist_strength < 50 or (in_hamburg_spd and not nsdap_hl >= 50) or (in_hamburg_tolerated_spd and not nsdap_hl >= 50) 
+unavailable-subtitle: The Hamburg SPD wishes to partner with the bourgeois.
+on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 0; in_hamburg_spd = 1; in_hamburg_tolerated_soclib: 0; in_hamburg_soclib: 0; in_hamburg_socchr: 0; in_hamburg_tolerated_weimar: 0; in_hamburg_weimar: 0; in_hamburg_groko = 0; in_hamburg_bourgeois: 0; in_hamburg_right: 0; in_hamburg_nsdap = 0; workers_spd += 4*(1-dissent)
+
+The SPD forms a majority government! [? if spd_wl < 50 : This is despite it lacking a majority. ?]
+
+@h_uspd_tolerated_social_liberal_coalition
+view-if: h_uspd_tolerated_social_liberal_coalition >= 50
+title: A "Social-Liberal" coalition with USPD toleration.
+subtitle: SPD + [+ ddp_name +] ([+ h_uspd_tolerated_social_liberal_coalition +]%)
+choose-if: ddp_relation >= 45 and uspd_relation >= 45 and hindenburg_relation >= 30
+unavailable_subtitle: We do not have sufficient relations with either the DDP, the USPD, or President Hindenberg.
+on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 0; in_hamburg_spd = 0; in_hamburg_tolerated_soclib: 1; in_hamburg_soclib: 0; in_hamburg_socchr: 0; in_hamburg_tolerated_weimar: 0; in_hamburg_weimar: 0; in_hamburg_groko = 0; in_hamburg_bourgeois: 0; in_hamburg_right: 0; in_hamburg_nsdap = 0; workers_spd += 2*(1-dissent)
+
+The SPD enters a coalition with the [+ ddp_name +] with the toleration of the USPD. 
+
+@h_social_liberal_coalition
 title: A "Social-Liberal" coalition.
 subtitle: SPD + [+ ddp_name +] ([+ h_social_liberal_coalition +]%)
-view-if: h_social_liberal_coalition >= 50 or in_hamburg_soclib
-choose-if: h_social_liberal_coalition >= 50 or (in_hamburg_soclib and not nsdap_hl >= 50)
-on-arrival: in_hamburg_soclib = 1; in_hamburg_groko = 0; in_hamburg_left = 0; in_spd_hamburg = 0; in_nazi_hamburg = 0; workers_spd += 2*(1-dissent)
+choose-if: ddp_relation >= 45
+unavailable_subtitle: We do not have sufficient relations with the DDP.
+view-if: h_social_liberal_coalition >= 50 or (in_hamburg_soclib and not nsdap_hl >= 50) or (in_hamburg_tolerated_soclib and not nsdap_hl >= 50) 
+choose-if: h_social_liberal_coalition >= 50 or (in_hamburg_soclib and not nsdap_hl >= 50) or (in_hamburg_tolerated_soclib and not nsdap_hl >= 50) 
+on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 0; in_hamburg_spd = 0; in_hamburg_tolerated_soclib: 0; in_hamburg_soclib: 1; in_hamburg_socchr: 0; in_hamburg_tolerated_weimar: 0; in_hamburg_weimar: 0; in_hamburg_groko = 0; in_hamburg_bourgeois: 0; in_hamburg_right: 0; in_hamburg_nsdap = 0; workers_spd += 2*(1-dissent)
 
 The SPD enters a coalition with the [+ ddp_name +]. [? if h_social_liberal_coalition < 50 : This is despite it lacking a majority. ?]
 
-@left_front
-title: Is a "United Front" possible?
-subtitle: SPD + KPD ([+ h_left_coalition +]%)
-view-if: h_left_coalition >= 50 or in_hamburg_left
-choose-if: h_left_coalition >= 50 or (in_hamburg_left and not nsdap_hl >= 50)
+@h_social_christian_coalition
+title: A "Social-Christian" coalition.
+subtitle: SPD + Z ([+ h_social_christian_coalition +]%)
+unavailable_subtitle: We do not have sufficient relations with the DDP.
+view-if: h_social_christian_coalition >= 50 or (in_hamburg_socchr and not nsdap_hl >= 50)
+choose-if: h_social_christian_coalition >= 50 or (in_hamburg_socchr and not nsdap_hl >= 50)
+on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 0; in_hamburg_spd = 0; in_hamburg_tolerated_soclib: 0; in_hamburg_soclib: 0; in_hamburg_socchr: 1; in_hamburg_tolerated_weimar: 0; in_hamburg_weimar: 0; in_hamburg_groko = 0; in_hamburg_bourgeois: 0; in_hamburg_right: 0; in_hamburg_nsdap = 0; workers_spd += 1*(1-dissent)
 
-Such a coalition is an interesting possibility. For it to be made, however, would require the Hamburg SPD to get over its reformist inclinations, as well as the national and regional level KPD to authorize such a coalition.
+The SPD enters a coalition with the Zentrum. [? if h_social_christian_coalition < 50 : This is despite it lacking a majority. ?]
 
-- @formed: A Left Front is formed.
-- @coalition_menu: This isn't working.
+@h_uspd_tolerated_weimar_coalition
+title: A Weimar coalition with USPD toleration.
+subtitle: SPD + Z + [+ ddp_name +] ([+ h_uspd_tolerated_weimar_coalition +]%)
+view-if: h_uspd_tolerated_weimar_coalition >= 50 or (in_hamburg_tolerated_weimar and not nsdap_hl >= 50)
+choose-if: z_relation >= 45 and ddp_relation >= 45 and uspd_relation >= 50 and hindenburg_relation >= 15 or (in_hamburg_tolerated_weimar and not nsdap_hl >= 50)
+unavailable_subtitle: We do not have sufficient relations with the three parties, or with President Hindenburg.
+on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 0; in_hamburg_spd = 0; in_hamburg_tolerated_soclib: 0; in_hamburg_soclib: 0; in_hamburg_socchr: 0; in_hamburg_tolerated_weimar: 1; in_hamburg_weimar: 0; in_hamburg_groko = 0; in_hamburg_bourgeois: 0; in_hamburg_right: 0; in_hamburg_nsdap = 0; workers_spd += 1*(1-dissent)
 
-@formed
-unavailable-subtitle: [? if reformist_strength >= 25 : The Hamburg SPD is unwilling. ?][? if kpd_relation < 55 or communist_coalition < 2 : The KPD is unwilling. ?]
-choose-if: reformist_strength < 25 and kpd_relation >= 55 and communist_coalition >= 2
-on-arrival: in_hamburg_left = 1; in_hamburg_soclib = 0; in_hamburg_groko = 0; in_spd_hamburg = 0; in_nazi_hamburg = 0; workers_spd += 5*(1-dissent); workers_kpd += 2
+The SPD enters a Weimar Coalition with the DDP and Zentrum, with USPD toleration. [? if h_uspd_tolerated_weimar_coalition < 50 : This is despite it lacking a majority. ?]
 
-The SPD enters a coalition with the KPD. [? if h_left_coalition < 50 : This is despite it lacking a majority. ?]
+@h_weimar_coalition
+title: A Weimar coalition.
+subtitle: SPD + Z + [+ ddp_name +] ([+ h_weimar_coalition +]%)
+view-if: h_weimar_coalition >= 50 or (in_hamburg_weimar and not nsdap_hl >= 50) or (in_hamburg_tolerated_weimar and not nsdap_hl >= 50) 
+choose-if: h_weimar_coalition >= 50 or (in_hamburg_weimar and not nsdap_hl >= 50)
+on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 0; in_hamburg_spd = 0; in_hamburg_tolerated_soclib: 0; in_hamburg_soclib: 0; in_hamburg_socchr: 0; in_hamburg_tolerated_weimar: 0; in_hamburg_weimar: 1; in_hamburg_groko = 0; in_hamburg_bourgeois: 0; in_hamburg_right: 0; in_hamburg_nsdap = 0; workers_spd += 1*(1-dissent)
 
-@spd_majority
-title: The SPD has won a majority.
-view-if: spd_hl >= 50 or in_spd_hamburg
-choose-if: reformist_strength < 50 or (in_spd_hamburg and spd_hl < 50)
-unavailable-subtitle: The Hamburg SPD wishes to partner with the bourgeois.
-on-arrival: in_spd_hamburg = 1; in_hamburg_soclib = 0; in_hamburg_left = 0; in_hamburg_groko = 0; in_nazi_hamburg = 0; workers_spd += 6*(1-dissent); new_middle_spd += 4*(1-dissent)
-
-The SPD governs solely in Hamburg. [? if spd_hl < 50 : This is thanks to the constructive VONC mechanism. ?]
+The SPD enters a Weimar Coalition with the DDP and Zentrum. [? if h_weimar_coalition < 50 : This is despite it lacking a majority. ?]
 
 @nsdap_majority
 title: The NSDAP has won a majority.
 view-if: nsdap_hl >= 50 or in_nazi_hamburg
-on-arrival: in_nazi_hamburg = 1; in_hamburg_soclib = 0; in_hamburg_left = 0; in_spd_hamburg = 0; in_hamburg_groko = 0; hamburg_nsdap += 0.25; hamburg_kpd -= 0.25; hamburg_spd -= 0.1; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed_nsdap += 3
+on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 0; in_hamburg_spd = 0; in_hamburg_tolerated_soclib: 0; in_hamburg_soclib: 0; in_hamburg_socchr: 0; in_hamburg_tolerated_weimar: 0; in_hamburg_weimar: 0; in_hamburg_groko = 0; in_hamburg_bourgeois: 0; in_hamburg_right: 0; in_hamburg_nsdap = 1; workers_spd += 1*(1-dissent); hamburg_nsdap += 0.25; hamburg_uspd -= 0.25; hamburg_spd -= 0.1; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed_nsdap += 3
 
 The NSDAP governs Hamburg alone. Suppression of the left-wing parties is intense, and the Nazis consolidate power within the state.
 
 @no_majority
-view-if: not (nsdap_hl >= 50 or in_nazi_hamburg) and not (spd_hl >= 50 or in_spd_hamburg) and not ((h_left_coalition >= 50 or in_hamburg_left) or (reformist_strength < 25 and kpd_relation >= 55 and communist_coalition >= 2)) and not (h_social_liberal_coalition >= 50 or in_hamburg_soclib) and not (h_grand_coalition >= 50 or h_elections < 1 or in_hamburg_groko)
+view-if: not (nsdap_hl >= 50 or in_nazi_hamburg) and not (spd_hl >= 50 or in_spd_hamburg) and not ((h_left_coalition >= 50 or in_hamburg_left) or (reformist_strength < 25 and uspd_relation >= 55 and communist_coalition >= 2)) and not (h_social_liberal_coalition >= 50 or in_hamburg_soclib) and not (h_grand_coalition >= 50 or h_elections < 1 or in_hamburg_groko)
 title: There is no clear majority.
-on-arrival: kpd_relation += 5 if h_left_coalition >= 50 and kpd_relation < 50; hamburg_kpd -= 0.2 if h_left_coalition >= 50 and kpd_relation < 50; hamburg_spd += 0.2 if h_left_coalition >= 50 and kpd_relation < 50; hamburg_dvp -= 0.1; hamburg_other -= 0.1; hamburg_dnvp -= 0.1; hamburg_ddp += 0.1; hamburg_nsdap += 0.05; hamburg_election_month = month+3; hamburg_election_year += 1 if hamburg_election_month > 12; hamburg_election_month -= 12 if hamburg_election_month > 12
+on-arrival: uspd_relation += 5 if h_left_coalition >= 50 and uspd_relation < 50; hamburg_uspd -= 0.2 if h_left_coalition >= 50 and uspd_relation < 50; hamburg_spd += 0.2 if h_left_coalition >= 50 and uspd_relation < 50; hamburg_dvp -= 0.1; hamburg_other -= 0.1; hamburg_dnvp -= 0.1; hamburg_ddp += 0.1; hamburg_nsdap += 0.05; hamburg_election_month = month+3; hamburg_election_year += 1 if hamburg_election_month > 12; hamburg_election_month -= 12 if hamburg_election_month > 12
 
 There is no clear majority, new elections have been set.
