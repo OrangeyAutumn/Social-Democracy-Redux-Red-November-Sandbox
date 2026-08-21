@@ -197,7 +197,7 @@ What should be the major focus of our new curriculum?
 @soc_major
 title: Socialist curriculum
 subtitle: Skepticism of authority, class analysis, and collectivism
-on-arrival: curriculum_timer = 50; major_curriculum = "socialist"; pro_republic += 5*(1-dissent); workers_spd += 3*(1-dissent); democratization += 1; uspd_relation += 10; z_relation -= 10; z_relation -= 10; dvp_relation -= 15; coalition_dissent += 2 if in_weimar_coalition; coalition_dissent +=3 in_grand_coalition; pacifism += 1; education_science += 0.3
+on-arrival: curriculum_timer = 50; major_curriculum = "socialist"; pro_republic += 5*(1-dissent); workers_spd += 3*(1-dissent); democratization += 1; uspd_relation += 10; z_relation -= 10; z_relation -= 10; dvp_relation -= 15; coalition_dissent += 2 if in_weimar_coalition; coalition_dissent +=3 if in_grand_coalition; pacifism += 1; education_science += 0.3
 go-to: curriculum_minor
 
 We should teach prepare the future generation for the socialist future, by teaching them to critically evaluate politics and current events, to exercise their rights in the workplace and to respect the rights of other citizens. Traditionalists of all stripes are outraged at this curriculum.
@@ -259,7 +259,7 @@ And what should be a secondary focus of the curriculum?
 @soc_minor
 title: Socialist curriculum
 subtitle: Skepticism of authority, class analysis, and collectivism
-on-arrival: minor_curriculum = "socialist"; pro_republic += 5*(1-dissent); workers_spd += 3*(1-dissent); democratization += 1; uspd_relation += 5; ddp_relation -= 5; z_relation -= 5; dvp_relation -= 10; coalition_dissent += 1 if in_weimar_coalition; coalition_dissent +=2 in_grand_coalition; pacifism += 1; education_science += 0.3
+on-arrival: minor_curriculum = "socialist"; pro_republic += 5*(1-dissent); workers_spd += 3*(1-dissent); democratization += 1; uspd_relation += 5; ddp_relation -= 5; z_relation -= 5; dvp_relation -= 10; coalition_dissent += 1 if in_weimar_coalition; coalition_dissent +=2 if in_grand_coalition; pacifism += 1; education_science += 0.3
 
 We should teach prepare the future generation for the socialist future, by teaching them to critically evaluate politics and current events, to exercise their rights in the workplace and to respect the rights of other citizens. Traditionalists of all stripes are outraged at this curriculum.
 
