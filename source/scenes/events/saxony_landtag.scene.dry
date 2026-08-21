@@ -349,7 +349,7 @@ There are some potential coalition arrangements.
 title: A progressive coalition.
 subtitle: SPD + ASPD[? if sapd_formed : + SAPD?] ([+ s_progressive_coalition +]%)
 view-if: s_progressive_coalition >= 50 and spd_sl < 50
-on-arrival: workers_spd += 2*(1-dissent); left_dissent -= 5; reformist_dissent -= 5; @socdem_saxony = 1; @spd_majority = 0; @s_uspd_tolerated_spd_minority = 0; @bourgeois_saxony = 0; @anticommunist_coalition = 0; @red_saxony = 0; @no_majority_saxony = 0; @brown_saxony = 0
+on-arrival: @socdem_saxony = 1; @spd_majority = 0; @s_uspd_tolerated_spd_minority = 0; @bourgeois_saxony = 0; @anticommunist_coalition = 0; @red_saxony = 0; @no_majority_saxony = 0; @brown_saxony = 0; workers_spd += 2*(1-dissent); left_dissent -= 5; reformist_dissent -= 5;
 
 A moderate socialist coalition is formed with the backing of the ASPD[? if sapd_formed : and SAPD?].
 
