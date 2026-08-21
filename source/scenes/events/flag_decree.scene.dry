@@ -75,7 +75,7 @@ Which it shall end up being remains to be seen. For the time being, this is the 
 - @intolerable: Intolerable. We shall call a motion of no confidence.
 
 @intolerable
-on-arrival: +10 reformist dissent, +10 left strength, uspd_relation += 5 , z_relation -= 10, dvp_relation -= 10, ddp_relation -= 5 
+on-arrival: reformist_dissent += 10; reformist_strength -= 5; left_strength += 10; left_dissent -= 5; uspd_relation += 5; z_relation -= 10; dvp_relation -= 10; ddp_relation -= 5
 
 The DNVP has blocked our vote of no confidence despite our best efforts.
 
@@ -125,6 +125,6 @@ Which it shall end up being remains to be seen. For the time being, this is the 
 - @absolutely_not: Intolerable. We shall call a motion of no confidence.
 
 @absolutely_not
-on-arrival: +10 reformist dissent, +10 left strength, uspd_relation += 5 , z_relation -= 10, dvp_relation -= 10, ddp_relation -= 5 
+on-arrival: reformist_dissent += 10; reformist_strength -= 5; left_strength += 10; left_dissent -= 5; uspd_relation += 5; z_relation -= 10; dvp_relation -= 10; ddp_relation -= 5
 
 The DNVP has blocked our vote of no confidence despite our best efforts.
