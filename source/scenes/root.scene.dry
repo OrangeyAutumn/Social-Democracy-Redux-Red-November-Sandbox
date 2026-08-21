@@ -601,13 +601,11 @@ Q.fun_value = Math.floor(Math.random() * 100) + 1;
 
 Q.political_crisis_progress = 0;
 
-// all the initial advisors are centrists.
+// initial advisers - Otto Wels and Hermann Müller are centrists, Arthur Crispien is left
 Q.wels_advisor = 1; // Otto Wels
 Q.muller_advisor = 1; // Hermann Müller
 Q.muller_dead = 0;
-// okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
-Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 1; // Rudolf Hilferding
+Q.crispien_advisor = 1; // Arthur Crispien
 
 // left advisors
 Q.sender_advisor = 0; // Toni Sender
@@ -619,6 +617,8 @@ Q.seydewitz_advisor = 0; // Max Seydewitz
 // centrist alternate advisors
 Q.pfulf_advisor = 0; // Antonie Pfülf
 Q.breitscheid_advisor = 0; // Rudolf Breitscheid
+Q.vogel_advisor = 0; // Hans Vogel
+Q.hilferding_advisor = 0 // Rudolf Hilferding
 
 // Reformist advisors
 Q.severing_advisor = 0; // Carl Severing
@@ -634,7 +634,6 @@ Q.wissell_advisor = 0; // Rudolf Wissell
 
 // Revisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
-
 Q.leber_advisor = 0; // Julius Leber (post-1930)
 Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 
