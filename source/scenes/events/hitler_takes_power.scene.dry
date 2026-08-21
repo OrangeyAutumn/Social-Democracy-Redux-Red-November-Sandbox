@@ -46,10 +46,10 @@ Q.new_middle_nsdap += 8;
 Q.old_middle_nsdap += 8; 
 Q.rural_nsdap += 10; 
 Q.unemployed_nsdap += 12;
-Q.workers_kpd -= 6;
+Q.workers_uspd -= 6;
 Q.workers_spd -= 3;
-Q.kpd_relation += 10; 
-Q.unemployed_kpd -= 8;
+Q.uspd_relation += 10; 
+Q.unemployed_uspd -= 8;
 Q.unemployed_spd -= 4;
 !}
 
