@@ -51,9 +51,9 @@ The programs of the Nordic socialists involve active government intervention in 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kpd_relation += 5*(1-dissent); communist_coalition += 1 if comintern_seen == 0; comintern_seen += 1
+on-arrival: resources -= 1; uspd_relation += 5*(1-dissent); communist_coalition += 1 if comintern_seen == 0; comintern_seen += 1
 
-The Stalinists of the KPD insists on calling us "social fascists", suggesting that we social democrats are as bad or worse than actual fascists. Needless to say, this is not good for our relationship with the Communists. By observing the Comintern, we can better understand the KPD, enabling us to potentially improve relations, or counter the KPD if it may come to that.
+The Communist wing of the USPD insists on calling us "social fascists", suggesting that we social democrats are as bad or worse than actual fascists. Needless to say, this is not good for our relationship with the USPD. By observing the Comintern, we can better understand the USPD's Communist wing, enabling us to potentially improve relations, or counter them if it may come to that.
 
 [? if wittorf_soviet_union != 1 and spd_in_government == 0 and dnvp_in_government and volksmai == 1 and comintern_seen >= 1 and wittorf_secret = 1 and ((year = 1929 and month < 7) or year = 1928) and wittorf_soviet_union = 0 : We have built up enough contacts in the Comintern that, if we wished, we could reach Moscow through them and see if the Soviets know about the Wittorf Affair, and if they know that we know. ?]
 
@@ -62,7 +62,7 @@ The Stalinists of the KPD insists on calling us "social fascists", suggesting th
 
 @wittorf
 view-if: wittorf_soviet_union != 1 and spd_in_government == 0 and dnvp_in_government == 1 and volksmai == 1 and comintern_seen >= 1 and wittorf_secret = 1 and ((year = 1929 and month < 7) or year = 1928) and wittorf_soviet_union = 0
-on-arrival: wittorf_soviet_union = 1; kpd_relation += 6*(1-dissent)
+on-arrival: wittorf_soviet_union = 1; uspd_relation += 6*(1-dissent)
 
 Of course Stalin and the various leaders of the Comintern know about the Wittorf Affair, but they do not seem to know that we know as well. The Comintern was planning to build a narrative around the affair that absolves Thälmann, but perhaps now they will be less inclined to defend him.
 
