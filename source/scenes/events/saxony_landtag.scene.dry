@@ -400,7 +400,7 @@ Together with the USPD, we have won a majority. The bourgeois parties are up in 
 title: The SPD may govern alone.
 subtitle: SPD ([+ spd_sl +]%)
 view-if: spd_sl >= 50
-on-arrival: saxony_spd -= 0.1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent)
+on-arrival: saxony_spd -= 0.1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); @socdem_saxony = 0; @spd_majority = 1; @s_uspd_tolerated_spd_minority = 0; @bourgeois_saxony = 0; @anticommunist_coalition = 0; @red_saxony = 0; @no_majority_saxony = 0; @brown_saxony = 0
 
 We have won a majority in Saxony alone.
 
