@@ -14,6 +14,7 @@ This is a bourgeois dispute, but the costs will be borne by the proletariat. The
 
 - @nothing_to_do: There is nothing we can do.
 - @stabilization: Take action to stabilize the economy!
+- @blame: The previous right-wing government is clearly to blame!
 - @austerity: Chancellor [+ chancellor +]'s response is, as always, more austerity.
 - @end_toleration: We are tired of austerity. End the toleration arrangement!
 
@@ -36,6 +37,12 @@ view-if: spd_in_government = 0
 on-arrival: welfare -= 1; workers_spd -= 2 if spd_toleration; unemployed_spd -= 3 if spd_toleration; left_dissent += 10 if spd_toleration; workers_spd += 3 if not spd_toleration; unemployed_spd += 3 if not spd_toleration; pro_republic -= 3; economic_growth -= 1;
 
 Chancellor [+ chancellor +] responds to the banking crisis with more cuts to welfare.
+
+@blame
+view-if: spd_in_government == 0 and spd_toleration == 0
+on-arrival: z_relation -= 5; workers_spd += 3; unemployed_spd += 5; workers_uspd -= 2; workers_nsdap -= 1; new_middle_dnvp -= 2; old_middle_dnvp -= 2; rural_dnvp -= 2; catholics_z -= 1
+
+We blame the crisis on the right-wing government and pitch ourselves as a more moderate alternative to those turning to the NSDAP and the USPD, though until we have adopted a programme to fix the economy there is only so much campaigning on this that we can do.
 
 @end_toleration
 view-if: spd_toleration = 1
