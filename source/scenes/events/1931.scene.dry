@@ -2,7 +2,7 @@ title: 1931
 subtitle: A new year 
 on-arrival: older_republic = old_republic; old_republic = pro_republic; {!
 // increase NSDAP vote share
-Q.unemployed_kpd -= Q.strife;
+Q.unemployed_uspd -= Q.strife;
 Q.unemployed_nsdap += Q.strife; 
 // TODO: if a public works program has started, unemployment is not so bad.
 Q.unemployed += 6;
