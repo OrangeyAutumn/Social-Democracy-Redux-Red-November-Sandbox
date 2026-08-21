@@ -1,0 +1,49 @@
+title: Württemberg Affairs
+new-page: true
+is-card: true
+view-if: spd_wurttemberg = 1 and wurttemberg_affairs_timer <= 0
+on-arrival: wurttemberg_affairs_timer += 6; month_actions += 1
+tags: lantags
+card-image: img/braun.jpg
+#subtitle: The state government of Württemberg presents an opportunity...
+
+= Württemberg Affairs
+
+Württemberg has historically been a more difficult state for our party, with a particularly strong independent agrarian party. We intend to change that.
+
+We can enact policies in Württemberg.
+
+- @bureaucracy: Purge the bureaucracy of reactionary elements.
+- @persecute_sa: Use our state offices to target and prosecute the state SA.
+- @persecute_rfb: Use our state offices to target and prosecute the state RFB.
+- @persecute_sh: Use our state offices to target and prosecute the state Stalhelm.
+- @recruit_rsb: Use our state offices to promote recruitment for the Reichsbanner.
+- @root: No new policies are needed.
+- @easy_discard
+- @cancel_advisor_action
+
+
+@bureaucracy
+on-arrival: wurttemberg_nsdap -= 0.02 if wurttemberg_nsdap >= 0.6; wurttemberg_nsdap -= 0.02 if year < 1930 and wurttemberg_nsdap >= 0.6; wurttemberg_dnvp += 0.02 if year < 1930 and wurttemberg_dnvp < 1.2; wurttemberg_dnvp -= 0.03 if year >= 1930 and wurttemberg_dnvp >= 0.8; wurttemberg_other += 0.02 if year >= 1930 and wurttemberg_other < 1.2; wurttemberg_dvp += 0.01 if year >= 1930; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
+
+The bureaucracy is deeply reactionary, and many abuse their power to favor the political right. By removing the pro-monarchy and pro-dictatorship elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
+
+@persecute_sa 
+on-arrival: sa_strength -= 500; uspd_relation += 3
+
+As it turns out, the Nazi SA has many allies in the police and bureaucracy, undermining our efforts. Nevertheless, the SA is substantially weakened by our efforts.
+
+@persecute_sh 
+on-arrival: sa_strength -= 250; dvp_relation -= 5; uspd_relation += 3
+
+Unsurprisingly, the Stalhelm has many allies in the police and bureaucracy, undermining our efforts. Nevertheless, our efforts bear some fruit.
+
+@persecute_rfb 
+on-arrival: rfb_strength -= 1000; uspd_relation -= 10; z_relation += 3; dvp_relation += 3
+
+The reactionary elements in the police and bureaucracy enthusiastically carry out these orders – rather more enthusiastically than we’d like, in fact. Nevertheless, our efforts bear clear fruit.
+
+@recruit_rsb
+On-arrival: rb_strength += 250; rb_militancy += 0.05; z_relation -= 2; dvp_relation -= 3
+
+We have used our state offices to promote recruitment to the Reichsbanner. The other state parties decry this as an abuse of office, but we ignore their protests.
