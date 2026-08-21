@@ -102,7 +102,7 @@ if (Q.uspd_hl >= Q.spd_hl && Q.uspd_hl >= Q.nsdap_hl) {
 // coalitions
 Q.h_uspd_tolerated_social_liberal_coalition = Q.spd_hl + Q.uspd_hl + Q.sapd_hl + Q.ddp_hl;
 Q.h_social_liberal_coalition = Q.spd_hl + Q.ddp_hl
-Q.h_social_christian_coalition = Q.spd_hl + Q.z_hl + - 3
+Q.h_social_christian_coalition = Q.spd_hl + Q.z_hl - 3
 Q.h_conditional_uspd_tolerated_weimar_coalition = Q.spd_hl + Q.uspd_hl + Q.z_hl + Q.ddp_hl - 3 + Q.sapd_hl;
 Q.h_weimar_coalition = Q.spd_hl + Q.ddp_hl + Q.z_hl;
 Q.h_grand_coalition = Q.spd_hl + Q.ddp_hl + + Q.dvp_hl;
