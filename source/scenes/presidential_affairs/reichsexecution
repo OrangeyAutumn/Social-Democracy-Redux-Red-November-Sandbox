@@ -1,0 +1,72 @@
+title: Reichsexecution
+new-page: true
+tags: pres_affairs
+is-card: true
+card-image: img/schleicher.jpeg
+
+With the Presidency, we have the power to depose any state government through a *Reichsexekution.* More cynically, it also offers an opportunity to enforce our power at the state level. We must reserve these powers for serious cases where the extreme parties have entered government, however.
+
+@reichsexekute_hamburg
+view-if: in_hamburg_left or in_hamburg_right
+tags: reichsexekutions_left
+title: Reichsexekute Hamburg.
+subtitle: This will anger the non-extreme parties of the state government!
+on-arrival: in_hamburg_left = 0; in_hamburg_right = 0 ; in_spd_hamburg = 1
+
+We have performed a *Reichsexekution* against the government of Hamburg, removing it of extremist forces.
+
+@reichsexekute_thuringia
+view-if: red_thuringia or brown_thuringia
+tags: reichsexekutions
+title: Reichsexekute Thuringia.
+subtitle: This will anger the non-extreme parties of the state government!
+on-arrival: red_thuringia = 0; brown_thuringia = 0; spd_thuringia = 1
+
+We have performed a *Reichsexekution* against the government of Thuringia, removing it of extremist forces.
+@reichsexekute_saxony
+view-if: red_saxony or brown_saxony
+tags: reichsexekutions
+title: Reichsexekute Saxony.
+subtitle: This will anger the non-extreme parties of the state government!
+on-arrival: red_saxony = 0; brown_saxony = 0; spd_saxony = 1
+
+We have performed a *Reichsexekution* against the government of Saxony, removing it of extremist forces.
+
+@reichsexekute_prussia
+view-if: uspd_prussia or right_prussia
+tags: reichsexekutions_left
+title: Reichsexekute Prussia.
+subtitle: This will anger the non-extreme parties of the state government!
+on-arrival: uspd_prussia = 0; right_prussia = 0; spd_prussia = 1
+
+We have performed a *Reichsexekution* against the government of Prussia, removing it of extremist forces.
+
+@reichsexekute_bavaria
+view-if: uspd_bavaria or right_bavaria = 0
+tags: reichsexekutions
+title: Reichsexekute Bavaria.
+subtitle: This will anger the non-extreme parties of the state government!
+on-arrival: uspd_bavaria = 0; right_bavaria = 0; spd_bavaria = 1
+
+We have performed a *Reichsexekution* against the government of Bavaria, removing it of extremist forces.
+
+
+@reichsexekute_württemberg
+view-if: uspd_württemberg or right_württemberg
+tags: reichsexekutions
+title: Reichsexekute Württemberg.
+subtitle: This will anger the non-extreme parties of the state government!
+on-arrival: uspd_württemberg = 0; right_württemberg = 0; spd_württemberg = 1
+
+We have performed a *Reichsexekution* against the government of Württemberg, removing it of extremist forces.
+
+@reichsexekute_schaumburg_lippe
+view-if: uspd_schaumburg_lippe or right_schaumburg_lippe
+tags: reichsexekutions
+title: Reichsexekute Schaumburg-Lippe.
+subtitle: This will anger the non-extreme parties of the state government!
+on-arrival: uspd_schaumburg_lippe = 0; right_schaumburg_lippe = 0; spd_schaumburg_lippe = 1
+
+We have performed a *Reichsexekution* against the government of Schaumburg-Lippe, removing it of extremist forces.
+
+
