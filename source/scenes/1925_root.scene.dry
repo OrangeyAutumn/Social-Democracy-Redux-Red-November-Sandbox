@@ -89,6 +89,36 @@ Q.weimar_plan_adopted = 0
 Q.weimar_support = 0
 Q.weimar_willingness = 0
 
+// landtags
+spd_in_prussia = 1
+uspd_in_prussia = 0
+dnvp_in_prussia = 0
+nsdap_in_prussia = 0
+spd_in_bavaria = 1
+uspd_in_bavaria = 0
+dnvp_in_bavaria = 0
+nsdap_in_bavaria = 0
+spd_in_wurttemburg = 0
+uspd_in_wurttemburg = 0
+dnvp_in_wurttemburg = 1
+nsdap_in_wurttemburg = 0
+spd_in_schaumburg_lippe = 1
+uspd_in_schaumburg_lippe = 0
+dnvp_in_schaumburg_lippe = 0
+nsdap_in_schaumburg_lippe = 0
+spd_in_hamburg = 1
+uspd_in_hamburg = 0
+dnvp_in_hamburg = 0
+nsdap_in_hamburg = 0
+spd_in_thuringia = 1
+uspd_in_thuringia = 0
+dnvp_in_thuringia = 0
+nsdap_in_thuringia = 0
+spd_in_saxony = 1
+uspd_in_saxony = 0
+dnvp_in_saxony = 0
+nsdap_in_saxony = 0
+
 // organizations
 
 // inter-party relations
