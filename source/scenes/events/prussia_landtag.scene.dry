@@ -329,7 +329,7 @@ There are some potential coalition arrangements.
 title: Social Democracy has won a majority in Prussia.
 subtitle: SPD ([ + spd_pl +]%)
 view-if: spd_pl >= 50 or (spd_prussia and in_spd_prussia)
-on-arrival: in_spd_prussia = 1
+on-arrival: in_prussia_spd = 1; in_prussia_uspd = 0; in_prussia_dnvp = 0; in_prussia_nsdap = 0;
 
 We have won a majority in Prussia!
 
@@ -338,7 +338,7 @@ title: The Weimar Coalition, traditionally dominant in Prussia.
 subtitle: SPD + Z + [+ ddp_name +] ([+ p_weimar_coalition +]%) [? if spd_prussia and p_weimar_coalition < 50 : - We retain Prussia through the constructive VONC. ?]
 choose-if: (spd_prussia or (z_prussia and z_relation >= 50)) or (p_weimar_coalition >= 50 and z_relation >= 35)
 unavailable-subtitle: SPD + Z + [+ ddp_name +] ([+ p_weimar_coalition +]%) - We lack the votes.
-on-arrival: dvp_relation -= 5 if dvp_prussia
+on-arrival: dvp_relation -= 5 if dvp_prussia;
 on-departure: dvp_prussia = 0; uspd_prussia = 0;
 
 We have enough votes to form a Weimar Coalition. [? if dvp_prussia : The DVP's exclusion from government has upset them. ?]
@@ -352,7 +352,7 @@ We have enough votes to form a Weimar Coalition. [? if dvp_prussia : The DVP's e
 choose-if: p_weimar_coalition >= 50 or spd_prussia
 unavailable-subtitle: We do not have the votes.
 subtitle: This will retain our control over Prussia.
-on-arrival: spd_prussia = 1; z_prussia = 0
+on-arrival: spd_prussia = 1; z_prussia = 0; in_prussia_spd = 1; in_prussia_uspd = 0; in_prussia_dnvp = 0; in_prussia_nsdap = 0;
 
 Otto Braun has been confirmed as Minister-President of Prussia.
 
@@ -360,7 +360,7 @@ Otto Braun has been confirmed as Minister-President of Prussia.
 choose-if: p_weimar_coalition >= 50 or z_prussia
 subtitle: The bourgeois will control Prussia.
 unavailable-subtitle: We do not have the votes.
-on-arrival: z_prussia = 1; spd_prussia = 0; left_dissent += 10; center_dissent += 5; labor_dissent += 5
+on-arrival: z_prussia = 1; spd_prussia = 0; left_dissent += 10; center_dissent += 5; labor_dissent += 5; in_prussia_spd = 1; in_prussia_uspd = 0; in_prussia_dnvp = 0; in_prussia_nsdap = 0;
 
 Adam Stegerwald has been confirmed as Minister-President of Prussia, to the protest of our party's left.
 
@@ -369,7 +369,7 @@ title: A "Grand Coalition", including the DVP in government.
 subtitle: SPD + Z + [+ ddp_name +] + DVP ([+ p_grand_coalition +]%)
 choose-if: (spd_prussia or (z_prussia and z_relation >= 45)) or p_grand_coalition >= 50 and dvp_relation >= 40 and z_relation >= 40
 unavailable-subtitle: SPD + Z + [+ ddp_name +] + DVP ([+ p_grand_coalition +]%) - [? if p_grand_coalition < 50 : We lack the votes. ?][? if dvp_relation < 40 : The DVP is unwilling. ?][? if z_relation < 40 : The Center Party is unwilling. ?]
-on-arrival: uspd_prussia = 0; dvp_relation += 5; left_dissent += 5; uspd_relation -= 5; dvp_prussia = 1; democratization -= 1; stalhelm_militancy += 0.05; prussian_police_loyalty -= 0.1; prussia_dvp += 0.05 if prussia_dvp < 1.25; prussia_dnvp -= 0.1 if prussia_dnvp >= 0.7; prussia_nsdap += 0.05 if prussia_nsdap < 1.25
+on-arrival: uspd_prussia = 0; dvp_relation += 5; left_dissent += 5; uspd_relation -= 5; dvp_prussia = 1; democratization -= 1; stalhelm_militancy += 0.05; prussian_police_loyalty -= 0.1; prussia_dvp += 0.05 if prussia_dvp < 1.25; prussia_dnvp -= 0.1 if prussia_dnvp >= 0.7; prussia_nsdap += 0.05 if prussia_nsdap < 1.25;
 
 The DVP has been included in government to foster goodwill. The left is upset by this.
 
@@ -382,13 +382,13 @@ The DVP has been included in government to foster goodwill. The left is upset by
 choose-if: p_grand_coalition >= 50 or spd_prussia
 unavailable-subtitle: We do not have the votes.
 subtitle: This will retain our control over Prussia.
-on-arrival: spd_prussia = 1; z_prussia = 0
+on-arrival: spd_prussia = 1; z_prussia = 0; in_prussia_spd = 1; in_prussia_uspd = 0; in_prussia_dnvp = 0; in_prussia_nsdap = 0;
 
 Otto Braun has been confirmed as Minister-President of Prussia.
 
 @stegerwald_groko
 choose-if: p_grand_coalition >= 50 or z_prussia
-on-arrival: z_prussia = 1; spd_prussia = 0; left_dissent += 10; center_dissent += 5; labor_dissent += 5
+on-arrival: z_prussia = 1; spd_prussia = 0; left_dissent += 10; center_dissent += 5; labor_dissent += 5; in_prussia_spd = 1; in_prussia_uspd = 0; in_prussia_dnvp = 0; in_prussia_nsdap = 0;
 subtitle: The bourgeois will control Prussia.
 unavailable-subtitle: We do not have the votes.
 
@@ -400,6 +400,7 @@ subtitle: Z + DVP + Others + DNVP ([+ p_right_coalition +]%)
 unavailable-subtitle:  Z + DVP + Others + DNVP ([+ p_right_coalition +]%) - The DNVP is unwilling.
 view-if: p_right_coalition >= 50 or z_prussia
 choose-if: (p_right_coalition >= 50 or (z_prussia and not (p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3))) and (z_relation < 35 or (z_relation < 45 and (p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3))) and (dnvp_reform or year < 1930)
+on-arrival: in_prussia_spd = 0; in_prussia_uspd = 0; in_prussia_dnvp = 1; in_prussia_nsdap = 0;
 on-departure: z_prussia = 1; spd_prussia = 0; prussia_spd -= 0.1 if prussia_spd >= 0.8; prussia_dnvp += 0.1 if prussia_dnvp < 1.2; prussian_police_loyalty -= 0.25; prussia_other += 0.05 if prussia_other < 1.2; prussia_z -= 0.05 if prussia_z >= 0.8; prussia_dvp -= 0.1 if prussia_dvp >= 0.8; prussia_ddp += 0.05 if prussia_ddp < 1.1; prussia_uspd += 0.05 if prussia_uspd < 1.1; prussia_nsdap -= 0.1 if prussia_nsdap >= 0.7
 
 [? if spd_prussia : Otto Braun has been de-seated and replaced by Adam Stegerwald. ?][? if z_prussia : Adam Stegerwald has been re-elected M-P of Prussia. ?]
@@ -412,7 +413,7 @@ subtitle: USPD + SPD ([+ p_left_coalition +]%)
 view-if: spd_prussia or p_left_coalition >= 50
 choose-if: (spd_prussia and (p_right_coalition < 50 or z_relation >= 45 or not dnvp_reform or year >= 1930)) or p_left_coalition >= 50 and uspd_relation >= 55 and communist_coalition >= 3
 unavailable-subtitle: USPD + SPD ([+ p_left_coalition +]%) - [? if p_left_coalition < 50 : We lack the votes. ?][? if uspd_relation < 55 or communist_coalition < 3 : The USPD is unwilling. ?]
-on-arrival: dvp_relation -= 10; z_relation -= 5; dvp_relation -= 5 if dvp_prussia; z_relation -= 5 if z_prussia;
+on-arrival: dvp_relation -= 10; z_relation -= 5; dvp_relation -= 5 if dvp_prussia; z_relation -= 5 if z_prussia; in_prussia_spd = 1; in_prussia_uspd = 1; in_prussia_dnvp = 0; in_prussia_nsdap = 0;
 on-departure: dvp_prussia = 0; uspd_prussia = 1; spd_prussia = 1; z_prussia = 0; prussia_uspd += 0.1 if prussia_uspd < 1.3; prussia_spd += 0.05 if prussia_spd < 1.1; coup_progress += 4; capital_strike_progress += 1
 
 We have enough votes to form a United Front with the USPD. [? if dvp_prussia : The DVP's exclusion from government has upset them. ?]
@@ -425,7 +426,7 @@ subtitle: USPD + SPD + [+ ddp_name +] + Z ([+ p_popular_front_coalition +]%)
 view-if: spd_prussia or p_popular_front_coalition >= 50
 choose-if: (spd_prussia and (p_right_coalition < 50 or z_relation >= 40 or not dnvp_reform or year >= 1930)) or p_popular_front_coalition >= 50 and uspd_relation >= 60 and z_relation >= 60 and communist_coalition >= 3
 unavailable-subtitle: USPD + SPD + [+ ddp_name +] + Z ([+ p_popular_front_coalition +]%) - [? if p_popular_front_coalition < 50 : We lack the votes. ?][? if uspd_relation < 60 or communist_coalition < 3 : The USPD is unwilling. ?][? if z_relation < 60 : The Center Party is unwilling. ?]
-on-arrival: dvp_relation -= 5; dvp_relation -= 5 if dvp_prussia
+on-arrival: dvp_relation -= 5; dvp_relation -= 5 if dvp_prussia; in_prussia_spd = 1; in_prussia_uspd = 1; in_prussia_dnvp = 0; in_prussia_nsdap = 0;
 on-departure: dvp_prussia = 0; uspd_prussia = 1; spd_prussia = 1; z_prussia = 0; prussia_uspd += 0.05 if prussia_uspd < 1.2; prussia_spd -= 0.05 if prussia_spd >= 0.9; coup_progress += 3; capital_strike_progress += 1
 
 We have enough votes to form a Popular Front with the USPD and Z. [? if dvp_prussia : The DVP's exclusion from government has upset them. ?]
@@ -454,7 +455,7 @@ No clear government can be formed, even despite the constructive VONC. Stegerwal
 @actually
 subtitle: Z + NSDAP + DNVP + DVP + Others ([+ p_hitler_right_coalition +]%)
 view-if: black_brown_seen and p_hitler_right_coalition >= 50
-on-arrival: prussia_nsdap += 0.4; prussia_uspd -= 0.25; prussia_spd -= 0.2; sa_militancy += 0.05; prussian_police_loyalty -= 0.4; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4
+on-arrival: in_prussia_spd = 0; in_prussia_uspd = 0; in_prussia_dnvp = 1; in_prussia_nsdap = 1; prussia_nsdap += 0.4; prussia_uspd -= 0.25; prussia_spd -= 0.2; sa_militancy += 0.05; prussian_police_loyalty -= 0.4; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4
 
 Stegerwald has announced a reorganization of the Prussian cabinet to include multiple Nazi ministers, in order to present a majority. Immediately, the Nazis abuse their positions to suppress the left-wing, and secure power for themselves.
 
@@ -467,7 +468,7 @@ As if Stegerwald would do such a thing. He may be bourgeois, but he is republica
 title: A far-right coalition.
 view-if: p_far_right_coalition >= 50
 subtitle: NSDAP + DNVP ([+ p_far_right_coalition +]%)
-on-arrival: coup_progress += 5; sa_militancy += 0.2; rb_militancy -= 0.1; rfb_militancy -= 0.1; prussia_nsdap += 0.2; spd_prussia = 0; z_prussia = 0; uspd_prussia = 0; dvp_prussia = 0; pro_republic -= 6; socialism -= 3; nationalism += 5; workers_spd -= 4; workers_uspd -= 4; workers -= 2; new_middle_nsdap += 8; old_middle_nsdap += 6; rural_nsdap += 5; workers_nsdap += 3; unemployed_nsdap += 3; prussia_uspd -= 0.25; prussian_police_loyalty -= 1; 
+on-arrival: in_prussia_spd = 0; in_prussia_uspd = 0; in_prussia_dnvp = 1; in_prussia_nsdap = 1;; coup_progress += 5; sa_militancy += 0.2; rb_militancy -= 0.1; rfb_militancy -= 0.1; prussia_nsdap += 0.2; spd_prussia = 0; z_prussia = 0; uspd_prussia = 0; dvp_prussia = 0; pro_republic -= 6; socialism -= 3; nationalism += 5; workers_spd -= 4; workers_uspd -= 4; workers -= 2; new_middle_nsdap += 8; old_middle_nsdap += 6; rural_nsdap += 5; workers_nsdap += 3; unemployed_nsdap += 3; prussia_uspd -= 0.25; prussian_police_loyalty -= 1; 
 
 Disaster has struck - the reactionaries have won a majority, taking away from us the bulwark of democracy we have for so long held dear. Now it is converted into a bulwark of reaction.
 
