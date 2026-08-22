@@ -334,7 +334,7 @@ The SPD enters a coalition with the USPD.
 title: An SPD Minority government with USPD toleration.
 subtitle: SPD + USPD ([+ wl_uspd_tolerated_spd_minority +]%)
 view-if: wl_uspd_tolerated_spd_minority >= 50
-choose-if: uspd_relation >= 45 and Q.hindenburg_relation >= 40;
+choose-if: uspd_relation >= 45 and hindenburg_relation >= 40;
 unavailable_subtitle: We do not have sufficient relations with either President Hindenburg or the USPD.
 on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 1; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois= 0; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0; workers_spd += 3*(1-dissent)
 
