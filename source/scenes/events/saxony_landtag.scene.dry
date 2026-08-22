@@ -476,6 +476,6 @@ The Saxon SPD, following the direction of the party away from the left, has deci
 title: NSDAP majority
 subtitle: NSDAP ([+ nsdap_sl +]%)
 view-if: nsdap_sl >= 50
-on-arrival: saxony_nsdap += 0.25; workers_nsdap += 4; old_middle_nsdap += 5; rural_nsdap += 2; in_saxony_spd = 0; in_saxony_uspd = 0; in_saxony_dnvp = 0; in_saxony_nsdap = 1; socdem_saxony = 0; spd_majority = 0; s_uspd_tolerated_spd_minority = 0; bourgeois_saxony = 0; anticommunist_coalition = 0; red_saxony = 0; no_majority_saxony = 0; @brown_saxony = 1
+on-arrival: saxony_nsdap += 0.25; workers_nsdap += 4; old_middle_nsdap += 5; rural_nsdap += 2; in_saxony_spd = 0; in_saxony_uspd = 0; in_saxony_dnvp = 0; in_saxony_nsdap = 1; socdem_saxony = 0; spd_majority = 0; s_uspd_tolerated_spd_minority = 0; bourgeois_saxony = 0; anticommunist_coalition = 0; red_saxony = 0; no_majority_saxony = 0; brown_saxony = 1
 
 The Nazis have won a majority in Saxony and immediately go about persecuting socialists within the state and consolidating power.
