@@ -637,4 +637,4 @@ We back Wilhelm Marx from the Center Party. In return, the Center Party votes Ot
 - @round1: Let the voting begin...
 
 @round2_results
-go-to: hindenburg_wins if hindenburg_plurality; braun_wins if braun_plurality; marx_wins if marx_plurality; gessler_wins if gessler_plurality; 
+go-to: hindenburg_wins if hindenburg_plurality; braun_wins if braun_plurality; marx_wins if marx_plurality; gessler_wins if gessler_plurality 
