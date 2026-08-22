@@ -320,7 +320,7 @@ There are some potential coalition arrangements.
 - @wl_bourgeois_coalition: A Bourgeois Coalition forms?
 - @right_wing_coalition: A Right-wing Coalition forms?
 
-@wl_left_coalition: Left_Coalition is possible?
+@wl_left_coalition
 title: A Left coalition.
 subtitle: SPD + USPD ([+ wl_left_coalition +]%)
 view-if: wl_left_coalition >= 50
