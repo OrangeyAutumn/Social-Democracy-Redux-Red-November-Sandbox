@@ -1,7 +1,7 @@
 title: Thuringian Affairs
 new-page: true
 is-card: true
-view-if: in_thuringia_spd = 1
+view-if: in_thuringia_spd = 1 and thuringia_affairs_timer <= 0
 on-arrival: thuringia_affairs_timer += 6; month_actions += 1
 tags: lantags
 card-image: img/braun.jpg
