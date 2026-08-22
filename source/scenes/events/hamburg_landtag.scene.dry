@@ -348,7 +348,7 @@ The SPD enters a coalition with the USPD. [? if h_left_coalition < 50 : This is 
 title: An SPD Minority government with USPD toleration.
 subtitle: SPD + USPD ([+ h_uspd_tolerated_spd_minority +]%)
 view-if: h_uspd_tolerated_spd_minority >= 50 or ( in_hamburg_spd and not nsdap_hl >= 50) or (in_hamburg_tolerated_spd and not nsdap_hl >= 50) 
-choose-if: uspd_relation >= 45 and Q.hindenburg_relation >= 40 or ( in_hamburg_spd and not nsdap_hl >= 50) or (in_hamburg_tolerated_spd and not nsdap_hl >= 50) 
+choose-if: uspd_relation >= 45 and hindenburg_relation >= 40 or ( in_hamburg_spd and not nsdap_hl >= 50) or (in_hamburg_tolerated_spd and not nsdap_hl >= 50) 
 unavailable_subtitle: We do not have sufficient relations with either President Hindenburg or the USPD.
 on-arrival: in_hamburg_left = 0; in_hamburg_tolerated_spd = 1; in_hamburg_spd = 0; in_hamburg_tolerated_soclib= 0; in_hamburg_soclib= 0; in_hamburg_socchr= 0; in_hamburg_tolerated_weimar= 0; in_hamburg_weimar= 0; in_hamburg_groko = 0; in_hamburg_bourgeois= 0; in_hamburg_right= 0; in_hamburg_nsdap = 0; workers_spd += 3*(1-dissent)
 
