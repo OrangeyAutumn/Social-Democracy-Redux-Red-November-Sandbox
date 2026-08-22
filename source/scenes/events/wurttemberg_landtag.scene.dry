@@ -318,7 +318,7 @@ There are some potential coalition arrangements.
 - @wl_uspd_tolerated_weimar_coalition: A USPD-tolerated Weimar Coalition?
 - @wl_grand_coalition: A Grand Coalition?
 - @wl_bourgeois_coalition: A Bourgeois Coalition forms?
-- @right_wing_coalition: A Right-wing Coalition forms?
+- @wl_right_coalition: A Right-wing Coalition forms?
 
 @wl_left_coalition
 title: A Left coalition.
@@ -340,7 +340,7 @@ on-arrival: in_wurttemburg_spd = 1; in_wurttemburg_uspd = 0; in_wurttemburg_dnvp
 
 The SPD forms a minority government with the toleration of the USPD.
 
-@spd_majority
+@wl_spd_majority
 title: An SPD Majority government at last!
 view-if: spd__wl >= 50
 choose-if: spd__wl >= 50
