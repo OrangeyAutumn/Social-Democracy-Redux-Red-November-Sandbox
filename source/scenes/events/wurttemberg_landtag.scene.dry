@@ -326,7 +326,7 @@ subtitle: SPD + USPD ([+ wl_left_coalition +]%)
 view-if: wl_left_coalition >= 50
 choose-if: President != Hindenburg
 unavailable_subtitle: The current President would immediately *Reichsexecute* such a government if it were to form.
-on-arrival: in_wurttemburg_left = 1; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois: 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 3*(1-dissent)
+on-arrival: in_wurttemburg_left = 1; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois= 0; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0; workers_spd += 3*(1-dissent)
 
 The SPD enters a coalition with the USPD.
 
@@ -336,7 +336,7 @@ subtitle: SPD + USPD ([+ wl_uspd_tolerated_spd_minority +]%)
 view-if: wl_uspd_tolerated_spd_minority >= 50
 choose-if: uspd_relation >= 45 and Q.hindenburg_relation >= 40;
 unavailable_subtitle: We do not have sufficient relations with either President Hindenburg or the USPD.
-on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 1; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois: 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 3*(1-dissent)
+on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 1; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois= 0; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0; workers_spd += 3*(1-dissent)
 
 The SPD forms a minority government with the toleration of the USPD.
 
@@ -344,7 +344,7 @@ The SPD forms a minority government with the toleration of the USPD.
 title: An SPD Majority government at last!
 view-if: spd__wl >= 50
 choose-if: spd__wl >= 50
-on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 1; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois: 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 4*(1-dissent)
+on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 1; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois= 0; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0; workers_spd += 4*(1-dissent)
 
 The SPD forms a majority government!
 
@@ -354,7 +354,7 @@ title: A "Social-Liberal" coalition with USPD toleration.
 subtitle: SPD + [+ ddp_name +] ([+ wl_uspd_tolerated_social_liberal_coalition +]%)
 choose-if: ddp_relation >= 45 and uspd_relation >= 45 and hindenburg_relation >= 30
 unavailable_subtitle: We do not have sufficient relations with either the DDP, the USPD, or President Hindenberg.
-on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 1; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois: 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 2*(1-dissent)
+on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 1; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois= 0; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0; workers_spd += 2*(1-dissent)
 
 The SPD enters a coalition with the [+ ddp_name +] with the toleration of the USPD.
 
@@ -364,7 +364,7 @@ subtitle: SPD + [+ ddp_name +] ([+ wl_social_liberal_coalition +]%)
 choose-if: ddp_relation >= 45
 unavailable_subtitle: We do not have sufficient relations with the DDP.
 view-if: wl_social_liberal_coalition >= 50
-on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 1; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois: 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 2*(1-dissent)
+on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 1; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois= 0; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0; workers_spd += 2*(1-dissent)
 
 The SPD enters a coalition with the [+ ddp_name +].
 
@@ -374,7 +374,7 @@ subtitle: SPD + Z ([+ wl_social_christian_coalition +]%)
 unavailable_subtitle: We do not have sufficient relations with the DDP.
 view-if: wl_social_christian_coalition >= 50
 choose-if: wl_social_christian_coalition >= 50
-on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 1; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois: 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 1*(1-dissent)
+on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 1; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois= 0; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0; workers_spd += 1*(1-dissent)
 
 The SPD enters a coalition with the Zentrum.
 
@@ -384,7 +384,7 @@ subtitle: SPD + Z + [+ ddp_name +] ([+ wl_weimar_coalition +]%)
 view-if: wl_uspd_tolerated_weimar_coalition >= 50
 choose-if: z_relation >= 45 and ddp_relation >= 45 and uspd_relation >= 50 and hindenburg_relation >= 15
 unavailable_subtitle: We do not have sufficient relations with the three parties, or with President Hindenburg.
-on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 1; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois: 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 1*(1-dissent)
+on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 1; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois= 0; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0; workers_spd += 1*(1-dissent)
 
 The SPD enters a Weimar Coalition with the DDP and Zentrum, with USPD toleration.
 
@@ -393,7 +393,7 @@ title: A Weimar coalition.
 subtitle: SPD + Z + [+ ddp_name +] ([+ wl_weimar_coalition +]%)
 view-if: wl_weimar_coalition >= 50
 choose-if: wl_weimar_coalition >= 50
-on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 1; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois: 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 1*(1-dissent)
+on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 1; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois= 0; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0; workers_spd += 1*(1-dissent)
 
 The SPD enters a Weimar Coalition with the DDP and Zentrum.
 
@@ -403,7 +403,7 @@ subtitle: SPD + Z + [+ ddp_name +] ([+ wl_weimar_coalition +]%)
 view-if: wl_grand_coalition >= 50
 choose-if: z_relation >= 30 and ddp_relation >= 30 and dvp_relation >= 30
 unavailable_subtitle: We do not have sufficient relations with one of the three parties
-on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 1; in_wurttemburg_bourgeois: 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd -= 1*(1-dissent)
+on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 1; in_wurttemburg_bourgeois= 0; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0; workers_spd -= 1*(1-dissent)
 
 The SPD enters a Grand Coalition with the DDP, DVP and Zentrum.
 
@@ -412,7 +412,7 @@ title: A Bourgeois Coalition forms?
 subtitle: [+ ddp_name +] + Z + DVP + Others ([+ wl_bourgeois_coalition +]%)
 view-if: wl_bourgeois_coalition >= 50
 choose-if: wl_bourgeois_coalition >= 50
-on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 1; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0;)
+on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 1; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0;)
 
 A Bourgeois Coalition is formed.
 
@@ -421,6 +421,6 @@ title: A Right Coalition forms?
 subtitle: [+ ddp_name +] + Z + DVP + DNVP + Others ([+ wl_right_coalition +]%)
 view-if: wl_right_coalition >= 50
 choose-if: wl_right_coalition >= 50
-on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 0; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_right: 1; in_wurttemburg_nsdap = 0;)
+on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_right= 1; in_wurttemburg_nsdap = 0;)
 
 A Right Coalition is formed.
