@@ -7,9 +7,21 @@ subtitle: With the Chancellorship, we have a range of powers we can deploy to ou
 
 - @coalition: We can improve relations with our coalition partners.
 - @shuffle_cabinet: We can reshuffle the cabinet.
-- @snap_elections: We can call snap elections.
+- @snap_election: We can call snap elections.
 - @root: We do not want to take any action at present.
 - @easy_discard
+
+@coalition
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 5; ddp_relation += 5; dvp_relation += 5
+
+We have improved our relations with the Z, [+ ddp_name +], and DVP, and reduced tensions with the coalition.
+
+@snap_election
+title: Snap Election
+subtitle: Call a snap election.
+on-arrival: next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+
+We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
 
 @shuffle_cabinet
 on-arrival: shuffle_cabinet_timer = 6
@@ -49,14 +61,3 @@ go-to: election_1928.coalition_menu
 
 #todo: changing coalitions should anger current coalition partners...
 
-@coalition
-on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 5; ddp_relation += 5; dvp_relation += 5
-
-We have improved our relations with the Z, [+ ddp_name +], and DVP, and reduced tensions with the coalition.
-
-@snap_election
-title: Snap Election
-subtitle: Call a snap election.
-on-arrival: next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
-
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
