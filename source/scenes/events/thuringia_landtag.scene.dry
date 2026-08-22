@@ -101,7 +101,7 @@ if (Q.uspd_tl >= Q.spd_tl && Q.uspd_tl >= Q.nsdap_tl) {
     Q.largest_party = 'USPD';
 }
 // coalitions
-Q.t_uspd_tolerated_spd_minority = Q.spd_tl + Q.uspd_tl + Q.sapd_tl;
+Q.in_thuringia_spd = t_uspd_tolerated_spd_minority = Q.spd_tl + Q.uspd_tl + Q.sapd_tl;
 Q.t_uspd_tolerated_social_liberal_coalition = Q.spd_tl + Q.uspd_tl + Q.sapd_tl + Q.ddp_tl;
 Q.t_social_liberal_coalition = Q.spd_tl + Q.ddp_tl
 Q.t_social_christian_coalition = Q.spd_tl + Q.z_tl + - 3
@@ -317,7 +317,7 @@ There are some potential coalition arrangements.
 @coalition_menu
 
 - @t_uspd_tolerated_spd_minority
-- @t_uspd_tolerated_social_liberal_coalition
+- t_uspd_tolerated_social_liberal_coalition
 - @t_social_liberal_coalition
 - @t_social_christian_coalition
 - @t_weimar_coalition
@@ -335,17 +335,17 @@ subtitle: SPD + USPD ([+ t_uspd_tolerated_spd_minority +]%)
 view-if: t_uspd_tolerated_spd_minority >= 50
 choose-if: uspd_relation >= 45 and hindenburg_relation >= 40
 unavailable_subtitle: We do not have sufficient relations with either President Hindenburg or the USPD.
-on-arrival: @t_uspd_tolerated_spd_minority = 1; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 0; @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 0; @left_coalition = 0; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 0;
+on-arrival: in_thuringia_spd = 1; in_thuringia_uspd = 0; in_thuringia_dnvp = 0; in_thuringia_nsdap = 0; t_uspd_tolerated_spd_minority = 1; t_uspd_tolerated_social_liberal_coalition = 0; t_social_liberal_coalition = 0; t_social_christian_coalition = 0; t_weimar_coalition = 0; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 0; evil_coalition = 0; left_coalition = 0; spd_majority = 0; no_majority_thuringia = 0; nazi_thuringia = 0;
 
 The SPD forms a minority government with the toleration of the USPD.
 
-@t_uspd_tolerated_social_liberal_coalition
+t_uspd_tolerated_social_liberal_coalition
 view-if: t_uspd_tolerated_social_liberal_coalition >= 50
 title: A "Social-Liberal" coalition with USPD toleration.
 subtitle: SPD + [+ ddp_name +] ([+ t_uspd_tolerated_social_liberal_coalition +]%)
 choose-if: ddp_relation >= 45 and uspd_relation >= 45 and hindenburg_relation >= 30
 unavailable_subtitle: We do not have sufficient relations with either the DDP, the USPD, or President Hindenberg.
-on-arrival: @t_uspd_tolerated_spd_minority = 0; @t_uspd_tolerated_social_liberal_coalition = 1; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 0; @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 0; @left_coalition = 0; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 0;
+on-arrival: in_thuringia_spd = 1; in_thuringia_uspd = 0; in_thuringia_dnvp = 0; in_thuringia_nsdap = 0; t_uspd_tolerated_spd_minority = 0; t_uspd_tolerated_social_liberal_coalition = 1; t_social_liberal_coalition = 0; t_social_christian_coalition = 0; t_weimar_coalition = 0; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 0; evil_coalition = 0; left_coalition = 0; spd_majority = 0; no_majority_thuringia = 0; nazi_thuringia = 0;
 
 The SPD enters a coalition with the [+ ddp_name +] with the toleration of the USPD.
 
@@ -355,7 +355,7 @@ subtitle: SPD + [+ ddp_name +] ([+ t_social_liberal_coalition +]%)
 choose-if: ddp_relation >= 45
 unavailable_subtitle: We do not have sufficient relations with the DDP.
 view-if: t_social_liberal_coalition >= 50
-on-arrival: @t_uspd_tolerated_spd_minority = 0; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 1; @t_social_christian_coalition = 0; @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 0; @left_coalition = 0; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 0;
+on-arrival: in_thuringia_spd = 1; in_thuringia_uspd = 0; in_thuringia_dnvp = 0; in_thuringia_nsdap = 0; t_uspd_tolerated_spd_minority = 0; t_uspd_tolerated_social_liberal_coalition = 0; t_social_liberal_coalition = 1; t_social_christian_coalition = 0; t_weimar_coalition = 0; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 0; evil_coalition = 0; left_coalition = 0; spd_majority = 0; no_majority_thuringia = 0; nazi_thuringia = 0;
 
 The SPD enters a coalition with the [+ ddp_name +].
 
@@ -365,7 +365,7 @@ subtitle: SPD + Z ([+ t_social_christian_coalition +]%)
 unavailable_subtitle: We do not have sufficient relations with the DDP.
 view-if: t_social_christian_coalition >= 50
 choose-if: t_social_christian_coalition >= 50
-on-arrival: @t_uspd_tolerated_spd_minority = 0; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 1; @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 0; @left_coalition = 0; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 0;
+on-arrival: in_thuringia_spd = 1; in_thuringia_uspd = 0; in_thuringia_dnvp = 0; in_thuringia_nsdap = 0; t_uspd_tolerated_spd_minority = 0; t_uspd_tolerated_social_liberal_coalition = 0; t_social_liberal_coalition = 0; t_social_christian_coalition = 1; t_weimar_coalition = 0; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 0; evil_coalition = 0; left_coalition = 0; spd_majority = 0; no_majority_thuringia = 0; nazi_thuringia = 0;
 
 The SPD enters a coalition with the Zentrum.
 
@@ -375,7 +375,7 @@ subtitle: SPD + Z + [+ ddp_name +] ([+ t_weimar_coalition +]%)
 view-if: t_uspd_tolerated_weimar_coalition >= 50
 choose-if: z_relation >= 45 and ddp_relation >= 45 and uspd_relation >= 50 and hindenburg_relation >= 15
 unavailable_subtitle: We do not have sufficient relations with the three parties, or with President Hindenburg.
-on-arrival: @t_uspd_tolerated_spd_minority = 0; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 0; @t_weimar_coalition = 1; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 0; @left_coalition = 0; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 0;
+on-arrival: in_thuringia_spd = 1; in_thuringia_uspd = 0; in_thuringia_dnvp = 0; in_thuringia_nsdap = 0; t_uspd_tolerated_spd_minority = 0; t_uspd_tolerated_social_liberal_coalition = 0; t_social_liberal_coalition = 0; t_social_christian_coalition = 0; t_weimar_coalition = 1; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 0; evil_coalition = 0; left_coalition = 0; spd_majority = 0; no_majority_thuringia = 0; nazi_thuringia = 0;
 
 The SPD enters a Weimar Coalition with the DDP and Zentrum, with USPD toleration.
 
@@ -384,7 +384,7 @@ title: A Weimar coalition.
 subtitle: SPD + Z + [+ ddp_name +] ([+ t_weimar_coalition +]%)
 view-if: t_weimar_coalition >= 50
 choose-if: t_weimar_coalition >= 50
-on-arrival: @t_uspd_tolerated_spd_minority = 0; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 0; @t_weimar_coalition = 1; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 0; @left_coalition = 0; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 0;
+on-arrival: in_thuringia_spd = 1; in_thuringia_uspd = 0; in_thuringia_dnvp = 0; in_thuringia_nsdap = 0; t_uspd_tolerated_spd_minority = 0; t_uspd_tolerated_social_liberal_coalition = 0; t_social_liberal_coalition = 0; t_social_christian_coalition = 0; t_weimar_coalition = 1; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 0; evil_coalition = 0; left_coalition = 0; spd_majority = 0; no_majority_thuringia = 0; nazi_thuringia = 0;
 
 The SPD enters a Weimar Coalition with the DDP and Zentrum.
 
@@ -394,7 +394,7 @@ subtitle: DVP + DNVP + Others ([+ t_bourgeois_coalition +]%)
 view-if: t_bourgeois_coalition >= 50 or t_elections <= 1
 choose-if: t_bourgeois_coalition >= 50 or (t_elections <= 0 and t_bourgeois_coalition+ddp_tl+nsdap_tl >= 50)
 unavailable-subtitle: DVP + DNVP + Others ([+ t_bourgeois_coalition +]%) - The bourgeois have fallen short of a majority.
-on-arrival: @t_uspd_tolerated_spd_minority = 0; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 0; @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 1; @evil_coalition = 0; @left_coalition = 0; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 0;
+on-arrival: in_thuringia_spd = 0; in_thuringia_uspd = 0; in_thuringia_dnvp = 1; in_thuringia_nsdap = 0; t_uspd_tolerated_spd_minority = 0; t_uspd_tolerated_social_liberal_coalition = 0; t_social_liberal_coalition = 0; t_social_christian_coalition = 0; t_weimar_coalition = 0; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 1; evil_coalition = 0; left_coalition = 0; spd_majority = 0; no_majority_thuringia = 0; nazi_thuringia = 0;
 
 The incumbent bourgeois coalition is able to survive[? if t_bourgeois_coalition >= 50 : , thankfully, without Nazi toleration. ?][? if t_bourgeois_coalition < 50 : , though only with the toleration of the Nazi Party is it able to do so. ?]
 
@@ -404,7 +404,7 @@ subtitle: DVP + DNVP + NSDAP + Others ([+ frick_coalition +]%)
 view-if: frick_coalition >= 50 and t_bourgeois_coalition < 50
 choose-if: dvp_relation < 60 or t_anti_democratic_coalition >= 50
 unavailable-subtitle: Thankfully, the DVP does not see the need to include Nazis in government.
-on-arrival: @t_uspd_tolerated_spd_minority = 0; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 0; @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 1; @left_coalition = 0; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 1; thuringia_nazi_times += 1; new_middle_nsdap += 2; old_middle_nsdap += 2; unemployed_nsdap += 2
+on-arrival: in_thuringia_spd = 0; in_thuringia_uspd = 0; in_thuringia_dnvp = 1; in_thuringia_nsdap = 1; t_uspd_tolerated_spd_minority = 0; t_uspd_tolerated_social_liberal_coalition = 0; t_social_liberal_coalition = 0; t_social_christian_coalition = 0; t_weimar_coalition = 0; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 0; evil_coalition = 1; left_coalition = 0; spd_majority = 0; no_majority_thuringia = 0; nazi_thuringia = 1; thuringia_nazi_times += 1; new_middle_nsdap += 2; old_middle_nsdap += 2; unemployed_nsdap += 2
 
 The bourgeois parties of Thuringia deeply distrust us, as the regional SPD branch has always been particularly left-leaning. As a result, they have refused to even accept the idea of toleration from us, and instead include the NSDAP in government to secure a majority.
 
@@ -416,7 +416,7 @@ subtitle: USPD + SPD ([+ t_left_coalition +]%)
 view-if: t_left_coalition >= 50
 choose-if: uspd_relation >= 45
 unavailable-subtitle: The USPD doesn't trust us enough.
-on-arrival: @t_uspd_tolerated_spd_minority = 0; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 0; @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 0; @left_coalition = 1; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 0; thuringia_uspd += 0.2 if thuringia_uspd < 1.5; coup_progress += 2; capital_strike_progress += 2; red_thuringia = 1; thuringia_nsdap -= 0.1 if thuringia_nsdap >= 0.7; workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent)
+on-arrival: in_thuringia_spd = 1; in_thuringia_uspd = 1; in_thuringia_dnvp = 0; in_thuringia_nsdap = 0; t_uspd_tolerated_spd_minority = 0; t_uspd_tolerated_social_liberal_coalition = 0; t_social_liberal_coalition = 0; t_social_christian_coalition = 0; t_weimar_coalition = 0; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 0; evil_coalition = 0; left_coalition = 1; spd_majority = 0; no_majority_thuringia = 0; nazi_thuringia = 0; thuringia_uspd += 0.2 if thuringia_uspd < 1.5; coup_progress += 2; capital_strike_progress += 2; red_thuringia = 1; thuringia_nsdap -= 0.1 if thuringia_nsdap >= 0.7; workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent)
 
 Together with the USPD, we have won a majority. The bourgeois parties are up in arms at the prospect of a return to socialist Thuringia, and scramble to oppose the government.
 
@@ -424,7 +424,7 @@ Together with the USPD, we have won a majority. The bourgeois parties are up in 
 title: The SPD may govern alone.
 subtitle: SPD ([+ spd_tl +]%)
 view-if: spd_tl >= 50
-on-arrival: @t_uspd_tolerated_spd_minority = 0; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 0; @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 0; @left_coalition = 0; @spd_majority = 1; @no_majority_thuringia = 0; @nazi_thuringia = 0; thuringia_spd -= 0.1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent)
+on-arrival: in_thuringia_spd = 1; in_thuringia_uspd = 0; in_thuringia_dnvp = 0; in_thuringia_nsdap = 0; t_uspd_tolerated_spd_minority = 0; t_uspd_tolerated_social_liberal_coalition = 0; t_social_liberal_coalition = 0; t_social_christian_coalition = 0; t_weimar_coalition = 0; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 0; evil_coalition = 0; left_coalition = 0; spd_majority = 1; no_majority_thuringia = 0; nazi_thuringia = 0; thuringia_spd -= 0.1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent)
 
 We have won a majority in Thuringia alone.
 
@@ -499,7 +499,7 @@ The Thuringian SPD, following the direction of the party away from the left, has
 title: NSDAP majority
 subtitle: NSDAP ([+ nsdap_tl +]%)
 view-if: nsdap_tl >= 50
-on-arrival: workers_nsdap += 2; old_middle_nsdap += 6; unemployed_nsdap += 4; new_middle_nsdap += 3; rural_nsdap += 2; thuringia_nsdap += 0.25; @t_uspd_tolerated_spd_minority = 0; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 0; @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 0; @left_coalition = 0; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 1;
+on-arrival: workers_nsdap += 2; old_middle_nsdap += 6; unemployed_nsdap += 4; new_middle_nsdap += 3; rural_nsdap += 2; thuringia_nsdap += 0.25; in_thuringia_spd = 0; in_thuringia_uspd = 0; in_thuringia_dnvp = 0; in_thuringia_nsdap = 1; t_uspd_tolerated_spd_minority = 0; t_uspd_tolerated_social_liberal_coalition = 0; t_social_liberal_coalition = 0; t_social_christian_coalition = 0; t_weimar_coalition = 0; t_uspd_tolerated_weimar_coalition = 0; bourgeois_coalition = 0; evil_coalition = 0; left_coalition = 0; spd_majority = 0; no_majority_thuringia = 0; nazi_thuringia = 1;
 
 
 The Nazis have won a majority in Thuringia. They immediately begin persecution of left-wing forces in the state.
