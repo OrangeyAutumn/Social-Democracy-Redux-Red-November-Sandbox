@@ -306,7 +306,7 @@ subtitle: SPD + [+ ddp_name +] ([+ sch_social_liberal +]%)
 view-if: sch_social_liberal >= 50 or (sch_social_liberal < 50 and spd_schl < 50 and (sch_huh < 50 or (year >= 1930 and not dnvp_reform)))
 choose-if: year >= 1930 and not dnvp_reform
 unavailable-subtitle: SPD + [+ ddp_name +] ([+ sch_social_liberal +]%) - They want to include the DNVP in government.
-in_schaumburg_lippe_spd = 1; in_schaumburg_lippe_uspd = 0; in_schaumburg_lippe_dnvp = 0; in_schaumburg_lippe_nsdap = 0;
+on-arrival: in_schaumburg_lippe_spd = 1; in_schaumburg_lippe_uspd = 0; in_schaumburg_lippe_dnvp = 0; in_schaumburg_lippe_nsdap = 0;
 
 A "Social-Liberal" coalition has been formed, including the [+ ddp_name +]. [? if spd_schl >= 50 : This is despite the SPD holding a majority. How queer. ?]
 
