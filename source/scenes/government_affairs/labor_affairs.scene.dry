@@ -83,7 +83,7 @@ With unemployment rampant and increasing, we must do something to bring it down.
 @welfare_cuts
 subtitle: +1 budget. The workers will regard this as a betrayal.
 on-arrival: cut_benefits_vote = 1
-go-to: welfare_cuts_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
+go-to: welfare_cuts_done if not legislature_enabled; legislative_menu if legislature_enabled
 
 We propose a bill to cut benefits.
 
@@ -96,7 +96,7 @@ To try to boost employment, we have cut welfare, to the applause of the bourgeoi
 view-if: working_hours >= 2 and black_thursday_seen = 1
 subtitle: Could we induce more hiring and reduce unemployment by reducing work hours?
 on-arrival: shorten_hours_vote = 1
-go-to: shorten_hours_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
+go-to: shorten_hours_done if not legislature_enabled; legislative_menu if legislature_enabled
 
 We propose a bill to further lower working hours.
 
@@ -119,7 +119,7 @@ With the onset of the Depression and its throngs of unemployed, our unemployment
 @cut_benefits
 subtitle: +1 budget. The workers will regard this as a betrayal.
 on-arrival: cut_benefits_vote = 1
-go-to: cut_benefits_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
+go-to: cut_benefits_done if not legislature_enabled; legislative_menu if legislature_enabled
 
 We propose a bill to cut benefits.
 
@@ -133,7 +133,7 @@ For budgetary reasons, we have cut unemployment insurance benefits. Unfortunatel
 @increase_employers
 subtitle: Employers are strongly against this. [? if in_grand_coalition: The DVP will likely break the coalition. ?]
 on-arrival: increase_employers_vote = 1
-go-to: increase_employers_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
+go-to: increase_employers_done if not legislature_enabled; legislative_menu if legislature_enabled
 
 We propose a bill to increase the contributions of employers.
 
@@ -145,7 +145,7 @@ We have increased employer contributions to the unemployment insurance fund, all
 @balance2
 subtitle: Neither workers nor employers will be entirely satisfied or dissatisfied. [? if in_grand_coalition and dvp_relation < 30: The DVP will likely consider the compromise unacceptable. ?][? if in_grand_coalition and dvp_relation >= 30: The DVP might grudgingly accept the compromise for now. ?]
 on-arrival: balance_vote = 1
-go-to: balance_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
+go-to: balance_done if not legislature_enabled; legislative_menu if legislature_enabled
 
 We propose a bill to increase the contributions of both employers and workers.
 
