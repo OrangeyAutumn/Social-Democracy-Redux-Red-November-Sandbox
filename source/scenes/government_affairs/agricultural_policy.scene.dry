@@ -26,7 +26,7 @@ unavailable-subtitle: [? if budget <= 0 : Requires 1 budget. ?] [? if judicial_r
 choose-if: judicial_reform >= 2 and budget > 0
 max-visits: 4
 on-arrival: land_reform_vote = 1
-go-to: land_reform_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
+go-to: land_reform_done if not legislature_enabled; legislative_menu if legislature_enabled
 
 We propose a bill to begin a land reform program.
 
@@ -59,7 +59,7 @@ subtitle: -2 budget - Create a state monopoly for grain purchases, guaranteeing 
 choose-if: budget >= 2 and judicial_reform >= 2
 max-visits: 1
 on-arrival: state_buyer_vote = 1
-go-to: state_buyer_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
+go-to: state_buyer_done if not legislature_enabled; legislative_menu if legislature_enabled
 
 We propose a bill to create a state monopoly for grain purchases.
 
