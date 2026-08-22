@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: in_hamburg_spd = 1 and hamburg_affairs_timer <= 0
 on-arrival: hamburg_affairs_timer += 6; month_actions += 1
-tags: lantags
+tags: landtag_affairs
 card-image: img/braun.jpg
 #subtitle: The state government of Hamburg is a bulwark of the left...
 
