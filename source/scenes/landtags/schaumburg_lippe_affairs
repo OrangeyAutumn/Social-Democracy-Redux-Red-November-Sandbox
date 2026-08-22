@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: spd_schaumburg_lippe = 1 and schaumburg_lippe_affairs_timer <= 0
 on-arrival: schaumburg_lippe_affairs_timer += 6; month_actions += 1
-tags: lantags
+tags: landtag_affairs
 card-image: img/braun.jpg
 #subtitle: The state government of Schaumburg-Lippe is famously bizzare...
 
