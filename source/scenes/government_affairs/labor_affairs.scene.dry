@@ -33,7 +33,7 @@ The industrial Ruhr region is aflame with labor unrest. The employers have start
 
 - @support_labor: Support labor in their demands.
 - @support_employers: Support the employers in their demands.
-- @balance: Try to strike a compromise between the sides.
+- @balance1: Try to strike a compromise between the sides.
 - @easy_discard
 
 @support_labor
@@ -48,7 +48,7 @@ on-arrival: labor_dissent += 8; workers_spd -= 3; coalition_dissent -= 1  if coa
 
 The more radical workers despise our suppression of their strikes, recalling the days of Friedrich Ebert.
 
-@balance
+@balance1
 subtitle: Both sides need to share the pain in the current crisis.
 on-arrival: labor_dissent += 4; workers_spd -= 2; uspd_coalition_dissent += 1; uspd_relation -= 5; strike_term_seen += 1; socialism -= 2
 
@@ -113,7 +113,7 @@ With the onset of the Depression and its throngs of unemployed, our unemployment
 
 - @cut_benefits: Cut benefits.
 - @increase_employers: Increase employer contributions.
-- @balance: Increase both employer and employee contributions.
+- @balance2: Increase both employer and employee contributions.
 - @labor_affairs_menu: We can defer this decision for now.
 
 @cut_benefits
@@ -142,7 +142,7 @@ on-arrival: capital_strike_progress += 2; coalition_dissent = 2 if in_grand_coal
 
 We have increased employer contributions to the unemployment insurance fund, allowing the program to continue without hurting workers and the unemployed. Perhaps understandably, the capitalists and their political parties are furious, while our base in the unions and among the unemployed are pleased.
 
-@balance
+@balance2
 subtitle: Neither workers nor employers will be entirely satisfied or dissatisfied. [? if in_grand_coalition and dvp_relation < 30: The DVP will likely consider the compromise unacceptable. ?][? if in_grand_coalition and dvp_relation >= 30: The DVP might grudgingly accept the compromise for now. ?]
 on-arrival: balance_vote = 1
 go-to: balance_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
