@@ -416,7 +416,7 @@ He has received the backing of the DVP, the DNVP[? if bvp_support_hindenburg :, 
 @liebknecht_campaign
 
 - @attack_marx_m: Attempt to win over sympathetic progressives by attacking Marx.
-- @democracy_rally_m: Rally for democracy, and against monarchism.
+- @democracy_rally_l: Rally for democracy, and against monarchism.
 - @donate_uspd: Provide more campaign resources for the left to spend.
 - @round1: Let the voting begin...
 
@@ -429,7 +429,7 @@ max-visits: 1
 
 We attack Marx for every fault we can find, and make concessions to our reformist wing.
 
-@democracy_rally_m
+@democracy_rally_l
 subtitle: -1 resource
 choose-if: resources >= 1
 on-arrival: resources -= 1; pro_republic += 6; nationalism -= 3; workers_dnvp -= 2; new_middle_dnvp -= 2; left_dissent -= 2
