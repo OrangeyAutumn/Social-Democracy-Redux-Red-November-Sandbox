@@ -214,7 +214,7 @@ Forming a "United States of Europe" has long been part of the Social Democratic 
 title: We can sign a treaty to form a European Union!
 view-if: west_relation >= 5 and east_relation >= 4 and eu_progress >= 2 and not eu
 on-arrival: eu_vote = 1
-go-to: eu_done if not legislature_enabled; legislative_menu if legislature_enabled
+go-to: eu_done if not legislature_enabled; @legislative_menu if legislature_enabled
 
 We put the Reichskonkordat up for vote in the Reichstag.
 
