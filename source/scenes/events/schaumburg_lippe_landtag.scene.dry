@@ -102,7 +102,7 @@ if (Q.uspd_schl >= Q.spd_schl && Q.uspd_schl >= Q.nsdap_schl) {
 // coalitions
 Q.sch_social_liberal = Q.spd_schl + Q.ddp_schl;
 Q.sch_huh = Q.spd_schl + Q.ddp_schl + Q.dnvp_schl;
-
+Q.sch_querfront = Q.spd_schl + Q.uspd_schl + Q.ddp_schl + Q.dnvp_schl;
 Q.sch_weimar_coalition = Q.spd_schl + Q.ddp_schl + Q.z_schl;
 Q.sch_grand_coalition = Q.spd_schl + Q.ddp_schl + Q.z_schl + Q.dvp_schl;
 Q.sch_bourgeois_coalition = Q.ddp_schl + Q.z_schl + Q.dvp_schl + Q.other_schl;
@@ -289,6 +289,7 @@ There are some potential coalition arrangements.
 - @spd_majority
 - @social_liberal
 - @huh
+- @querfront
 - @nazis
 
 @spd_majority
@@ -297,6 +298,7 @@ subtitle: SPD ([+ spd_schl +]%)
 view-if: spd_schl >= 50
 choose-if: never
 unavailable-subtitle: SPD ([+ spd_schl +]%) - The SPD wants to include the bourgeois in government.
+on-arrival: in_schaumburg_lippe_spd = 1; in_schaumburg_lippe_uspd = 0; in_schaumburg_lippe_dnvp = 0; in_schaumburg_lippe_nsdap = 0;
 
 @social_liberal
 title: A "Social-Liberal" Coalition
@@ -304,6 +306,7 @@ subtitle: SPD + [+ ddp_name +] ([+ sch_social_liberal +]%)
 view-if: sch_social_liberal >= 50 or (sch_social_liberal < 50 and spd_schl < 50 and (sch_huh < 50 or (year >= 1930 and not dnvp_reform)))
 choose-if: year >= 1930 and not dnvp_reform
 unavailable-subtitle: SPD + [+ ddp_name +] ([+ sch_social_liberal +]%) - They want to include the DNVP in government.
+in_schaumburg_lippe_spd = 1; in_schaumburg_lippe_uspd = 0; in_schaumburg_lippe_dnvp = 0; in_schaumburg_lippe_nsdap = 0;
 
 A "Social-Liberal" coalition has been formed, including the [+ ddp_name +]. [? if spd_schl >= 50 : This is despite the SPD holding a majority. How queer. ?]
 
@@ -311,6 +314,7 @@ A "Social-Liberal" coalition has been formed, including the [+ ddp_name +]. [? i
 title: ...Huh.
 subtitle: SPD + [+ ddp_name +] + DNVP ([+ sch_huh +]%)
 view-if: sch_huh >= 50 and (year < 1930 or dnvp_reform)
+on-arrival: in_schaumburg_lippe_spd = 1; in_schaumburg_lippe_uspd = 0; in_schaumburg_lippe_dnvp = 1; in_schaumburg_lippe_nsdap = 0; dnvp_relation += 1
 
 That's...peculiar. [? if spd_schl >= 50 : The SPD, despite holding a lone majority, has gone out of its way to...include the DNVP? ?][? if spd_schl < 50 and sch_social_liberal >= 50 : The SPD, despite holding a majority with just the [+ ddp_name +], has gone out of its way to...include the DNVP? ?]
 
@@ -318,10 +322,33 @@ That's...peculiar. [? if spd_schl >= 50 : The SPD, despite holding a lone majori
 - @judging: The SPD is *absolutely* judging. Why on earth would Schaumburg-Lippe do this?
 
 @judging
+on-arrival: dnvp_relation -= 1
 
 We may never know.
 
 @no_judging
+on-arrival: dnvp_relation += 1
+
+They surely must have. 
+
+@querfront
+title: ... What now?
+subtitle: USPD + SPD + [+ ddp_name +] + DNVP ([+ sch_querfront +]%)
+view-if: sch_querfront >= 50 and sch_huh <= 50 and sch_social_liberal <= 50
+on-arrival: in_schaumburg_lippe_spd = 1; in_schaumburg_lippe_uspd = 0; in_schaumburg_lippe_dnvp = 1; in_schaumburg_lippe_nsdap = 0; dnvp_relation += 1
+
+That's certainly... peculiar... wait what?.
+
+- @still_no_judging: The SPD doesn't judge, although maybe it really should.
+- @absolutely_judging: Why on earth would Schaumburg-Lippe do this? More importantly, how?
+
+@judging
+on-arrival: dnvp_relation -= 1; uspd_relation -= 2
+
+We may never know.
+
+@no_judging
+on-arrival: dnvp_relation += 1; uspd_relation += 2
 
 They surely must have. 
 
@@ -329,6 +356,6 @@ They surely must have.
 title: NSDAP majority.
 subtitle: NSDAP ([+ nsdap_schl +]%)
 view-if: nsdap_schl >= 50
-on-arrival: nazi_schaumburg_lippe = 1; workers_nsdap += 1; new_middle_nsdap += 1; schaumburg_lippe_nsdap += 1; schaumburg_lippe_ddp -= 0.4
+on-arrival: in_schaumburg_lippe_spd = 0; in_schaumburg_lippe_uspd = 0; in_schaumburg_lippe_dnvp = 0; in_schaumburg_lippe_nsdap = 1; nazi_schaumburg_lippe = 1; workers_nsdap += 1; new_middle_nsdap += 1; schaumburg_lippe_nsdap += 1; schaumburg_lippe_ddp -= 0.4
 
 The Nazis have won control over Schaumburg-Lippe. That's bad.
