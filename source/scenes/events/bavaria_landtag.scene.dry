@@ -408,8 +408,7 @@ subtitle: USPD + SPD + [+ ddp_name +] ([+ b_popular_front_coalition +]%)
 unavailable-subtitle: USPD + SPD + [+ ddp_name +] ([+ b_popular_front_coalition +]%) - [? if ddp_relation < 45 : The [+ ddp_name +] won't vote for us. ?][? if uspd_relation < 55 or communist_coalition < 3 : The USPD won't vote for us. ?]
 view-if: b_popular_front_coalition >= 50
 choose-if: ((uspd_relation >= 55) or (spd_bl+ddp_bl >= 50 and ddp_relation >= 45)) and ((ddp_relation >= 45) or (uspd_bl+spd_bl >= 50 and uspd_relation >= 55 and communist_coalition >= 3))
-on-arrival: spd_bavaria = 1; workers_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); rural_spd += 4*(1-dissent); sh_militancy -= 0.05; rb_militancy += 0.05; coup_progress += 1; capital_strike_progress += 2
-in_bavaria_spd = 1; in_bavaria_uspd = 1; in_bavaria_dnvp = 0; in_bavaria_nsdap = 0;
+on-arrival: spd_bavaria = 1; workers_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); rural_spd += 4*(1-dissent); sh_militancy -= 0.05; rb_militancy += 0.05; coup_progress += 1; capital_strike_progress += 2; in_bavaria_spd = 1; in_bavaria_uspd = 1; in_bavaria_dnvp = 0; in_bavaria_nsdap = 0;
 
 Somehow, a "Popular Front" of the USPD, [+ ddp_name +] and us has been able to outvote the right-wing parties for rulership of Bavaria, instating a social democrat as Minister-President.
 
