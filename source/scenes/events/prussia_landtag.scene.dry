@@ -468,7 +468,7 @@ As if Stegerwald would do such a thing. He may be bourgeois, but he is republica
 title: A far-right coalition.
 view-if: p_far_right_coalition >= 50
 subtitle: NSDAP + DNVP ([+ p_far_right_coalition +]%)
-on-arrival: in_prussia_spd = 0; in_prussia_uspd = 0; in_prussia_dnvp = 1; in_prussia_nsdap = 1;; coup_progress += 5; sa_militancy += 0.2; rb_militancy -= 0.1; rfb_militancy -= 0.1; prussia_nsdap += 0.2; spd_prussia = 0; z_prussia = 0; uspd_prussia = 0; dvp_prussia = 0; pro_republic -= 6; socialism -= 3; nationalism += 5; workers_spd -= 4; workers_uspd -= 4; workers -= 2; new_middle_nsdap += 8; old_middle_nsdap += 6; rural_nsdap += 5; workers_nsdap += 3; unemployed_nsdap += 3; prussia_uspd -= 0.25; prussian_police_loyalty -= 1; 
+on-arrival: in_prussia_spd = 0; in_prussia_uspd = 0; in_prussia_dnvp = 1; in_prussia_nsdap = 1; coup_progress += 5; sa_militancy += 0.2; rb_militancy -= 0.1; rfb_militancy -= 0.1; prussia_nsdap += 0.2; spd_prussia = 0; z_prussia = 0; uspd_prussia = 0; dvp_prussia = 0; pro_republic -= 6; socialism -= 3; nationalism += 5; workers_spd -= 4; workers_uspd -= 4; workers -= 2; new_middle_nsdap += 8; old_middle_nsdap += 6; rural_nsdap += 5; workers_nsdap += 3; unemployed_nsdap += 3; prussia_uspd -= 0.25; prussian_police_loyalty -= 1; 
 
 Disaster has struck - the reactionaries have won a majority, taking away from us the bulwark of democracy we have for so long held dear. Now it is converted into a bulwark of reaction.
 
