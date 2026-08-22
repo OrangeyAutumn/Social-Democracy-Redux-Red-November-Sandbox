@@ -1,7 +1,7 @@
 title: Thuringian Affairs
 new-page: true
 is-card: true
-view-if: @t_uspd_tolerated_spd_minority = 1 or @t_uspd_tolerated_social_liberal_coalition = 1 or @t_social_liberal_coalition = 1 or @t_social_christian_coalition = 1 or @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 1 or @left_coalition = 1 or @spd_majority = 1 or and thuringian_affairs_timer <= 0
+view-if: in_thuringia_spd = 1
 on-arrival: thuringia_affairs_timer += 6; month_actions += 1
 tags: lantags
 card-image: img/braun.jpg
