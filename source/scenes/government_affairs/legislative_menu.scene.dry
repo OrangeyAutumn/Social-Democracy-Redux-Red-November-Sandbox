@@ -1,7 +1,4 @@
 title: Legislative Menu
-go-to: @legislative_system
-
-@legislative_system
 on-arrival: {!
 
 if (Q.welfare_cut_vote) {
