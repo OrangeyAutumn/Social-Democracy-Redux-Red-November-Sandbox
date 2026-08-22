@@ -317,7 +317,7 @@ There are some potential coalition arrangements.
 @coalition_menu
 
 - @t_uspd_tolerated_spd_minority
-- t_uspd_tolerated_social_liberal_coalition
+- @t_uspd_tolerated_social_liberal_coalition
 - @t_social_liberal_coalition
 - @t_social_christian_coalition
 - @t_weimar_coalition
