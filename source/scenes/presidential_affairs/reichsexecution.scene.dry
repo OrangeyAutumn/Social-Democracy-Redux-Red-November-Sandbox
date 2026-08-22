@@ -28,7 +28,7 @@ view-if: red_saxony or brown_saxony
 tags: reichsexekutions
 title: Reichsexekute Saxony.
 subtitle: This will anger the non-extreme parties of the state government!
-on-arrival: red_saxony = 0; brown_saxony = 0; spd_saxony = 1
+on-arrival: red_saxony = 0; brown_saxony = 0; spd_saxony = 1;
 
 We have performed a *Reichsexekution* against the government of Saxony, removing it of extremist forces.
 
