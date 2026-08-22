@@ -151,7 +151,7 @@ title: Lower tariffs on imports.
 choose-if: budget >= 2 and tariffs > -5
 subtitle: -2 budget. [? if tariffs <= -5 : There are no tariffs left to cut. ?]
 on-arrival: tariff_cut_vote = 1
-go-to: tariff_cut_done if not legislature_enabled; legislative_menu if legislature_enabled
+go-to: tariff_cut_done if not legislature_enabled; @legislative_menu if legislature_enabled
 
 We propose a bill to decrease tariff rates.
 
