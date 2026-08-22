@@ -1,7 +1,7 @@
 title: Württemberg Affairs
 new-page: true
 is-card: true
-view-if: in_wurttemburg_left = 1 or in_wurttemburg_tolerated_spd = 1 or in_wurttemburg_spd = 1 or in_wurttemburg_tolerated_soclib= 1 or in_wurttemburg_soclib = 1 or in_wurttemburg_socchr = 1 or in_wurttemburg_tolerated_weimar = 1 or in_wurttemburg_weimar = 1 and wurttemberg_affairs_timer <= 0
+view-if: in_wurttemburg_spd = 1
 on-arrival: wurttemberg_affairs_timer += 6; month_actions += 1
 tags: lantags
 card-image: img/braun.jpg
