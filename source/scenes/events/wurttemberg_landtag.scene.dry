@@ -412,7 +412,7 @@ title: A Bourgeois Coalition forms?
 subtitle: [+ ddp_name +] + Z + DVP + Others ([+ wl_bourgeois_coalition +]%)
 view-if: wl_bourgeois_coalition >= 50
 choose-if: wl_bourgeois_coalition >= 50
-on-arrival: in_wurttemburg_spd = 0; in_wurttemburg_uspd = 0; in_wurttemburg_dnvp = 0; in_wurttemburg_nsdap = 0; in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 1; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0;)
+on-arrival: in_wurttemburg_spd = 0; in_wurttemburg_uspd = 0; in_wurttemburg_dnvp = 0; in_wurttemburg_nsdap = 0; in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 1; in_wurttemburg_right= 0; in_wurttemburg_nsdap = 0
 
 A Bourgeois Coalition is formed.
 
@@ -421,6 +421,6 @@ title: A Right Coalition forms?
 subtitle: [+ ddp_name +] + Z + DVP + DNVP + Others ([+ wl_right_coalition +]%)
 view-if: wl_right_coalition >= 50
 choose-if: wl_right_coalition >= 50
-on-arrival: in_wurttemburg_spd = 0; in_wurttemburg_uspd = 0; in_wurttemburg_dnvp = 1; in_wurttemburg_nsdap = 0; in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_right= 1; in_wurttemburg_nsdap = 0;)
+on-arrival: in_wurttemburg_spd = 0; in_wurttemburg_uspd = 0; in_wurttemburg_dnvp = 1; in_wurttemburg_nsdap = 0; in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib= 0; in_wurttemburg_soclib= 0; in_wurttemburg_socchr= 0; in_wurttemburg_tolerated_weimar= 0; in_wurttemburg_weimar= 0; in_wurttemburg_groko = 0; in_wurttemburg_right= 1; in_wurttemburg_nsdap = 0
 
 A Right Coalition is formed.
