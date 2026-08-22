@@ -357,7 +357,7 @@ A moderate socialist coalition is formed with the backing of the ASPD[? if sapd_
 title: An SPD Minority government with USPD toleration.
 subtitle: SPD + USPD ([+ s_uspd_tolerated_spd_minority +]%)
 view-if: s_uspd_tolerated_spd_minority >= 50
-choose-if: uspd_relation >= 45 and Q.hindenburg_relation >= 40;
+choose-if: uspd_relation >= 45 and hindenburg_relation >= 40;
 unavailable_subtitle: We do not have sufficient relations with either President Hindenburg or the USPD.
 on-arrival: socdem_saxony = 0; spd_majority = 0; s_uspd_tolerated_spd_minority = 1; bourgeois_saxony = 0; anticommunist_coalition = 0; red_saxony = 0; no_majority_saxony = 0; brown_saxony = 0
 
