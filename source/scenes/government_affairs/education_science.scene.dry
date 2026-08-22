@@ -164,7 +164,7 @@ We have funded more public secondary schools so that proletarian children may re
 title: Create elected school boards to give local areas more control over education.
 view-if: school_boards = 0
 on-arrival: school_board_vote = 1
-go-to: school_board_done if not legislature_enabled; legislative_menu if legislature_enabled
+go-to: school_board_done if not legislature_enabled; @legislative_menu if legislature_enabled
 
 We propose the creation of school boards in the Reichstag.
 
