@@ -339,18 +339,18 @@ on-arrival: in_schaumburg_lippe_spd = 1; in_schaumburg_lippe_uspd = 0; in_schaum
 
 That's certainly... peculiar... wait what?.
 
-- @still_no_judging: The SPD doesn't judge, although maybe it really should.
+- @still_no_judging: The SPD doesn't judge?
 - @absolutely_judging: Why on earth would Schaumburg-Lippe do this? More importantly, how?
 
-@judging
+@absolutely_judging
 on-arrival: dnvp_relation -= 1; uspd_relation -= 2
 
 We may never know.
 
-@no_judging
+@still_no_judging
 on-arrival: dnvp_relation += 1; uspd_relation += 2
 
-They surely must have. 
+Although maybe it really should. 
 
 @nazis
 title: NSDAP majority.
