@@ -23,7 +23,7 @@ subtitle: -1 budget
 choose-if: budget >= 1
 unavailable-subtitle: We do not have the budget.
 on-arrival: rearmament_vote = 1
-go-to: rearmament_done if not legislature_enabled; legislative_menu if legislature_enabled
+go-to: rearmament_done if not legislature_enabled; legislative_menu_location.legislative_menu if legislature_enabled
 
 We propose a bill to increase military spending.
 
