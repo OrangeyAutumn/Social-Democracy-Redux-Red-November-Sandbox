@@ -333,7 +333,7 @@ There are some potential coalition arrangements.
 title: An SPD Minority government with USPD toleration.
 subtitle: SPD + USPD ([+ t_uspd_tolerated_spd_minority +]%)
 view-if: t_uspd_tolerated_spd_minority >= 50
-choose-if: uspd_relation >= 45 and Q.hindenburg_relation >= 40;
+choose-if: uspd_relation >= 45 and hindenburg_relation >= 40;
 unavailable_subtitle: We do not have sufficient relations with either President Hindenburg or the USPD.
 on-arrival: @t_uspd_tolerated_spd_minority = 1; @t_uspd_tolerated_social_liberal_coalition = 0; @t_social_liberal_coalition = 0; @t_social_christian_coalition = 0; @t_weimar_coalition = 0; @t_uspd_tolerated_weimar_coalition = 0; @bourgeois_coalition = 0; @evil_coalition = 0; @left_coalition = 0; @spd_majority = 0; @no_majority_thuringia = 0; @nazi_thuringia = 0;
 
