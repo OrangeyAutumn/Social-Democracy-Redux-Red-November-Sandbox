@@ -26,7 +26,7 @@ subtitle: -1 budget
 unavailable-subtitle: Not enough budget.
 choose-if: budget >= 1
 on-arrival: judicial_vote = 1
-go-to: judiciary_done if not legislature_enabled; legislative_menu.scene.dry if legislature_enabled
+go-to: judiciary_done if not legislature_enabled; legislative_menu if legislature_enabled
 
 We propose a bill to perform substantial reforms in the judiciary.
 
