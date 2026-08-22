@@ -11,7 +11,7 @@ view-if: in_hamburg_left or in_hamburg_right
 tags: reichsexekutions_left
 title: Reichsexekute Hamburg.
 subtitle: This will anger the non-extreme parties of the state government!
-on-arrival: in_hamburg_left = 0; in_hamburg_right = 0 ; in_spd_hamburg = 1
+on-arrival: in_hamburg_left = 0; in_hamburg_right = 0 ; in_spd_hamburg =1;
 
 We have performed a *Reichsexekution* against the government of Hamburg, removing it of extremist forces.
 
@@ -20,7 +20,7 @@ view-if: red_thuringia or brown_thuringia
 tags: reichsexekutions
 title: Reichsexekute Thuringia.
 subtitle: This will anger the non-extreme parties of the state government!
-on-arrival: red_thuringia = 0; brown_thuringia = 0; spd_thuringia = 1
+on-arrival: red_thuringia = 0; brown_thuringia = 0; spd_thuringia =1;
 
 We have performed a *Reichsexekution* against the government of Thuringia, removing it of extremist forces.
 @reichsexekute_saxony
@@ -37,7 +37,7 @@ view-if: uspd_prussia or right_prussia
 tags: reichsexekutions_left
 title: Reichsexekute Prussia.
 subtitle: This will anger the non-extreme parties of the state government!
-on-arrival: uspd_prussia = 0; right_prussia = 0; spd_prussia = 1
+on-arrival: uspd_prussia = 0; right_prussia = 0; spd_prussia =1;
 
 We have performed a *Reichsexekution* against the government of Prussia, removing it of extremist forces.
 
@@ -46,7 +46,7 @@ view-if: uspd_bavaria or right_bavaria = 0
 tags: reichsexekutions
 title: Reichsexekute Bavaria.
 subtitle: This will anger the non-extreme parties of the state government!
-on-arrival: uspd_bavaria = 0; right_bavaria = 0; spd_bavaria = 1
+on-arrival: uspd_bavaria = 0; right_bavaria = 0; spd_bavaria =1;
 
 We have performed a *Reichsexekution* against the government of Bavaria, removing it of extremist forces.
 
@@ -56,7 +56,7 @@ view-if: uspd_wurttemberg or right_wurttemberg
 tags: reichsexekutions
 title: Reichsexekute Württemberg.
 subtitle: This will anger the non-extreme parties of the state government!
-on-arrival: uspd_württemberg = 0; right_wurttemberg = 0; spd_wurttemberg = 1
+on-arrival: uspd_wurttemberg = 0; right_wurttemberg = 0; spd_wurttemberg = 1;
 
 We have performed a *Reichsexekution* against the government of Württemberg, removing it of extremist forces.
 
@@ -65,7 +65,7 @@ view-if: uspd_schaumburg_lippe or right_schaumburg_lippe
 tags: reichsexekutions
 title: Reichsexekute Schaumburg-Lippe.
 subtitle: This will anger the non-extreme parties of the state government!
-on-arrival: uspd_schaumburg_lippe = 0; right_schaumburg_lippe = 0; spd_schaumburg_lippe = 1
+on-arrival: uspd_schaumburg_lippe = 0; right_schaumburg_lippe = 0; spd_schaumburg_lippe =1;
 
 We have performed a *Reichsexekution* against the government of Schaumburg-Lippe, removing it of extremist forces.
 
