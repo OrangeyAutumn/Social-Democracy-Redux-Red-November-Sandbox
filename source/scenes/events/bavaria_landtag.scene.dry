@@ -390,6 +390,7 @@ title: A bourgeois-right coalition.
 subtitle: BVP + BB + DNVP + Others ([+ b_bourgeois_coalition +]%)
 choose-if: nsdap_bl < 50 and spd_bl < 50
 unavailable-subtitle: BVP + BB + DNVP + Others ([+ b_bourgeois_coalition +]%) - An alternative government can be formed.
+on-arrival: in_bavaria_spd = 0; in_bavaria_uspd = 0; in_bavaria_dnvp = 1; in_bavaria_nsdap = 0;
 
 Heinrich Held, the leader of the BVP's parliamentary delegation, has been re-elected Minister-President of Bavaria. [? if b_bourgeois_coalition < 50 : He has survived as a minority government thanks to the constructive VONC of the Bavarian constitution. ?]
 
@@ -397,7 +398,7 @@ Heinrich Held, the leader of the BVP's parliamentary delegation, has been re-ele
 title: A Nazi majority government.
 subtitle: NSDAP ([+ nsdap_bl +]%)
 view-if: nsdap_bl >= 50
-on-arrival: rural_nsdap += 6; old_middle_nsdap += 4; catholics_nsdap += 3; bavaria_other -= 0.2; bavaria_nsdap += 0.3; coup_progress += 2; sa_militancy += 0.05; sa_strength += 20
+on-arrival: in_bavaria_spd = 0; in_bavaria_uspd = 0; in_bavaria_dnvp = 0; in_bavaria_nsdap = 1; rural_nsdap += 6; old_middle_nsdap += 4; catholics_nsdap += 3; bavaria_other -= 0.2; bavaria_nsdap += 0.3; coup_progress += 2; sa_militancy += 0.05; sa_strength += 20
 
 Somehow, the Nazis have won a majority in Bavaria. Epp has been made Minister-President and now leads an all-Nazi coalition government, which quickly sets to work consolidating power within the state.
 
@@ -408,6 +409,7 @@ unavailable-subtitle: USPD + SPD + [+ ddp_name +] ([+ b_popular_front_coalition 
 view-if: b_popular_front_coalition >= 50
 choose-if: ((uspd_relation >= 55) or (spd_bl+ddp_bl >= 50 and ddp_relation >= 45)) and ((ddp_relation >= 45) or (uspd_bl+spd_bl >= 50 and uspd_relation >= 55 and communist_coalition >= 3))
 on-arrival: spd_bavaria = 1; workers_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); rural_spd += 4*(1-dissent); sh_militancy -= 0.05; rb_militancy += 0.05; coup_progress += 1; capital_strike_progress += 2
+in_bavaria_spd = 1; in_bavaria_uspd = 1; in_bavaria_dnvp = 0; in_bavaria_nsdap = 0;
 
 Somehow, a "Popular Front" of the USPD, [+ ddp_name +] and us has been able to outvote the right-wing parties for rulership of Bavaria, instating a social democrat as Minister-President.
 
@@ -416,6 +418,7 @@ title: SPD majority government
 subtitle: SPD ([+ spd_bl +]%)
 view-if: spd_bl >= 50
 on-arrival: spd_bavaria = 1; workers_spd += 5*(1-dissent); catholics_spd += 8*(1-dissent); rural_spd += 8*(1-dissent); sh_militancy -= 0.05; rb_militancy += 0.1
+in_bavaria_spd = 1; in_bavaria_uspd = 0; in_bavaria_dnvp = 0; in_bavaria_nsdap = 0;
 
 Somehow, the SPD has won a majority in Bavaria.
 
