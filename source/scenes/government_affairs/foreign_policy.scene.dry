@@ -173,7 +173,7 @@ The Roman Catholic Church is interested in furthering relations with the German 
 title: We can sign a Concordat with the Vatican!
 view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
 on-arrival: concordat_vote = 1
-go-to: concordat_done if not legislature_enabled; legislative_menu if legislature_enabled
+go-to: concordat_done if not legislature_enabled; @legislative_menu if legislature_enabled
 
 We put the Reichskonkordat up for vote in the Reichstag.
 
