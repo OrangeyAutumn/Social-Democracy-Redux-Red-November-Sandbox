@@ -23,7 +23,7 @@ subtitle: -1 budget
 choose-if: budget >= 1
 unavailable-subtitle: We do not have the budget.
 on-arrival: rearmament_vote = 1
-go-to: rearmament_done if not legislature_enabled; legislative_menu if legislature_enabled
+go-to: rearmament_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
 
 We propose a bill to increase military spending.
 
@@ -37,7 +37,7 @@ subtitle: +1 budget
 unavailable-subtitle: There is nothing left to cut.
 choose-if: reichswehr_strength >= 20 or reichswehr_militancy >= 1
 on-arrival: disarmament_vote = 1
-go-to: disarmament_done if not legislature_enabled; legislative_menu if legislature_enabled
+go-to: disarmament_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
 
 We propose a bill to increase military spending.
 
@@ -79,7 +79,7 @@ subtitle: -1 budget
 choose-if: budget >= 1 and reichswehr_loyalty < 1
 unavailable-subtitle: [? if budget < 1 : We do not have the budget. ?][? if reichswehr_loyalty >= 1 : The Reichswehr is already fully loyal to the democratic government. ?]
 on-arrival: military_reform_vote = 1
-go-to: military_reform_done if not legislature_enabled; legislative_menu if legislature_enabled
+go-to: military_reform_done if not legislature_enabled; government_affairs.legislative_menu if legislature_enabled
 
 We propose a bill to perform substantial reforms in the army.
 
