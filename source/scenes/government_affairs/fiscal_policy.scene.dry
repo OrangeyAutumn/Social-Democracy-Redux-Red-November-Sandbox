@@ -76,6 +76,7 @@ on-arrival: inflation += 0.35; growth += 0.25; unemployment -= 0.1; workers_spd 
 We have lowered interest rates, hoping to boost growth and ease the cost-of-living burden. This is broadly popular across classes, but economists warn of the risk of stoking inflation.
 
 @emergency_fiscal_event
+title: An Emergency Fiscal Event
 subtitle: This may unsettle businesses, consumers, and our coalition partners.
 
 - @raise_rich: Increase taxes on the rich.
