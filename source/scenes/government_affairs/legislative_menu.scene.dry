@@ -1,5 +1,7 @@
-@legislative.menu
-title: Legislative menu
+title: Legislative_menu
+go-to: legislative_menu
+
+@legislative_menu
 on-arrival: {!
 
 if (Q.welfare_cut_vote) {
