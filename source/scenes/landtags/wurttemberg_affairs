@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: in_wurttemburg_spd = 1 and wurttemberg_affairs_timer <= 0
 on-arrival: wurttemberg_affairs_timer += 6; month_actions += 1
-tags: landtags
+tags: landtag_affairs
 card-image: img/braun.jpg
 #subtitle: The state government of Württemberg presents an opportunity...
 
