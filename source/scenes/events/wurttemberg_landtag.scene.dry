@@ -364,7 +364,6 @@ subtitle: SPD + [+ ddp_name +] ([+ wl_social_liberal_coalition +]%)
 choose-if: ddp_relation >= 45
 unavailable_subtitle: We do not have sufficient relations with the DDP.
 view-if: wl_social_liberal_coalition >= 50
-choose-if: wl_social_liberal_coalition >= 50
 on-arrival: in_wurttemburg_left = 0; in_wurttemburg_tolerated_spd = 0; in_wurttemburg_spd = 0; in_wurttemburg_tolerated_soclib: 0; in_wurttemburg_soclib: 1; in_wurttemburg_socchr: 0; in_wurttemburg_tolerated_weimar: 0; in_wurttemburg_weimar: 0; in_wurttemburg_groko = 0; in_wurttemburg_bourgeois: 0; in_wurttemburg_right: 0; in_wurttemburg_nsdap = 0; workers_spd += 2*(1-dissent)
 
 The SPD enters a coalition with the [+ ddp_name +].
