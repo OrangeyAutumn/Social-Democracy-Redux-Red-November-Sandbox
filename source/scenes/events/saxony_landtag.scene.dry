@@ -373,7 +373,7 @@ on-arrival: saxon_dispute = 1; in_saxony_spd = 0; in_saxony_uspd = 0; in_saxony_
 
 Surprisingly, the center-right bourgeois parties are capable of a lone majority! [? if s_elections <= 1 : Max Heldt is replaced by a candidate from the DVP, Bünger. ?]
 
-anticommunist_coalition
+@anticommunist_coalition
 title: An anticommunist coalition, of the bourgeois and their sympathizers.
 subtitle: ASPD + [+ ddp_name +] + Z + DVP + Others + DNVP + NSDAP ([+ s_anticommunist_coalition +]%)
 view-if: s_anticommunist_coalition >= 50 or s_elections <= 1
@@ -403,7 +403,7 @@ on-arrival: saxony_spd -= 0.1; workers_spd += 3*(1-dissent); unemployed_spd += 3
 
 We have won a majority in Saxony alone.
 
-no_majority_saxony
+@no_majority_saxony
 view-if: (nsdap_sl < 50) and (s_left_coalition < 50 or uspd_relation < 40 or communist_coalition <2) and (s_anticommunist_coalition < 50 or s_center_right_coalition >= 50 or (year >= 1930 and not nazi_reform and not dnvp_reform)) and (s_center_right_coalition < 50 or (year >= 1930 and not dnvp_reform)) and (spd_sl < 50) and (s_progressive_coalition < 50)
 title: There is no clear majority.
 
