@@ -92,7 +92,7 @@ is-deck: true
 
 @pres
 title: Presidential Affairs
-view-if: president == "Ebert" or "Braun" or president == "Schumacher" or president == "Juchacz"
+view-if: president == "Ebert" or president == "Braun" or president == "Schumacher" or president == "Juchacz"
 card-image: img/presidential_affairs.jpg
 is-deck: true
 
