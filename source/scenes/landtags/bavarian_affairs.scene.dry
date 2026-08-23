@@ -1,8 +1,8 @@
 title: Bavarian Affairs
 new-page: true
 is-card: true
-view-if: in_spd_bavaria = 1
-on-arrival: month_actions += 1
+view-if: in_bavaria_spd = 1 and hamburg_affairs_timer <= 0
+on-arrival: bavaria_affairs_timer += 6; month_actions += 1
 tags: landtag_affairs
 card-image: img/braun.jpg
 #subtitle: The state government of Bavaria presents an opportunity...
