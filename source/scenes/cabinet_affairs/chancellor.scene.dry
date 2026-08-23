@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: cabinet_affairs
 card-image: img/muller_cabinet.jpg
-view-if: spd_in_government = 1
+view-if: spd_in_government = 1 and chancellor_party = "SPD"
 subtitle: With the Chancellorship, we have a range of powers we can deploy to our advantage.
 
 - @coalition: We can improve relations with our coalition partners.
