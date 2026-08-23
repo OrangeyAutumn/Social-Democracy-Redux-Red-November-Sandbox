@@ -407,7 +407,7 @@ go-to: marx_campaign
 We have dropped out and endorsed Wilhelm Marx, who is now the candidate of the **Volksblock**. In return, the Center Party has voted Otto Braun as M-P of Prussia.
 
 @back_both
-view-if: marx_campaign and liebknecht_campaign and not spd_support marx and not spd_support_liebknecht
+view-if: marx_campaign and liebknecht_campaign and not spd_support_marx and not spd_support_liebknecht
 on_arrival: spd_prussia = 1; spd_support_both = 1; backed_both = 1
 go-to: both_campaign
 
