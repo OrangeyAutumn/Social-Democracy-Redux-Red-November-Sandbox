@@ -1,6 +1,6 @@
 title: Root Scene
 new-page: true
-go-to: post_event if started == 1; start_menu if started == 0
+go-to: post_event if started = 1; start_menu if started = 0
 
 # TODO: do that thing that we did before...
 
@@ -8,7 +8,7 @@ go-to: post_event if started == 1; start_menu if started == 0
 new-page: true
 go-to: start_menu_2
 
-= Social Democracy: A (Very) Alternate History
+= Social Democracy: An Alternate History
 
 @start_menu_2
 
@@ -121,7 +121,7 @@ Q.weimar_willingness = 0
 
 // inter-party relations
 Q.z_relation = 50;
-Q.uspd_relation = 45;
+Q.uspd_relation = 25;
 Q.ddp_relation = 60;
 Q.dvp_relation = 35;
 // DNVP and NSDAP are invariably hostile
@@ -601,7 +601,7 @@ Q.fun_value = Math.floor(Math.random() * 100) + 1;
 
 Q.political_crisis_progress = 0;
 
-// initial advisers - Otto Wels and Hermann Müller are centrists, Arthur Crispien is left
+// initial advisors - Otto Wels and Hermann Müller are centrists, Arthur Crispien is left
 Q.wels_advisor = 1; // Otto Wels
 Q.muller_advisor = 1; // Hermann Müller
 Q.muller_dead = 0;
@@ -641,6 +641,36 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
+
+// Landtags
+Q.in_bavaria_spd = 0
+Q.in_bavaria_uspd: 0
+Q.in_bavaria_dnvp: 1
+Q.in_bavaria_nsdap: 0
+Q.in_prussia_spd = 1
+Q.in_prussia_uspd: 0
+Q.in_prussia_dnvp: 0
+Q.in_prussia_nsdap: 0
+Q.in_wurttemburg_spd = 0
+Q.in_wurttemburg_uspd: 0
+Q.in_wurttemburg_dnvp: 1
+Q.in_wurttemburg_nsdap: 0
+Q.in_saxony_spd = 0
+Q.in_saxony_uspd: 0
+Q.in_saxony_dnvp: 1
+Q.in_saxony_nsdap: 0
+Q.in_hamburg_spd = 1
+Q.in_hamburg_uspd: 0
+Q.in_hamburg_dnvp: 0
+Q.in_hamburg_nsdap: 0
+Q.in_thuringia_spd = 1
+Q.in_thuringia_uspd: 0
+Q.in_thuringia_dnvp: 0
+Q.in_thuringia_nsdap: 0
+Q.in_schaumburg_lippe_spd = 1
+Q.in_schaumburg_lippe_uspd: 0
+Q.in_schaumburg_lippe_dnvp: 1
+Q.in_schaumburg_lippe_nsdap: 0
 
 Q.prussia_spd = 0.95;
 Q.prussia_sapd = 1;
@@ -798,6 +828,9 @@ Q.uspd_wl = 12;
 Q.ddp_wl = 11;
 Q.other_wl = 24;
 
+Q.landtags_enabled = 1
+Q.legislature_enabled = 1
+
 !}
 set-bg: img/map_2.jpg
 new-page: true
@@ -810,10 +843,6 @@ This is a game of alternate history. While historical accuracy is a major concer
 
 For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
-- @1925_easy: Begin (easy difficulty)
-- @1925_main: Begin (normal difficulty)
-- @1925_hard: Begin (hard difficulty)
-- @1925_historical: Begin (historical mode)
 - @1928_easy: Begin (easy difficulty)
 - @1928_main: Begin (normal difficulty)
 - @1928_hard: Begin (hard difficulty)
@@ -826,12 +855,12 @@ For more information on the politics and government of the German Republic, see 
 
 @1928_easy
 view-if: year == 1928
-on-arrival: landtags_enabled = 1; legislature_enabled = 1; difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; uspd_relation = 29; z_relation = 54; dvp_relation = 49; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; uspd_relation = 29; z_relation = 54; dvp_relation = 49; budget = 5;
 go-to: 1928_main
 
 @1928_hard
 view-if: year == 1928
-on-arrival: landtags_enabled = 1; legislature_enabled = 1; difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; uspd_relation = 16; dvp_relation = 31; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; uspd_relation = 16; dvp_relation = 31; budget = 3;
 go-to: 1928_main
 
 @1928_historical
@@ -851,20 +880,18 @@ Q.z_relation = 41;
 Q.uspd_relation = 16;
 Q.dvp_relation = 31;
 Q.budget = 2;
-landtags_enabled = 1; 
-legislature_enabled = 1;
 this.state.disableSaves = true;
 !}
 go-to: 1928_main
 
 @1930_easy
 view-if: year == 1930
-on-arrival: landtags_enabled = 1; legislature_enabled = 1; difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; uspd_relation += 9; z_relation += 5; dvp_relation += 9; budget += 1
+on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; uspd_relation += 9; z_relation += 5; dvp_relation += 9; budget += 1
 go-to: 1930_main
 
 @1930_hard
 view-if: year == 1930
-on-arrival: landtags_enabled = 1; legislature_enabled = 1; difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent += 10; left_dissent += 10; labor_dissent += 10; center_dissent += 15; z_relation -=  9; uspd_relation -= 5; dvp_relation -= 9; budget -= 1;
+on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent += 10; left_dissent += 10; labor_dissent += 10; center_dissent += 15; z_relation -=  9; uspd_relation -= 5; dvp_relation -= 9; budget -= 1;
 go-to: 1930_main
 
 @1930_historical
@@ -886,20 +913,18 @@ Q.dvp_relation -= 9;
 Q.budget -= 2;
 Q.status_quo = 1;
 Q.budget_resolved = 1;
-landtags_enabled = 1; 
-legislature_enabled = 1;
 this.state.disableSaves = true;
 !}
 go-to: 1930_main
 
 @1925_easy
 view-if: year == 1925
-on-arrival: landtags_enabled = 1; legislature_enabled = 1; difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; uspd_relation += 9; z_relation += 5; dvp_relation += 9; budget += 1
+on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; uspd_relation += 9; z_relation += 5; dvp_relation += 9; budget += 1
 go-to: 1925_main
 
 @1925_hard
 view-if: year == 1925
-on-arrival: landtags_enabled = 1; legislature_enabled = 1; difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent += 10; left_dissent += 10; labor_dissent += 10; center_dissent += 15; z_relation -=  9; uspd_relation -= 5; dvp_relation -= 9; budget -= 1;
+on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent += 10; left_dissent += 10; labor_dissent += 10; center_dissent += 15; z_relation -=  9; uspd_relation -= 5; dvp_relation -= 9; budget -= 1;
 go-to: 1925_main
 
 @1925_historical
@@ -919,8 +944,6 @@ Q.z_relation -= 9;
 Q.uspd_relation -= 5;
 Q.dvp_relation -= 9;
 Q.budget -= 2;
-landtags_enabled = 1; 
-legislature_enabled = 1;
 this.state.disableSaves = true;
 !}
 go-to: 1925_main
@@ -932,15 +955,17 @@ For other, non-difficulty related tweaks.
 
 - @disable_end: Disable end in 1934.
 - @enable_end: Enable end in 1934.
+- @enable_normalize: Enable experimental support changes (Not Recommended)
+- @disable_normalize: Disable experimental support changes.
 - @enable_hyperinflation: Enable hyperinflation (janky)
 - @disable_hyperinflation: Disable hyperinflation
 - @enable_landtags: Enable WIP landtags (WIP).
 - @disable_landtags: Disable WIP landtags (WIP).
 - @enable_legislature: Enable legislative rework
 - @disable_legislature: Disable legislative rework
-- @1925: Begin the game in 1925 (fairly WIP)
 - @1930: Begin the game in 1930.
 - @1928: Begin the game in 1928.
+- @1925: Begin the game in 1925 (fairly WIP)
 - @menu: Back.
 
 @disable_end
@@ -957,6 +982,21 @@ go-to: menu
 
 The end date has been enabled.
 
+@enable_normalize
+view-if: normalize_support != 1
+on-arrival: normalize_support = 1
+go-to: menu
+
+Experimental support changes enabled. These will likely lead to more uniform changes in support, rather than support becoming more static in the lategame. However, the game isn't currently adjusted for this, so it may also lead to unexpected margins.
+
+Note: After some playtests, they seem to inexplicably just lead to the Nazis never growing. Not recommended.
+
+@disable_normalize
+view-if: normalize_support = 1
+on-arrival: normalize_support = 0
+go-to: menu
+
+Experimental support changes disabled.
 
 @enable_hyperinflation
 view-if: hyperinflation_enabled != 1
