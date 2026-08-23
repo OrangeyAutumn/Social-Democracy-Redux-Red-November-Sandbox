@@ -376,7 +376,7 @@ is-card: true
 card-image: img/portraits/VogelHans.jpg
 tags: center_advisor
 view-if: vogel_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: wels_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
+on-arrival: vogel_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
 go-to: advisor_menu
 
 Hans Vogel is now an advisor.
