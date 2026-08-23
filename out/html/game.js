@@ -220,8 +220,8 @@
       }
       var tabButton = document.getElementById(tabId);
       var tabButtons = document.getElementsByClassName('tab_button');
-      for (i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+      for (var i = 0; i < tabButtons.length; i++) { 
+        tabButtons[i].className = tabButtons[i].className.replace(' active', ''); 
       }
       tabButton.className += ' active';
       window.statusTab = newTab;
