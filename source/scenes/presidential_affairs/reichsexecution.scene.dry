@@ -2,9 +2,18 @@ title: Reichsexecution
 new-page: true
 tags: pres_affairs
 is-card: true
-card-image: img/reichsexecution.jpeg
+card-image: img/reichsexekution.jpg
 
 With the Presidency, we have the power to depose any state government through a *Reichsexekution.* More cynically, it also offers an opportunity to enforce our power at the state level. We must reserve these powers for serious cases where the extreme parties have entered government, however.
+
+-@reichsexecute_hamburg
+-@reichsexecute_saxony
+-@reichsexecute_thuringia
+-@reichsexecute_bavaria
+-@reichsexecute_prussia
+-@reichsexecute_wurttemburg
+-@reichsexecute_schaumburg_lippe
+-@root
 
 @reichsexekute_hamburg
 choose-if: in_hamburg_uspd = 1 or in_hamburg_dnvp = 1 or in_hamburg_nsdap = 1
