@@ -14,8 +14,6 @@ if (Q.economic_growth) {
 }
 !}
 
-@main
-
 = Status
 
 [+ month : month +] [+ year +]
