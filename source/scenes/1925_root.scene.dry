@@ -639,14 +639,14 @@ Q.thuringia_election_year = 1927;
 Q.thuringia_election_month = 1;
 Q.t_elections = -1;
 
-Q.saxony_election_year = 1929;
-Q.saxony_election_month = 5;
+Q.saxony_election_year = 1926;
+Q.saxony_election_month = 10;
 
-Q.schaumburg_lippe_election_year = 1928;
-Q.schaumburg_lippe_election_month = 4;
+Q.schaumburg_lippe_election_year = 1925;
+Q.schaumburg_lippe_election_month = 5;
 
-Q.hamburg_election_year = 1928;
-Q.hamburg_election_month = 2;
+Q.hamburg_election_year = 1927;
+Q.hamburg_election_month = 10;
 
 Q.wurttemberg_election_year = 1928;
 Q.wurttemberg_election_month = 5;
