@@ -1,5 +1,5 @@
 title: Article 48
-view-if: chancellor_party == "SPD" and not presidential_powers and article_48_timer <= 8
+view-if: chancellor_party == "SPD" and not presidential_powers and article_48_timer <= 8 and president == "Ebert" or president == "Braun" or president == "Schumacher" or president == "Juchacz"
 new-page: true
 tags: pres_affairs
 is-card: true
