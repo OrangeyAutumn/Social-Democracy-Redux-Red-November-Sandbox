@@ -230,42 +230,36 @@ For other, non-difficulty related tweaks.
 @disable_end
 view-if: end_disabled != 1
 on-arrival: end_disabled = 1
-go-to: menu
 
 The end date has been disabled.
 
 @enable_end
 view-if: end_disabled = 1
 on-arrival: end_disabled = 0
-go-to: menu
 
 The end date has been enabled.
 
 @enable_landtags
 view-if: landtags_enabled != 1
 on-arrival: landtags_enabled = 1
-go-to: menu
 
 Landtags have been enabled.
 
 @disable_landtags
 view-if: landtags_enabled
 on-arrival: landtags_enabled = 0
-go-to: menu
 
 Landtags have been disabled.
 
 @enable_legislature
 view-if: legislature_enabled != 1
 on-arrival: legislature_enabled = 1
-go-to: menu
 
 The legislative rework have been enabled.
 
 @disable_legislature
 view-if: legislature_enabled
 on-arrival: legislature_enabled = 0
-go-to: menu
 
 The legislative rework has been disabled.
 
