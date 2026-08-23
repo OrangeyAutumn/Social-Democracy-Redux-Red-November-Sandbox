@@ -803,4 +803,4 @@ Q.landtags_enabled = 1;
 Q.legislature_enabled = 1;
 
 !}
-go-to: root.menu
+go-to: root.1928_start
