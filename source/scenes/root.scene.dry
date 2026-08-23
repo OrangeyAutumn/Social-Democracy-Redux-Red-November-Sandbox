@@ -45,9 +45,9 @@ Please select your desired start date.
 - @settings: Settings.
 
 @1925_start
-go-to: 1925_root
 set-bg: img/hindenburg_election.jpg
 new-page: true
+go-to: 1925_root
 
 = 1925: The Death of Ebert
 
@@ -70,9 +70,9 @@ Please select your desired difficulty to begin.
 - @start: Go Back.
 
 @1928_start
-go-to: 1928_root
 set-bg: img/bankrun.jpg
 new-page: true
+go-to: 1928_root
 
 = 1928: The Age of Catastrophe
 
@@ -95,9 +95,9 @@ Please select your desired difficulty to begin.
 - @start: Go Back.
 
 @1930_start
-go-to: 1930_root
 set-bg: img/reichstag_3.jpg
 new-page: true
+go-to: 1930_root
 
 = 1930: In This Historic Hour
 
