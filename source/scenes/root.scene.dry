@@ -643,34 +643,34 @@ Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
 
 // Landtags
-Q.in_bavaria_spd = 0
-Q.in_bavaria_uspd: 0
-Q.in_bavaria_dnvp: 1
-Q.in_bavaria_nsdap: 0
-Q.in_prussia_spd = 1
-Q.in_prussia_uspd: 0
-Q.in_prussia_dnvp: 0
-Q.in_prussia_nsdap: 0
-Q.in_wurttemburg_spd = 0
-Q.in_wurttemburg_uspd: 0
-Q.in_wurttemburg_dnvp: 1
-Q.in_wurttemburg_nsdap: 0
-Q.in_saxony_spd = 0
-Q.in_saxony_uspd: 0
-Q.in_saxony_dnvp: 1
-Q.in_saxony_nsdap: 0
-Q.in_hamburg_spd = 1
-Q.in_hamburg_uspd: 0
-Q.in_hamburg_dnvp: 0
-Q.in_hamburg_nsdap: 0
-Q.in_thuringia_spd = 1
-Q.in_thuringia_uspd: 0
-Q.in_thuringia_dnvp: 0
-Q.in_thuringia_nsdap: 0
-Q.in_schaumburg_lippe_spd = 1
-Q.in_schaumburg_lippe_uspd: 0
-Q.in_schaumburg_lippe_dnvp: 1
-Q.in_schaumburg_lippe_nsdap: 0
+Q.in_bavaria_spd = 0;
+Q.in_bavaria_uspd = 0;
+Q.in_bavaria_dnvp = 1;
+Q.in_bavaria_nsdap = 0;
+Q.in_prussia_spd = 1;
+Q.in_prussia_uspd = 0;
+Q.in_prussia_dnvp = 0;
+Q.in_prussia_nsdap = 0;
+Q.in_wurttemburg_spd = 0;
+Q.in_wurttemburg_uspd = 0;
+Q.in_wurttemburg_dnvp = 1;
+Q.in_wurttemburg_nsdap = 0;
+Q.in_saxony_spd = 0;
+Q.in_saxony_uspd = 0;
+Q.in_saxony_dnvp = 1;
+Q.in_saxony_nsdap = 0;
+Q.in_hamburg_spd = 1;
+Q.in_hamburg_uspd = 0;
+Q.in_hamburg_dnvp = 0;
+Q.in_hamburg_nsdap = 0;
+Q.in_thuringia_spd = 1;
+Q.in_thuringia_uspd = 0;
+Q.in_thuringia_dnvp = 0;
+Q.in_thuringia_nsdap = 0;
+Q.in_schaumburg_lippe_spd = 1;
+Q.in_schaumburg_lippe_uspd = 0;
+Q.in_schaumburg_lippe_dnvp = 1;
+Q.in_schaumburg_lippe_nsdap = 0;
 
 Q.prussia_spd = 0.95;
 Q.prussia_sapd = 1;
@@ -828,8 +828,8 @@ Q.uspd_wl = 12;
 Q.ddp_wl = 11;
 Q.other_wl = 24;
 
-Q.landtags_enabled = 1
-Q.legislature_enabled = 1
+Q.landtags_enabled = 1;
+Q.legislature_enabled = 1;
 
 !}
 set-bg: img/map_2.jpg
