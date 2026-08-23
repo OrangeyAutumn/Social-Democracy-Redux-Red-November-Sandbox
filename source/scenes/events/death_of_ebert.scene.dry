@@ -411,7 +411,7 @@ view-if: marx_campaign and liebknecht_campaign and not spd_support_marx and not 
 on_arrival: spd_prussia = 1; spd_support_both = 1; backed_both = 1
 go-to: both_campaign
 
-We have dropped out and endorsed both Wilhelm Marx and Karl Liebknecht. This has pleased nobody, but hopefully it will be enough to defeat Hindenburg.
+We have dropped out and endorsed both Wilhelm Marx and Karl Liebknecht. This has pleased nobody, but hopefully it will be enough to defeat any right-wing candidate.
 
 @finished_campaign_braun
 on-arrival: held_campaign = 0; jarres_campaign = 0; ludendorff_campaign = 0; dvp_support_hindenburg = 1; hindenburg_campaign = 1; bvp_support_hindenburg = 1 if z_relation < 55 and spd_support_marx; bvp_support_marx = 1 if z_relation > 65 or not spd_support_marx; nationalism += 5
@@ -420,6 +420,45 @@ go-to: bc2 if braun_campaign
 Just as we conclude our own decisions with regards to the presidential campaign, we receive news of the entry of Paul von Hindenburg into the race. Considered by the right-wing a war hero, Paul von Hindenburg was a Field Marshal in the German Empire and managed to win the Battle of Tannenberg against Russia. To us, however, he is a reactionary junker and one of the primary peddlers of the stab-in-the-back myth, the same which recently cost Friedrich Ebert his life. 
 
 He has received the backing of the DVP, the DNVP[? if bvp_support_hindenburg :, the BVP?], the NSDAP, and the various minor parties of the center-right. A victory for him could mean the end of democracy as we know it.
+
+@both_campaign
+on-arrival: held_campaign = 0; jarres_campaign = 0; ludendorff_campaign = 0; dvp_support_hindenburg = 1; hindenburg_campaign = 1; bvp_support_hindenburg = 1 if z_relation < 55 and spd_support_marx; bvp_support_marx = 1 if z_relation > 65 or not spd_support_marx; nationalism += 5
+
+Just as we conclude our own decisions with regards to the presidential campaign, we receive news of the entry of Paul von Hindenburg into the race. Considered by the right-wing a war hero, Paul von Hindenburg was a Field Marshal in the German Empire and managed to win the Battle of Tannenberg against Russia. To us, however, he is a reactionary junker and one of the primary peddlers of the stab-in-the-back myth, the same which recently cost Friedrich Ebert his life. 
+
+He has received the backing of the DVP, the DNVP[? if bvp_support_hindenburg :, the BVP?], the NSDAP, and the various minor parties of the center-right. A victory for him could mean the end of democracy as we know it.
+
+- @democracy_rally_2: Rally for democracy, and against monarchism.
+- @donate_uspd_1: Provide more campaign resources for the left to spend.
+- @donate_z_1
+- @round1: Let the voting begin...
+
+@democracy_rally_2
+subtitle: -1 resource
+choose-if: resources >= 1
+on-arrival: resources -= 1; pro_republic += 6; nationalism -= 3; workers_dnvp -= 2; new_middle_dnvp -= 2; left_dissent -= 2
+go-to: liebknecht_campaign
+max-visits: 1
+
+We rally for democracy and against Paul von Hindenburg and the monarchists backing him.
+
+@donate_uspd_1
+subtitle: -1 resource - this may anger our reformist-wing further!
+choose-if: resources >= 1
+on-arrival: resources -= 1; reformist_dissent += 2
+go-to: liebknecht_campaign
+max-visits: 1
+
+Let's hope that it's enough.
+
+@donate_z_1
+subtitle: -1 resource - this may anger our left-wing further!
+choose-if: resources >= 1
+on-arrival: resources -= 1; catholics_z += 2; left_dissent += 2
+go-to: marx_campaign
+max-visits: 1
+
+We contribute to the campaign by helping the Centrists recover their right flank with resources. Let's hope that it's enough.
 
 @liebknecht_campaign
 on-arrival: held_campaign = 0; jarres_campaign = 0; ludendorff_campaign = 0; dvp_support_hindenburg = 1; hindenburg_campaign = 1; bvp_support_hindenburg = 1 if z_relation < 55 and spd_support_marx; bvp_support_marx = 1 if z_relation > 65 or not spd_support_marx; nationalism += 5
