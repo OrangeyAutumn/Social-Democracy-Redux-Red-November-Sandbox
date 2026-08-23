@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: pres_affairs
 on-arrival: month_actions += 1; international_relations_timer += 12;
-card-image: img/international.jpg
+card-image: img/on_the_world_stage.jpg
 max-visits: 6
 subtitle: Building ties with foreign powers.
 
