@@ -834,10 +834,37 @@ This is a game of alternate history. While historical accuracy is a major concer
 
 For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
+Please select your desired start date.
+
+- @1925_start: Select Difficulty
+- @1928_start: Select Difficulty
+- @1930_start: Select Difficulty
+- @settings: Settings.
+
+@1925_start
+go-to: 1925_root
+
+Please select your desired difficulty to begin.
+
+- @1925_easy: Begin (Easy Difficulty)
+- @1925_main: Begin (Normal Difficulty)
+- @1925_hard: Begin (Normal Difficulty)
+- @1925_historical: Begin (Historical Mode)
+
+@1928_start
+
+Please select your desired difficulty to begin.
+
 - @1928_easy: Begin (easy difficulty)
 - @1928_main: Begin (normal difficulty)
 - @1928_hard: Begin (hard difficulty)
 - @1928_historical: Begin (historical mode)
+
+@1930_start
+go-to: 1930_root
+
+Please select your desired difficulty to begin.
+
 - @1930_easy: Begin (easy difficulty)
 - @1930_main: Begin (normal difficulty)
 - @1930_hard: Begin (hard difficulty)
