@@ -225,7 +225,7 @@ For other, non-difficulty related tweaks.
 - @disable_landtags: Disable landtags.
 - @enable_legislature: Enable legislative rework
 - @disable_legislature: Disable legislative rework
-- @menu: Back.
+- @start_menu_2: Back.
 
 @disable_end
 view-if: end_disabled != 1
