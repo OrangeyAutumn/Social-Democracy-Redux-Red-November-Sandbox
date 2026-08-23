@@ -6,6 +6,7 @@ go-to: post_event if started = 1; start_menu if started = 0
 
 @start_menu
 new-page: true
+audio: music/opening_score.mp3
 go-to: start_menu_2
 
 = Social Democracy Redux: The Two SPDs (An Alternate History)
@@ -850,6 +851,7 @@ Please select your desired start date.
 @1925_start
 go-to: 1925_root
 new-page: true
+audio: music/opening_score.mp3
 
 = 1925: The Death of Ebert
 
@@ -876,6 +878,7 @@ Please select your desired difficulty to begin.
 @1928_start
 go-to: root
 new-page: true
+audio: music/opening_score.mp3
 
 = 1928: The Age of Catastrophe
 
@@ -902,6 +905,8 @@ Please select your desired difficulty to begin.
 @1930_start
 go-to: 1930_root
 new-page: true
+audio: music/opening_score.mp3
+
 
 = 1930: In This Historic Hour
 
