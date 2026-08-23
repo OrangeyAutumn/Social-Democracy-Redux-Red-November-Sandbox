@@ -49,6 +49,8 @@ set-bg: img/hindenburg_election.jpg
 new-page: true
 go-to: 1925_root
 
+@1925_start_menu
+
 = 1925: The Death of Ebert
 
 *"You will understand and know the German Republic better when it elects Hindenburg president."*
@@ -74,6 +76,8 @@ set-bg: img/bankrun.jpg
 new-page: true
 go-to: 1928_root
 
+@1928_start_menu
+
 = 1928: The Age of Catastrophe
 
 *"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
@@ -98,6 +102,8 @@ Please select your desired difficulty to begin.
 set-bg: img/reichstag_3.jpg
 new-page: true
 go-to: 1930_root
+
+@1930_start_menu
 
 = 1930: In This Historic Hour
 
