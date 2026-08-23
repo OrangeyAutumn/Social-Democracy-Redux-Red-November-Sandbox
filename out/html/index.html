@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta prefix="ifiction: http://babel.ifarchive.org/protocol/iFiction/"
         property="ifiction:ifid" content="7FCDF039-2B77-4179-B795-CBAFA65253AA">
-    <title>Social Democracy: Redux Sandbox</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Social Democracy: An Alternate History - Autumn Chen</title>
     <link rel="stylesheet" type="text/css" href="game.css">
     <script src="jquery-1.11.1.min.js"></script>
     <script src="d3.v7.min.js"></script>
@@ -22,20 +21,29 @@
     <div class="background" id="bg1">
     </div>
 
-    <div id="options" class="overlay" style="display: none;">
+    <div id="options" class="overlay options" style="display: none;">
+
         <div class="overlay_top">
+        <div class="music_player">
+            <h3>Music</h3>
+            <p>Currently playing: <span id="currently_playing"></span></p>
+            <p><label for="volume">Volume:</label><input type="range" min="0" max="100" value="100" id="volume" name="volume" oninput="window.setVolume(this.value);"></p>
+            <p style="text-align: center;"><button onclick="window.shuffle();">Next song</button></p>
+        </div>
+            <h3>Settings</h3>
             <table>
                 <tr>
                     <td>
-                        <label for="backgrounds_yes">Enable backgrounds</label>
+                        Backgrounds:
+                    </td>
+                    <td>
+                        <label for="backgrounds_yes">On</label>
                     </td>
                     <td>
                         <input type="radio" id="backgrounds_yes" name="backgrounds" value="1" onclick="window.enableBg();">
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        <label for="backgrounds_no">Disable backgrounds</label>
+                        <label for="backgrounds_no">Off</label>
                     </td>
                     <td>
                         <input type="radio" id="backgrounds_no" name="backgrounds" value="0" onclick="window.disableBg();">
@@ -46,15 +54,36 @@
                 </tr>
                 <tr>
                     <td>
-                        <label for="animate_yes">Enable animation</label>
+                        Event images:
+                    <td>
+                        <label for="images_yes">On</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="images_yes" name="images" value="1" onclick="window.enableImages();">
+                    </td>
+                    <td>
+                        <label for="images_no">Off</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="images_no" name="images" value="0" onclick="window.disableImages();">
+                    </td>
+                </tr>
+                <tr>
+                    <td> <hr> </td>
+                </tr>
+ 
+                <tr>
+                    <td>
+                        Animations:
+                    </td>
+                    <td>
+                        <label for="animate_yes">On</label>
                     </td>
                     <td>
                         <input type="radio" id="animate_yes" name="animate" value="1" onclick="window.enableAnimate();">
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        <label for="animate_no">Disable animation</label>
+                        <label for="animate_no">Off</label>
                     </td>
                     <td>
                         <input type="radio" id="animate_no" name="animate" value="0" onclick="window.disableAnimate();">
@@ -65,31 +94,80 @@
                 </tr>
                 <tr>
                     <td>
-                        <label for="audio_yes">Music on</label>
+                        Music:
+                    </td>
+                    <td>
+                        <label for="audio_yes">On</label>
                     </td>
                     <td>
                         <input type="radio" id="audio_yes" name="audio" value="1" onclick="window.enableAudio();">
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        <label for="audio_no">Music off</label>
+                        <label for="audio_no">Off</label>
                     </td>
                     <td>
                         <input type="radio" id="audio_no" name="audio" value="0" onclick="window.disableAudio();">
                     </td>
                 </tr>
+                <tr>
+                    <td> <hr> </td>
+                </tr>
+                <tr>
+                    <td>
+                        Color scheme:
+                    </td>
+                    <td>
+                        <label for="light_mode">Light mode</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="light_mode" name="ld_mode" value="1" onclick="window.enableLightMode();">
+                    </td>
+                    <td>
+                        <label for="dark_mode">Dark mode</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="dark_mode" name="ld_mode" value="0" onclick="window.enableDarkMode();">
+                    </td>
+                </tr>
+                <tr>
+                    <td> <hr> </td>
+                </tr>
+                <tr>
+                    <td>
+                        Font size:
+                    </td>
 
+                    <td colspan=2>
+                        <button onclick="window.decreaseFontSize();">Decrease font size</button>
+                    </td>
+                    <td colspan=2>
+                        <button onclick="window.increaseFontSize();">Increase font size</button>
+                    </td>
+                    <td>
+                        <span id="font_size_value"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <hr> </td>
+                </tr>
                 <tr>
                     <td>
                         <button onclick="window.hideOptions();">Close</button>
                     </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                   <td>
+                        <button onclick="window.showMods();">Mods</button>
+                    </td>
+
                 </tr>
             </table>
         </div>
     </div>
 
-    <div id="save" class="overlay" style="display: none;">
+    <div id="save" class="overlay saves" style="display: none;">
         <table id="saves_table" class="overlay_top">
             <tr>
                 <td>Auto-0</td>
@@ -247,14 +325,13 @@
     <div id='page'>
         <div id="mid_panel">
             <header>
-                <h1>Social Democracy: An Alternate History (Redux Sandbox)</h1>
-                <h2>Autumn Chen, modded by CuttleCraft and SylvurrTV</h2>
+                <h1 id="game-title">Social Democracy: An Alternate History</h1>
+                <h2 id="game-author">Autumn Chen</h2>
 
                 <div id="header-links">
                     <a id="stats-link" onclick="window.showStats();" href="#">Library</a>
                     <a onclick="dendryUI.showSaveSlots();" href="#">Save/Load</a>
                     <a onclick="window.showOptions();" href="#">Options</a>
-                    <a onclick="window.showSandbox();" href="#">Sandbox</a>
                 </div>
             </header>
             <div id="tools_wrapper">
