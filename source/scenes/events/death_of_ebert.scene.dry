@@ -452,6 +452,7 @@ max-visits: 1
 Let's hope that it's enough.
 
 @donate_z_1
+title: Donate resources to the Zentrum.
 subtitle: -1 resource - this may anger our left-wing further!
 choose-if: resources >= 1
 on-arrival: resources -= 1; catholics_z += 2; left_dissent += 2
