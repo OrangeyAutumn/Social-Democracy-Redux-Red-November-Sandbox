@@ -49,8 +49,6 @@ set-bg: img/hindenburg_election.jpg
 new-page: true
 go-to: 1925_root
 
-@1925_start_menu
-
 = 1925: The Death of Ebert
 
 *"You will understand and know the German Republic better when it elects Hindenburg president."*
@@ -68,8 +66,6 @@ Please select your desired difficulty to begin.
 set-bg: img/bankrun.jpg
 new-page: true
 go-to: 1928_root
-
-@1928_start_menu
 
 = 1928: The Age of Catastrophe
 
