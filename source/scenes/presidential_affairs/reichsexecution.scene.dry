@@ -1,8 +1,10 @@
 title: Reichsexecution
 new-page: true
 tags: pres_affairs
+view-if: president == "Ebert" or president == "Braun" or president == "Schumacher" or president == "Juchacz"
 is-card: true
 card-image: img/reichsexekution.jpg
+subtitle: Article 48 Paragraph 1 gives the President the power to order a Reichsexekution - the federal intervention against a state government, including even the use of military force. 
 
 With the Presidency, we have the power to depose any state government through a *Reichsexekution.* More cynically, it also offers an opportunity to enforce our power at the state level. We must reserve these powers for serious cases where the extreme parties have entered government, however.
 
@@ -13,7 +15,7 @@ With the Presidency, we have the power to depose any state government through a 
 - @reichsexekute_bavaria
 - @reichsexekute_wurttemberg
 - @reichsexekute_schaumburg_lippe
-- @root
+- @root: No, we should not do this.
 
 @reichsexekute_hamburg
 choose-if: in_hamburg_uspd = 1 or in_hamburg_dnvp = 1 or in_hamburg_nsdap = 1
