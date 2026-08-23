@@ -1,0 +1,20 @@
+title: Call a Vote of No Confidence?
+new-page: true
+is-card: true
+tags: cabinet_affairs
+on-arrival: shuffle_cabinet_timer = 6
+view-if: spd_in_government == 1 and chancellor_party = !"SPD" and not in_spd_majority and not in_emergency_government and coalition_dissent >= 3
+card-image: img/reichstag_1.jpg
+subtitle: Many in our party are disatisfied with the present governing arrangement!
+
+Many in our party have grown tired of the present governing arrangement, and see fresh elections as the only path forwards.
+
+- @vonc_yes: Yes, we cannot go on like this!
+- @root: That would be madness! 
+
+@vonc_yes
+on-arrival: spd_in_government = 0; spd_toleration = 0; in_grand_coalition = 0; chancellor = "Brüning"; chancellor_party = "Z"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; left_strength += 8; pro_republic -= 5; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 5; left_dissent -= 5
+
+We have called for a vote of no confidence, and have brought down this government. Chancellor [+ chancellor +] currently rules as acting chancellor.
+
+New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
