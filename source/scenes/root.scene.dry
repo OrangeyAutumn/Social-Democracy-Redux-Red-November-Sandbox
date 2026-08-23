@@ -8,7 +8,7 @@ go-to: post_event if started = 1; start_menu if started = 0
 new-page: true
 go-to: start_menu_2
 
-= Social Democracy: An Alternate History
+= Social Democracy Redux: The Two SPDs (An Alternate History)
 
 <img src="img/reichstag_2.jpg" alt="The Reichstag building">
 
@@ -828,6 +828,8 @@ Q.legislature_enabled = 1;
 set-bg: img/map_2.jpg
 new-page: true
 
+= Social Democracy Redux: The Two SPDs (An Alternate History)
+
 > *"It is difficult for those who have not experienced the 'Age of Catastrophe' of the twentieth century in central Europe to see what it meant to live in a world that was simply not expected to last, in something that could not really even be described as a world, but merely as a provisional way-station between a dead past and a future not yet born, unless perhaps in the depth of revolutionary Russia. Nowhere was this more palpable than in the dying days of the Weimar Republic."*
 
  - Eric Hobsbawm, Interesting Times (2002)
@@ -847,6 +849,9 @@ Please select your desired start date.
 
 @1925_start
 go-to: 1925_root
+new-page: true
+
+= 1925: The Death of Ebert
 
 *"You will understand and know the German Republic better when it elects Hindenburg president."*
 - Jacques Bainville, remark (25 November 1918)
@@ -868,6 +873,9 @@ Please select your desired difficulty to begin.
 
 @1928_start
 go-to: root
+new-page: true
+
+= 1928: The Age of Catastrophe
 
 *"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
 - Otto Wels, Speech Against the Passage of the Enabling Act, 1933
@@ -889,6 +897,9 @@ Please select your desired difficulty to begin.
 
 @1930_start
 go-to: 1930_root
+new-page: true
+
+= 1930: In This Historic Hour
 
 *"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
 - Otto Wels, Speech Against the Passage of the Enabling Act, 1933
