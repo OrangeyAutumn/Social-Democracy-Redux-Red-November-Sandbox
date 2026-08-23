@@ -7,6 +7,7 @@ go-to: post_event if started = 1; start_menu if started = 0
 @start_menu
 new-page: true
 audio: music/opening_score.mp3
+set-bg: img/reichstag_2.jpg
 go-to: start_menu_2
 
 = Social Democracy Redux: The Two SPDs (An Alternate History)
@@ -22,7 +23,6 @@ go-to: start_menu_2
 - @game_over.achievements
 
 @start
-set-bg: img/map_2.jpg
 new-page: true
 
 = Social Democracy Redux: The Two SPDs (An Alternate History)
@@ -46,6 +46,7 @@ Please select your desired start date.
 
 @1925_start
 go-to: 1925_root
+set-bg: img/hindenburg_election.jpg
 new-page: true
 
 = 1925: The Death of Ebert
@@ -65,12 +66,12 @@ Please select your desired difficulty to begin.
 - @1925_main: Begin (Normal Difficulty)
 - @1925_hard: Begin (Normal Difficulty)
 - @1925_historical: Begin (Historical Mode)
-- @1928_start: Change to 1928 Start Date
-- @1930_start: Change to 1930 Start Date
 - @settings: Settings.
+- @start: Go Back.
 
 @1928_start
 go-to: 1928_root
+set-bg: img/bankrun.jpg
 new-page: true
 
 = 1928: The Age of Catastrophe
@@ -90,12 +91,12 @@ Please select your desired difficulty to begin.
 - @1928_main: Begin (normal difficulty)
 - @1928_hard: Begin (hard difficulty)
 - @1928_historical: Begin (historical mode)
-- @1925_start: Change to 1925 Start Date
-- @1930_start: Change to 1930 Start Date
 - @settings: Settings.
+- @start: Go Back.
 
 @1930_start
 go-to: 1930_root
+set-bg: img/reichstag_3.jpg
 new-page: true
 
 = 1930: In This Historic Hour
@@ -115,9 +116,8 @@ Please select your desired difficulty to begin.
 - @1930_main: Begin (normal difficulty)
 - @1930_hard: Begin (hard difficulty)
 - @1930_historical: Begin (historical mode)
-- @1925_start: Change to 1925 Start Date
-- @1928_start: Change to 1928 Start Date
 - @settings: Settings.
+- @start: Go Back.
 
 @1928_easy
 view-if: year == 1928
@@ -219,19 +219,12 @@ subtitle: Enable or disable various features.
 
 For other, non-difficulty related tweaks.
 
-- @disable_end: Disable end in 1934.
 - @enable_end: Enable end in 1934.
-- @enable_normalize: Enable experimental support changes (Not Recommended)
-- @disable_normalize: Disable experimental support changes.
-- @enable_hyperinflation: Enable hyperinflation (janky)
-- @disable_hyperinflation: Disable hyperinflation
-- @enable_landtags: Enable WIP landtags (WIP).
-- @disable_landtags: Disable WIP landtags (WIP).
+- @disable_end: Disable end in 1934.
+- @enable_landtags: Enable landtags.
+- @disable_landtags: Disable landtags.
 - @enable_legislature: Enable legislative rework
 - @disable_legislature: Disable legislative rework
-- @1930: Begin the game in 1930.
-- @1928: Begin the game in 1928.
-- @1925: Begin the game in 1925 (fairly WIP)
 - @menu: Back.
 
 @disable_end
@@ -247,36 +240,6 @@ on-arrival: end_disabled = 0
 go-to: menu
 
 The end date has been enabled.
-
-@enable_normalize
-view-if: normalize_support != 1
-on-arrival: normalize_support = 1
-go-to: menu
-
-Experimental support changes enabled. These will likely lead to more uniform changes in support, rather than support becoming more static in the lategame. However, the game isn't currently adjusted for this, so it may also lead to unexpected margins.
-
-Note: After some playtests, they seem to inexplicably just lead to the Nazis never growing. Not recommended.
-
-@disable_normalize
-view-if: normalize_support = 1
-on-arrival: normalize_support = 0
-go-to: menu
-
-Experimental support changes disabled.
-
-@enable_hyperinflation
-view-if: hyperinflation_enabled != 1
-on-arrival: hyperinflation_enabled = 1
-go-to: menu
-
-Hyperinflation enabled.
-
-@disable_hyperinflation
-view-if: hyperinflation_enabled
-on-arrival: hyperinflation_enabled = 0
-go-to: menu
-
-Hyperinflation disabled.
 
 @enable_landtags
 view-if: landtags_enabled != 1
@@ -305,38 +268,6 @@ on-arrival: legislature_enabled = 0
 go-to: menu
 
 The legislative rework has been disabled.
-
-@1925
-view-if: year != 1925
-go-to: 1925_root
-
-The starting date has been changed to 1925. This is so WIP you wouldn't believe it. Literally unplayable. Don't blame me when it's exactly as I warned.
-
-@1930
-view-if: year != 1930
-go-to: 1930_root
-
-The starting date has been changed to 1930.
-
-@1928
-view-if: year != 1928
-go-to: start_menu_2
-
-@menu
-
-- @1925_easy: Begin (easy difficulty)
-- @1925_main: Begin (normal difficulty)
-- @1925_hard: Begin (hard difficulty)
-- @1925_historical: Begin (historical mode)
-- @1928_easy: Begin (easy difficulty)
-- @1928_main: Begin (normal difficulty)
-- @1928_hard: Begin (hard difficulty)
-- @1928_historical: Begin (historical mode)
-- @1930_easy: Begin (easy difficulty)
-- @1930_main: Begin (normal difficulty)
-- @1930_hard: Begin (hard difficulty)
-- @1930_historical: Begin (historical mode)
-- @settings: Modify game.
 
 @1928_main
 view-if: year == 1928
