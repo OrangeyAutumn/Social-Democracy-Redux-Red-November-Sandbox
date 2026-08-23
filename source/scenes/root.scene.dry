@@ -10,6 +10,8 @@ go-to: start_menu_2
 
 = Social Democracy: An Alternate History
 
+image: img/reichstag_2.jpg
+
 @start_menu_2
 
 - @start: Start game
@@ -830,6 +832,8 @@ new-page: true
 
  - Eric Hobsbawm, Interesting Times (2002)
 
+image: img/reichstag_2.jpg
+
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game* and an alternate history, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
 For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
@@ -847,6 +851,8 @@ go-to: 1925_root
 *"You will understand and know the German Republic better when it elects Hindenburg president."*
 - Jacques Bainville, remark (25 November 1918)
 
+image: hindenburg_election.jpg
+
 It is an uncertain time for German democracy. Though the crises of 1923 have subsided and given way to a stabilization and normalization, the bourgeois parties continue to shift to the right to exclude us from government, even including the anticonstitutional DNVP in the form of the Luther cabinet which has just assumed power.
 
 The task of Social Democracy is to prepare itself so that when the government inevitably falls due to disagreements between the left and right of the bourgeois parties, we will be seen by the workers of Germany a viable alternative.
@@ -862,6 +868,8 @@ Please select your desired difficulty to begin.
 
 *"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
 - Otto Wels, Speech Against the Passage of the Enabling Act, 1933
+
+image: bankrun.jpg
 
 It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality.
 
@@ -879,6 +887,8 @@ go-to: 1930_root
 
 *"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
 - Otto Wels, Speech Against the Passage of the Enabling Act, 1933
+
+image: reichstag_3.jpg
 
 It is a grim time for German democracy. Following the largest crash in the stock market the world has seen, a worldwide depression has started, hitting Germany especially hard. The Nazis are ascendant and our support is dwindling as our coalition nears collapse.
 
