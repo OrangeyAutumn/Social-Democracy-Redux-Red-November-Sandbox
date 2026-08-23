@@ -2,12 +2,13 @@ title: Reichsexecution
 new-page: true
 tags: pres_affairs
 is-card: true
-card-image: img/schleicher.jpeg
+card-image: img/reichsexecution.jpeg
 
 With the Presidency, we have the power to depose any state government through a *Reichsexekution.* More cynically, it also offers an opportunity to enforce our power at the state level. We must reserve these powers for serious cases where the extreme parties have entered government, however.
 
 @reichsexekute_hamburg
-view-if: in_hamburg_uspd = 1 or in_hamburg_dnvp = 1 or in_hamburg_nsdap = 1
+choose-if: in_hamburg_uspd = 1 or in_hamburg_dnvp = 1 or in_hamburg_nsdap = 1
+unavailable-subtitle: There are no extreme parties within this government.
 tags: reichsexekutions
 title: Reichsexekute Hamburg.
 subtitle: This will anger the non-extreme parties of the state government!
@@ -16,7 +17,8 @@ on-arrival: in_hamburg_spd = 1; in_hamburg_uspd = 0; in_hamburg_dnvp = 0; in_ham
 We have performed a *Reichsexekution* against the government of Hamburg, removing it of extremist forces.
 
 @reichsexekute_thuringia
-view-if: in_thuringia_uspd = 1 or in_thuringia_dnvp = 1 or in_thuringia_nsdap = 1
+choose-if: in_thuringia_uspd = 1 or in_thuringia_dnvp = 1 or in_thuringia_nsdap = 1
+unavailable-subtitle: There are no extreme parties within this government.
 tags: reichsexekutions
 title: Reichsexekute Thuringia.
 subtitle: This will anger the non-extreme parties of the state government!
@@ -25,7 +27,8 @@ on-arrival: in_thuringia_spd = 1; in_thuringia_uspd = 0; in_thuringia_dnvp = 0; 
 We have performed a *Reichsexekution* against the government of Thuringia, removing it of extremist forces.
 
 @reichsexekute_saxony
-view-if: in_saxony_uspd = 1 or in_saxony_dnvp = 1 or in_saxony_nsdap = 1
+choose-if: in_saxony_uspd = 1 or in_saxony_dnvp = 1 or in_saxony_nsdap = 1
+unavailable-subtitle: There are no extreme parties within this government.
 tags: reichsexekutions
 title: Reichsexekute Saxony.
 subtitle: This will anger the non-extreme parties of the state government!
@@ -34,7 +37,8 @@ on-arrival: in_saxony_spd = 1; in_saxony_uspd = 0; in_saxony_dnvp = 0; in_saxony
 We have performed a *Reichsexekution* against the government of Saxony, removing it of extremist forces.
 
 @reichsexekute_prussia
-view-if: in_prussia_uspd = 1 or in_prussia_dnvp = 1 or in_prussia_nsdap = 1
+choose-if: in_prussia_uspd = 1 or in_prussia_dnvp = 1 or in_prussia_nsdap = 1
+unavailable-subtitle: There are no extreme parties within this government.
 tags: reichsexekutions
 title: Reichsexekute Prussia.
 subtitle: This will anger the non-extreme parties of the state government!
@@ -43,7 +47,8 @@ on-arrival: in_prussia_spd = 1; in_prussia_uspd = 0; in_prussia_dnvp = 0; in_pru
 We have performed a *Reichsexekution* against the government of Prussia, removing it of extremist forces.
 
 @reichsexekute_bavaria
-view-if: in_bavaria_uspd = 1 or in_bavaria_dnvp = 1 or in_bavaria_nsdap = 1
+choose-if: in_bavaria_uspd = 1 or in_bavaria_dnvp = 1 or in_bavaria_nsdap = 1
+unavailable-subtitle: There are no extreme parties within this government.
 tags: reichsexekutions
 title: Reichsexekute Bavaria.
 subtitle: This will anger the non-extreme parties of the state government!
@@ -52,7 +57,8 @@ on-arrival: in_bavaria_spd = 1; in_bavaria_uspd = 0; in_bavaria_dnvp = 0; in_bav
 We have performed a *Reichsexekution* against the government of Bavaria, removing it of extremist forces.
 
 @reichsexekute_wurttemberg
-view-if: in_wurttemberg_uspd = 1 or in_wurttemberg_dnvp = 1 or in_wurttemberg_nsdap = 1
+choose-if: in_wurttemberg_uspd = 1 or in_wurttemberg_dnvp = 1 or in_wurttemberg_nsdap = 1
+unavailable-subtitle: There are no extreme parties within this government.
 tags: reichsexekutions
 title: Reichsexekute Wurttemberg.
 subtitle: This will anger the non-extreme parties of the state government!
@@ -61,7 +67,8 @@ on-arrival: in_wurttemberg_spd = 1; in_wurttemberg_uspd = 0; in_wurttemberg_dnvp
 We have performed a *Reichsexekution* against the government of Wurttemberg, removing it of extremist forces.
 
 @reichsexekute_schaumburg_lippe
-view-if: in_schaumburg_lippe_uspd = 1 or in_schaumburg_lippe_dnvp = 1 or in_schaumburg_lippe_nsdap = 1
+choose-if: in_schaumburg_lippe_uspd = 1 or in_schaumburg_lippe_dnvp = 1 or in_schaumburg_lippe_nsdap = 1
+unavailable-subtitle: There are no extreme parties within this government.
 tags: reichsexekutions
 title: Reichsexekute Schaumburg-Lippe.
 subtitle: This will anger the non-extreme parties of the state government!
