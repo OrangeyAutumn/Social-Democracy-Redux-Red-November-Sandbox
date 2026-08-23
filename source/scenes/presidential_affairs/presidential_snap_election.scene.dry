@@ -1,5 +1,10 @@
-title: Snap Election
-subtitle: Call a snap election.
+title: On The World Stage
+new-page: true
+is-card: true
+tags: presidential_affairs
+card-image: img/braun.jpg
+max-visits: 6
+subtitle: The current Reichstag is not working. We must call a snap election.
 
 - @yes: Yes, we shall have new elections.
 - @root: No, we should not do this.
