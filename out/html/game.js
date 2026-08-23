@@ -14,14 +14,15 @@
     game = ui.game;
 
     // Add your custom code here.
-    window.enableDarkMode();
   };
 
   var TITLE = "Social Democracy: An Alternate History" + '_' + "Autumn Chen";
 
   // the url is a link to game.json
+  // test url: https://aucchen.github.io/social_democracy_mods/v0.1.json
   // TODO; 
   window.loadMod = function(url) {
+      ui.loadGame(url);
   };
 
   window.showStats = function() {
@@ -32,12 +33,37 @@
     }
   };
 
-  window.showSandbox = function() {
-      if (window.dendryUI.dendryEngine.state.sceneId.startsWith('sandbox')) {
-          window.dendryUI.dendryEngine.goToScene('backSpecialScene');
+  window.showMods = function() {
+    window.hideOptions();
+    if (window.dendryUI.dendryEngine.state.sceneId.startsWith('mod_loader')) {
+        window.dendryUI.dendryEngine.goToScene('backSpecialScene');
+    } else {
+        window.dendryUI.dendryEngine.goToScene('mod_loader');
+    }
+  };
+
+  // TODO: update audio displays
+  window.updateAudio = function(song) {
+      var now_playing = document.getElementById('currently_playing');
+      if (song) {
+          var a = song.split('/');
+          now_playing.textContent = a[a.length-1];
       } else {
-          window.dendryUI.dendryEngine.goToScene('sandbox');
+          var s = window.dendryUI.currentAudioURL;
+          var a = s.split('/');
+          now_playing.textContent = a[a.length-1];
       }
+  };
+
+  // sets the volume
+  window.setVolume = function(volume) {
+      window.dendryUI.volume = volume/100;
+      window.dendryUI.currentAudio.volume = volume/100;
+  };
+
+  // go to the next song - this just sets the time to 9999 lol.
+  window.shuffle = function() {
+      window.dendryUI.currentAudio.currentTime = 9999;
   };
   
   window.showOptions = function() {
@@ -102,6 +128,16 @@
       window.dendryUI.saveSettings();
   };
 
+  window.enableImages = function() {
+      window.dendryUI.show_portraits = true;
+      window.dendryUI.saveSettings();
+  };
+
+  window.disableImages = function() {
+      window.dendryUI.show_portraits = false;
+      window.dendryUI.saveSettings();
+  };
+
   window.enableLightMode = function() {
       window.dendryUI.dark_mode = false;
       document.body.classList.remove('dark-mode');
@@ -113,12 +149,12 @@
       window.dendryUI.saveSettings();
   };
 
-
   // populates the checkboxes in the options view
   window.populateOptions = function() {
     var disable_bg = window.dendryUI.disable_bg;
     var animate = window.dendryUI.animate;
     var disable_audio = window.dendryUI.disable_audio;
+    var show_portraits = window.dendryUI.show_portraits;
     if (disable_bg) {
         $('#backgrounds_no')[0].checked = true;
     } else {
@@ -133,6 +169,16 @@
         $('#audio_no')[0].checked = true;
     } else {
         $('#audio_yes')[0].checked = true;
+    }
+    if (show_portraits) {
+        $('#images_yes')[0].checked = true;
+    } else {
+        $('#images_no')[0].checked = true;
+    }
+    if (window.dendryUI.dark_mode) {
+        $('#dark_mode')[0].checked = true;
+    } else {
+        $('#light_mode')[0].checked = true;
     }
   };
 
@@ -223,8 +269,38 @@
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
+  window.increaseFontSize = function() {
+        window.dendryUI.font_size += 0.1;
+        var fs = window.dendryUI.font_size;
+        var sidebar_fs = fs - 0.1;
+        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+        document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
+        window.dendryUI.saveSettings();
+  }
+
+  window.decreaseFontSize = function() {
+        window.dendryUI.font_size -= 0.1;
+        var fs = window.dendryUI.font_size;
+        var sidebar_fs = fs - 0.1;
+        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+        document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
+        window.dendryUI.saveSettings();
+  }
+
   window.onload = function() {
-    window.dendryUI.loadSettings();
+    window.dendryUI.loadSettings({show_portraits: false});
+    if (window.dendryUI.dark_mode) {
+        document.body.classList.add('dark-mode');
+    }
+    if (window.dendryUI.font_size != 1.1) {
+        var fs = window.dendryUI.font_size;
+        var sidebar_fs = fs - 0.1;
+        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+    }
+    document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
   };
 
