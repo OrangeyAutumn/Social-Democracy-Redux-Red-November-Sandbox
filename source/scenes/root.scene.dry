@@ -854,7 +854,8 @@ new-page: true
 = 1925: The Death of Ebert
 
 *"You will understand and know the German Republic better when it elects Hindenburg president."*
-- Jacques Bainville, remark (25 November 1918)
+
+- Jacques Bainville, November 1918
 
 <img src="img/hindenburg_election.jpg" alt="A Hindenburg Election Poster">
 
@@ -868,8 +869,9 @@ Please select your desired difficulty to begin.
 - @1925_main: Begin (Normal Difficulty)
 - @1925_hard: Begin (Normal Difficulty)
 - @1925_historical: Begin (Historical Mode)
+- @1928_start: Change to 1928 Start Date
+- @1930_start: Change to 1930 Start Date
 - @settings: Settings.
-- @start: Go Back
 
 @1928_start
 go-to: root
@@ -878,6 +880,7 @@ new-page: true
 = 1928: The Age of Catastrophe
 
 *"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
+
 - Otto Wels, Speech Against the Passage of the Enabling Act, 1933
 
 <img src="img/bankrun.jpg" alt="A Bankrun">
@@ -892,8 +895,9 @@ Please select your desired difficulty to begin.
 - @1928_main: Begin (normal difficulty)
 - @1928_hard: Begin (hard difficulty)
 - @1928_historical: Begin (historical mode)
+- @1925_start: Change to 1925 Start Date
+- @1930_start: Change to 1930 Start Date
 - @settings: Settings.
-- @start: Go Back
 
 @1930_start
 go-to: 1930_root
@@ -902,6 +906,7 @@ new-page: true
 = 1930: In This Historic Hour
 
 *"The Weimar Constitution is not a socialist constitution. But we stand by the principles enshrined in it—the principles of a state based on the rule of law, of equal rights, of social justice. In this historic hour, we German Social Democrats solemnly pledge ourselves to the principles of humanity and justice, of freedom and socialism. No Enabling Act gives you the power to destroy ideas that are eternal and indestructible."
+
 - Otto Wels, Speech Against the Passage of the Enabling Act, 1933
 
 <img src="img/reichstag_3.jpg" alt="The Reichstag Interior">
@@ -916,8 +921,9 @@ Please select your desired difficulty to begin.
 - @1930_main: Begin (normal difficulty)
 - @1930_hard: Begin (hard difficulty)
 - @1930_historical: Begin (historical mode)
+- @1925_start: Change to 1925 Start Date
+- @1928_start: Change to 1928 Start Date
 - @settings: Settings.
-- @start: Go Back
 
 @1928_easy
 view-if: year == 1928
