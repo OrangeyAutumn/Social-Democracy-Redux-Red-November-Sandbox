@@ -29,7 +29,7 @@ SPD position: [? if spd_toleration : toleration ?][? if spd_in_government : in g
 
 Internal dissent: [+ dissent_percent : dissent +]
 
-[? if spartacist_influence_seen : USPD influence: [+ uspd_influence : uspd_influence +] ?]
+[? if communist_influence_seen : USPD influence: [+ uspd_influence : uspd_influence +] ?]
 
 = Government
 
@@ -76,9 +76,22 @@ Economic growth: [+ economic_growth_2 +]%
 
 @politics
 
-= Internal Factions of the SPD
+= Inter-party Relations
 
-Leadership: Crispien-Muller-Wels (Centre Marxism) 
+
+Z: [+ z_relation : relationships +]
+
+DDP: [+ ddp_relation : relationships +]
+
+DVP: [+ dvp_relation : relationships +]
+
+USPD: [+ uspd_relation : relationships +]
+
+DNVP: [+ dnvp_relation : relationships +]
+
+NSDAP: [+ nsdap_relation : relationships +]
+
+= Internal Factions of the SPD
 
 Left strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
 
@@ -89,29 +102,6 @@ Labor strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dis
 Reformist strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
 
 [? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
-
-= Inter-party Relations
-
-USPD: Revolutionary Socialism (Liebknecht)
-Relations: [+ uspd_relation : relationships +]
-
-DDP: Left Liberalism (Koch-Weser)
-Relations: DDP: [+ ddp_relation : relationships +]
-
-Z: Christian Democracy (Marx)
-Relations: Z: [+ z_relation : relationships +]
-
-BVP: Catholic Conservatism (Speck)
-Relations: Z: [+ z_relation : relationships +]
-
-DVP: National Liberalism (Stresemann)
-Relations: [+ dvp_relation : relationships +]
-
-DNVP: National Conservatism (Westarp)
-Relations: [+ dnvp_relation : relationships +]
-
-NSDAP: Nazism (Hitler)
-Relations: [+ nsdap_relation : relationships +]
 
 
 @paramilitaries
