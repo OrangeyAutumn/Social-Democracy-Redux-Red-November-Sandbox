@@ -5,7 +5,7 @@ tags: presidential_affairs
 on-arrival: month_actions += 1; international_relations_timer += 12;
 card-image: img/international.jpg
 max-visits: 6
-#subtitle: Building ties with foreign powers.
+subtitle: Building ties with foreign powers.
 
 With the Presidency, we can forge relations with governments in Europe and across the world.
 
