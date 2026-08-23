@@ -64,13 +64,6 @@ The task of Social Democracy is to prepare itself so that when the government in
 
 Please select your desired difficulty to begin.
 
-- @1925_easy: Begin (Easy Difficulty)
-- @1925_main: Begin (Normal Difficulty)
-- @1925_hard: Begin (Normal Difficulty)
-- @1925_historical: Begin (Historical Mode)
-- @settings: Settings.
-- @start: Go Back.
-
 @1928_start
 set-bg: img/bankrun.jpg
 new-page: true
@@ -91,19 +84,10 @@ Now, the task of Social Democracy is to prepare for the next election. The bourg
 
 Please select your desired difficulty to begin.
 
-- @1928_easy: Begin (easy difficulty)
-- @1928_main: Begin (normal difficulty)
-- @1928_hard: Begin (hard difficulty)
-- @1928_historical: Begin (historical mode)
-- @settings: Settings.
-- @start: Go Back.
-
 @1930_start
 set-bg: img/reichstag_3.jpg
 new-page: true
 go-to: 1930_root
-
-@1930_start_menu
 
 = 1930: In This Historic Hour
 
@@ -118,11 +102,21 @@ It will be our responsibility to ensure that this crisis of capitalism will not 
 
 Please select your desired difficulty to begin.
 
+@menu
+
+- @1925_easy: Begin (easy difficulty)
+- @1925_main: Begin (normal difficulty)
+- @1925_hard: Begin (hard difficulty)
+- @1925_historical: Begin (historical mode)
+- @1928_easy: Begin (easy difficulty)
+- @1928_main: Begin (normal difficulty)
+- @1928_hard: Begin (hard difficulty)
+- @1928_historical: Begin (historical mode)
 - @1930_easy: Begin (easy difficulty)
 - @1930_main: Begin (normal difficulty)
 - @1930_hard: Begin (hard difficulty)
 - @1930_historical: Begin (historical mode)
-- @settings: Settings.
+- @settings: Modify game.
 - @start: Go Back.
 
 @1928_easy
@@ -232,6 +226,7 @@ For other, non-difficulty related tweaks.
 - @enable_legislature: Enable legislative rework
 - @disable_legislature: Disable legislative rework
 - @start_menu_2: Back.
+- @menu: Proceed to Game.
 
 @disable_end
 view-if: end_disabled != 1
