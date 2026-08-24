@@ -107,14 +107,14 @@ Q.uspd_leader_fullname = "Karl Liebknecht";
 Q.spd_coleader_1 = "Crispien";
 Q.spd_coleader_1_fullname = "Arthur Crispien";
 // Hans Vogel after Muller's death
-Q.spd_coleader_2 = "Müller";
-Q.spd_coleader_2_fullname = "Hermann Müller";
+Q.spd_coleader_2 = "Muller";
+Q.spd_coleader_2_fullname = "Hermann Muller";
 Q.spd_coleader_3 = "Wels";
 Q.spd_coleader_3_fullname = "Otto Wels";
 // Erich Koch-Weser — 1924–1930
 Q.ddp_leader = "Koch-Weser"
 Q.ddp_leader_fullname = "Erich Koch-Weser"
-Q.z_leader = "Brüning";
+Q.z_leader = "Bruning";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
 // Wilhelm Marx — 1924–1928; Ludwig Kaas — 1928–May 1933; Heinrich Brüning — May–July 1933
 Q.z_party_leader = "Marx";
