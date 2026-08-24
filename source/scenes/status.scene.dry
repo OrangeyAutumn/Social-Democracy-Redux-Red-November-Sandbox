@@ -154,9 +154,9 @@ Ideology: [+ ddp_ideology +]
 Relations: [+ ddp_relation : relationships +]
 
 
-Z: ([+ z_leader +])
+Z: ([+ z_party_leader +])
 
-Leader: [+ z_leader_fullname +]
+Leader: [+ z_party_leader_fullname +]
 
 Ideology: [+ z_ideology +]
 
