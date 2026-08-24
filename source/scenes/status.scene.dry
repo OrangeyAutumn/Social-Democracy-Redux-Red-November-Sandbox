@@ -76,33 +76,76 @@ Economic growth: [+ economic_growth_2 +]%
 
 @politics
 
-= Inter-party Relations
-
-
-Z: [+ z_relation : relationships +]
-
-DDP: [+ ddp_relation : relationships +]
-
-DVP: [+ dvp_relation : relationships +]
-
-USPD: [+ uspd_relation : relationships +]
-
-DNVP: [+ dnvp_relation : relationships +]
-
-NSDAP: [+ nsdap_relation : relationships +]
-
 = Internal Factions of the SPD
 
-Left strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+Leadership: [+ spd_coleader_1 +]-[ Q.spd_coleader_2 +]-[+ spd_coleader_3 +]
+[+ spd_coleader_1_fullname +]
+[+ spd_coleader_2_fullname +]
+[+ spd_coleader_3_fullname +]
+Ideology: [+ spd_ideology +]
 
-Center strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
+Left
+Leader: Paul Levi
+Strength: [+ left_strength : strength +]
+Dissent: [+ left_dissent : dissent +]
 
-Labor strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +]
+Center 
+Leader: Rudolf Hilferding
+Strength: [+ center_strength : strength +]
+Dissent: [+ center_dissent : dissent +]
 
-Reformist strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
+Labor 
+Leader: Theodor Leipart
+Strength: [+ labor_strength : strength +]
+Dissent: [+ labor_dissent : dissent +]
 
-[? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
+Reformist 
+Leader: Otto Braun
+Strength: [+ reformist_strength : strength +]
+Dissent: [+ reformist_dissent : dissent +]
 
+[? if neorevisionism > 0 : 
+Neorevisionist
+Leader: Carlo Mierendorff
+Strength: [+ neorevisionist_strength : strength +]
+Dissent: [+ neorevisionist_dissent : dissent +] ?]
+
+  = Inter-party Relations
+
+USPD: ([+ uspd_leader +])
+Leader: [+ uspd_leader_fullname +]
+Ideology: Revolutionary Socialism
+Relations: [+ uspd_relation : relationships +]
+
+DDP: ([+ ddp_leader +])
+Leader: [+ ddp_leader_fullname +]
+Ideology: Left Liberalism
+Relations: [+ ddp_relation : relationships +]
+
+Z: ([+ z_leader +])
+Leader: [+ z_leader_fullname +]
+Ideology: Christian Democracy
+Relations: [+ z_relation : relationships +]
+
+BVP: ([+ bvp_leader +])
+Leader: [+ bvp_leader_fullname +]
+Ideology: Conservative Catholicism
+Relations: [+ z_relation : relationships +]
+
+DVP: ([+ dvp_leader +])
+Leader: [+ dvp_leader_fullname +]
+Ideology: National Liberalism
+Relations: [+ dvp_relation : relationships +]
+
+DNVP: ([+ dnvp_leader +])
+Leader: [+ dnvp_leader_fullname +]
+Ideology: National Conservatism
+Relations: [+ dnvp_relation : relationships +]
+
+NSDAP: ([+ nsdap_leader +])
+Leader: [+ nsdap_leader_fullname_fullname +]
+Ideology: Nazism
+Relations: Hostile
 
 @paramilitaries
 on-arrival: {!
