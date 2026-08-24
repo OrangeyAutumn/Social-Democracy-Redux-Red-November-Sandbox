@@ -104,26 +104,26 @@ Q.NSDAP_relation = 0;
 // Liebknecht 1925-1929 - Can be Karl Liebknecht or Ernst Thalmann 1929 onwards
 Q.uspd_leader = "Thälmann";
 Q.uspd_party_leader = "Thälmann";
-Q.uspd_leader_fullname = "Ernst Thälmann";
+Q.uspd_leader_fullname = "Ernst Thalmann";
 Q.spd_coleader_1 = "Crispien";
 Q.spd_coleader_1_fullname = "Arthur Crispien";
 // Hans Vogel after Muller's death
-Q.spd_coleader_2 = "Müller";
-Q.spd_coleader_2_fullname = "Hermann Müller";
+Q.spd_coleader_2 = "Muller";
+Q.spd_coleader_2_fullname = "Hermann Muller";
 Q.spd_coleader_3 = "Wels";
 Q.spd_coleader_3_fullname = "Otto Wels";
 // Erich Koch-Weser — 1924–1930
 Q.ddp_leader = "Koch-Weser"
 Q.ddp_leader_fullname = "Erich Koch-Weser"
-// Can later be Brüning)
-Q.z_leader = "Brüning";
+// Can later be Bruning)
+Q.z_leader = "Bruning";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
 // Wilhelm Marx — 1924–1928; Ludwig Kaas — 1928–May 1933; Heinrich Brüning — May–July 1933
 Q.z_party_leader = "Kaas";
 Q.z_party_leader_fullname = "Ludwig Kaas";
 // Karl Friedrich Speck — 1924–1929; Fritz Schäffer — 1929–1933
-Q.bvp_leader_fullname = "Schäffer"
-Q.bvp_leader_fullname = "Karl Schäffer"
+Q.bvp_leader_fullname = "Schaffer"
+Q.bvp_leader_fullname = "Karl Schaffer"
 // Gustav Stresemann — 1924–October 1929; Ernst Scholz — 1929–1930; Eduard Dingeldey — 1930–July 1933
 Q.dvp_leader = "Scholz"
 Q.dvp_leader_fullname = "Ernst Scholz"
