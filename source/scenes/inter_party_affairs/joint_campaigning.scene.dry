@@ -3,7 +3,7 @@ new-page: true
 on-arrival: month_actions += 1
 max-visits: 36
 is-card: true
-card-image: img/flags.jpg
+card-image: img/weimar_coalition_2.jpg
 frequency: 100
 tags: inter_party_affairs
 
@@ -22,31 +22,30 @@ Campaigning alongside other parties is an opportunity to reach out to their base
 subtitle: -1 resources
 choose-if: resources >= 1 and ddp_relation >= 45
 unavailable-subtitle: We either do not have enough resources or not enough relations with the DDP.
-on-arrival: new_middle_spd += 8*(1-dissent); new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1;
+on-arrival: new_middle_spd += 5*(1-dissent); workers_dvp += 2; resources -= 1; peoples_party_support += 1;
 
-We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards socialism among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+Campaigning alongside the DDP, we have increased our campaigning among the new middle class. Our campaign partners lend us credibility.
 
 @old_middle
 subtitle: -1 resources
 choose-if: resources >= 1 and dvp_relation >= 55
 unavailable-subtitle: We either do not have enough resources or not enough relations with the DVP.
-on-arrival: old_middle_spd += 8*(1-dissent); resources -= 1; old_middle_spd -= 3 if nationalism >= 51 and peoples_party == 0; peoples_party_support += 1
+on-arrival: old_middle_spd += 5*(1-dissent); workers_dvp += 2; resources -= 1; peoples_party_support += 1
 
-We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
-
+Campaigning alongside the DVP, we have increased our campaigning among the old middle class. Our campaign partners lend us credibility.
 
 @unemployed
 subtitle: -1 resources
 choose-if: resources >= 1 and USPD_relation >= 45
 unavailable-subtitle: We either do not have enough resources or not enough relations with the USPD.
-on-arrival: unemployed_spd += 8*(1-dissent); resources -= 1; unemployed_spd -= 3 if welfare < 0; unemployed_spd += 6*(1-dissent) if wtb_adopted = 1; unemployed_spd += 3*(1-dissent) if welfare >= 2;
+on-arrival: unemployed_spd += 5*(1-dissent); workers_uspd += 2; resources -= 1;
 
-We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
+Campaigning alongside the USPD, we have increased our campaigning among the unemployed. Our campaign partners lend us credibility.
 
 @catholics
 subtitle: -1 resources
 choose-if: resources >= 1 and z_relation >= 45
 unavailable-subtitle: We either do not have enough resources or not enough relations with the Zentrum.
-on-arrival: catholics_spd += 8*(1-dissent); resources -= 1
+on-arrival: catholics_spd += 5*(1-dissent); workers_z += 2; resources -= 1
 
-We have increased our campaigning among Catholics.
+Campaigning alongside the Zentrum, we have increased our campaigning among Catholics. Our campaign partners lend us credibility.
