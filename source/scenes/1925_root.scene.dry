@@ -158,8 +158,8 @@ Q.bvp_leader_fullname = "Karl Speck"
 Q.dvp_leader = "Stresemann"
 Q.dvp_leader_fullname = "Gustav Stresemann"
 // Johann Friedrich Winckler — 1924–1926; Kuno von Westarp — 1926–1928; Alfred Hugenberg — 1928–1933
-Q.dnvp_leader = "Westarp"
-Q.dnvp_leader_fullname = "Kuno von Westarp"
+Q.dnvp_leader = "Winckler"
+Q.dnvp_leader_fullname = "Johann Friedrich Winckler"
 // Hitler all the way through, unless deported or ousted
 Q.nsdap_leader = "Hitler";
 Q.nsdap_leader_fullname = "Adolf Hilter"
