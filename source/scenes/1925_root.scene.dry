@@ -164,6 +164,24 @@ Q.dnvp_leader_fullname = "Kuno von Westarp"
 Q.nsdap_leader = "Hitler";
 Q.nsdap_leader_fullname = "Adolf Hilter"
 
+// Party Ideologies
+// Can be Revolutionary Socialism, Council Communism, or Stalinism
+Q.uspd_ideology = "Revolutionary Socialism"
+// Can be Revolutionary Socialism, Centre Marxism, Labor Socialism, or Reformist Socialism
+Q.spd_ideology = "Centre Marxism"
+// Can be Left Liberalism, Progressive Liberalism, or National Liberalism
+Q.ddp_ideology = "Left Liberalism"
+// Can be Progressive Catholicism, Christian Democracy, or Conservative Catholicism
+Q.z_ideology = "Christian Democracy"
+// Can be Progressive Catholicism, Christian Democracy, or Conservative Catholicism
+Q.bvp_ideology = "Conservative Catholicism"
+// Can be National Liberalism, Paternalistic Liberalism, Classical Liberalism, or National Capitalism
+Q.dvp_ideology - "National Liberalism"
+// Can be Tory Democracy, Christiansozial, National Conservatism, or Authoritarian Conservatism
+Q.dnvp_ideology = "National Conservatism"
+// Can be Nazism, Fascism, or Strasserism
+Q.nsdap_ideology = "Nazism"
+
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 10;
 Q.marx_relation = 50;
