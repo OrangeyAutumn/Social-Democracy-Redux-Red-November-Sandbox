@@ -134,8 +134,8 @@ Q.nsdap_leader_fullname = "Adolf Hilter"
 // Party Ideologies
 // Can be Revolutionary Socialism, Council Communism, or Stalinism
 Q.uspd_ideology = "Revolutionary Socialism"
-// Can be Revolutionary Socialism, Centre Marxism, Labor Socialism, or Reformist Socialism
-Q.spd_ideology = "Centre Marxism"
+// Can be Revolutionary Socialism, center Marxism, Labor Socialism, or Reformist Socialism
+Q.spd_ideology = "center Marxism"
 // Can be Left Liberalism, Progressive Liberalism, or National Liberalism
 Q.ddp_ideology = "Left Liberalism"
 // Can be Progressive Catholicism, Christian Democracy, or Conservative Catholicism
@@ -152,8 +152,8 @@ Q.nsdap_ideology = "Nazism"
 // factions
 Q.left_faction_leader = “Levi”
 Q.left_faction_leader_fullname = “Paul Levi”
-Q.centre_faction_leader = “Hilferding”
-Q.centre_faction_leader_fullname = “Rudolf Hilferding”
+Q.center_faction_leader = “Hilferding”
+Q.center_faction_leader_fullname = “Rudolf Hilferding”
 Q.labor_faction_leader = “Leipart”
 Q.labor_faction_leader_fullname = “Theodor Leipart”
 Q.reformist_faction_leader = “Braun”
