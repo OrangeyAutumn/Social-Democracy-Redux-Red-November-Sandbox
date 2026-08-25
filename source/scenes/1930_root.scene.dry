@@ -146,7 +146,7 @@ Q.z_ideology = "Conservative Catholicism"
 // Can be Progressive Catholicism, Christian Democracy, or Conservative Catholicism
 Q.bvp_ideology = "Conservative Catholicism"
 // Can be National Liberalism, Paternalistic Liberalism, Classical Liberalism, or National Capitalism
-Q.dvp_ideology - "National Capitalism"
+Q.dvp_ideology = "National Capitalism"
 // Can be Tory Democracy, Christiansozial, National Conservatism, or Authoritarian Conservatism
 Q.dnvp_ideology = "Authoritarian Conservatism"
 // Can be Nazism, Fascism, or Strasserism
