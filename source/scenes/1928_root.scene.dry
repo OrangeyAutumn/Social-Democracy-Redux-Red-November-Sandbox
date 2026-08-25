@@ -625,20 +625,18 @@ Q.fun_value = Math.floor(Math.random() * 100) + 1;
 
 Q.political_crisis_progress = 0;
 
-// initial advisors - Otto Wels and Hermann Müller are centrists, Arthur Crispien is left
-Q.wels_advisor = 1; // Otto Wels
-Q.muller_advisor = 1; // Hermann Müller
-Q.muller_dead = 0;
-Q.crispien_advisor = 1; // Arthur Crispien
-
 // left advisors
+Q.crispien_advisor = 1; // Arthur Crispien
 Q.sender_advisor = 0; // Toni Sender
 Q.levi_advisor = 0; // Paul Levi
 Q.levi_dead = 0;
 Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
 Q.seydewitz_advisor = 0; // Max Seydewitz
 
-// centrist alternate advisors
+// centrist advisors
+Q.wels_advisor = 1; // Otto Wels
+Q.muller_advisor = 1; // Hermann Müller
+Q.muller_dead = 0;
 Q.pfulf_advisor = 0; // Antonie Pfülf
 Q.breitscheid_advisor = 0; // Rudolf Breitscheid
 Q.vogel_advisor = 0; // Hans Vogel
