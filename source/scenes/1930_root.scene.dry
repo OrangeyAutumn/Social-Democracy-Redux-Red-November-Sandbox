@@ -122,8 +122,8 @@ Q.z_leader = "Bruning";
 Q.z_party_leader = "Kaas";
 Q.z_party_leader_fullname = "Ludwig Kaas";
 // Karl Friedrich Speck — 1924–1929; Fritz Schäffer — 1929–1933
-Q.bvp_leader_fullname = "Schaffer"
-Q.bvp_leader_fullname = "Karl Schaffer"
+Q.bvp_leader = "Schäffer"
+Q.bvp_leader_fullname = "Karl Schäffer"
 // Gustav Stresemann — 1924–October 1929; Ernst Scholz — 1929–1930; Eduard Dingeldey — 1930–July 1933
 Q.dvp_leader = "Scholz"
 Q.dvp_leader_fullname = "Ernst Scholz"
@@ -132,7 +132,7 @@ Q.dnvp_leader = "Hugenberg"
 Q.dnvp_leader_fullname = "Alfred Hugenberg"
 // Hitler all the way through, unless deported or ousted
 Q.nsdap_leader = "Hitler";
-Q.nsdap_leader_fullname = "Adolf Hilter"
+Q.nsdap_leader_fullname = "Adolf Hitler"
 
 // Party Ideologies
 // Can be Revolutionary Socialism, Council Communism, or Stalinism
@@ -153,14 +153,14 @@ Q.dnvp_ideology = "Authoritarian Conservatism"
 Q.nsdap_ideology = "Nazism"
 
 // faction leaders
-Q.left_faction_leader = “Levi”;
-Q.left_faction_leader_fullname = “Paul Levi”;
-Q.center_faction_leader = “Hilferding”;
-Q.center_faction_leader_fullname = “Rudolf Hilferding”;
-Q.labor_faction_leader = “Leipart”;
-Q.labor_faction_leader_fullname = “Theodor Leipart”;
-Q.reformist_faction_leader = “Braun”;
-Q.reformist_faction_leader_fullname = “Otto Braun”;
+Q.left_faction_leader = "Levi";
+Q.left_faction_leader_fullname = "Paul Levi";
+Q.center_faction_leader = "Hilferding";
+Q.center_faction_leader_fullname = "Rudolf Hilferding";
+Q.labor_faction_leader = "Leipart";
+Q.labor_faction_leader_fullname = "Theodor Leipart";
+Q.reformist_faction_leader = "Braun";
+Q.reformist_faction_leader_fullname = "Otto Braun";
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 10;
