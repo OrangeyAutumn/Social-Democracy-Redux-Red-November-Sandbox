@@ -287,7 +287,7 @@ window.changeTab = function(newTab, tabId) {
 
 
   window.justLoaded = true;
-  window.statusTab = "status";
+  window.statusTab = "main";
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
