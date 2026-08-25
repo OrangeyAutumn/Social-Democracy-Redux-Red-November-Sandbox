@@ -279,7 +279,7 @@ Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['spd', 'sapd', 'uspd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
-Q.states = ['prussia', 'bavaria', 'thuringia', 'saxony', 'schaumburg_lippe', 'hamburg', 'wurttemberg'];
+Q.states = ['prussia', 'bavaria', 'thuringia', 'saxony', 'schaumburg_', 'hamburg', 'wurttemberg'];
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -792,7 +792,7 @@ Q.in_lubeck_dnvp = 0;
 Q.in_lubeck_nsdap = 0;
 Q.lubeck_election_year = 1929;
 Q.lubeck_election_month = 11;
-Lippe
+// Lippe
 Q.lippe_minister_president = "Heinrich Drake (SPD)"
 Q.in_lippe_spd = 1;
 Q.in_lippe_uspd = 0;
@@ -887,27 +887,6 @@ Q.wurttemberg_dnvp = 0.45;
 Q.wurttemberg_z = 1;
 Q.wurttemberg_other = 2.3;
 Q.wurttemberg_nsdap = 0.1;
-
-Q.prussia_election_year = 1928;
-Q.prussia_election_month = 5;
-
-Q.bavaria_election_year = 1928;
-Q.bavaria_election_month = 5;
-
-Q.thuringia_election_year = 1929;
-Q.thuringia_election_month = 12;
-
-Q.saxony_election_year = 1929;
-Q.saxony_election_month = 5;
-
-Q.schaumburg_lippe_election_year = 1928;
-Q.schaumburg_lippe_election_month = 4;
-
-Q.hamburg_election_year = 1928;
-Q.hamburg_election_month = 2;
-
-Q.wurttemberg_election_year = 1928;
-Q.wurttemberg_election_month = 5;
 
 Q.spd_pl = 25;
 Q.dnvp_pl = 24;
