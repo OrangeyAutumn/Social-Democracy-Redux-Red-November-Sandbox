@@ -463,7 +463,7 @@ go-to: spd_chancellor_menu
 - @no_majority_adenauer
 - @no_majority_gessler
 - @no_majority_eckener
-- @chancellor_brauns_dilemma
+- @brauns_dilemma
 - @left_coalition
 - @uspd_majority
 - @popular_front_coalition
@@ -1805,7 +1805,7 @@ on-arrival: z_relation += 5; dvp_relation -= 5; unity_refused = 1
 Despite our agreement, crucial components in the plan such as the DVP have become unwilling to enter into such a government. They are too set in their antidemocratic ways. We will have to find an alternative.
 
 - @no_majority: Thus, there is no clear majority.
-- @chancellor_brauns_dilemma
+- @brauns_dilemma
 - @coalition_menu: Are there any alternative governments we can form?
 
 @reject_unity_government
@@ -1813,7 +1813,7 @@ on-arrival: z_relation -= 8; ddp_relation -= 5; dvp_relation -= 5
 
 Our rejection of the unity government has hurt our relations with the bourgeois and center-right parties.
 
-- @chancellor_brauns_dilemma
+- @brauns_dilemma
 - @toleration_bruning: We will tolerate a minority government led by Brüning.
 - @toleration_wirth: We will tolerate a minority government led by Joseph Wirth.
 - @new_elections: There will be new elections.
@@ -1963,7 +1963,7 @@ Who should be chancellor?
 
 go-to: spd_chancellor_menu
 
-@chancellor_brauns_dilemma
+@brauns_dilemma
 title: There is no clear governing majority.
 subtitle: President [+ president +] faces a dilemma.
 view-if: president == "Braun" or president == "Schumacher" or president == "Juchacz" and (grand_coalition < 50 or grand_coalition_failed == 1 or dvp_willing != 1)
@@ -2235,7 +2235,7 @@ If we do not at least "tolerate" the government, there will be new elections in 
 
 - @join_bruning: Join the Brüning coalition.
 - @toleration_bruning: We will tolerate Brüning after all.
-- @chancellor_brauns_dilemma
+- @brauns_dilemma
 - @new_elections: New elections, it is!
 
 
@@ -2352,7 +2352,7 @@ on-arrival: grand_coalition_failed = 1
 Unfortunately, the DVP and [+ bvp_name +] are unwilling to enter into another coalition with the SPD, so the grand coalition is unable to be formed.
 
 - @no_majority: Thus, there is no clear majority.
-- @chancellor_brauns_dilemma
+- @brauns_dilemma
 - @right_coalition_2: Perhaps a right-wing coalition may form.
 - @bourgeois_coalition: Perhaps a bourgeois coalition may form.
 - @beg_dvp: Perhaps we could ask the DVP to change their minds?
@@ -2375,7 +2375,7 @@ The DVP asks us to adhere to their conservative economic policies (that is, extr
 
 - @beg_dvp_2: But they would not have a majority without the SPD! The DNVP and NSDAP have no interest in participating in government.
 - @no_majority: There is no chance that we would agree.
-- @chancellor_brauns_dilemma
+- @brauns_dilemma
 - @coalition_menu: What are the other governing arrangements?
 
 
@@ -2773,8 +2773,8 @@ go-to: ministries
 - @majority_chancellor_aufhauser
 - @chancellor_wissell
 - @majority_chancellor_wissell
-- @chancellor_wotyinsky
-- @majority_chancellor_wotyinsky
+- @chancellor_woytinsky
+- @majority_chancellor_woytinsky
 - @chancellor_baade
 - @majority_chancellor_baade
 - @chancellor_hirschfeld
