@@ -72,30 +72,33 @@ The SA have won this show of strength.
 Mass rallies are a common feature of social democratic life, especially in the lead-up to an election. Joint rallies in particular offer an opportunity to energise not only our base, but the bases of our allies. Which party shall we rally alongside?
 
 - @class_struggle: The USPD, on the class struggle of the proletariat against the bourgeoisie.
-- @welfare: The DDP, on the maintenance and expansion of social welfare programs.
-- @democracy: The DDP and Z, on expanding our nascent democracy and defending it against dictatorship and fascism.
+- @welfare: The [+ ddp_name +], on the maintenance and expansion of social welfare programs.
+- @democracy: The [+ ddp_name +] and Z, on expanding our nascent democracy and defending it against dictatorship and fascism.
 - @pacifism: The USPD, on opposing war, nationalism, and militarism at all costs.
 - @wtb: The USPD, to support the WTB plan!
 - @weimar_2: A joint rally by the Weimar parties on behalf of our economic plan, tauting it as a republican compromise.
 - @easy_discard
 
 @class_struggle
-view-if: uspd_relation >= 55
-on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if left_strength > reformist_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2 if not new_middle_conscious; socialism += 2*(1-dissent)
+choose-if: uspd_relation >= 45
+unavailable-subtitle: Our relations with the USPD are not good enough.
+on-arrival: workers_spd += 3*(1-dissent); unemployed_spd += 2*(1-dissent); workers_uspd += 1*(1-dissent); unemployed_uspd += 2*(1-dissent); left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2 if not new_middle_conscious; socialism += 2*(1-dissent); uspd_relations += 5
 
-Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
+Rallying alongside the USPD, our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
 
 @welfare
-view-if: ddp_relation >= 55
-on-arrival: workers_spd += 3*(1-dissent); workers_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labor_strength += 4; reformist_dissent -= 3; labor_dissent -= 3;
+choose-if: ddp_relation >= 45
+unavailable-subtitle: Our relations with the [+ ddp_name +] are not good enough.
+on-arrival: workers_spd += 2*(1-dissent); unemployed_spd += 3*(1-dissent); workers_ddp += 1*(1-dissent); unemployed_ddp += 2*(1-dissent); reformist_dissent -= 3; labor_dissent -= 3; ddp_relation += 5
 
-The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
+Rallying alongside the [+ ddp_name +], the reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
 
 @democracy
-view-if: ddp_relation >= 55 and z_relation >= 55
-on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_spd += 4*(1-dissent) if democratization >= 3; unemployed_spd += 3*(1-dissent) if democratization >= 3; pro_republic += 4*(1 - dissent) if democratization >= 3; new_middle_spd += 4*(1-dissent) if democratization >= 3 
+choose-if: ddp_relation >= 45 and z_relation >= 45
+unavailable-subtitle: [? if ddp_relation <= 44 : Our relations with the [+ ddp_name +] are not good enough. ?][? if z_relation <= 44 : Our relations with the Zentrum are not good enough. ?]
+on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); if democratisation < 3: workers_spd += 2*(1 - dissent) and workers_z + 1*(1 - dissent) and workers_ddp += 2*(1 - dissent) and new_middle_spd += 1*(1 - dissent) and new_middle_ddp += 2*(1 - dissent) and new_middle_z += 1*(1 - dissent) and catholic_spd += 1*(1 - dissent) and catholic_ddp += 1*(1 - dissent) and catholic_z += 2*(1 - dissent); if democratisation > 3: workers_spd += 3*(1 - dissent) and workers_z + 2*(1 - dissent) and workers_ddp += 2*(1 - dissent) and new_middle_spd += 2*(1 - dissent) and new_middle_ddp += 3*(1 - dissent) and new_middle_z += 2*(1 - dissent) and catholic_spd += 2*(1 - dissent) and catholic_ddp += 2*(1 - dissent) and catholic_z += 3*(1 - dissent); relation_ddp += 3; relation_z += 3
 
-Our speakers defend the republican system and rail against the monarchists and authoritarians who threaten it.
+Rallying alongside the [+ ddp_name +] and Zentrum, our speakers defend the republican system and rail against the monarchists and authoritarians who threaten it.
 
 [? if democratization < 3 : Talk of democracy does not excite the workers as much as more practical issues. But that may change; part of our job is to provide political education to the proletariat. ?]
 [? if democratization >= 3 : Since we have consistently made democratization a theme of our campaign, the workers are enthusiastic about our message. ?]
@@ -110,16 +113,14 @@ Our speakers denounce the military establishment and all the spending entering t
 [? if pacifism >= 3 : Since we have consistently made pacifism a theme of our campaign, the workers are enthusiastic about our message. ?]
 
 @wtb
-view-if: uspd_relation >= 55 and wtb_adopted = 1
-choose-if: return_to_normalcy = 0
-unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
+view-if: uspd_relation >= 45 and wtb_adopted = 1 and return_to_normalcy = 0
 on-arrival: wtb_support += 1; workers_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent); rural_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent);
 
 The WTB plan has become a popular rallying cry for our party. The workers are eager to go back to work, and that is exactly what the plan promises.
 
 @weimar_2
 view-if: weimar_plan_adopted = 1
-on-arrival: moderate_plan_support += 1; workers_spd += ((5*(1-dissent))*(pro_republic/100)); unemployed_spd += ((4*(1-dissent))*(pro_republic/100)); rural_spd += ((3*(1-dissent))*(pro_republic/100)); new_middle_spd += ((3*(1-dissent))*(pro_republic/100)); old_middle_spd += ((3*(1-dissent))*(pro_republic/100)); workers_ddp += 3*(pro_republic/100); unemployed_nsdap -= 2*(pro_republic/100); unemployed_kpd -= 2*(pro_republic/100); rural_z += 4*(pro_republic/100); new_middle_ddp += 4*(pro_republic/100); old_middle_ddp += 3*(pro_republic/100); old_middle_z += 3*(pro_republic/100); workers_nsdap -= 1*(pro_republic/100); workers_kpd -= 1*(pro_republic/100); new_middle_nsdap -= 2*(pro_republic/100); old_middle_nsdap -= 1*(pro_republic/100); peoples_party_support += 1; neorevisionist_strength += 5; left_strength -= 2; left_dissent += 2; kpd_relation -= 5; pro_republic += 4*(((z_relation + ddp_relation)/2)/100); weimar_rallies += 1; weimar_dissent += 1 if weimar_rallies > 3; weimar_dissent += 1 if pro_republic >= 75
+on-arrival: moderate_plan_support += 1; pro_republic += 2*(1 - dissent); workers_spd += 3*(1 - dissent); workers_z + 2*(1 - dissent); workers_ddp += 2*(1 - dissent) and new_middle_spd += 2*(1 - dissent); new_middle_ddp += 3*(1 - dissent) and new_middle_z += 2*(1 - dissent); catholic_spd += 2*(1 - dissent); catholic_ddp += 2*(1 - dissent); catholic_z += 3*(1 - dissent); relation_ddp += 3; relation_z += 3
 
 We rally alongside politicians from Zentrum and the DDP, united behind our economic plan and support of the republic. [? if pro_republic < 40 : Such a show of democratic solidarity bolsters republican forces, but as extremist and anti-democratic rhetoric has recently entered the mainstream, many who hear our message remain unconvinced, and many on the Left of the party even criticize the rally and our alignment with the bourgeois parties. ?] [? if pro_republic > 40 and pro_republic < 60 : Such a show of democratic solidarity bolsters republican forces, helping match the now prevalent anti-democratic rhetoric from the far-left and far-right, though many on the Left oppose our decision to align with the bourgeois parties. ?] [? if pro_republic > 60 : Such a show of democratic solidarity has greatly bolstered republican forces, helping combat the increasingly prevalent anti-democratic rhetoric from the far-left and far-right. Nevertheless, some on the Left of the party still oppose our alignment with the bourgeois parties. ?]
 
