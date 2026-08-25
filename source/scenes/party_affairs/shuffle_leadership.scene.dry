@@ -353,7 +353,7 @@ card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
 view-if: hilferding_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: hilferding_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Rudolf Hilferding is now an advisor.
 
@@ -365,7 +365,7 @@ card-image: img/portraits/WelsRudolf.jpg
 tags: center_advisor
 view-if: wels_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: wels_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Otto Wels is now an advisor.
 
@@ -377,7 +377,7 @@ card-image: img/portraits/VogelHans.jpg
 tags: center_advisor
 view-if: vogel_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: vogel_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Hans Vogel is now an advisor.
 
@@ -389,7 +389,7 @@ card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
 view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: muller_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Hermann Müller is now an advisor.
 
@@ -400,7 +400,7 @@ is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
 view-if: breitscheid_advisor = 0 and n_advisors < 3
 on-arrival: breitscheid_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: center_advisor
 
 Rudolf Breitscheid is now an advisor.
@@ -416,7 +416,7 @@ card-image: img/portraits/SeveringCarl.jpg
 tags: reformist_advisor
 view-if: severing_advisor = 0 and n_advisors < 3
 on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Carl Severing is now an advisor.
 
@@ -428,7 +428,7 @@ card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor
 view-if: braun_advisor = 0 and n_advisors < 3
 on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Otto Braun is now an advisor.
 
@@ -439,7 +439,8 @@ is-card: true
 card-image: img/portraits/JuchaczMarie.jpg
 view-if: juchacz_advisor = 0 and n_advisors < 3
 on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
 tags: reformist_advisor
 
 Marie Juchacz is now an advisor.
@@ -451,7 +452,7 @@ is-card: true
 card-image: img/portraits/PfülfAntonie.jpg
 view-if: pfulf_advisor = 0 and n_advisors < 3
 on-arrival: pfulf_advisor = 1; n_advisors += 1
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: reformist_advisor
 
 Antonie Pfülf is now an advisor.
@@ -467,7 +468,7 @@ is-card: true
 card-image: img/portraits/CrispienArthur.jpg
 view-if: crispien_advisor = 0 and n_advisors < 3 and left_split = 0
 on-arrival: crispien_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
 Arthur Crispien is now an advisor.
@@ -479,7 +480,7 @@ is-card: true
 card-image: img/portraits/LeviPaul.jpg
 view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and left_split = 0
 on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
 Paul Levi is now an advisor.
@@ -491,7 +492,7 @@ is-card: true
 card-image: img/portraits/SenderToni.jpg
 view-if: sender_advisor = 0 and n_advisors < 3
 on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
 Toni Sender is now an advisor.
@@ -503,7 +504,7 @@ is-card: true
 card-image: img/portraits/RosenfeldKurt.jpg
 view-if: rosenfeld_advisor = 0 and n_advisors < 3 and left_split = 0
 on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
 Kurt Rosenfeld is now an advisor.
@@ -515,7 +516,7 @@ is-card: true
 card-image: img/portraits/SeydewitzMax.jpg
 view-if: seydewitz_advisor = 0 and n_advisors < 3 and left_split = 0
 on-arrival: seydewitz_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
 Max Seydewitz is now an advisor.
@@ -527,7 +528,7 @@ is-card: true
 card-image: img/portraits/SiemsenAnna.jpg
 view-if: siemsen_advisor = 0 and n_advisors < 3 and left_split = 0
 on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 2; reformist_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: left_advisor
 
 Anna Siemsen is now an advisor.
@@ -543,7 +544,7 @@ card-image: img/portraits/LeipartTheodor.jpg
 tags: labor_advisor
 view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
 on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 2; center_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Theodor Leipart is now an advisor.
 
@@ -555,7 +556,7 @@ card-image: img/portraits/AufhäuserSiegfried.jpg
 tags: labor_advisor
 view-if: aufhauser_advisor = 0 and n_advisors < 3
 on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 2; reformist_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Siegfried Aufhäuser is now an advisor.
 
@@ -567,7 +568,7 @@ card-image: img/portraits/WissellRudolf.jpg
 tags: labor_advisor
 view-if: wissell_advisor = 0 and n_advisors < 3 and unions_independent = 0
 on-arrival: wissell_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Rudolf Wissell is now an advisor.
 
@@ -579,7 +580,7 @@ card-image: img/portraits/WoytinskyWladimir.jpg
 tags: labor_advisor
 view-if: woytinsky_advisor = 0 and n_advisors < 3 and unions_independent = 0
 on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; center_dissent += 1
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Wladimir Woytinsky is now an advisor.
 
@@ -593,7 +594,7 @@ is-card: true
 card-image: img/portraits/MierendorffCarlo.jpg
 view-if: mierendorff_advisor = 0 and n_advisors < 3
 on-arrival: mierendorff_advisor = 1; n_advisors += 1; neorevisionist_strength += 5; neorevisionist_dissent -= 2; center_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: neorev_advisor
 
 Carlo Mierendorff is now an advisor.
@@ -606,7 +607,7 @@ card-image: img/portraits/SchumacherKurt.jpg
 tags: neorev_advisor
 view-if: schumacher_advisor = 0 and n_advisors < 3
 on-arrival: schumacher_advisor = 1; n_advisors += 1; neorevisionist_strength += 5; neorevisionist_dissent -= 2; center_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Kurt Schumacher is now an advisor.
 
@@ -617,7 +618,7 @@ is-card: true
 card-image: img/portraits/LeberJulius.jpg
 view-if: leber_advisor = 0 and n_advisors < 3
 on-arrival: leber_advisor = 1; n_advisors += 1; neorevisionist_strength += 5; neorevisionist_dissent -= 2; center_dissent += 2
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: neorev_advisor
 
 Julius Leber is now an advisor.
@@ -631,7 +632,7 @@ is-card: true
 card-image: img/portraits/BaadeFritz.jpg
 view-if: baade_advisor = 0 and n_advisors < 3
 on-arrival: baade_advisor = 1; n_advisors += 1
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: nonfactional_advisor
 
 Fritz Baade is now an advisor.
@@ -644,7 +645,7 @@ is-card: true
 card-image: img/portraits/HirschfeldMagnus.jpg
 view-if: hirschfeld_advisor = 0 and n_advisors < 3
 on-arrival: hirschfeld_advisor = 1; n_advisors += 1
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: nonfactional_advisor
 
 Magnus Hirschfeld is now an advisor.
@@ -658,7 +659,7 @@ is-card: true
 card-image: img/portraits/RadbruchGustav.jpg
 view-if: radbruch_advisor = 0 and n_advisors < 3
 on-arrival: radbruch_advisor = 1; n_advisors += 1
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: nonfactional_advisor
 
 Gustav Radbruch is now an advisor.
@@ -671,7 +672,7 @@ is-card: true
 card-image: img/portraits/StampferFriedrich.jpg
 view-if: stampfer_advisor = 0 and n_advisors < 3
 on-arrival: stampfer_advisor = 1; n_advisors += 1
-go-to: advisor_menu
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: nonfactional_advisor
 
 Friedrich Stampfer is now an advisor.
