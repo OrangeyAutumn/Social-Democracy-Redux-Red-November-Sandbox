@@ -2943,6 +2943,7 @@ go-to: ministries
 Müller's appointment as chancellor is approved by all our potential allies.
 
 @majority_chancellor_muller
+title: Hermann Müller for Chancellor
 view-if: muller_advisor = 1 and muller_dead = 0 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
 on-arrival: chancellor = "Müller"
 
@@ -2958,6 +2959,7 @@ go-to: ministries
 Otto Wels's appointment as chancellor is approved by our potential allies.
 
 @majority_chancellor_wels
+title: Otto Wels for Chancellor
 view-if: wels_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
 on-arrival: chancellor = "Wels"
 
