@@ -28,6 +28,6 @@ With our support, Karl Liebknecht has won the leadership contest! We hope, with 
 
 @communists_triumphant
 title: Ernst Thälmann wins the Chairmanship!
-on-arrival: uspd_party_leader = "Thälmann"; uspd_relation -= 25
+on-arrival: uspd_party_leader = "Thälmann"; uspd_relation -= 25; uspd_name = "KPD"
 
 Unfortunately, we could not influence the USPD leadership election against the hardliners and the Communists emerge triumphant. Thälmann quickly moves to consolidate absolute leadership, expelling or exiling his opponents, and reforms the party into the KPD.
