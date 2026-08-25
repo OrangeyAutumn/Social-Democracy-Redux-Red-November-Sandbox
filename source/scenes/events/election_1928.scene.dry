@@ -2792,9 +2792,6 @@ go-to: ministries
 - @chancellor_pfulf
 - @majority_chancellor_pfulf
 
-// Left Chancellors
-// Paul Levi
-
 @chancellor_levi
 view-if: levi_advisor = 1 and levi_dead = 0 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 choose-if: president != "Hindenburg"
@@ -2816,8 +2813,6 @@ subtitle: Levi’s appointment would send a message about the kind of government
 on-arrival: chancellor = "Levi "
 
 Paul Levi, a key figure of our party’s left wing, has been appointed Chancellor.
-
-// Arthur Crispien
 
 @chancellor_crispien
 view-if: crispien_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -2841,8 +2836,6 @@ on-arrival: chancellor = "Crispien "
 
 Arthur Crispien, a key figure of our party’s left wing, has been appointed Chancellor.
 
-// Kurt Rosenfeld
-
 @chancellor_rosenfeld
 view-if: rosenfeld_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 choose-if: president != "Hindenburg"
@@ -2865,7 +2858,6 @@ on-arrival: chancellor = "Rosenfeld "
 
 Kurt Rosenfeld, a key figure of our party’s left wing, has been appointed Chancellor.
 
-// Max Seydewitz
 
 
 @chancellor_seydewitz
@@ -2890,7 +2882,6 @@ on-arrival: chancellor = "Seydewitz "
 
 Max Seydewitz, a key figure of our party’s left wing, has been appointed Chancellor.
 
-// Toni Sender
 
 @chancellor_sender
 view-if: sender_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -2914,7 +2905,6 @@ on-arrival: chancellor = "Sender "
 
 Toni Sender, a key figure of our party’s left wing, has been appointed Chancellor. Social conservatives across parties, including our own, are already up in arms over the appointment of a woman Chancellor.
 
-// Anna Siemsen
 
 @chancellor_siemsen
 view-if: siemsen_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -2938,14 +2928,11 @@ on-arrival: chancellor = "Siemsen "
 
 Anna Siemsen, a key figure of our party’s left wing, has been appointed Chancellor. Social conservatives across parties, including our own, are already up in arms over the appointment of a woman Chancellor.
 
-// Center Chancellors
-// Hermann Muller
-
 @chancellor_muller
 title: Hermann Müller for Chancellor
 view-if: muller_advisor = 1 and muller_dead = 0
 subtitle: Müller is popular within the party, and is the preferred candidate of the Center and other parties.
-on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"
 go-to: ministries
 
 Müller's appointment as chancellor is approved by all our potential allies.
@@ -2956,13 +2943,11 @@ on-arrival: chancellor = "Müller"
 
 Hermann Müller, a key figure of our party’s center faction, has become chancellor of the SPD majority.
 
-// Otto Wels
-
 @chancellor_wels
 title: Otto Wels for Chancellor
 view-if: wels_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: Otto Wels is a party leader, but can he also be chancellor?
-on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = "SPD"
 go-to: ministries
 
 Otto Wels's appointment as chancellor is approved by our potential allies.
@@ -2972,8 +2957,6 @@ view-if: wels_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
 on-arrival: chancellor = "Wels"
 
 Otto Wels, a key figure of our party’s center faction, has become chancellor of the SPD majority.
-
-// Rudolf Breitscheid
 
 @chancellor_breitscheid
 title: Rudolf Breitscheid for Chancellor
@@ -2994,13 +2977,11 @@ on-arrival: chancellor = "Breitscheid"
 
 Rudolf Breitscheid, a key figure of our party’s center faction, has become chancellor of the SPD majority.
 
-// Rudolf Hilferding
-
 @chancellor_hilferding
 title: Rudolf Hilferding for Chancellor
 view-if: hilferding_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: Rudolf Hilferding is a great theorist, but can he also be a great chancellor?
-on-arrival: spd_in_government = 1; chancellor = "Hilferding"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Hilferding"; chancellor_party = "SPD"
 go-to: ministries
 
 Rudolf Hilferding's appointment as chancellor is approved by our potential allies.
@@ -3013,13 +2994,11 @@ on-arrival: chancellor = "Hilferding"
 
 Rudolf Hilferding, a key figure of our party’s center faction, has become chancellor of the SPD majority.
 
-// Hans Vogel
-
 @chancellor_vogel
 title: Hans Vogel for Chancellor
 view-if: vogel_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: Hans Vogel is a party leader, but can he also be chancellor?
-on-arrival: spd_in_government = 1; chancellor = "Vogel"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Vogel"; chancellor_party = "SPD"
 go-to: ministries
 
 Hans Vogel's appointment as chancellor is approved by our potential allies.
@@ -3032,14 +3011,11 @@ on-arrival: chancellor = "Vogel"
 
 Hans Vogel, a key figure of our party’s center faction, has become chancellor of the SPD majority.
 
-// Labor Chancellors
-// Theodor Leipart
-
 @chancellor_leipart
 title: Theodor Leipart for Chancellor
 view-if: leipart_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: Leipart leads the ADGB, can he also lead the country?
-on-arrival: spd_in_government = 1; chancellor = "Leipart"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Leipart"; chancellor_party = "SPD"
 go-to: ministries
 
 Theodor Leipart, a key figure of our party’s labor wing, has been appointed Chancellor
@@ -3052,13 +3028,11 @@ on-arrival: chancellor = "Leipart"
 
 Theodor Leipart, a key figure of our party’s labor wing, has become chancellor of the SPD majority.
 
-// Siegfried Aufhäuser
-
 @chancellor_aufhauser
 title: Siegfried Aufhäuser for Chancellor
 view-if: aufhauser_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: Aufhäuser leads the AfA-Bund, can he also lead the country?
-on-arrival: spd_in_government = 1; chancellor = "Aufhäuser"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Aufhäuser"; chancellor_party = "SPD"
 go-to: ministries
 
 Siegfried Aufhäuser, a key figure of our party’s labor wing, has been appointed Chancellor
@@ -3071,13 +3045,11 @@ on-arrival: chancellor = "Aufhäuser"
 
 Siegfried Aufhäuser, a key figure of our party’s labor wing, has become chancellor of the SPD majority.
 
-// Rudolf Wissell
-
 @chancellor_wissell
 title: Rudolf Wissell for Chancellor
 view-if: wissell_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: Wissell is a former Labor minister and advocate for workers’ rights.
-on-arrival: spd_in_government = 1; chancellor = "Wissell"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Wissell"; chancellor_party = "SPD"
 go-to: ministries
 
 Rudolf Wissell, a key figure of our party’s labor wing, has been appointed Chancellor
@@ -3090,13 +3062,11 @@ on-arrival: chancellor = "Wissell"
 
 Rudolf Wissell, a key figure of our party’s labor wing, has become chancellor of the SPD majority.
 
-// Wladimir Woytinsky
-
 @chancellor_woytinsky
 title: Wladmir Woytinsky for Chancellor
 view-if: woytinsky_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: Can the former Russian Menshevik lead Germany?
-on-arrival: spd_in_government = 1; chancellor = "Woytinsky"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Woytinsky"; chancellor_party = "SPD"
 go-to: ministries
 
 Wladmir Woytinsky, a key figure of our party’s labor wing, has been appointed Chancellor. The Nationalist right is already up in arms over the appointment of a non-German Chancellor.
@@ -3109,14 +3079,11 @@ on-arrival: chancellor = "Woytinsky"
 
 Wladmir Woytinsky, a key figure of our party’s labor wing, has become chancellor of the SPD majority. The Nationalist right is already up in arms over the appointment of a non-German Chancellor.
 
-// Nonfactional Advisors
-// Fritz Baade
-
 @chancellor_baade
 title: Fritz Baade for Chancellor
 view-if: baade_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: A Chancellor for Agriculture?
-on-arrival: spd_in_government = 1; chancellor = "Baade"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Baade"; chancellor_party = "SPD"
 go-to: ministries
 
 Fritz Baade, one of our few agricultural policy experts, has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
@@ -3129,13 +3096,11 @@ on-arrival: chancellor = "Baade"
 
 Fritz Baade, one of our few agricultural policy experts, has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
 
-// Magnus Hirschfeld
-
 @chancellor_hirschfeld
 title: Magnus Hirschfeld for Chancellor
 view-if: hirschfeld_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: A Chancellor for Sexual Minorities?
-on-arrival: spd_in_government = 1; chancellor = "Hirschfeld"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Hirschfeld"; chancellor_party = "SPD"
 go-to: ministries
 
 Magnus Hirschfeld has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment, but Nationalists and Conservatives are already up in arms about his history as an advocate for the rights of sexual minorities.
@@ -3148,13 +3113,11 @@ on-arrival: chancellor = "Hirschfeld"
 
 Magnus Hirschfeld has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment, but Nationalists and Conservatives are already up in arms about his history as an advocate for the rights of sexual minorities.
 
-// Gustav Radbruch
-
 @chancellor_radbruch
 title: Gustav Radbruch for Chancellor
 view-if: radbruch_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: A Chancellor of the Law?
-on-arrival: spd_in_government = 1; chancellor = "Radbruch"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Radbruch"; chancellor_party = "SPD"
 go-to: ministries
 
 Gustav Radbruch, one of our key legal experts, has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
@@ -3167,13 +3130,11 @@ on-arrival: chancellor = "Radbruch"
 
 Gustav Radbruch, one of our key legal experts, has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
 
-// Friedrich Stampfer
-
 @chancellor_stampfer
 title: Friedrich Stampfer for Chancellor
 view-if: stampfer_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
 subtitle: A New(s) Chancellor?
-on-arrival: spd_in_government = 1; chancellor = "Stampfer"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_in_government = 1; chancellor = "Stampfer"; chancellor_party = "SPD"
 go-to: ministries
 
 Friedrich Stampfer, long-time editor of our party newspaper, has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
@@ -3185,9 +3146,6 @@ subtitle: A New(s) Chancellor
 on-arrival: chancellor = "Stampfer"
 
 Friedrich Stampfer, long-time editor of our party newspaper, has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
-
-// Reformist Chancellors
-// Carl Severing
 
 @chancellor_severing
 view-if: severing_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3205,8 +3163,6 @@ subtitle: Severing’s appointment would send a reassuring message of about the 
 on-arrival: chancellor = "Severing "
 
 Carl Severing, a key figure of our party’s right wing, has been appointed Chancellor.
-
-// Otto Braun
 
 @chancellor_braun
 choose-if: (president != "Hindenburg" or not spd_sackings)
@@ -3231,7 +3187,7 @@ We have promised to let the Center have more influence in the government in resp
 subtitle: Adam Stegerwald will be Minister-President.
 choose-if: spd_prussia
 unavailable-subtitle: Wait, what? Damn, this shit's bugged. Ping me on discord or on reddit, I'll fix it.
-on-arrival: spd_prussia = 0; z_prussia = 1; spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: spd_prussia = 0; z_prussia = 1; spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"
 go-to: ministries
 
 Otto Braun has resigned as Minister-President of Prussia to pursue his aspirations on the national level.
@@ -3244,8 +3200,6 @@ on-arrival: chancellor = "Braun"
 [? if president != "Braun": Otto Braun has become chancellor of the SPD majority. ?]
 
 Otto Braun is the Minister-President of Prussia, and one of the most recognizable and well-known Social Democratic leaders.
-
-// Marie Juchacz
 
 @chancellor_juchacz
 view-if: juchacz_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3264,8 +3218,6 @@ subtitle: Juchacz’s appointment would send a reassuring message of about the k
 on-arrival: chancellor = "Juchacz "
 
 Marie Juchacz, a key figure of our party’s right wing, has been appointed Chancellor. Despite her reformist leanings, social conservatives across parties, including our own, are already up in arms over the appointment of a woman Chancellor.
-
-// Antonie Pfülf
 
 @chancellor_pfulf
 view-if: pfulf_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
