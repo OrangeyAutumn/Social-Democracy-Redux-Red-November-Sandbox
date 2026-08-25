@@ -94,7 +94,7 @@ Strength: [+ left_strength : strength +];
 Dissent: [+ left_dissent : dissent +];
 
 Center:
-Leader: [+ centre_faction_leader_fullname +];
+Leader: [+ center_faction_leader_fullname +];
 Strength: [+ center_strength : strength +];
 Dissent: [+ center_dissent : dissent +];
 
@@ -147,7 +147,7 @@ Ideology: [+ dnvp_ideology +]
 Relations: [+ dnvp_relation : relationships +]
 
 NSDAP: ([+ nsdap_leader +])
-Leader: [+ nsdap_leader_fullname_fullname +]
+Leader: [+ nsdap_leader_fullname +]
 Ideology: [+ nsdap_ideology +]
 Relations: Hostile
 
