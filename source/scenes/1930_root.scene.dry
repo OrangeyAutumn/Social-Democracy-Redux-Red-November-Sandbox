@@ -781,7 +781,7 @@ Q.in_lubeck_dnvp = 0;
 Q.in_lubeck_nsdap = 0;
 Q.lubeck_election_year = 1932;
 Q.lubeck_election_month = 11;
-Lippe
+// Lippe
 Q.lippe_minister_president = "Heinrich Drake (SPD)"
 Q.in_lippe_spd = 1;
 Q.in_lippe_uspd = 0;
