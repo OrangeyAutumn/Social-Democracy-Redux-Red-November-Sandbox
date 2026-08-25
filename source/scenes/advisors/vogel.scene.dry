@@ -2,7 +2,7 @@ title: Hans Vogel
 is-pinned-card: true
 tags: advisor, centrist
 card-image: img/portraits/VogelHans.jpg
-view-if: hans_vogel = 1
+view-if: vogel_advisor = 1
 new-page: true
 
 = Hans Vogel
