@@ -89,22 +89,22 @@ Leadership: [+ spd_coleader_1 +]-[ Q.spd_coleader_2 +]-[+ spd_coleader_3 +];
 Ideology: [+ spd_ideology +];
 
 Left:
-Leader: Paul Levi;
+Leader: [+ left_faction_leader_fullname +];
 Strength: [+ left_strength : strength +];
 Dissent: [+ left_dissent : dissent +];
 
 Center:
-Leader: Rudolf Hilferding;
+Leader: [+ centre_faction_leader_fullname +];
 Strength: [+ center_strength : strength +];
 Dissent: [+ center_dissent : dissent +];
 
 Labor:
-Leader: Theodor Leipart;
+Leader: [+ labor_faction_leader_fullname +];
 Strength: [+ labor_strength : strength +];
 Dissent: [+ labor_dissent : dissent +];
 
 Reformist:
-Leader: Otto Braun;
+Leader: [+ reformist_faction_leader_fullname +];
 Strength: [+ reformist_strength : strength +];
 Dissent: [+ reformist_dissent : dissent +];
 
