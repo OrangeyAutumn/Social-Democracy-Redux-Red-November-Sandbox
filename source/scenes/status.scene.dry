@@ -82,7 +82,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Internal Factions of the SPD
 
-Leadership: [+ spd_coleader_1 +]-[ Q.spd_coleader_2 +]-[+ spd_coleader_3 +];
+Leadership: [+ spd_coleader_1 +]-[+ spd_coleader_2 +]-[+ spd_coleader_3 +];
 [+ spd_coleader_1_fullname +];
 [+ spd_coleader_2_fullname +];
 [+ spd_coleader_3_fullname +];
