@@ -16,6 +16,10 @@ if (Q.economic_growth) {
 
 = Status
 
+@status
+
+= Status
+
 [+ month : month +] [+ year +]
 
 Resources available: [+ resources +]
