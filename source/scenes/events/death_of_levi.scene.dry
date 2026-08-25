@@ -7,11 +7,11 @@ tags: event
 
 Paul Levi, a leader of the left wing of our party, has died in an unfortunate accident. He will be missed.
 
-- @levi_advisor_succession
-- @levi_chancellor_succession
-- @levi_coleader_1_succession
-- @levi_coleader_2_succession
-- @levi_coleader_3_succession
+- @levi_advisor_succession: We must decide his successor as advisor.
+- @levi_chancellor_succession: We must decide his successor as Chancellor.
+- @levi_coleader_1_succession: We must decide his successor as Co-leader.
+- @levi_coleader_2_succession: We must decide his successor as Co-leader.
+- @levi_coleader_3_succession: We must decide his successor as Co-leader.
 
 @levi_advisor_succession
 view-if: levi_advisor == 1
