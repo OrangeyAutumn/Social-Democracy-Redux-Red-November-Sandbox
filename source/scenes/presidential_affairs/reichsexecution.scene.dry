@@ -18,7 +18,7 @@ With the Presidency, we have the power to depose any state government through a 
 - @root: No, we should not do this.
 
 @reichsexekute_hamburg
-choose-if: in_hamburg_uspd = 1 or in_hamburg_dnvp = 1 or in_hamburg_nsdap = 1 and president == ! "Ebert"
+choose-if: in_hamburg_uspd = 1 or in_hamburg_dnvp = 1 or in_hamburg_nsdap = 1 and president != "Ebert"
 unavailable-subtitle: [ ? If in_hamburg_uspd = 0 and in_hamburg_dnvp = 0 and in_hamburg_nsdap = 0: There are no extreme parties within this government. ? ][ ? If president = "Ebert" : President Ebert does not wish to pursue a Reichsexekution. ? ]
 tags: reichsexekutions
 title: Reichsexekute Hamburg.
@@ -28,7 +28,7 @@ on-arrival: in_hamburg_spd = 1; in_hamburg_uspd = 0; in_hamburg_dnvp = 0; in_ham
 We have performed a *Reichsexekution* against the government of Hamburg, removing it of extremist forces.
 
 @reichsexekute_thuringia
-choose-if: in_thuringia_uspd = 1 or in_thuringia_dnvp = 1 or in_thuringia_nsdap = 1 and and president == ! "Ebert"
+choose-if: in_thuringia_uspd = 1 or in_thuringia_dnvp = 1 or in_thuringia_nsdap = 1 and and president != "Ebert"
 unavailable-subtitle: [ ? If in_thuringia_uspd = 0 and in_thuringia_dnvp = 0 and in_thuringia_nsdap = 0: There are no extreme parties within this government. ? ][ ? If president = "Ebert" : President Ebert does not wish to pursue a Reichsexekution. ? ]
 tags: reichsexekutions
 title: Reichsexekute Thuringia.
@@ -38,7 +38,7 @@ on-arrival: in_thuringia_spd = 1; in_thuringia_uspd = 0; in_thuringia_dnvp = 0; 
 We have performed a *Reichsexekution* against the government of Thuringia, removing it of extremist forces.
 
 @reichsexekute_saxony
-choose-if: in_saxony_uspd = 1 or in_saxony_dnvp = 1 or in_saxony_nsdap = 1 and president == ! "Ebert"
+choose-if: in_saxony_uspd = 1 or in_saxony_dnvp = 1 or in_saxony_nsdap = 1 and president != "Ebert"
 unavailable-subtitle: [ ? If in_saxony_uspd = 0 and in_saxony_dnvp = 0 and in_saxony_nsdap = 0: There are no extreme parties within this government. ? ][ ? If president = "Ebert" : President Ebert does not wish to pursue a Reichsexekution. ? ]
 tags: reichsexekutions
 title: Reichsexekute Saxony.
@@ -48,7 +48,7 @@ on-arrival: in_saxony_spd = 1; in_saxony_uspd = 0; in_saxony_dnvp = 0; in_saxony
 We have performed a *Reichsexekution* against the government of Saxony, removing it of extremist forces.
 
 @reichsexekute_prussia
-choose-if: in_prussia_uspd = 1 or in_prussia_dnvp = 1 or in_prussia_nsdap = 1 and president == ! "Ebert"
+choose-if: in_prussia_uspd = 1 or in_prussia_dnvp = 1 or in_prussia_nsdap = 1 and president != "Ebert"
 unavailable-subtitle: [ ? If in_prussia_uspd = 0 and in_prussia_dnvp = 0 and in_prussia_nsdap = 0: There are no extreme parties within this government. ? ][ ? If president = "Ebert" : President Ebert does not wish to pursue a Reichsexekution. ? ]
 tags: reichsexekutions
 title: Reichsexekute Prussia.
@@ -58,7 +58,7 @@ on-arrival: in_prussia_spd = 1; in_prussia_uspd = 0; in_prussia_dnvp = 0; in_pru
 We have performed a *Reichsexekution* against the government of Prussia, removing it of extremist forces.
 
 @reichsexekute_bavaria
-choose-if: in_bavaria_uspd = 1 or in_bavaria_dnvp = 1 or in_bavaria_nsdap = 1 and president == ! "Ebert"
+choose-if: in_bavaria_uspd = 1 or in_bavaria_dnvp = 1 or in_bavaria_nsdap = 1 and president != "Ebert"
 unavailable-subtitle: [ ? If in_bavaria_uspd = 0 and in_bavaria_dnvp = 0 and in_bavaria_nsdap = 0: There are no extreme parties within this government. ? ][ ? If president = "Ebert" : President Ebert does not wish to pursue a Reichsexekution. ? ]
 tags: reichsexekutions
 title: Reichsexekute Bavaria.
@@ -68,7 +68,7 @@ on-arrival: in_bavaria_spd = 1; in_bavaria_uspd = 0; in_bavaria_dnvp = 0; in_bav
 We have performed a *Reichsexekution* against the government of Bavaria, removing it of extremist forces.
 
 @reichsexekute_wurttemberg
-choose-if: in_wurttemburg_uspd = 1 or in_wurttemburg_dnvp = 1 or in_wurttemburg_nsdap = 1 and president == ! "Ebert"
+choose-if: in_wurttemburg_uspd = 1 or in_wurttemburg_dnvp = 1 or in_wurttemburg_nsdap = 1 and president != "Ebert"
 unavailable-subtitle: [ ? If in_wurttemburg_uspd = 0 and in_wurttemburg_dnvp = 0 and in_wurttemburg_nsdap = 0: There are no extreme parties within this government. ? ][ ? If president = "Ebert" : President Ebert does not wish to pursue a Reichsexekution. ? ]
 tags: reichsexekutions
 title: Reichsexekute Wurttemberg.
@@ -78,7 +78,7 @@ on-arrival: in_wurttemberg_spd = 1; in_wurttemberg_uspd = 0; in_wurttemberg_dnvp
 We have performed a *Reichsexekution* against the government of Wurttemberg, removing it of extremist forces.
 
 @reichsexekute_schaumburg_lippe
-choose-if: in_schaumburg_lippe_uspd = 1 or in_schaumburg_lippe_dnvp = 1 or in_schaumburg_lippe_nsdap = 1 and president == ! "Ebert"
+choose-if: in_schaumburg_lippe_uspd = 1 or in_schaumburg_lippe_dnvp = 1 or in_schaumburg_lippe_nsdap = 1 and president != "Ebert"
 unavailable-subtitle: [ ? If in_schaumburg_lippe_uspd = 0 and in_schaumburg_lippe_dnvp = 0 and in_schaumburg_lippe_nsdap = 0: There are no extreme parties within this government. ? ][ ? If president = "Ebert" : President Ebert does not wish to pursue a Reichsexekution. ? ]
 tags: reichsexekutions
 title: Reichsexekute Schaumburg-Lippe.
