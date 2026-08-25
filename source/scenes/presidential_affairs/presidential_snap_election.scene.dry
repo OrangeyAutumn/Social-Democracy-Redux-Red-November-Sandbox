@@ -15,7 +15,7 @@ subtitle: The current Reichstag is not working. We must call a snap election.
 - @root: No, we should not do this.
 
 @yes
-choose-if: president = ! "Ebert"
+choose-if: president == ! "Ebert"
 unavailable-subtitle: President Ebert does not wish to call fresh elections so soon after the last elections concluded.
 on-arrival: next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 
