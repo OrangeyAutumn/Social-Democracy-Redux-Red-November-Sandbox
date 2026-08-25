@@ -104,7 +104,7 @@ on-arrival: workers_spd += 2*(1 - dissent); workers_z += 1*(1 - dissent); worker
 Talk of democracy does not excite the workers as much as more practical issues. But that may change; part of our job is to provide political education to the proletariat.
 
 @democracy_high
-on-arrival workers_spd += 3*(1 - dissent); workers_z += 2*(1 - dissent); workers_ddp += 2*(1 - dissent); new_middle_spd += 2*(1 - dissent); new_middle_ddp += 3*(1 - dissent); new_middle_z += 2*(1 - dissent); catholics_spd += 2*(1 - dissent); catholics_ddp += 2*(1 - dissent); catholics_z += 3*(1 - dissent); relation_ddp += 3; relation_z += 3
+on-arrival: workers_spd += 3*(1 - dissent); workers_z += 2*(1 - dissent); workers_ddp += 2*(1 - dissent); new_middle_spd += 2*(1 - dissent); new_middle_ddp += 3*(1 - dissent); new_middle_z += 2*(1 - dissent); catholics_spd += 2*(1 - dissent); catholics_ddp += 2*(1 - dissent); catholics_z += 3*(1 - dissent); relation_ddp += 3; relation_z += 3
 
 Rallying alongside the [+ ddp_name +] and Zentrum, our speakers defend the republican system and rail against the monarchists and authoritarians who threaten it.
 
