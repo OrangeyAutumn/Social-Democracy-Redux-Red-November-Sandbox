@@ -3200,6 +3200,7 @@ go-to: ministries
 Otto Braun has resigned as Minister-President of Prussia to pursue his aspirations on the national level.
 
 @majority_chancellor_braun
+title: Otto Braun for Chancellor!
 view-if: braun_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
 on-arrival: chancellor = "Braun"
 
