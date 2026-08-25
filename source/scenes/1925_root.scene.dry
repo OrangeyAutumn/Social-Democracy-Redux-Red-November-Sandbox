@@ -420,7 +420,7 @@ Q.economic_records = [];
 
 // State of the government
 Q.president = "Ebert";
-// starting chancellor: Wilhelm Marx
+// starting chancellor: Wilhelm Marx;
 Q.chancellor = "Luther";
 Q.chancellor_party = 'DVP';
 Q.spd_in_government = 0;
@@ -643,20 +643,18 @@ Q.nazi_reform_timer = 0;
 Q.laissez_faire_timer = 0;
 Q.presidential_timer = 0;
 
-// initial advisers - Otto Wels and Hermann Müller are centrists, Arthur Crispien is left
-Q.wels_advisor = 1; // Otto Wels
-Q.muller_advisor = 1; // Hermann Müller
-Q.muller_dead = 0;
-Q.crispien_advisor = 1; // Arthur Crispien
-
 // left advisors
+Q.crispien_advisor = 1; // Arthur Crispien
 Q.sender_advisor = 0; // Toni Sender
 Q.levi_advisor = 0; // Paul Levi
 Q.levi_dead = 0;
 Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
 Q.seydewitz_advisor = 0; // Max Seydewitz
 
-// centrist alternate advisors
+// centrist advisors
+Q.wels_advisor = 1; // Otto Wels
+Q.muller_advisor = 1; // Hermann Müller
+Q.muller_dead = 0;
 Q.pfulf_advisor = 0; // Antonie Pfülf
 Q.breitscheid_advisor = 0; // Rudolf Breitscheid
 Q.vogel_advisor = 0; // Hans Vogel
@@ -782,8 +780,6 @@ Q.dvp_wl = 5;
 Q.uspd_wl = 12;
 Q.ddp_wl = 11;
 Q.other_wl = 24;
-
-// for when i tackle landtags...not yet, though
 
 !}
 go-to: root.menu
