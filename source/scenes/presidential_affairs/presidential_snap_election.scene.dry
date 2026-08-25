@@ -9,7 +9,8 @@ subtitle: The current Reichstag is not working. We must call a snap election.
 
 = Snap Elections
 
-[ ? If spd_in_government : Despite our position in government, there is a growing feeling that our party would benefit from snap elections. ? ] [ ? If spd_in_opposition: Despite holding the Presidency, we are not even a partner in the current government. Snap elections offer an opportunity to rectify this. ? ]
+[? If spd_in_government : Despite our position in government, there is a growing feeling that our party would benefit from snap elections. ?] 
+[? If spd_in_opposition : Despite holding the Presidency, we are not even a partner in the current government. Snap elections offer an opportunity to rectify this. ?]
 
 - @yes: Yes, we shall have new elections.
 - @root: No, we should not do this.
