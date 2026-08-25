@@ -23,4 +23,5 @@ if (!Q.economic_plan) {
 }
 !}
 
+- @root: Continue Game
 - @game_over: Game over.
