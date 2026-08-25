@@ -28,7 +28,7 @@ on-arrival: in_hamburg_spd = 1; in_hamburg_uspd = 0; in_hamburg_dnvp = 0; in_ham
 We have performed a *Reichsexekution* against the government of Hamburg, removing it of extremist forces.
 
 @reichsexekute_thuringia
-choose-if: in_thuringia_uspd = 1 or in_thuringia_dnvp = 1 or in_thuringia_nsdap = 1 and and president != "Ebert"
+choose-if: in_thuringia_uspd = 1 or in_thuringia_dnvp = 1 or in_thuringia_nsdap = 1 and president != "Ebert"
 unavailable-subtitle: [ ? If in_thuringia_uspd = 0 and in_thuringia_dnvp = 0 and in_thuringia_nsdap = 0: There are no extreme parties within this government. ? ][ ? If president = "Ebert" : President Ebert does not wish to pursue a Reichsexekution. ? ]
 tags: reichsexekutions
 title: Reichsexekute Thuringia.
