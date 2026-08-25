@@ -3,54 +3,76 @@ view-if: year = 1931 and month >= 3
 frequency: 1000
 max-visits: 1
 tags: event
-go-to: pm if chancellor = "Müller"; not_pm if chancellor != "Müller"
-on-arrival: muller_dead = 1; n_advisors -= 1 if muller_advisor == 1; muller_advisor = 0;
+on-arrival: muller_dead = 1; n_advisors -= 1 if muller_advisor == 1; muller_advisor = 0; muller_died_in_office = 1 if chancellor = "Müller"; succession_active = 1
 
-@pm
-on-arrival: muller_died_in_office = 1
-# TODO: achievement for muller dying in office
+Herman Müller, one of the SPD's long-time leaders, has died. He will be greatly missed.
 
-Chancellor Hermann Müller has died while in office. He will be greatly missed. But now, we must select a new Chancellor.
+- @muller_advisor_succession: We must decide his successor as advisor.
+- @muller_chancellor_succession: We must decide his successor as Chancellor.
+- @muller_chancellor_succession_bruning: We will allow Heinrich Brüning (Z) to succeed as Chancellor.
+- @muller_chancellor_succession_wirth: We will allow Joseph Wirth (Z) to succeed as Chancellor.
+- @muller_coleader_1_succession: We must decide his successor as Co-leader.
+- @muller_coleader_2_succession: We must decide his successor as Co-leader.
+- @muller_coleader_3_succession: We must decide his successor as Co-leader.
+- @succession_concluded: We have dealt with all matters of succession.
 
-- @braun_chancellor: Otto Braun (SPD) for Chancellor.
-- @wels_chancellor: Otto Wels (SPD) for Chancellor.
-- @breitscheid_chancellor: Rudolf Breitscheid (SPD) for Chancellor.
-- @bruning_chancellor: Let Heinrich Bruning of the Center Party become Chancellor.
-- @wirth_chancellor: Joseph Wirth of the Center Party should be Chancellor.
+@muller_advisor_succession
+view-if: muller_advisor == 1
+on-arrival: muller_advisor = 0; n_advisors -= 1
+go-to: shuffle_leadership.add_advisors
 
-@braun_chancellor
-on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; z_relation -= 5; dvp_relation -= 5
-subtitle: The Center Party is worried about having so much power in one man.
+Who should succeed muller as an advisor?
 
-Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
+@muller_chancellor_succession
+view-if: chancellor == "Müller"
+go-to: election_1928.spd_chancellor_menu
 
+Who should succeed muller as Chancellor?
 
-@wels_chancellor
-on-arrival: chancellor = "Wels"; chancellor_party = "SPD"; z_relation -= 3; dvp_relation -= 3
-subtitle: He is a good organizer, but is he also a good chancellor?
+@muller_coleader_1_succession
+view-if: spd_coleader_1 == "Müller"
 
-Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
+Who should succeed muller as Co-leader?
 
-@breitscheid_chancellor
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; z_relation -= 5; dvp_relation -= 5; uspd_relation += 1
-subtitle: The Center Party is worried about his left-leaning tendencies.
+- @vogel1: Hans Vogel is the clear choice.
 
-Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
+@muller_coleader_2_succession
+view-if: spd_coleader_2 == "Müller" 
 
-@bruning_chancellor
+Who should succeed muller as Co-leader?
+
+- @vogel2: Hans Vogel is the clear choice.
+
+@muller_coleader_3_succession
+view-if: spd_coleader_3 == "Müller" 
+
+Who should succeed muller as Co-leader?
+
+- @vogel3: Hans Vogel is the clear choice.
+
+@vogel1
+on-arrival: spd_coleader_1 = "Vogel" 
+
+@vogel2
+on-arrival: spd_coleader_2 = "Vogel" 
+
+@vogel3
+on-arrival: spd_coleader_3 = "Vogel" 
+
+@muller_chancellor_succession_bruning
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; z_relation += 5; dvp_relation += 5
 subtitle: The Center Party claims it is their turn...
 
 The Center Party is grateful that we have supported Brüning for Chancellor.
 
-@wirth_chancellor
+@muller_chancellor_succession_wirth
 on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; z_relation += 5; dvp_relation += 2
 view-if: z_party_leader = "Joos"
 subtitle: As a moderate member of the Center Party, he could represent unity.
 
 Our coalition partners accept Joseph Wirth of the Center Party as the new Chancellor.
 
+@succession_concluded
+on-arrival: succession_active = 0
+go-to: root
 
-@not_pm
-
-Herman Müller, one of the SPD's long-time leaders, has died. He will be greatly missed.
