@@ -97,6 +97,7 @@ Rallying alongside the [+ ddp_name +], the reformist message appeals to the orga
 choose-if: ddp_relation >= 45 and z_relation >= 45
 unavailable-subtitle: [? if ddp_relation <= 44 : Our relations with the [+ ddp_name +] are not good enough. ?][? if z_relation <= 44 : Our relations with the Zentrum are not good enough. ?]
 on-arrival: if democratization < 3: workers_spd += 2*(1 - dissent); workers_z += 1*(1 - dissent); workers_ddp += 2*(1 - dissent); new_middle_spd += 1*(1 - dissent); new_middle_ddp += 2*(1 - dissent); new_middle_z += 1*(1 - dissent); catholics_spd += 1*(1 - dissent); catholics_ddp += 1*(1 - dissent); catholics_z += 2*(1 - dissent); if democratization > 3: workers_spd += 3*(1 - dissent); workers_z + 2*(1 - dissent); workers_ddp += 2*(1 - dissent); new_middle_spd += 2*(1 - dissent); new_middle_ddp += 3*(1 - dissent); new_middle_z += 2*(1 - dissent); catholics_spd += 2*(1 - dissent); catholics_ddp += 2*(1 - dissent); catholics_z += 3*(1 - dissent); relation_ddp += 3; relation_z += 3:
+
 Rallying alongside the [+ ddp_name +] and Zentrum, our speakers defend the republican system and rail against the monarchists and authoritarians who threaten it.
 
 [? if democratization < 3 : Talk of democracy does not excite the workers as much as more practical issues. But that may change; part of our job is to provide political education to the proletariat. ?]
