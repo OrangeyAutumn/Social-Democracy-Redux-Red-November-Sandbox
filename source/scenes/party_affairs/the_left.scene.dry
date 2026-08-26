@@ -27,7 +27,7 @@ on-arrival: left_strength += 10; left_dissent -= 5; center_dissent += 3; labor_d
 We have openly promoted the Left faction, to the anger of the other factions.
 
 @youth
-on-arrival: resources -= 1; rb_strength += 50; rb_militancy += 0.02; young_socialists += 1; left_strength += 5; neorevisionist_strength += 5; radicalization += 1;
+on-arrival: rb_strength += 50; rb_militancy += 0.02; young_socialists += 1; left_strength += 5; neorevisionist_strength += 5; radicalization += 1;
 
 We have used the Left’s connections to improve youth recruitment. Our new youth members flock to the left or neorevisionist wings of the party, and also bring new radicalism to the Reichsbanner.
 
