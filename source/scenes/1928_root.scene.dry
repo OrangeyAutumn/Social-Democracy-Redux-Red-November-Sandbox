@@ -154,14 +154,14 @@ Q.dnvp_ideology = "National Conservatism"
 Q.nsdap_ideology = "Nazism"
 
 // faction leaders
-Q.left_faction_leader = "Levi";
-Q.left_faction_leader_fullname = "Paul Levi";
-Q.center_faction_leader = "Hilferding";
-Q.center_faction_leader_fullname = "Rudolf Hilferding";
-Q.labor_faction_leader = "Leipart";
-Q.labor_faction_leader_fullname = "Theodor Leipart";
-Q.reformist_faction_leader = "Braun";
-Q.reformist_faction_leader_fullname = "Otto Braun";
+Q.left_leader = "Levi";
+Q.left_leader_fullname = "Paul Levi";
+Q.center_leader = "Hilferding";
+Q.center_leader_fullname = "Rudolf Hilferding";
+Q.labor_leader = "Leipart";
+Q.labor_leader_fullname = "Theodor Leipart";
+Q.reformist_leader = "Braun";
+Q.reformist_leader_fullname = "Otto Braun";
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
