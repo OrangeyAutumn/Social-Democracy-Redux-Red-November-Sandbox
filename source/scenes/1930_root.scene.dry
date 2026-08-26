@@ -410,7 +410,7 @@ Q.in_right_coalition = 0;
 // Weimar coalition = SPD + Z + DDP
 Q.in_weimar_coalition = 0;
 // Grand coalition = SPD + Z + BVP + DDP + DVP
-// also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
+// also includes the "new grand coalition"of SPD + Z + BVP + DDP + DVP + Others
 Q.in_grand_coalition = 1;
 // Popular front = SPD + USPD + Z + DDP
 Q.in_popular_front = 0;
@@ -680,7 +680,7 @@ Q.in_bavaria_nsdap = 0;
 Q.bavaria_election_year = 1932;
 Q.bavaria_election_month = 4;
 // wurttemburg
-Q.wurttemburg_minister_president = " Eugen Bolz (Z)"
+Q.wurttemburg_minister_president = "Eugen Bolz (Z)"
 Q.in_wurttemburg_spd = 0;
 Q.in_wurttemburg_uspd = 0;
 Q.in_wurttemburg_dnvp = 1;
@@ -688,7 +688,7 @@ Q.in_wurttemburg_nsdap = 0;
 Q.wurttemberg_election_year = 1932;
 Q.wurttemberg_election_month = 4;
 // saxony
-Q.saxony_minister_president = " Wilhelm Bünger	(DVP))"
+Q.saxony_minister_president = "Wilhelm Bünger (DVP))"
 Q.in_saxony_spd = 0;
 Q.in_saxony_uspd = 0; 
 Q.in_saxony_dnvp = 1;
@@ -696,16 +696,16 @@ Q.in_saxony_nsdap = 0;
 Q.saxony_election_year = 1930;
 Q.saxony_election_month = 6;
 // Thuringia
-Q.thuringia_minister_president = " Arnold Paulssen (DDP)"
+Q.thuringia_minister_president = "Erwin Baum (Landbund)"
 Q.in_thuringia_spd = 0;
 Q.in_thuringia_uspd = 0;
 Q.in_thuringia_dnvp = 1;
-Q.in_thuringia_nsdap = 0;
+Q.in_thuringia_nsdap = 1;
 Q.thuringia_election_year = 1932;
 Q.thuringia_election_month = 7;
 Q.t_elections = -1;
 // baden
-Q.baden_minister_president = " Josef Schmitt (Z)"
+Q.baden_minister_president = "Josef Schmitt (Z)"
 Q.in_baden_spd = 1;
 Q.in_baden_uspd = 0;
 Q.in_baden_dnvp = 0;
@@ -713,7 +713,7 @@ Q.in_baden_nsdap = 0;
 Q.baden_election_year = 1933;
 Q.baden_election_month = 10;
 // hesse
-Q.hesse_minister_president = " Bernhard Adelung (SPD)"
+Q.hesse_minister_president = "Bernhard Adelung (SPD)"
 Q.in_hesse_spd = 1;
 Q.in_hesse_uspd = 0;
 Q.in_hesse_dnvp = 0;
@@ -737,7 +737,7 @@ Q.in_anhalt_nsdap = 0;
 Q.anhalt_election_year = 1932;
 Q.anhalt_election_month = 4;
 // oldenburg
-Q.oldenburg_minister_president = " Friedrich Cassebohm (I)"
+Q.oldenburg_minister_president = "Friedrich Cassebohm (I)"
 Q.in_oldenburg_spd = 0;
 Q.in_oldenburg_uspd = 0;
 Q.in_oldenburg_dnvp = 0;
@@ -745,7 +745,7 @@ Q.in_oldenburg_nsdap = 0;
 Q.oldenburg_election_year = 1931;
 Q.oldenburg_election_month = 5;
 // Mecklenburg-Schwerin
-Q.mecklenburg_schwerin_minister_president = " Karl Eschenburg (DNVP)"
+Q.mecklenburg_schwerin_minister_president = "Karl Eschenburg (DNVP)"
 Q.in_mecklenburg_schwerin_spd = 0;
 Q.in_mecklenburg_schwerin_uspd = 0;
 Q.in_mecklenburg_schwerin_dnvp = 1;
@@ -753,7 +753,7 @@ Q.in_mecklenburg_schwerin_nsdap = 0;
 Q.mecklenburg_schwerin_election_year = 1932;
 Q.mecklenburg_schwerin_election_month = 6;
 // Mecklenburg-Strelitz
-Q.mecklenburg_strelitz_minister_president = " Kurt von Reibnitz (SPD)"
+Q.mecklenburg_strelitz_minister_president = "Kurt von Reibnitz (SPD)"
 Q.in_mecklenburg_strelitz_spd = 0;
 Q.in_mecklenburg_strelitz_uspd = 0;
 Q.in_mecklenburg_strelitz_dnvp = 1;
@@ -761,7 +761,7 @@ Q.in_mecklenburg_strelitz_nsdap = 0;
 Q.mecklenburg_strelitz_election_year = 1932;
 Q.mecklenburg_strelitz_election_month = 3;
 // hamburg
-Q.hamburg_minister_president = " Rudolf Roß (SPD)"
+Q.hamburg_minister_president = "Rudolf Roß (SPD)"
 Q.in_hamburg_spd = 1;
 Q.in_hamburg_uspd = 0;
 Q.in_hamburg_dnvp = 0;
