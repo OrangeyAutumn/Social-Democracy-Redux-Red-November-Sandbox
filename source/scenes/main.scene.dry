@@ -59,7 +59,7 @@ is-deck: true
 - #party_affairs
 
 @inter_party_affairs
-title: Party Affairs
+title: Inter-Party Affairs
 card-image: img/inter_party_relations.jpg
 is-deck: true
 
