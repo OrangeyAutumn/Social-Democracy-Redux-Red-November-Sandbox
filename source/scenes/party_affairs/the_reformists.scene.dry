@@ -1,0 +1,150 @@
+title: The Reformists
+new-page: true
+is-card: true
+tags: party_affairs
+on-arrival: month_activities += 1;
+card-image: img/portraits/BraunOtto.jpg
+
+The Reformist faction is the fire that drives our party forwards. How shall we make use of their talents?
+
+- @boost_reformists_influence_subtle: We will subtly promote the Reformists faction as not to anger any of the other factions.
+- @boost_reformists_influence_blatant: We will openly promote the Reformist faction.
+- @hindenburg: We will use the Reformists’ connections to attempt to come to an understanding with President Hindenburg.
+- @grand_coalition_relations: We will use the Reformists’ connections to attempt to come to an understanding with the bourgeois parties.
+- @reduce_reformists_dissent: We will work to reduce dissent within the faction.
+- @new_reformists_leader: [+ reformists_leader +] has served well, but new leadership is required.
+- @root: We will do none of these things.
+- @easy_discard: We will consider this at a later time.
+
+@boost_reformists_influence_subtle
+on-arrival: reformists_strength += 5; reformists_dissent -= 3
+
+We have made subtle moves to boost the popularity of the Reformist faction.
+
+@boost_reformists_influence_blatant
+on-arrival: reformists_strength += 10; reformists_dissent -= 5; center_dissent += 3; labor_dissent += 3; left_dissent += 3
+
+We have openly promoted the Reformist faction, to the anger of the other factions.
+
+@hindenburg
+on-arrival: hindenburg_relation += 3*(1-dissent)
+
+We have used our Reformist’s connections, particularly through Otto Braun, to meet with President Hindenburg. Our meetings with are frosty to say the least, but they are meetings nonetheless.
+
+@grand_coalition_relations
+on-arrival: z_relation += 3; ddp_relation += 3 ; dvp_relation += 3 ; hindenburg_relation += 3
+
+We have used the Reformists’ connections to try to come to an understanding with the Bourgeois parties.
+
+@reduce_reformists_dissent
+on-arrival: reformists_dissent -= 10
+
+We have worked to reduce dissent within the Reformist faction.
+
+@new_reformists_leader
+
+We must now select a new leader for the Reformist Faction.
+
+- @reformists_leader_juchacz
+- @reformists_leader_severing
+- @reformists_leader_rosenfeld
+- @reformists_leader_seydewitz
+- @reformists_leader_pfulf
+- @reformists_leader_braun
+- @reformists_leader_baade
+- @reformists_leader_hirschfeld
+- @reformists_leader_radbruch
+- @reformists_leader_stampfer
+- @root: We have changed our minds.
+- @easy_discard: We will consider this at a later time.
+
+
+@reformists_leader_severing
+title: Carl Severing
+subtitle: Carl Severing is a one-time Prussian interior minister and police reformer.
+view-if: reformists_leader != "Severing" and spd_coleader_1 != "Severing" and spd_coleader_2 != "Severing" and spd_coleader_3 != "Severing"
+is-card: true
+card-image: img/portraits/SeveringCarl.jpg
+on-arrival: reformists_leader = "Severing"; reformists_leader_fullname = "Carl Severing"
+go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+
+Carl Severing has been agreed as faction leader.
+
+@reformists_leader_braun
+title: Otto Braun
+subtitle: Otto Braun is the Minister-President of Prussia, and one of the most recognizable and well-known Social Democratic leaders.
+is-card: true
+card-image: img/portraits/BraunOtto.jpg
+view-if: reformists_leader != "Braun" and spd_coleader_1 != "Braun" and spd_coleader_2 != "Braun" and spd_coleader_3 != "Braun"
+on-arrival: reformists_leader = "Braun"; reformists_leader_fullname = "Otto Braun"
+go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+
+Otto Braun has been agreed as faction leader.
+
+@reformists_leader_juchacz
+title: Marie Juchacz
+subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization.
+is-card: true
+card-image: img/portraits/JuchaczMarie.jpg
+view-if: reformists_leader != "Juchacz" and spd_coleader_1 != "Juchacz" and spd_coleader_2 != "Juchacz" and spd_coleader_3 != "Juchacz"
+on-arrival: reformists_leader = "Juchacz"; reformists_leader_fullname = "Marie Juchacz"
+go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+
+Marie Juchacz has been agreed as faction leader.
+
+@reformists_leader_pfulf
+title: Antonie Pfülf
+subtitle: Antonie Pfülf is a leader in social policy and women's rights.
+is-card: true
+card-image: img/portraits/PfülfAntonie.jpg
+view-if: reformists_leader != "Pfülf" and spd_coleader_1 != "Pfülf" and spd_coleader_2 != "Pfülf" and spd_coleader_3 != "Pfülf"
+on-arrival: reformists_leader = "Pfülf"; reformists_leader_fullname = "Antonie Pfülf"
+go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+
+Antonie Pfülf has been agreed as faction leader.
+
+@reformists_leader_baade
+title: Fritz Baade – Perhaps a Non-factional Pick could broaden our appeal?
+subtitle: Fritz Baade is one of the few agricultural policy experts in the SPD.
+is-card: true
+card-image: img/portraits/BaadeFritz.jpg
+view-if: reformists_leader != "Baade" and spd_coleader_1 != "Baade" and spd_coleader_2 != "Baade" and spd_coleader_3 != "Baade" and left_leader != "Baade" and center_leader != "Baade" and labor_leader != "Baade"
+on-arrival: reformists_leader = "Baade"; reformists_leader_fullname = "Fritz Baade"
+go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+
+Fritz Baade has been agreed as faction leader.
+
+
+@reformists_leader_hirschfeld
+title: Magnus Hirschfeld – Perhaps a Non-factional Pick could broaden our appeal?
+subtitle: Magnus Hirschfeld is the founder of the Institut für Sexualwissenschaft and an advocate for the rights of sexual minorities.
+is-card: true
+card-image: img/portraits/HirschfeldMagnus.jpg
+view-if: reformists_leader != "Hirschfeld" and spd_coleader_1 != "Hirschfeld" and spd_coleader_2 != "Hirschfeld" and spd_coleader_3 != "Hirschfeld" and left_leader != "Hirschfeld" and center_leader != "Hirschfeld" and labor_leader != "Hirschfeld"
+on-arrival: reformists_leader = "Hirschfeld"; reformists_leader_fullname = "Magnus Hirschfeld"
+go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+
+Magnus Hirschfeld has been agreed as faction leader.
+
+@reformists_leader_radbruch
+title: Gustav Radbruch – Perhaps a Non-factional Pick could broaden our appeal?
+subtitle: Gustav Radbruch is a renowned legal scholar and long-time SPD justice minister.
+is-card: true
+card-image: img/portraits/RadbruchGustav.jpg
+view-if: reformists_leader != "Radbruch" and spd_coleader_1 != "Radbruch" and spd_coleader_2 != "Radbruch" and spd_coleader_3 != "Radbruch" and left_leader != "Radbruch" and center_leader != "Radbruch" and labor_leader != "Radbruch"
+on-arrival: reformists_leader = "Radbruch"; reformists_leader_fullname = "Gustav Radbruch"
+go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+
+Gustav Radbruch has been agreed as faction leader.
+
+
+@reformists_leader_stampfer
+title: Friedrich Stampfer – Perhaps a Non-factional Pick could broaden our appeal?
+subtitle: Friedrich Stampfer is the long-time editor-in-chief of Vorwärts, our party newspaper.
+is-card: true
+card-image: img/portraits/StampferFriedrich.jpg
+view-if: reformists_leader != "Stampfer" and spd_coleader_1 != "Stampfer" and spd_coleader_2 != "Stampfer" and spd_coleader_3 != "Stampfer" and left_leader != "Stampfer" and center_leader != "Stampfer" and labor_leader != "Stampfer"
+on-arrival: reformists_leader = "Stampfer"; reformists_leader_fullname = "Friedrich Stampfer"
+go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+
+Friedrich Stampfer has been agreed as faction leader.
