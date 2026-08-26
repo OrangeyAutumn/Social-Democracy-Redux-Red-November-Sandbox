@@ -5,10 +5,10 @@ tags: party_affairs
 on-arrival: month_activities += 1;
 card-image: img/portraits/LeipartTheodor.jpg
 
-The Reformist faction is the fire that drives our party forwards. How shall we make use of their talents?
+The Labor wing are our strongest connection to our grassroots. How shall we make use of their talents?
 
 - @boost_labor_influence_subtle: We will subtly promote the Labor faction as not to anger any of the other factions.
-- @boost_labor_influence_blatant: We will openly promote the Reformist faction.
+- @boost_labor_influence_blatant: We will openly promote the Labor faction.
 - @welfare: We will use Labor’s connections to promote mutual aid programs for the workers.
 - @culture: We will use Labor’s connections to promote sports, educational, and cultural programs.
 - @grassroots_relations: We will use Labor’s connections to attempt to build ties with the grassroots elements of the other parties.
@@ -20,12 +20,12 @@ The Reformist faction is the fire that drives our party forwards. How shall we m
 @boost_labor_influence_subtle
 on-arrival: labor_strength += 5; labor_dissent -= 3
 
-We have made subtle moves to boost the popularity of the Reformist faction.
+We have made subtle moves to boost the popularity of the Labor faction.
 
 @boost_labor_influence_blatant
 on-arrival: labor_strength += 10; labor_dissent -= 5; center_dissent += 3; reformist_dissent += 3; left_dissent += 3
 
-We have openly promoted the Reformist faction, to the anger of the other factions.
+We have openly promoted the Labor faction, to the anger of the other factions.
 
 @welfare
 on-arrival: workers_aid += 1; unemployed_spd += 5*(1 - dissent);
@@ -39,8 +39,6 @@ It is not enough for the SPD to solely be a political party. The Worker Singer's
 
 [? if sa_strength > 500 : However, it feels frivolous to spend on sports and choirs when the fascists are murdering us in the streets. ?]
 
-We have used our Reformist’s connections, particularly through Siegried Aufhäuser, to meet with President Hindenburg. Our meetings with are frosty to say the least, but they are meetings nonetheless.
-
 @grassroots_relations
 on-arrival: z_relation += 3; ddp_relation += 3 ; dvp_relation += 3 ; dnvp_relation += 3
 
@@ -49,11 +47,11 @@ We have used Labor’s connections to try to build ties with the grassroots of o
 @reduce_labor_dissent
 on-arrival: labor_dissent -= 10
 
-We have worked to reduce dissent within the Reformist faction.
+We have worked to reduce dissent within the Labor faction.
 
 @new_labor_leader
 
-We must now select a new leader for the Reformist Faction.
+We must now select a new leader for the Labor Faction.
 
 - @labor_leader_wissell
 - @labor_leader_leipart
@@ -162,15 +160,15 @@ go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_mull
 Friedrich Stampfer has been agreed as faction leader.
 
 @labor_leader_mierendorff
-title: Theodoro Mierendorff – Perhaps his new ideas are what we need to reach out to the everyday worker?
-subtitle: Theodoro Mierendorff is one of the youngest members of the Reichstag, and the originator of the "Neo-Revisionist" movement. He is an anti-Nazi strategist.
+title: Carlo Mierendorff – Perhaps his new ideas are what we need to reach out to the everyday worker?
+subtitle: Carlo Mierendorff is one of the youngest members of the Reichstag, and the originator of the "Neo-Revisionist" movement. He is an anti-Nazi strategist.
 is-card: true
-card-image: img/portraits/MierendorffTheodoro.jpg
+card-image: img/portraits/MierendorffCarlo.jpg
 view-if: nsdap_votes >= 10 and neorevisionism == 0 and  labor_leader != "Mierendorff" and spd_coleader_1 != "Mierendorff" and spd_coleader_2 != "Mierendorff" and spd_coleader_3 != "Mierendorff" and left_leader != "Mierendorff" and center_leader != "Mierendorff" and reformist_leader != "Mierendorff"
-on-arrival: labor_leader = "Mierendorff"; labor_leader_fullname = "Theodoro Mierendorff"
+on-arrival: labor_leader = "Mierendorff"; labor_leader_fullname = "Carlo Mierendorff"
 go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Theodoro Mierendorff has been agreed as faction leader.
+Carlo Mierendorff has been agreed as faction leader.
 
 @labor_leader_schumacher
 title: Kurt Schumacher – Perhaps his new ideas are what we need to reach out to the everyday worker?
