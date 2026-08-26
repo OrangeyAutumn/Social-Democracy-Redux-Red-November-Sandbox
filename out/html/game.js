@@ -9,7 +9,7 @@
                  month: 'short',
                  day: 'numeric' };
 
-var modifyUI = function(dendryUI) {
+var main = function(dendryUI) {
     ui = dendryUI;
     game = ui.game;
 
@@ -288,7 +288,7 @@ window.changeTab = function(newTab, tabId) {
 
   window.justLoaded = true;
   window.statusTab = "status";
-  window.dendryModifyUI = modifyUI;
+  window.dendrymain = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
   window.increaseFontSize = function() {
