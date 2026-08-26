@@ -76,14 +76,14 @@ is-deck: true
 @cabinet
 title: Cabinet Affairs
 view-if: time >= 6 or spd_in_government
-card-image: img/reichstag_2.jpg
+card-image: img/muller_cabinet.jpg
 is-deck: true
 
 - #cabinet_affairs
 
 @landtag_affairs
 title: Landtags
-card-image: img/reichstag_2.jpg
+card-image: img/map_2.jpg
 is-deck: true
 
 - #landtag_affairs
