@@ -2,9 +2,7 @@ title: The Center
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: shuffle_leadership_timer = 0
-on-arrival: month_activities += 1; shuffle_leadership_timer = 8;
-card-image: img/vorwarts_2.jpg
+card-image: img/HilferdingRudolf.jpg
 
 The Center faction is the glue that holds our party together. How shall we make use of their talents?
 
@@ -29,7 +27,7 @@ on-arrival: center_strength += 10; center_dissent -= 5; left_dissent += 3; labor
 We have openly promoted the Center faction, to the anger of the other factions.
 
 @party_discipline
-on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
+on-arrival: left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
 
 We have used the Center’s connections to reduce dissent across all factions.
 
@@ -121,7 +119,7 @@ go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_mull
 Rudolf Breitscheid has been agreed as faction leader.
 
 @center_leader_baade
-title: Fritz Baade – Perhaps a Non-factional Advisor could broaden our appeal?
+title: Fritz Baade – Perhaps a Non-factional pick could broaden our appeal?
 subtitle: Fritz Baade is one of the few agricultural policy experts in the SPD.
 is-card: true
 card-image: img/portraits/BaadeFritz.jpg
@@ -133,7 +131,7 @@ Fritz Baade has been agreed as faction leader.
 
 
 @center_leader_hirschfeld
-title: Magnus Hirschfeld – Perhaps a Non-factional Advisor could broaden our appeal?
+title: Magnus Hirschfeld – Perhaps a Non-factional pick could broaden our appeal?
 subtitle: Magnus Hirschfeld is the founder of the Institut für Sexualwissenschaft and an advocate for the rights of sexual minorities.
 is-card: true
 card-image: img/portraits/HirschfeldMagnus.jpg
@@ -144,7 +142,7 @@ go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_mull
 Magnus Hirschfeld has been agreed as faction leader.
 
 @center_leader_radbruch
-title: Gustav Radbruch – Perhaps a Non-factional Advisor could broaden our appeal?
+title: Gustav Radbruch – Perhaps a Non-factional pick could broaden our appeal?
 subtitle: Gustav Radbruch is a renowned legal scholar and long-time SPD justice minister.
 is-card: true
 card-image: img/portraits/RadbruchGustav.jpg
@@ -156,7 +154,7 @@ Gustav Radbruch has been agreed as faction leader.
 
 
 @center_leader_stampfer
-title: Friedrich Stampfer – Perhaps a Non-factional Advisor could broaden our appeal?
+title: Friedrich Stampfer – Perhaps a Non-factional pick could broaden our appeal?
 subtitle: Friedrich Stampfer is the long-time editor-in-chief of Vorwärts, our party newspaper.
 is-card: true
 card-image: img/portraits/StampferFriedrich.jpg
