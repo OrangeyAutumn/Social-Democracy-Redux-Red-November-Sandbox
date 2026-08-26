@@ -353,7 +353,7 @@ card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
 view-if: hilferding_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: hilferding_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
-go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Rudolf Hilferding is now an advisor.
 
@@ -365,7 +365,7 @@ card-image: img/portraits/WelsRudolf.jpg
 tags: center_advisor
 view-if: wels_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: wels_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
-go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Otto Wels is now an advisor.
 
@@ -377,7 +377,7 @@ card-image: img/portraits/VogelHans.jpg
 tags: center_advisor
 view-if: vogel_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: vogel_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
-go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Hans Vogel is now an advisor.
 
@@ -389,7 +389,7 @@ card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
 view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: muller_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
-go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Hermann Müller is now an advisor.
 
@@ -400,7 +400,7 @@ is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
 view-if: breitscheid_advisor = 0 and n_advisors < 3
 on-arrival: breitscheid_advisor = 1; n_advisors += 1; center_strength += 3; center_dissent -= 1;
-go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: center_advisor
 
 Rudolf Breitscheid is now an advisor.
@@ -416,7 +416,7 @@ card-image: img/portraits/SeveringCarl.jpg
 tags: reformist_advisor
 view-if: severing_advisor = 0 and n_advisors < 3
 on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
-go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Carl Severing is now an advisor.
 
@@ -428,7 +428,7 @@ card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor
 view-if: braun_advisor = 0 and n_advisors < 3
 on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
-go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Otto Braun is now an advisor.
 
@@ -439,7 +439,7 @@ is-card: true
 card-image: img/portraits/JuchaczMarie.jpg
 view-if: juchacz_advisor = 0 and n_advisors < 3
 on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
-go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1 if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 tags: reformist_advisor
 
 Marie Juchacz is now an advisor.
