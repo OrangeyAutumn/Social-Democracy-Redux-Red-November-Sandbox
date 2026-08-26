@@ -737,7 +737,7 @@ Q.in_anhalt_nsdap = 0;
 Q.anhalt_election_year = 1932;
 Q.anhalt_election_month = 4;
 // oldenburg
-Q.oldenburg_minister_president = "Friedrich Cassebohm (I)"
+Q.oldenburg_minister_president = "Eugen von Finckh (I)"
 Q.in_oldenburg_spd = 0;
 Q.in_oldenburg_uspd = 0;
 Q.in_oldenburg_dnvp = 0;
