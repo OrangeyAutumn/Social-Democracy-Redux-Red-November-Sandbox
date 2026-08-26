@@ -2,38 +2,38 @@ title: Relations with Hindenburg
 new-page: true
 is-card: true
 tags: inter_party_affairs
-view-if: hindenburg_timer >= 0
-on-arrival: month += 1; hindenburg_timer = 4;
-card-image: img/portraits/VitorioEmanuel.jpg
+view-if: hindenburg_timer >= 0 and president == "Hindenburg"
+on-arrival: month_actions += 1; hindenburg_timer = 4;
+card-image: img/portraits/Hindenburg.jpg
 
-= Royal Relations
+= Relations with Hindenburg
 
-Our relationship with the King can be described as wary as best, due to our diametrically opposed ideals. However, if we are to make any solid reforms, we will need to have the King on our side.
+Our relationship with President Hindenburg can be described as wary as best, due to our diametrically opposed ideals. However, if we are to make any solid reforms, or even hold any chance of sustained government, we will need to at least have dealings with Hindenburg.
 
-- @king_funds: Arrange some meetings with the King.
-- @king_ldr: Utilise our influence with the [+ ldr_name +] to sway the King.
-- @king_ul: Utilise our influence with the [+ ul_name +] to sway the King.
+- @hindenburg_funds: Arrange some meetings with the King.
+- @hindenburg_z: Utilise our influence with the [+ ldr_name +] to sway the King.
+- @hindenburg_dvp: Utilise our influence with the [+ ul_name +] to sway the King.
 - @return: Let's not do this for now.
 - @easy_discard
 
-@king_funds
+@hindenburg_funds
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; king_relation += 7; king_relation += 3*(1-dissent) if radicalisation < 3; king_relation -= 5*(1-dissent) if radicalisation > 6; radicalisation -= 0.1;
+on-arrival: resources -= 1; hindenburg_relation += 3*(1-dissent)
 
-We are received with wariness, though the King does not turn us away outright. [? if radicalisation > 6 : Our radicalisation, however, makes relations with the King hard to improve. ?]
+Our meetings with President Hindenburg are frosty to say the least, but they are meetings nonetheless.
 
-@king_ldr
-choose-if: ldr_relation >= 64.9
-unavailable-subtitle: Our relationship with the [+ ldr_name +] isn't high enough.
-on-arrival: ldr_relation -= 5; king_relation += 3
+@hindenburg_z
+choose-if: z_relation >= 60
+unavailable-subtitle: Our relationship with the Zentrum isn't high enough.
+on-arrival: king_relation += 3
 
-With some meetings and agreements, they agree to put a good word for us with the King.
+With some meetings and agreements, they agree to put a good word for us with Hindenburg.
 
-@king_ul
-choose-if: ul_relation >= 64.9
+@hindenburg_dvp
+choose-if: ul_relation >= 60
 unavailable-subtitle: Our relationship with the [+ ul_name +] isn't high enough.
-on-arrival: ul_relation -= 5; king_relation += 3
+on-arrival: king_relation += 5
 
-With some meetings and agreements, they agree to sway some of their Senate-aligned members towards us, which in turn sways the King.
+With some meetings and agreements, they agree to put a good word for us with Hindenburg.
