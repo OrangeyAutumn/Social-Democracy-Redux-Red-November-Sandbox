@@ -33,7 +33,7 @@ on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; ce
 
 We have used the Center’s connections to reduce dissent across all factions.
 
-@toleration: We will use the Center’s connections to defend toleration.
+@toleration
 view-if: spd_in_government = 0 and spd_toleration = 1
 on-arrival: left_dissent -= 8; neorevisionist_dissent -= 8; center_dissent -= 5;
 
