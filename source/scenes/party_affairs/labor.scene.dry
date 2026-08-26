@@ -186,7 +186,6 @@ title: Julius Leber – Perhaps his new ideas are what we need to reach out to t
 subtitle: Julius Leber is a former Reichswehr officer who resigned in opposition to the Kapp coup attempt.
 is-card: true
 card-image: img/portraits/LeberJulius.jpg
-view-if: leber_advisor = 0 and n_advisors < 3
 view-if: nsdap_votes >= 10 and neorevisionism == 0 and  labor_leader != "Leber" and spd_coleader_1 != "Leber" and spd_coleader_2 != "Leber" and spd_coleader_3 != "Leber" and left_leader != "Leber" and center_leader != "Leber" and reformist_leader != "Leber"
 on-arrival: labor_leader = "Leber"; labor_leader_fullname = "Julius Leber"
 go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
