@@ -66,7 +66,7 @@ view-if: reformists_leader != "Severing" and spd_coleader_1 != "Severing" and sp
 is-card: true
 card-image: img/portraits/SeveringCarl.jpg
 on-arrival: reformists_leader = "Severing"; reformists_leader_fullname = "Carl Severing"
-go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+go-to: death_of_muller if succession_muller == 1; death_of_muller if succession_muller == 1
 
 Carl Severing has been agreed as faction leader.
 
@@ -77,7 +77,7 @@ is-card: true
 card-image: img/portraits/BraunOtto.jpg
 view-if: reformists_leader != "Braun" and spd_coleader_1 != "Braun" and spd_coleader_2 != "Braun" and spd_coleader_3 != "Braun"
 on-arrival: reformists_leader = "Braun"; reformists_leader_fullname = "Otto Braun"
-go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+go-to: death_of_muller if succession_muller == 1; death_of_muller if succession_muller == 1
 
 Otto Braun has been agreed as faction leader.
 
@@ -88,7 +88,7 @@ is-card: true
 card-image: img/portraits/JuchaczMarie.jpg
 view-if: reformists_leader != "Juchacz" and spd_coleader_1 != "Juchacz" and spd_coleader_2 != "Juchacz" and spd_coleader_3 != "Juchacz"
 on-arrival: reformists_leader = "Juchacz"; reformists_leader_fullname = "Marie Juchacz"
-go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+go-to: death_of_muller if succession_muller == 1; death_of_muller if succession_muller == 1
 
 Marie Juchacz has been agreed as faction leader.
 
@@ -99,7 +99,7 @@ is-card: true
 card-image: img/portraits/PfülfAntonie.jpg
 view-if: reformists_leader != "Pfülf" and spd_coleader_1 != "Pfülf" and spd_coleader_2 != "Pfülf" and spd_coleader_3 != "Pfülf"
 on-arrival: reformists_leader = "Pfülf"; reformists_leader_fullname = "Antonie Pfülf"
-go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+go-to: death_of_muller if succession_muller == 1; death_of_muller if succession_muller == 1
 
 Antonie Pfülf has been agreed as faction leader.
 
@@ -110,7 +110,7 @@ is-card: true
 card-image: img/portraits/BaadeFritz.jpg
 view-if: reformists_leader != "Baade" and spd_coleader_1 != "Baade" and spd_coleader_2 != "Baade" and spd_coleader_3 != "Baade" and left_leader != "Baade" and center_leader != "Baade" and labor_leader != "Baade"
 on-arrival: reformists_leader = "Baade"; reformists_leader_fullname = "Fritz Baade"
-go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+go-to: death_of_muller if succession_muller == 1; death_of_muller if succession_muller == 1
 
 Fritz Baade has been agreed as faction leader.
 
@@ -122,7 +122,7 @@ is-card: true
 card-image: img/portraits/HirschfeldMagnus.jpg
 view-if: reformists_leader != "Hirschfeld" and spd_coleader_1 != "Hirschfeld" and spd_coleader_2 != "Hirschfeld" and spd_coleader_3 != "Hirschfeld" and left_leader != "Hirschfeld" and center_leader != "Hirschfeld" and labor_leader != "Hirschfeld"
 on-arrival: reformists_leader = "Hirschfeld"; reformists_leader_fullname = "Magnus Hirschfeld"
-go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+go-to: death_of_muller if succession_muller == 1; death_of_muller if succession_muller == 1
 
 Magnus Hirschfeld has been agreed as faction leader.
 
@@ -133,7 +133,7 @@ is-card: true
 card-image: img/portraits/RadbruchGustav.jpg
 view-if: reformists_leader != "Radbruch" and spd_coleader_1 != "Radbruch" and spd_coleader_2 != "Radbruch" and spd_coleader_3 != "Radbruch" and left_leader != "Radbruch" and center_leader != "Radbruch" and labor_leader != "Radbruch"
 on-arrival: reformists_leader = "Radbruch"; reformists_leader_fullname = "Gustav Radbruch"
-go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+go-to: death_of_muller if succession_muller == 1; death_of_muller if succession_muller == 1
 
 Gustav Radbruch has been agreed as faction leader.
 
@@ -145,6 +145,6 @@ is-card: true
 card-image: img/portraits/StampferFriedrich.jpg
 view-if: reformists_leader != "Stampfer" and spd_coleader_1 != "Stampfer" and spd_coleader_2 != "Stampfer" and spd_coleader_3 != "Stampfer" and left_leader != "Stampfer" and center_leader != "Stampfer" and labor_leader != "Stampfer"
 on-arrival: reformists_leader = "Stampfer"; reformists_leader_fullname = "Friedrich Stampfer"
-go-to: death_of_muller if succession_severing == 1; death_of_muller if succession_muller == 1
+go-to: death_of_muller if succession_muller == 1; death_of_muller if succession_muller == 1
 
 Friedrich Stampfer has been agreed as faction leader.
