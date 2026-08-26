@@ -111,11 +111,14 @@ Q.uspd_party_leader = "Thälmann";
 Q.uspd_leader_fullname = "Ernst Thalmann";
 Q.spd_coleader_1 = "Crispien";
 Q.spd_coleader_1_fullname = "Arthur Crispien";
+Q.spd_coleader_1_faction == "Left";
 // Hans Vogel after Muller's death
 Q.spd_coleader_2 = "Muller";
 Q.spd_coleader_2_fullname = "Hermann Muller";
+Q.spd_coleader_2_faction == "Center";
 Q.spd_coleader_3 = "Wels";
 Q.spd_coleader_3_fullname = "Otto Wels";
+Q.spd_coleader_3_faction == "Center";
 // Erich Koch-Weser — 1924–1930
 Q.ddp_leader = "Koch-Weser"
 Q.ddp_leader_fullname = "Erich Koch-Weser"
