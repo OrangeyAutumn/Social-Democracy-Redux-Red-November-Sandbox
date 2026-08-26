@@ -83,7 +83,7 @@ subtitle: This may unsettle businesses, consumers, and our coalition partners.
 - @raise_overall: Increase overall taxes.
 - @cut_overall: Cut overall taxes.
 - @raise_progressive: Make the tax system more progressive by raising taxes on the rich and cutting them for the poor.
-- @regressive
+- @regressive: Make the tax system more regressive... wait what?!
 - @fiscal_menu: Consider other options.
 
 @raise_progressive
