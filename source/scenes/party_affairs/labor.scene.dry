@@ -57,19 +57,19 @@ view-if: labor_leader == "Leber"
 go-to: leber
 
 @use_baade
-view-if: labor_leader == “Baade”
+view-if: labor_leader == "Baade"
 go-to: baade
 
 @use_hirschfeld
-view-if: labor_leader == “Hirschfeld”
+view-if: labor_leader == "Hirschfeld"
 go-to: hirschfeld
 
 @use_radbruch
-view-if: labor_leader == “Rabdruch”
+view-if: labor_leader == "Rabdruch"
 go-to: radbruch
 
 @use_stampfer
-view-if: labor_leader == “Stampfer”
+view-if: labor_leader == "Stampfer"
 go-to: stampfer
 
 @boost_labor_influence_subtle
