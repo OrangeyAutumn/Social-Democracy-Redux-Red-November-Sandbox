@@ -3,10 +3,21 @@ new-page: true
 is-card: true
 tags: party_affairs
 on-arrival: month_activities += 1;
-card-image: img/portraits/BraunOtto.jpg
+card-image: img/portraits/MierendorffCarlo.jpg if reformist_leader == "Mierendorff"; img/portraits/SchumacherKurt.jpg if reformist_leader == "Schumacher"; img/portraits/LeberJulius.jpg if reformist_leader == "Leber"; img/portraits/SeveringCarl.jpg if reformist_leader == "Severing"; img/portraits/BraunOtto.jpg if reformist_leader == "Braun"; img/portraits/JuchaczMarie.jpg if reformist_leader == "Juchacz"; img/portraits/PfülfAntonie.jpg if reformist_leader == "Pfülf"; img/portraits/StampferFriedrich.jpg if reformist_leader == "Stampfer"; img/portraits/RadbruchGustav.jpg if reformist_leader == "Radbruch"; img/portraits/HirschfeldMagnus.jpg if reformist_leader == "Hirschfeld"; img/portraits/BaadeFritz.jpg if reformist_leader == "Baade"
 
-The Reformist faction is the fire that drives our party forwards. How shall we make use of their talents?
+The Reformist faction holds many of our most notable members. How shall we make use of their talents?
 
+-	@use_severing: We will use the talents of the Reformist leader, Carl Severing
+-	@use_braun: We will use the talents of the Reformist leader, Otto Braun
+-	@use_juchacz: We will use the talents of the Reformist leader, Marie Juchacz
+-	@use_pfülf: We will use the talents of the Reformist leader, Antonie Pfülf
+-	@use_baade: We will use the talents of the Reformist leader, Fritz Baade
+-	@use_hirschfeld: We will use the talents of the Reformist leader, Magnus Hirschfeld
+-	@use_radbruch: We will use the talents of the Reformist leader, Gustav Radbruch
+-	@use_stampfer: We will use the talents of the Reformist leader, Friedrich Stampfer
+-	@use_mierendorff: We will use the talents of the Reformist leader, Carlo Mierendorff
+-	@use_schumacher: We will use the talents of the Reformist leader, Kurt Schumacher
+-	@use_leber: We will use the talents of the Reformist leader, Julius Leber
 - @boost_reformists_influence_subtle: We will subtly promote the Reformists faction as not to anger any of the other factions.
 - @boost_reformists_influence_blatant: We will openly promote the Reformist faction.
 - @hindenburg: We will use the Reformists’ connections to attempt to come to an understanding with President Hindenburg.
@@ -15,6 +26,50 @@ The Reformist faction is the fire that drives our party forwards. How shall we m
 - @new_reformists_leader: [+ reformist_leader +] has served well, but new leadership is required.
 - @root: We will do none of these things.
 - @easy_discard: We will consider this at a later time.
+
+@use_severing
+view-if: reformist_leader == "Severing"
+go-to: severing
+
+@use_braun
+view-if: reformist_leader == "Braun"
+go-to: braun
+
+@use_juchacz
+view-if: reformist_leader == "Juchacz"
+go-to: juchacz
+
+@use_pfülf
+view-if: reformist_leader == "Pfülf"
+go-to: pfülf
+
+@use_mierendorff
+view-if: reformist_leader == "Mierendorff"
+go-to: mierendorff
+
+@use_schumacher
+view-if: reformist_leader == "Schumacher
+go-to: schumacher
+
+@use_leber
+view-if: reformist_leader == "Leber"
+go-to: leber
+
+@use_baade
+view-if: reformist_leader == “Baade”
+go-to: baade
+
+@use_hirschfeld
+view-if: reformist_leader == “Hirschfeld”
+go-to: hirschfeld
+
+@use_radbruch
+view-if: reformist_leader == “Rabdruch”
+go-to: radbruch
+
+@use_stampfer
+view-if: reformist_leader == “Stampfer”
+go-to: stampfer
 
 @boost_reformists_influence_subtle
 on-arrival: reformists_strength += 5; reformists_dissent -= 3
