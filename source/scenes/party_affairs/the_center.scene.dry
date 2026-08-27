@@ -48,19 +48,19 @@ view-if: center_leader == "Breitscheid"
 go-to: breitscheid
 
 @use_baade
-view-if: center_leader == “Baade”
+view-if: center_leader == "Baade"
 go-to: baade
 
 @use_hirschfeld
-view-if: center_leader == “Hirschfeld”
+view-if: center_leader == "Hirschfeld"
 go-to: hirschfeld
 
 @use_radbruch
-view-if: center_leader == “Rabdruch”
+view-if: center_leader == "Rabdruch"
 go-to: radbruch
 
 @use_stampfer
-view-if: center_leader == “Stampfer”
+view-if: center_leader == "Stampfer"
 go-to: stampfer
 
 @boost_center_influence_subtle
