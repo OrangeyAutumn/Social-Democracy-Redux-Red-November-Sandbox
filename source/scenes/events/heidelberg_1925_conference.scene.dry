@@ -711,9 +711,9 @@ Q.revisionist_leader_fullname = "vacant";
 - @co_leader_2: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @co_leader_1_no_challenge
+view-if: ((spd_coleader_1 != "vacant") and (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist")
 
 [+ spd_coleader_1_fullname +] does not face a challenge.
-view-if: spd_coleader != "vacant") or (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist" (reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist"
 
 - @co_leader_2: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 @co_leader_2
@@ -724,7 +724,7 @@ How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] fact
 - @co_leader_2_no_challenge: [+ spd_coleader_2_fullname +] faces no challenge.
 
 @co_leader_2_challenge
-view-if: center_c < 50 and spd_coleader_2_faction == "center") or (left_c < 50 and spd_coleader_2_faction == "left") or (reformist_c < 50 and spd_coleader_2_faction == "reformist") or (labor_c < 50 and spd_coleader_2_faction == "labor") or (neorevisionist_c < 50 and spd_coleader_2_faction == "neorevisionist") or (spd_coleader_2_faction == "non-factional")
+view-if: (center_c < 50 and spd_coleader_2_faction == "center") or (left_c < 50 and spd_coleader_2_faction == "left") or (reformist_c < 50 and spd_coleader_2_faction == "reformist") or (labor_c < 50 and spd_coleader_2_faction == "labor") or (neorevisionist_c < 50 and spd_coleader_2_faction == "neorevisionist") or (spd_coleader_2_faction == "non-factional")
 
 [+ spd_coleader_2_fullname +] has come under challenge at the Conference! They will attempt to survive the challenge, but their victory is far from guaranteed. Who wins the vote?
 
@@ -1083,7 +1083,7 @@ Q.revisionist_leader_fullname = "vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @co_leader_2_no_challenge
-view-if: spd_coleader != "vacant") or (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist" (reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist"
+view-if: (spd_coleader_2 != "vacant") and (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist")
 
 [+ spd_coleader_2_fullname +] does not face a challenge.
 
@@ -1456,7 +1456,7 @@ Q.revisionist_leader_fullname = "vacant";
 - @root: The conference is concluded.
 
 @co_leader_3_no_challenge
-view-if: spd_coleader != "vacant") or (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist" (reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist")
+view-if: (spd_coleader_3 != "vacant") and (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist")
 
 [+ spd_coleader_3_fullname +] does not face a challenge.
 
