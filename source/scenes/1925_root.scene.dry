@@ -2,7 +2,7 @@ title: 1925 root
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
-Q.time = 1;
+Q.time = -36;
 Q.year = 1925;
 Q.month = 1;
 // how many actions have been taken this month?
