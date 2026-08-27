@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: party_affairs
 on-arrival: month_activities += 1;
-card-image: img/portraits/MierendorffCarlo.jpg if reformist_leader == "Mierendorff"; img/portraits/SchumacherKurt.jpg if reformist_leader == "Schumacher"; img/portraits/LeberJulius.jpg if reformist_leader == "Leber"; img/portraits/SeveringCarl.jpg if reformist_leader == "Severing"; img/portraits/BraunOtto.jpg if reformist_leader == "Braun"; img/portraits/JuchaczMarie.jpg if reformist_leader == "Juchacz"; img/portraits/PfülfAntonie.jpg if reformist_leader == "Pfülf"; img/portraits/StampferFriedrich.jpg if reformist_leader == "Stampfer"; img/portraits/RadbruchGustav.jpg if reformist_leader == "Radbruch"; img/portraits/HirschfeldMagnus.jpg if reformist_leader == "Hirschfeld"; img/portraits/BaadeFritz.jpg if reformist_leader == "Baade"
+card-image: img/portraits/BraunOtto.jpg
 
 The Reformist faction holds many of our most notable members. How shall we make use of their talents?
 
