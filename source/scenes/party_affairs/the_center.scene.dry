@@ -2,6 +2,7 @@ title: The Center
 new-page: true
 is-card: true
 tags: party_affairs
+on-arrival: month_activities += 1;
 card-image: img/HilferdingRudolf.jpg
 
 The Center faction is the glue that holds our party together. How shall we make use of their talents?
