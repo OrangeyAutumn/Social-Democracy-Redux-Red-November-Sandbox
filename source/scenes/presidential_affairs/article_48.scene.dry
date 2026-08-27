@@ -1,5 +1,5 @@
 title: Article 48
-view-if: chancellor_party == "SPD" and not presidential_powers and article_48_timer <= 8 and president_party == "SPD"
+view-if: chancellor_party == "SPD" and not presidential_powers and article_48_timer <= 8 and president_party == "SPD" and judicial_reform >= 3 and ((neorevisionist_strength+left_strength+unemployed >= 50) or in_emergency_government)
 new-page: true
 tags: pres_affairs
 is-card: true
