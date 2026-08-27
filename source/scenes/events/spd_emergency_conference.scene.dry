@@ -1,5 +1,6 @@
 title: Emergency Conference
 subtitle: The SPD holds an emergency party conference in Magdeburg to address the leadership vacancy.
+view-if: spd_coleader_1 == "vacant" or spd_coleader_2 == "vacant" or spd_coleader_3 == "vacant" 
 new-page: true
 tags: event
 max-visits: 3
