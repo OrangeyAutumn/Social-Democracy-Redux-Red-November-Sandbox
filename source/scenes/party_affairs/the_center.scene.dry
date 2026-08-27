@@ -41,7 +41,7 @@ go-to: vogel
 
 @use_muller
 view-if: center_leader == "Müller"
-go-to: müller
+go-to: muller
 
 @use_breitscheid
 view-if: center_leader == "Breitscheid"
