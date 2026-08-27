@@ -263,6 +263,7 @@ for (var state of Q.states) {
 
 // 1. update dates
 if (Q.month_actions >= 1) {
+    console.log('month_actions:', Q.month_actions, 'month:', Q.month, 'year:', Q.year);
     Q.time += 1;
     Q.month_actions = 0;
     Q.month += 1;
