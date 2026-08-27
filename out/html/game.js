@@ -315,6 +315,17 @@ window.changeTab = function(newTab, tabId) {
     window.dendryUI.loadSettings({show_portraits: false});
     if (window.dendryUI.dark_mode) {
         document.body.classList.add('dark-mode');
+      window.onload = function() {
+    // Guard against uninitialized dendryUI
+    if (!window.dendryUI || !window.dendryUI.font_size) {
+        setTimeout(function() {
+            window.onload();
+        }, 100);
+        return;
+    }
+    window.dendryUI.loadSettings({show_portraits: false});
+    if (window.dendryUI.dark_mode) {
+        document.body.classList.add('dark-mode');
     }
     if (window.dendryUI.font_size != 1.1) {
         var fs = window.dendryUI.font_size;
@@ -323,7 +334,5 @@ window.changeTab = function(newTab, tabId) {
         document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
     }
     document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
-    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-  };
-
-}());
+    window.pinnedCardsDescription = "Co-leader cards - actions are only usable once per 6 months.";
+};
