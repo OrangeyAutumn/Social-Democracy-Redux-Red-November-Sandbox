@@ -26,7 +26,6 @@ As we have control over the Interior Ministry, we can direct police and intellig
 - @root: Take no action for now.
 
 @banning_menu
-
 view-if: constitutional_protection == 1
 
 - @ban_uspd: Ban USPD
