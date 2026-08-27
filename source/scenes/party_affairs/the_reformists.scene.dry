@@ -56,19 +56,19 @@ view-if: reformist_leader == "Leber"
 go-to: leber
 
 @use_baade
-view-if: reformist_leader == “Baade”
+view-if: reformist_leader == "Baade"
 go-to: baade
 
 @use_hirschfeld
-view-if: reformist_leader == “Hirschfeld”
+view-if: reformist_leader == "Hirschfeld"
 go-to: hirschfeld
 
 @use_radbruch
-view-if: reformist_leader == “Rabdruch”
+view-if: reformist_leader == "Rabdruch"
 go-to: radbruch
 
 @use_stampfer
-view-if: reformist_leader == “Stampfer”
+view-if: reformist_leader == "Stampfer"
 go-to: stampfer
 
 @boost_reformists_influence_subtle
