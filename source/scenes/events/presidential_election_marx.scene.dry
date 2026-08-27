@@ -334,13 +334,13 @@ Results:
 [? if hitler_campaign : [+ nsdap_candidate +] - [+ hitler_votes_disp +]% ?]
 
 @seeckt_wins
-on-arrival: president = "Seeckt"; chancellor = "Papen"; chancellor_party = "I"; time_to_election = 3
+on-arrival: president = "Seeckt"; president_party = "Independent"; chancellor = "Papen"; chancellor_party = "I"; time_to_election = 3
 call: set_next_election_time
 
 Hans von Seeckt has won the Presidency as the reactionary and anti-republican candidate. His first act is to replace the chancellor with Franz von Papen, an independent formerly of the Center Party, and dissolve the Reichstag for new elections in the hopes that a reactionary coalition may have a majority.
 
 @marx_wins
-on-arrival: president = "Marx"; marx_relation += 5; reformist_strength += 5; coup_progress += 2; {!
+on-arrival: president = "Marx"; president_party = "Z"; marx_relation += 5; reformist_strength += 5; coup_progress += 2; {!
 if (Q.reactionary_consolidate && Q.hitler_votes_disp >= Q.nsdap_votes) {
     var nazi_normalization = Q.hitler_votes_disp-Q.nsdap_votes;
     Q.workers_nsdap += nazi_normalization/2;
@@ -359,7 +359,7 @@ Wilhelm Marx has won re-election as president, despite the attempts by the react
 - @far_right_coup: The Harzburg Front immediately initiates a coup...
 
 @braun_wins
-on-arrival: president = "Braun"; coup_progress += 3; coup_progress += 1 if sa_force + sh_force >= 50; reformist_dissent -= 15; center_dissent -= 15; labor_dissent -= 15; left_dissent -= 5; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent); {!
+on-arrival: president = "Braun"; president_party = "SPD"; coup_progress += 3; coup_progress += 1 if sa_force + sh_force >= 50; reformist_dissent -= 15; center_dissent -= 15; labor_dissent -= 15; left_dissent -= 5; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent); {!
 if (Q.reactionary_consolidate && Q.hitler_votes_disp >= Q.nsdap_votes) {
     var nazi_normalization = Q.hitler_votes_disp-Q.nsdap_votes;
     Q.workers_nsdap += nazi_normalization/2;
@@ -386,14 +386,14 @@ Immediately following the election, forces of the Stalhelm and SA organized acro
 - @civil_war: This is civil war.
 
 @thalmann_wins
-on-arrival: president = "Thälmann"; uspd_relation = 80;
+on-arrival: president = "Thälmann"; uspd_relation = 80; president_party = "KPD";
 
 Ernst Thälmann of the USPD has won the presidency. Immediately, the far-right launches a coup attempt against the government. We have no choice but to unite with the USPD against the fascists...
 
 - @civil_war: This is civil war.
 
 @hitler_wins
-on-arrival: president = nsdap_candidate; chancellor = "Hitler" if presidential_powers != 1; chancellor_party = "NSDAP" if presidential_powers != 1
+on-arrival: president = nsdap_candidate; president = "NSDAP"; chancellor = "Hitler" if presidential_powers != 1; chancellor_party = "NSDAP" if presidential_powers != 1
 
 [? if nsdap_candidate == "Hitler" : Adolf Hitler of the NSDAP has won the presidency. He wastes no time in consolidating power. ?]
 [? if nsdap_candidate != "Hitler" : The NSDAP candidate [+ president +] has won. The first action President [+ president +] takes is inviting Hitler back into Germany, and appointing him chancellor. The Nazis waste no time in consolidating power. ?]
