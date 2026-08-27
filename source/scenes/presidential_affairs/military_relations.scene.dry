@@ -1,5 +1,5 @@
 title: Military Relations
-view-if: military_relations_timer <= 0 and not victory_republic and president == "Ebert" or president == "Braun" or president == "Schumacher" or president == "Juchacz"
+view-if: military_relations_timer <= 0 and not victory_republic and president_party == "SPD"
 new-page: true
 tags: pres_affairs
 is-card: true
