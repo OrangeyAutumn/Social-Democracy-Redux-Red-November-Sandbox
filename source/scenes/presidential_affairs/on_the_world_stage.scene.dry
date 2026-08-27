@@ -2,8 +2,8 @@ title: On The World Stage
 new-page: true
 is-card: true
 tags: pres_affairs
-view-if: president == "Ebert" or president == "Braun" or president == "Schumacher" or president == "Juchacz"
-on-arrival: month_actions += 1; international_relations_timer += 12;
+view-if: president_party == "SPD" and on_the_world_stage_timer <= 0
+on-arrival: month_actions += 1; on_the_world_stage_timer += 6;
 card-image: img/on_the_world_stage.jpg
 max-visits: 6
 subtitle: Building ties with foreign powers.
