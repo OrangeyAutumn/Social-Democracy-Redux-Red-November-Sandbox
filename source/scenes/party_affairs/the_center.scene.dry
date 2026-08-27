@@ -11,7 +11,7 @@ The Center faction is the glue that holds our party together. How shall we make 
 -	@use_hilferding: We will use the talents of the Center leader, Rudolf Hilferding
 -	@use_wels: We will use the talents of the Center leader, Otto Wels
 -	@use_vogel: We will use the talents of the Center leader, Hans Vogel
--	@use_müller: We will use the talents of the Center leader, Hermann Müller
+-	@use_muller: We will use the talents of the Center leader, Hermann Müller
 -	@use_breitscheid: We will use the talents of the Center leader, Rudolf Breitscheid
 -	@use_baade: We will use the talents of the Center leader, Fritz Baade
 -	@use_hirschfeld: We will use the talents of the Center leader, Magnus Hirschfeld
@@ -39,7 +39,7 @@ go-to: wels
 view-if: center_leader == "Vogel"
 go-to: vogel
 
-@use_müller
+@use_muller
 view-if: center_leader == "Müller"
 go-to: müller
 
