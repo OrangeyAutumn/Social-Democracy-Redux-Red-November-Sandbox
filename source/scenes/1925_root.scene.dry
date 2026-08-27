@@ -260,8 +260,8 @@ Q.spd_coleader_1 = "Crispien";
 Q.spd_coleader_1_fullname = "Arthur Crispien";
 Q.spd_coleader_1_faction == "Left";
 // Hans Vogel after Muller's death
-Q.spd_coleader_2 = "Muller";
-Q.spd_coleader_2_fullname = "Hermann Muller";
+Q.spd_coleader_2 = "Müller";
+Q.spd_coleader_2_fullname = "Hermann Müller";
 Q.spd_coleader_2_faction == "Center";
 Q.spd_coleader_3 = "Wels";
 Q.spd_coleader_3_fullname = "Otto Wels";
