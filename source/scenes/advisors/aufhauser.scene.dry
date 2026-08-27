@@ -14,6 +14,8 @@ Aufhäuser is [? if chancellor = "Aufhäuser": the current Chancellor and ?] [? 
 - @crisis
 - @moderate_economic_plan
 - @radicalize_middle
+- @chancellor
+- @president
 - @root: Return to main
 
 @white_collar
@@ -58,3 +60,20 @@ unavailable-subtitle: They are not yet radical enough.
 max-visits: 1
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: new_middle_consciousness
+
+@chancellor
+title: Use the Chancellorship
+subtitle: As the current Chancellor, ... can make use of their position to further our goals.
+view-if: chancellor == ""
+go-to: chancellor
+
+@president
+title: Use the Presidency
+subtitle: As the current President, ... can make use of their position to further our goals.
+view if: president == ""
+
+- @article_48
+- @military_relations
+- @on_the_world_stage
+- @presidential_snap_election
+- @reichsexecution
