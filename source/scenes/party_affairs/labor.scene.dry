@@ -49,7 +49,7 @@ view-if: labor_leader == "Mierendorff"
 go-to: mierendorff
 
 @use_schumacher
-view-if: labor_leader == "Schumacher
+view-if: labor_leader == "Schumacher"
 go-to: schumacher
 
 @use_leber
