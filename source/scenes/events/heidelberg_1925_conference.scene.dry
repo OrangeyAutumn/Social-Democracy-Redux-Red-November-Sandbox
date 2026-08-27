@@ -336,7 +336,31 @@ on-arrival: left_strength += 5; left_dissent -= 5; reformist_strength -= 10; ref
 
 A motion to expel Heldt from the party passes. Unfortunately, expelling Heldt from the party does not expel him from the Saxon government and he, alongside a small group styling themselves as the ‘ASPD’, continue in their coalition with the DVP, while our loyalists return to opposition.
 
-- @the_matter_of_the_leadership
+- @the_matter_of_the_leadership: Now for the matter of the leadership.
+
+@a_strongly_worded_note
+view-if: reformists_c < 50 and left_c < 50
+on_arrival: left_dissent += 3; reformist_dissent += 3; center_strength += 5; center_dissent -= 3
+
+We pass a resolution condemning Heldt, but stopping short of actually expelling him. The resolution does not make matters any worse, but nor does it make things any better.
+
+- @the_matter_of_the_leadership: Now for the matter of the leadership.
+
+@leave_heldt_be
+view-if: left_c < 50
+on_arrival: reformist_strength += 5; reformist_dissent -= 5; left_strength -= 10; left_dissent += 10; center_dissent += 5; labor_dissent += 5
+
+The Conference declines to pass any resolution whatsoever.
+
+- @the_matter_of_the_leadership: Now for the matter of the leadership.
+
+@who_cares
+view-if: left_c < 50 and center_c < 50 and reformist_c < 50
+on_arrival: labor_strength += 10
+
+The Conference turns its attention to other issues.
+
+- @the_matter_of_the_leadership: Now for the matter of the leadership.
 
 @the_matter_of_the_leadership
 
