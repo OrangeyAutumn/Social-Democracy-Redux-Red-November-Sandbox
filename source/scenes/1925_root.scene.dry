@@ -884,5 +884,8 @@ Q.uspd_wl = 12;
 Q.ddp_wl = 11;
 Q.other_wl = 24;
 
+Q.landtags_enabled = 1;
+Q.legislature_enabled = 1;
+
 !}
 go-to: root.menu
