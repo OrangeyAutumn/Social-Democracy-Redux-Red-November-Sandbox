@@ -12,7 +12,7 @@ The Reformist faction is the fire that drives our party forwards. How shall we m
 - @hindenburg: We will use the Reformists’ connections to attempt to come to an understanding with President Hindenburg.
 - @grand_coalition_relations: We will use the Reformists’ connections to attempt to come to an understanding with the bourgeois parties.
 - @reduce_reformists_dissent: We will work to reduce dissent within the faction.
-- @new_reformists_leader: [+ reformists_leader +] has served well, but new leadership is required.
+- @new_reformists_leader: [+ reformist_leader +] has served well, but new leadership is required.
 - @root: We will do none of these things.
 - @easy_discard: We will consider this at a later time.
 
@@ -27,6 +27,7 @@ on-arrival: reformists_strength += 10; reformists_dissent -= 5; center_dissent +
 We have openly promoted the Reformist faction, to the anger of the other factions.
 
 @hindenburg
+view-if: president == "Hindenburg"
 on-arrival: hindenburg_relation += 3*(1-dissent)
 
 We have used our Reformist’s connections, particularly through Otto Braun, to meet with President Hindenburg. Our meetings with are frosty to say the least, but they are meetings nonetheless.
