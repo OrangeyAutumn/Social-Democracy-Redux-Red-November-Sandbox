@@ -7,6 +7,16 @@ card-image: img/HilferdingRudolf.jpg
 
 The Center faction is the glue that holds our party together. How shall we make use of their talents?
 
+
+-	@use_hilferding: We will use the talents of the Center leader, Rudolf Hilferding
+-	@use_wels: We will use the talents of the Center leader, Otto Wels
+-	@use_vogel: We will use the talents of the Center leader, Hans Vogel
+-	@use_müller: We will use the talents of the Center leader, Hermann Müller
+-	@use_breitscheid: We will use the talents of the Center leader, Rudolf Breitscheid
+-	@use_baade: We will use the talents of the Center leader, Fritz Baade
+-	@use_hirschfeld: We will use the talents of the Center leader, Magnus Hirschfeld
+-	@use_radbruch: We will use the talents of the Center leader, Gustav Radbruch
+-	@use_stampfer: We will use the talents of the Center leader, Friedrich Stampfer
 - @boost_center_influence_subtle: We will subtly promote the Center faction as not to anger any of the other factions.
 - @boost_center_influence_blatant: We will openly promote the Center faction.
 - @party_discipline: We will use the Center’s connections to reduce dissent across the party.
@@ -16,6 +26,42 @@ The Center faction is the glue that holds our party together. How shall we make 
 - @new_center_leader: [+ center_leader +] has served well, but new leadership is required.
 - @root: We will do none of these things.
 - @easy_discard: We will consider this at a later time.
+
+@use_hilferding
+view-if: center_leader == "Hilferding"
+go-to: hilferding
+
+@use_wels
+view-if: center_leader == "Wels"
+go-to: wels
+
+@use_vogel
+view-if: center_leader == "Vogel"
+go-to: vogel
+
+@use_müller
+view-if: center_leader == "Müller"
+go-to: müller
+
+@use_breitscheid
+view-if: center_leader == "Breitscheid"
+go-to: breitscheid
+
+@use_baade
+view-if: center_leader == “Baade”
+go-to: baade
+
+@use_hirschfeld
+view-if: center_leader == “Hirschfeld”
+go-to: hirschfeld
+
+@use_radbruch
+view-if: center_leader == “Rabdruch”
+go-to: radbruch
+
+@use_stampfer
+view-if: center_leader == “Stampfer”
+go-to: stampfer
 
 @boost_center_influence_subtle
 on-arrival: center_strength += 5; center_dissent -= 3
