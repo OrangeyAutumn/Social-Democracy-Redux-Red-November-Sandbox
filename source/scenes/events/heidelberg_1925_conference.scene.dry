@@ -711,7 +711,7 @@ Q.revisionist_leader_fullname = "vacant";
 - @co_leader_2: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @co_leader_1_no_challenge
-view-if: ((spd_coleader_1 != "vacant") and (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist")
+view-if: (spd_coleader_1 != "vacant") and (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist")
 
 [+ spd_coleader_1_fullname +] does not face a challenge.
 
