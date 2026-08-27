@@ -845,5 +845,8 @@ Q.uspd_hl = 17;
 Q.ddp_hl = 13;
 Q.other_hl = 3;
 
+Q.landtags_enabled = 1;
+Q.legislature_enabled = 1;
+
 !}
 go-to: root.menu
