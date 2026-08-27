@@ -301,7 +301,7 @@ It is an uncertain time for German democracy. Though the crises of 1923 have sub
 
 The task of Social Democracy is to prepare itself so that when the government inevitably falls due to disagreements between the left and right of the bourgeois parties, we will be seen by the workers of Germany a viable alternative.
 
-@1930_althist: Select Alternate 1930 Scenarios
+@1930_althist
 view-if: year == 1930
 
 // VSPD_formed; RDP_formed; Any_Others???
