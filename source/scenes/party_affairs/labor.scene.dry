@@ -34,7 +34,7 @@ go-to: leipart
 
 @use_aufhauser
 view-if: labor_leader == "Aufhäuser"
-go-to: aufhäuser
+go-to: aufhauser
 
 @use_wissell
 view-if: labor_leader == "Wissell"
