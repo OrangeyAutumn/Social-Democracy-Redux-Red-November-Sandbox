@@ -374,7 +374,41 @@ The incumbent, [+ spd_coleader_1_fullname +], wins in a victory for the [+ spd_c
 @left_1
 view-if: spd_coleader_1_faction != "left"
 choose-if: (left_c >= 50) or (left_c >= labor_c and (left_c+labor_c) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
-on-arrival: (spd_coleader_1_faction = "left”) or (spd_coleader_1 = "Crispien" and spd_coleader_1_fullname = "Arthur Crispien" if left_leader = "Crispien") or (spd_coleader_1 = "Levi" and spd_coleader_1_fullname = "Paul Levi" if left_leader = "Levi") or (spd_coleader_1 = "Sender" and spd_coleader_1_fullname = "Toni Sender" if left_leader = "Sender") or (spd_coleader_1 = "Rosenfeld" and spd_coleader_1_fullname = "Kurt Rosenfeld" if left_leader = "Rosenfeld") or (spd_coleader_1 = "Seydewitz" and spd_coleader_1_fullname = "Max Seydewitz" if left_leader = "Seydewitz") or (spd_coleader_1 = "Siemsen" and spd_coleader_1_fullname = "Anna Siemsen" if left_leader = "Siemsen") or (spd_coleader_1 = "Stampfer" and spd_coleader_1_fullname = "Friedrich Stampfer" if left_leader = "Stampfer") or (spd_coleader_1 = "Radbruch" and spd_coleader_1_fullname = "Gustav Radbruch" if left_leader = "Radbruch") or (spd_coleader_1 = "Hirschfeld" and spd_coleader_1_fullname = "Magnus Hirschfeld" if left_leader = "Hirschfeld") or (spd_coleader_1 = "Baade" and spd_coleader_1_fullname = "Fritz Baade" if left_leader = "Baade"); (left_leader = “vacant”); (left_leader_fullname = "vacant")
+on-arrival: {!
+if (Q.left_leader == "Crispien") {
+    Q.spd_coleader_1 = "Crispien";
+    Q.spd_coleader_1_fullname = "Arthur Crispien";
+} else if (Q.left_leader == "Levi") {
+    Q.spd_coleader_1 = "Levi";
+    Q.spd_coleader_1_fullname = "Paul Levi";
+} else if (Q.left_leader == "Sender") {
+    Q.spd_coleader_1 = "Sender";
+    Q.spd_coleader_1_fullname = "Toni Sender";
+} else if (Q.left_leader == "Rosenfeld") {
+    Q.spd_coleader_1 = "Rosenfeld";
+    Q.spd_coleader_1_fullname = "Kurt Rosenfeld";
+} else if (Q.left_leader == "Seydewitz") {
+    Q.spd_coleader_1 = "Seydewitz";
+    Q.spd_coleader_1_fullname = "Max Seydewitz";
+} else if (Q.left_leader == "Siemsen") {
+    Q.spd_coleader_1 = "Siemsen";
+    Q.spd_coleader_1_fullname = "Anna Siemsen";
+} else if (Q.left_leader == "Stampfer") {
+    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+} else if (Q.left_leader == "Radbruch") {
+    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+} else if (Q.left_leader == "Hirschfeld") {
+    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+} else if (Q.left_leader == "Baade") {
+    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+}
+Q.left_leader = "vacant";
+Q.left_leader_fullname = "vacant";
+!}
 
 [+ spd_coleader_1_fullname +] wins in a victory for the Left faction!
 
@@ -383,7 +417,69 @@ on-arrival: (spd_coleader_1_faction = "left”) or (spd_coleader_1 = "Crispien" 
 @center_1
 view-if: spd_coleader_1_faction != "center"
 choose-if: (left_c < 50 and labor_c < 50 and (reformist_c+neorevisionist_c) < 50) or (center_leader == "Baade") or (center_leader == "Hirschfeld") or (center_leader == "Radbruch") or (center_leader == "Stampfer")
-on-arrival: (spd_coleader_1_faction = "center") or (spd_coleader_1 = "Hilferding" and spd_coleader_1_fullname = "Rudolf Hilferding" if center_leader = "Hilferding") or (spd_coleader_1 = "Wels" and spd_coleader_1_fullname = "Otto Wels" if center_leader = "Wels") or (spd_coleader_1 = "Vogel" and spd_coleader_1_fullname = "Hans Vogel" if center_leader = "Vogel") or (spd_coleader_1 = "Müller" and spd_coleader_1_fullname = "Hermann Müller" if center_leader = "Müller") or (spd_coleader_1 = "Breitscheid" and spd_coleader_1_fullname = "Rudolf Breitscheid" if center_leader = "Breitscheid") or (spd_coleader_1 = "Stampfer" and spd_coleader_1_fullname = "Friedrich Stampfer" if center_leader = "Stampfer") or (spd_coleader_1 = "Radbruch" and spd_coleader_1_fullname = "Gustav Radbruch" if center_leader = "Radbruch") or (spd_coleader_1 = "Hirschfeld" and spd_coleader_1_fullname = "Magnus Hirschfeld" if center_leader = "Hirschfeld") or (spd_coleader_1 = "Baade" and spd_coleader_1_fullname = "Fritz Baade" if center_leader = "Baade"); (center_leader = “vacant”); (center_leader_fullname = "vacant")
+on-arrival: {!
+
+if (Q.center_leader == "Hilferding") {
+
+    Q.spd_coleader_1 = "Hilferding";
+
+    Q.spd_coleader_1_fullname = "Rudolf Hilferding";
+
+} else if (Q.center_leader == "Wels") {
+
+    Q.spd_coleader_1 = "Wels";
+
+    Q.spd_coleader_1_fullname = "Otto Wels";
+
+} else if (Q.center_leader == "Vogel") {
+
+    Q.spd_coleader_1 = "Vogel";
+
+    Q.spd_coleader_1_fullname = "Hans Vogel";
+
+} else if (Q.center_leader == "Müller") {
+
+    Q.spd_coleader_1 = "Müller";
+
+    Q.spd_coleader_1_fullname = "Hermann Müller";
+
+} else if (Q.center_leader == "Breitscheid") {
+
+    Q.spd_coleader_1 = "Breitscheid";
+
+    Q.spd_coleader_1_fullname = "Rudolf Breitscheid";
+
+} else if (Q.center_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.center_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.center_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.center_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.center_leader = "vacant";
+
+Q.center_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Center faction!
 
@@ -392,7 +488,81 @@ on-arrival: (spd_coleader_1_faction = "center") or (spd_coleader_1 = "Hilferding
 @labor_1
 view-if: spd_coleader_1_faction != "labor"
 choose-if: (labor_c >= 50) or (labor_c >= left_c and (labor_c+left_c) >= 50) or (labor_c >= reformist_c and labor_c >= neorevisionist_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (labor_c >= center_c and (labor_c+center_c) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer")
-on-arrival: (spd_coleader_1 = "Leipart" and spd_coleader_1_fullname = "Theodor Leipart" if labor_leader = "Leipart") or (spd_coleader_1 = "Aufhäuser" and spd_coleader_1_fullname = "Siegfried Aufhäuser" if labor_leader = "Aufhäuser") or (spd_coleader_1 = "Wissell" and spd_coleader_1_fullname = "Rudolf Wissell" if labor_leader = "Wissell") or (spd_coleader_1 = "Woytinsky" and spd_coleader_1_fullname = "Wladimir Woytinsky" if labor_leader = "Woytinsky") or (spd_coleader_1 = "Mierendorff" and spd_coleader_1_fullname = "Carlo Mierendorff" if labor_leader = "Mierendorff") or (spd_coleader_1 = "Schumacher" and spd_coleader_1_fullname = "Kurt Schumacher" if labor_leader = "Schumacher") or (spd_coleader_1 = "Schumacher" and spd_coleader_1_fullname = "Kurt Schumacher" if labor_leader = "Leber") or (spd_coleader_1 = "Stampfer" and spd_coleader_1_fullname = "Friedrich Stampfer" if labor_leader = "Stampfer") or (spd_coleader_1 = "Radbruch" and spd_coleader_1_fullname = "Gustav Radbruch" if labor_leader = "Radbruch") or (spd_coleader_1 = "Hirschfeld" and spd_coleader_1_fullname = "Magnus Hirschfeld" if labor_leader = "Hirschfeld") or (spd_coleader_1 = "Baade" and spd_coleader_1_fullname = "Fritz Baade" if labor_leader = "Baade"); (labor_leader = “vacant”); (labor_leader_fullname = “vacant”); (spd_coleader_1_faction = "labor")
+on-arrival: {!
+
+if (Q.labor_leader == "Leipart") {
+
+    Q.spd_coleader_1 = "Leipart";
+
+    Q.spd_coleader_1_fullname = "Theodor Leipart";
+
+} else if (Q.labor_leader == "Aufhäuser") {
+
+    Q.spd_coleader_1 = "Aufhäuser";
+
+    Q.spd_coleader_1_fullname = "Siegfried Aufhäuser";
+
+} else if (Q.labor_leader == "Wissell") {
+
+    Q.spd_coleader_1 = "Wissell";
+
+    Q.spd_coleader_1_fullname = "Rudolf Wissell";
+
+} else if (Q.labor_leader == "Woytinsky") {
+
+    Q.spd_coleader_1 = "Woytinsky";
+
+    Q.spd_coleader_1_fullname = "Wladimir Woytinsky";
+
+} else if (Q.labor_leader == "Mierendorff") {
+
+    Q.spd_coleader_1 = "Mierendorff";
+
+    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+
+} else if (Q.labor_leader == "Schumacher") {
+
+    Q.spd_coleader_1 = "Schumacher";
+
+    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+
+} else if (Q.labor_leader == "Leber") {
+
+    Q.spd_coleader_1 = "Leber";
+
+    Q.spd_coleader_1_fullname = "Julius Leber";
+
+} else if (Q.labor_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.labor_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.labor_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.labor_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.labor_leader = "vacant";
+
+Q.labor_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_1_fullname +] wins in a victory for the Labor faction!
 
@@ -401,7 +571,81 @@ on-arrival: (spd_coleader_1 = "Leipart" and spd_coleader_1_fullname = "Theodor L
 @reformist_1
 view-if: spd_coleader_1_faction != "reformist"
 choose-if: (reformist_c >= 50) or (reformist_c >= neorevisionist_c and (reformist_c+neorevisionist_c) >= 50) or (reformist_c >= neorevisionist_c and reformist_c >= labor_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (reformist_leader == "Baade") or (reformist_leader == "Hirschfeld") or (reformist_leader == "Radbruch") or (reformist_leader == "Stampfer")
-on-arrival: (spd_coleader_1 = "Severing" and spd_coleader_1_fullname = "Carl Severing" if reformist_leader = "Severing") or (spd_coleader_1 = "Braun" and spd_coleader_1_fullname = "Otto Braun" if reformist_leader = "Braun") or (spd_coleader_1 = "Juchacz" and spd_coleader_1_fullname = "Marie Juchacz" if reformist_leader = "Juchacz") or (spd_coleader_1 = "Pfülf" and spd_coleader_1_fullname = "Antonie Pfülf" if reformist_leader = "Pfülf") or ( spd_coleader_1 = "Mierendorff" and spd_coleader_1_fullname = "Carlo Mierendorff" if reformist_leader = "Mierendorff") or (spd_coleader_1 = "Schumacher" and spd_coleader_1_fullname = "Kurt Schumacher" if reformist_leader = "Schumacher") or (spd_coleader_1 = "Schumacher" and spd_coleader_1_fullname = "Kurt Schumacher" if reformist_leader = "Leber") or (spd_coleader_1 = "Stampfer" and spd_coleader_1_fullname = "Friedrich Stampfer" if reformist_leader = "Stampfer") or (spd_coleader_1 = "Radbruch" and spd_coleader_1_fullname = "Gustav Radbruch" if reformist_leader = "Radbruch") or (spd_coleader_1 = "Hirschfeld" and spd_coleader_1_fullname = "Magnus Hirschfeld" if reformist_leader = "Hirschfeld") or (spd_coleader_1 = "Baade" and spd_coleader_1_fullname = "Fritz Baade" if reformist_leader = "Baade"); (reformist_leader = “vacant”); (reformist_leader_fullname = “vacant”); (spd_coleader_1_faction = "reformist";
+on-arrival: {!
+
+if (Q.reformist_leader == "Severing") {
+
+    Q.spd_coleader_1 = "Severing";
+
+    Q.spd_coleader_1_fullname = "Carl Severing";
+
+} else if (Q.reformist_leader == "Braun") {
+
+    Q.spd_coleader_1 = "Braun";
+
+    Q.spd_coleader_1_fullname = "Otto Braun";
+
+} else if (Q.reformist_leader == "Juchacz") {
+
+    Q.spd_coleader_1 = "Juchacz";
+
+    Q.spd_coleader_1_fullname = "Marie Juchacz";
+
+} else if (Q.reformist_leader == "Pfülf") {
+
+    Q.spd_coleader_1 = "Pfülf";
+
+    Q.spd_coleader_1_fullname = "Antonie Pfülf";
+
+} else if (Q.reformist_leader == "Mierendorff") {
+
+    Q.spd_coleader_1 = "Mierendorff";
+
+    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+
+} else if (Q.reformist_leader == "Schumacher") {
+
+    Q.spd_coleader_1 = "Schumacher";
+
+    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+
+} else if (Q.reformist_leader == "Leber") {
+
+    Q.spd_coleader_1 = "Leber";
+
+    Q.spd_coleader_1_fullname = "Julius Leber";
+
+} else if (Q.reformist_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.reformist_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.reformist_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.reformist_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.reformist_leader = "vacant";
+
+Q.reformist_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_1_fullname +] wins in a victory for the Reformist faction!
 
@@ -410,7 +654,57 @@ on-arrival: (spd_coleader_1 = "Severing" and spd_coleader_1_fullname = "Carl Sev
 @neorevisionist_1
 view-if: spd_coleader_1_faction != "neorevisionist" and neorevisionism == 1
 choose-if: (neorevisionist_c >= 50) or (neorevisionist_c >= reformist_c and (reformist_c+neorevisionist_c) >= 50) or (neorevisionist_c >= reformist_c and neorevisionist_c >= labor_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer")
-on-arrival: (spd_coleader_1 = "Mierendorff" and spd_coleader_1_fullname = "Carlo Mierendorff" if neorevisionist_leader = "Mierendorff") or (spd_coleader_1 = "Schumacher" and spd_coleader_1_fullname = "Kurt Schumacher" if neorevisionist_leader = "Schumacher") or (spd_coleader_1 = "Leber" and spd_coleader_1_fullname = "Julius Leber" if neorevisionist_leader = "Leber") or (spd_coleader_1 = "Stampfer" and spd_coleader_1_fullname = "Friedrich Stampfer" if neorevisionist_leader = "Stampfer") or (spd_coleader_1 = "Radbruch" and spd_coleader_1_fullname = "Gustav Radbruch" if neorevisionist_leader = "Radbruch") or (spd_coleader_1 = "Hirschfeld" and spd_coleader_1_fullname = "Magnus Hirschfeld" if neorevisionist_leader = "Hirschfeld") or (spd_coleader_1 = "Baade" and spd_coleader_1_fullname = "Fritz Baade" if neorevisionist_leader = "Baade") or (neorevisionist_leader = “vacant”); (neorevisionist_leader_fullname = “vacant”); (spd_coleader_1_faction = "neorevisionist")
+on-arrival: {!
+
+if (Q.revisionist_leader == "Mierendorff") {
+
+    Q.spd_coleader_1 = "Mierendorff";
+
+    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+
+} else if (Q.revisionist_leader == "Schumacher") {
+
+    Q.spd_coleader_1 = "Schumacher";
+
+    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+
+} else if (Q.revisionist_leader == "Leber") {
+
+    Q.spd_coleader_1 = "Leber";
+
+    Q.spd_coleader_1_fullname = "Julius Leber";
+
+} else if (Q.revisionist_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.revisionist_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.revisionist_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.revisionist_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.revisionist_leader = "vacant";
+
+Q.revisionist_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_1_fullname +] wins in a victory for the Neorevisionist faction!
 
@@ -452,7 +746,41 @@ The incumbent, [+ spd_coleader_2_fullname +], wins in a victory for the [+ spd_c
 @left_2
 view-if: spd_coleader_2_faction != "left"
 choose-if: (left_c >= 50) or (left_c >= labor_c and (left_c+labor_c) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
-on-arrival: (spd_coleader_2_faction = "left”) or (spd_coleader_2 = "Crispien" and spd_coleader_2_fullname = "Arthur Crispien" if left_leader = "Crispien") or (spd_coleader_2 = "Levi" and spd_coleader_2_fullname = "Paul Levi" if left_leader = "Levi") or (spd_coleader_2 = "Sender" and spd_coleader_2_fullname = "Toni Sender" if left_leader = "Sender") or (spd_coleader_2 = "Rosenfeld" and spd_coleader_2_fullname = "Kurt Rosenfeld" if left_leader = "Rosenfeld") or (spd_coleader_2 = "Seydewitz" and spd_coleader_2_fullname = "Max Seydewitz" if left_leader = "Seydewitz") or (spd_coleader_2 = "Siemsen" and spd_coleader_2_fullname = "Anna Siemsen" if left_leader = "Siemsen") or (spd_coleader_2 = "Stampfer" and spd_coleader_2_fullname = "Friedrich Stampfer" if left_leader = "Stampfer") or (spd_coleader_2 = "Radbruch" and spd_coleader_2_fullname = "Gustav Radbruch" if left_leader = "Radbruch") or (spd_coleader_2 = "Hirschfeld" and spd_coleader_2_fullname = "Magnus Hirschfeld" if left_leader = "Hirschfeld") or (spd_coleader_2 = "Baade" and spd_coleader_2_fullname = "Fritz Baade" if left_leader = "Baade") or (left_leader = “vacant”) and (left_leader_fullname = "vacant"
+on-arrival: {!
+if (Q.left_leader == "Crispien") {
+    Q.spd_coleader_1 = "Crispien";
+    Q.spd_coleader_1_fullname = "Arthur Crispien";
+} else if (Q.left_leader == "Levi") {
+    Q.spd_coleader_1 = "Levi";
+    Q.spd_coleader_1_fullname = "Paul Levi";
+} else if (Q.left_leader == "Sender") {
+    Q.spd_coleader_1 = "Sender";
+    Q.spd_coleader_1_fullname = "Toni Sender";
+} else if (Q.left_leader == "Rosenfeld") {
+    Q.spd_coleader_1 = "Rosenfeld";
+    Q.spd_coleader_1_fullname = "Kurt Rosenfeld";
+} else if (Q.left_leader == "Seydewitz") {
+    Q.spd_coleader_1 = "Seydewitz";
+    Q.spd_coleader_1_fullname = "Max Seydewitz";
+} else if (Q.left_leader == "Siemsen") {
+    Q.spd_coleader_1 = "Siemsen";
+    Q.spd_coleader_1_fullname = "Anna Siemsen";
+} else if (Q.left_leader == "Stampfer") {
+    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+} else if (Q.left_leader == "Radbruch") {
+    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+} else if (Q.left_leader == "Hirschfeld") {
+    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+} else if (Q.left_leader == "Baade") {
+    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+}
+Q.left_leader = "vacant";
+Q.left_leader_fullname = "vacant";
+!}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Left faction!
 
@@ -461,7 +789,69 @@ on-arrival: (spd_coleader_2_faction = "left”) or (spd_coleader_2 = "Crispien" 
 @center_2
 view-if: spd_coleader_2_faction != "center"
 choose-if: (left_c < 50 and labor_c < 50 and (reformist_c+neorevisionist_c) < 50) or (center_leader == "Baade") or (center_leader == "Hirschfeld") or (center_leader == "Radbruch") or (center_leader == "Stampfer")
-on-arrival: (spd_coleader_2_faction = "center") or (spd_coleader_2 = "Hilferding" and spd_coleader_2_fullname = "Rudolf Hilferding" if center_leader = "Hilferding") or (spd_coleader_2 = "Wels" and spd_coleader_2_fullname = "Otto Wels" if center_leader = "Wels") or (spd_coleader_2 = "Vogel" and spd_coleader_2_fullname = "Hans Vogel" if center_leader = "Vogel") or (spd_coleader_2 = "Müller" and spd_coleader_2_fullname = "Hermann Müller" if center_leader = "Müller") or (spd_coleader_2 = "Breitscheid" and spd_coleader_2_fullname = "Rudolf Breitscheid" if center_leader = "Breitscheid") or (spd_coleader_2 = "Stampfer" and spd_coleader_2_fullname = "Friedrich Stampfer" if center_leader = "Stampfer") or (spd_coleader_2 = "Radbruch" and spd_coleader_2_fullname = "Gustav Radbruch" if center_leader = "Radbruch") or (spd_coleader_2 = "Hirschfeld" and spd_coleader_2_fullname = "Magnus Hirschfeld" if center_leader = "Hirschfeld") or (spd_coleader_2 = "Baade" and spd_coleader_2_fullname = "Fritz Baade" if center_leader = "Baade") or (center_leader = “vacant”) and (center_leader_fullname = "vacant"
+on-arrival: {!
+
+if (Q.center_leader == "Hilferding") {
+
+    Q.spd_coleader_1 = "Hilferding";
+
+    Q.spd_coleader_1_fullname = "Rudolf Hilferding";
+
+} else if (Q.center_leader == "Wels") {
+
+    Q.spd_coleader_1 = "Wels";
+
+    Q.spd_coleader_1_fullname = "Otto Wels";
+
+} else if (Q.center_leader == "Vogel") {
+
+    Q.spd_coleader_1 = "Vogel";
+
+    Q.spd_coleader_1_fullname = "Hans Vogel";
+
+} else if (Q.center_leader == "Müller") {
+
+    Q.spd_coleader_1 = "Müller";
+
+    Q.spd_coleader_1_fullname = "Hermann Müller";
+
+} else if (Q.center_leader == "Breitscheid") {
+
+    Q.spd_coleader_1 = "Breitscheid";
+
+    Q.spd_coleader_1_fullname = "Rudolf Breitscheid";
+
+} else if (Q.center_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.center_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.center_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.center_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.center_leader = "vacant";
+
+Q.center_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Center faction!
 
@@ -470,7 +860,81 @@ on-arrival: (spd_coleader_2_faction = "center") or (spd_coleader_2 = "Hilferding
 @labor_2
 view-if: spd_coleader_2_faction != "labor"
 choose-if: (labor_c >= 50) or (labor_c >= left_c and (labor_c+left_c) >= 50) or (labor_c >= reformist_c and labor_c >= neorevisionist_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (labor_c >= center_c and (labor_c+center_c) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer")
-on-arrival: (spd_coleader_2 = "Leipart" and spd_coleader_2_fullname = "Theodor Leipart" if labor_leader = "Leipart") or (spd_coleader_2 = "Aufhäuser" and spd_coleader_2_fullname = "Siegfried Aufhäuser" if labor_leader = "Aufhäuser") or (spd_coleader_2 = "Wissell" and spd_coleader_2_fullname = "Rudolf Wissell" if labor_leader = "Wissell") or (spd_coleader_2 = "Woytinsky" and spd_coleader_2_fullname = "Wladimir Woytinsky" if labor_leader = "Woytinsky") or (labor_leader = “vacant”) and (spd_coleader_2 = "Mierendorff" and spd_coleader_2_fullname = "Carlo Mierendorff" if labor_leader = "Mierendorff") or (spd_coleader_2 = "Schumacher" and spd_coleader_2_fullname = "Kurt Schumacher" if labor_leader = "Schumacher") or (spd_coleader_2 = "Schumacher" and spd_coleader_2_fullname = "Kurt Schumacher" if labor_leader = "Leber") or (spd_coleader_2 = "Stampfer" and spd_coleader_2_fullname = "Friedrich Stampfer" if labor_leader = "Stampfer") or (spd_coleader_2 = "Radbruch" and spd_coleader_2_fullname = "Gustav Radbruch" if labor_leader = "Radbruch") or (spd_coleader_2 = "Hirschfeld" and spd_coleader_2_fullname = "Magnus Hirschfeld" if labor_leader = "Hirschfeld") or (spd_coleader_2 = "Baade" and spd_coleader_2_fullname = "Fritz Baade" if labor_leader = "Baade") or (labor_leader_fullname = “vacant”) and (spd_coleader_2_faction = "labor"
+on-arrival: {!
+
+if (Q.labor_leader == "Leipart") {
+
+    Q.spd_coleader_1 = "Leipart";
+
+    Q.spd_coleader_1_fullname = "Theodor Leipart";
+
+} else if (Q.labor_leader == "Aufhäuser") {
+
+    Q.spd_coleader_1 = "Aufhäuser";
+
+    Q.spd_coleader_1_fullname = "Siegfried Aufhäuser";
+
+} else if (Q.labor_leader == "Wissell") {
+
+    Q.spd_coleader_1 = "Wissell";
+
+    Q.spd_coleader_1_fullname = "Rudolf Wissell";
+
+} else if (Q.labor_leader == "Woytinsky") {
+
+    Q.spd_coleader_1 = "Woytinsky";
+
+    Q.spd_coleader_1_fullname = "Wladimir Woytinsky";
+
+} else if (Q.labor_leader == "Mierendorff") {
+
+    Q.spd_coleader_1 = "Mierendorff";
+
+    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+
+} else if (Q.labor_leader == "Schumacher") {
+
+    Q.spd_coleader_1 = "Schumacher";
+
+    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+
+} else if (Q.labor_leader == "Leber") {
+
+    Q.spd_coleader_1 = "Leber";
+
+    Q.spd_coleader_1_fullname = "Julius Leber";
+
+} else if (Q.labor_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.labor_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.labor_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.labor_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.labor_leader = "vacant";
+
+Q.labor_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Labor faction!
 
@@ -479,7 +943,81 @@ on-arrival: (spd_coleader_2 = "Leipart" and spd_coleader_2_fullname = "Theodor L
 @reformist_2
 view-if: spd_coleader_2_faction != "reformist"
 choose-if: (reformist_c >= 50) or (reformist_c >= neorevisionist_c and (reformist_c+neorevisionist_c) >= 50) or (reformist_c >= neorevisionist_c and reformist_c >= labor_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (reformist_leader == "Baade") or (reformist_leader == "Hirschfeld") or (reformist_leader == "Radbruch") or (reformist_leader == "Stampfer")
-on-arrival: (spd_coleader_2 = "Severing" and spd_coleader_2_fullname = "Carl Severing" if reformist_leader = "Severing") or (spd_coleader_2 = "Braun" and spd_coleader_2_fullname = "Otto Braun" if reformist_leader = "Braun") or (spd_coleader_2 = "Juchacz" and spd_coleader_2_fullname = "Marie Juchacz" if reformist_leader = "Juchacz") or (spd_coleader_2 = "Pfülf" and spd_coleader_2_fullname = "Antonie Pfülf" if reformist_leader = "Pfülf") or ( spd_coleader_2 = "Mierendorff" and spd_coleader_2_fullname = "Carlo Mierendorff" if reformist_leader = "Mierendorff") or (spd_coleader_2 = "Schumacher" and spd_coleader_2_fullname = "Kurt Schumacher" if reformist_leader = "Schumacher") or (spd_coleader_2 = "Schumacher" and spd_coleader_2_fullname = "Kurt Schumacher" if reformist_leader = "Leber") or (spd_coleader_2 = "Stampfer" and spd_coleader_2_fullname = "Friedrich Stampfer" if reformist_leader = "Stampfer") or (spd_coleader_2 = "Radbruch" and spd_coleader_2_fullname = "Gustav Radbruch" if reformist_leader = "Radbruch") or (spd_coleader_2 = "Hirschfeld" and spd_coleader_2_fullname = "Magnus Hirschfeld" if reformist_leader = "Hirschfeld") or (spd_coleader_2 = "Baade" and spd_coleader_2_fullname = "Fritz Baade" if reformist_leader = "Baade") or (reformist_leader = “vacant”) and (reformist_leader_fullname = “vacant”) and (spd_coleader_2_faction = "reformist";
+on-arrival: {!
+
+if (Q.reformist_leader == "Severing") {
+
+    Q.spd_coleader_1 = "Severing";
+
+    Q.spd_coleader_1_fullname = "Carl Severing";
+
+} else if (Q.reformist_leader == "Braun") {
+
+    Q.spd_coleader_1 = "Braun";
+
+    Q.spd_coleader_1_fullname = "Otto Braun";
+
+} else if (Q.reformist_leader == "Juchacz") {
+
+    Q.spd_coleader_1 = "Juchacz";
+
+    Q.spd_coleader_1_fullname = "Marie Juchacz";
+
+} else if (Q.reformist_leader == "Pfülf") {
+
+    Q.spd_coleader_1 = "Pfülf";
+
+    Q.spd_coleader_1_fullname = "Antonie Pfülf";
+
+} else if (Q.reformist_leader == "Mierendorff") {
+
+    Q.spd_coleader_1 = "Mierendorff";
+
+    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+
+} else if (Q.reformist_leader == "Schumacher") {
+
+    Q.spd_coleader_1 = "Schumacher";
+
+    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+
+} else if (Q.reformist_leader == "Leber") {
+
+    Q.spd_coleader_1 = "Leber";
+
+    Q.spd_coleader_1_fullname = "Julius Leber";
+
+} else if (Q.reformist_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.reformist_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.reformist_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.reformist_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.reformist_leader = "vacant";
+
+Q.reformist_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Reformist faction!
 
@@ -488,7 +1026,57 @@ on-arrival: (spd_coleader_2 = "Severing" and spd_coleader_2_fullname = "Carl Sev
 @neorevisionist_2
 view-if: spd_coleader_2_faction != "neorevisionist" and neorevisionism == 2
 choose-if: (neorevisionist_c >= 50) or (neorevisionist_c >= reformist_c and (reformist_c+neorevisionist_c) >= 50) or (neorevisionist_c >= reformist_c and neorevisionist_c >= labor_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer")
-on-arrival: (spd_coleader_2 = "Mierendorff" and spd_coleader_2_fullname = "Carlo Mierendorff" if neorevisionist_leader = "Mierendorff") or (spd_coleader_2 = "Schumacher" and spd_coleader_2_fullname = "Kurt Schumacher" if neorevisionist_leader = "Schumacher") or (spd_coleader_2 = "Leber" and spd_coleader_2_fullname = "Julius Leber" if neorevisionist_leader = "Leber") or (spd_coleader_2 = "Stampfer" and spd_coleader_2_fullname = "Friedrich Stampfer" if neorevisionist_leader = "Stampfer") or (spd_coleader_2 = "Radbruch" and spd_coleader_2_fullname = "Gustav Radbruch" if neorevisionist_leader = "Radbruch") or (spd_coleader_2 = "Hirschfeld" and spd_coleader_2_fullname = "Magnus Hirschfeld" if neorevisionist_leader = "Hirschfeld") or (spd_coleader_2 = "Baade" and spd_coleader_2_fullname = "Fritz Baade" if neorevisionist_leader = "Baade") or (neorevisionist_leader = “vacant”) and (neorevisionist_leader_fullname = “vacant”) and (spd_coleader_2_faction = "neorevisionist";
+on-arrival: {!
+
+if (Q.revisionist_leader == "Mierendorff") {
+
+    Q.spd_coleader_1 = "Mierendorff";
+
+    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+
+} else if (Q.revisionist_leader == "Schumacher") {
+
+    Q.spd_coleader_1 = "Schumacher";
+
+    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+
+} else if (Q.revisionist_leader == "Leber") {
+
+    Q.spd_coleader_1 = "Leber";
+
+    Q.spd_coleader_1_fullname = "Julius Leber";
+
+} else if (Q.revisionist_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.revisionist_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.revisionist_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.revisionist_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.revisionist_leader = "vacant";
+
+Q.revisionist_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_2_fullname +] wins in a victory for the Neorevisionist faction!
 
@@ -531,7 +1119,41 @@ The incumbent, [+ spd_coleader_3_fullname +], wins in a victory for the [+ spd_c
 @left_3
 view-if: spd_coleader_3_faction != "left"
 choose-if: (left_c >= 50) or (left_c >= labor_c and (left_c+labor_c) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
-on-arrival: (spd_coleader_3_faction = "left”) or (spd_coleader_3 = "Crispien" and spd_coleader_3_fullname = "Arthur Crispien" if left_leader = "Crispien") or (spd_coleader_3 = "Levi" and spd_coleader_3_fullname = "Paul Levi" if left_leader = "Levi") or (spd_coleader_3 = "Sender" and spd_coleader_3_fullname = "Toni Sender" if left_leader = "Sender") or (spd_coleader_3 = "Rosenfeld" and spd_coleader_3_fullname = "Kurt Rosenfeld" if left_leader = "Rosenfeld") or (spd_coleader_3 = "Seydewitz" and spd_coleader_3_fullname = "Max Seydewitz" if left_leader = "Seydewitz") or (spd_coleader_3 = "Siemsen" and spd_coleader_3_fullname = "Anna Siemsen" if left_leader = "Siemsen") or (spd_coleader_3 = "Stampfer" and spd_coleader_3_fullname = "Friedrich Stampfer" if left_leader = "Stampfer") or (spd_coleader_3 = "Radbruch" and spd_coleader_3_fullname = "Gustav Radbruch" if left_leader = "Radbruch") or (spd_coleader_3 = "Hirschfeld" and spd_coleader_3_fullname = "Magnus Hirschfeld" if left_leader = "Hirschfeld") or (spd_coleader_3 = "Baade" and spd_coleader_3_fullname = "Fritz Baade" if left_leader = "Baade") or (left_leader = “vacant”) and (left_leader_fullname = "vacant"
+on-arrival: {!
+if (Q.left_leader == "Crispien") {
+    Q.spd_coleader_1 = "Crispien";
+    Q.spd_coleader_1_fullname = "Arthur Crispien";
+} else if (Q.left_leader == "Levi") {
+    Q.spd_coleader_1 = "Levi";
+    Q.spd_coleader_1_fullname = "Paul Levi";
+} else if (Q.left_leader == "Sender") {
+    Q.spd_coleader_1 = "Sender";
+    Q.spd_coleader_1_fullname = "Toni Sender";
+} else if (Q.left_leader == "Rosenfeld") {
+    Q.spd_coleader_1 = "Rosenfeld";
+    Q.spd_coleader_1_fullname = "Kurt Rosenfeld";
+} else if (Q.left_leader == "Seydewitz") {
+    Q.spd_coleader_1 = "Seydewitz";
+    Q.spd_coleader_1_fullname = "Max Seydewitz";
+} else if (Q.left_leader == "Siemsen") {
+    Q.spd_coleader_1 = "Siemsen";
+    Q.spd_coleader_1_fullname = "Anna Siemsen";
+} else if (Q.left_leader == "Stampfer") {
+    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+} else if (Q.left_leader == "Radbruch") {
+    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+} else if (Q.left_leader == "Hirschfeld") {
+    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+} else if (Q.left_leader == "Baade") {
+    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+}
+Q.left_leader = "vacant";
+Q.left_leader_fullname = "vacant";
+!}
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Left faction!
 
@@ -540,7 +1162,69 @@ on-arrival: (spd_coleader_3_faction = "left”) or (spd_coleader_3 = "Crispien" 
 @center_3
 view-if: spd_coleader_3_faction != "center"
 choose-if: (left_c < 50 and labor_c < 50 and (reformist_c+neorevisionist_c) < 50) or (center_leader == "Baade") or (center_leader == "Hirschfeld") or (center_leader == "Radbruch") or (center_leader == "Stampfer")
-on-arrival: (spd_coleader_3_faction = "center") or (spd_coleader_3 = "Hilferding" and spd_coleader_3_fullname = "Rudolf Hilferding" if center_leader = "Hilferding") or (spd_coleader_3 = "Wels" and spd_coleader_3_fullname = "Otto Wels" if center_leader = "Wels") or (spd_coleader_3 = "Vogel" and spd_coleader_3_fullname = "Hans Vogel" if center_leader = "Vogel") or (spd_coleader_3 = "Müller" and spd_coleader_3_fullname = "Hermann Müller" if center_leader = "Müller") or (spd_coleader_3 = "Breitscheid" and spd_coleader_3_fullname = "Rudolf Breitscheid" if center_leader = "Breitscheid") or (spd_coleader_3 = "Stampfer" and spd_coleader_3_fullname = "Friedrich Stampfer" if center_leader = "Stampfer") or (spd_coleader_3 = "Radbruch" and spd_coleader_3_fullname = "Gustav Radbruch" if center_leader = "Radbruch") or (spd_coleader_3 = "Hirschfeld" and spd_coleader_3_fullname = "Magnus Hirschfeld" if center_leader = "Hirschfeld") or (spd_coleader_3 = "Baade" and spd_coleader_3_fullname = "Fritz Baade" if center_leader = "Baade") or (center_leader = “vacant”) and (center_leader_fullname = "vacant"
+on-arrival: {!
+
+if (Q.center_leader == "Hilferding") {
+
+    Q.spd_coleader_1 = "Hilferding";
+
+    Q.spd_coleader_1_fullname = "Rudolf Hilferding";
+
+} else if (Q.center_leader == "Wels") {
+
+    Q.spd_coleader_1 = "Wels";
+
+    Q.spd_coleader_1_fullname = "Otto Wels";
+
+} else if (Q.center_leader == "Vogel") {
+
+    Q.spd_coleader_1 = "Vogel";
+
+    Q.spd_coleader_1_fullname = "Hans Vogel";
+
+} else if (Q.center_leader == "Müller") {
+
+    Q.spd_coleader_1 = "Müller";
+
+    Q.spd_coleader_1_fullname = "Hermann Müller";
+
+} else if (Q.center_leader == "Breitscheid") {
+
+    Q.spd_coleader_1 = "Breitscheid";
+
+    Q.spd_coleader_1_fullname = "Rudolf Breitscheid";
+
+} else if (Q.center_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.center_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.center_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.center_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.center_leader = "vacant";
+
+Q.center_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Center faction!
 
@@ -549,7 +1233,81 @@ on-arrival: (spd_coleader_3_faction = "center") or (spd_coleader_3 = "Hilferding
 @labor_3
 view-if: spd_coleader_3_faction != "labor"
 choose-if: (labor_c >= 50) or (labor_c >= left_c and (labor_c+left_c) >= 50) or (labor_c >= reformist_c and labor_c >= neorevisionist_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (labor_c >= center_c and (labor_c+center_c) >= 50) or (labor_leader == "Baade") or (labor_leader == "Hirschfeld") or (labor_leader == "Radbruch") or (labor_leader == "Stampfer")
-on-arrival: (spd_coleader_3 = "Leipart" and spd_coleader_3_fullname = "Theodor Leipart" if labor_leader = "Leipart") or (spd_coleader_3 = "Aufhäuser" and spd_coleader_3_fullname = "Siegfried Aufhäuser" if labor_leader = "Aufhäuser") or (spd_coleader_3 = "Wissell" and spd_coleader_3_fullname = "Rudolf Wissell" if labor_leader = "Wissell") or (spd_coleader_3 = "Woytinsky" and spd_coleader_3_fullname = "Wladimir Woytinsky" if labor_leader = "Woytinsky") or (labor_leader = “vacant”) and (spd_coleader_3 = "Mierendorff" and spd_coleader_3_fullname = "Carlo Mierendorff" if labor_leader = "Mierendorff") or (spd_coleader_3 = "Schumacher" and spd_coleader_3_fullname = "Kurt Schumacher" if labor_leader = "Schumacher") or (spd_coleader_3 = "Schumacher" and spd_coleader_3_fullname = "Kurt Schumacher" if labor_leader = "Leber") or (spd_coleader_3 = "Stampfer" and spd_coleader_3_fullname = "Friedrich Stampfer" if labor_leader = "Stampfer") or (spd_coleader_3 = "Radbruch" and spd_coleader_3_fullname = "Gustav Radbruch" if labor_leader = "Radbruch") or (spd_coleader_3 = "Hirschfeld" and spd_coleader_3_fullname = "Magnus Hirschfeld" if labor_leader = "Hirschfeld") or (spd_coleader_3 = "Baade" and spd_coleader_3_fullname = "Fritz Baade" if labor_leader = "Baade") or (labor_leader_fullname = “vacant”) and (spd_coleader_3_faction = "labor"
+on-arrival: {!
+
+if (Q.labor_leader == "Leipart") {
+
+    Q.spd_coleader_1 = "Leipart";
+
+    Q.spd_coleader_1_fullname = "Theodor Leipart";
+
+} else if (Q.labor_leader == "Aufhäuser") {
+
+    Q.spd_coleader_1 = "Aufhäuser";
+
+    Q.spd_coleader_1_fullname = "Siegfried Aufhäuser";
+
+} else if (Q.labor_leader == "Wissell") {
+
+    Q.spd_coleader_1 = "Wissell";
+
+    Q.spd_coleader_1_fullname = "Rudolf Wissell";
+
+} else if (Q.labor_leader == "Woytinsky") {
+
+    Q.spd_coleader_1 = "Woytinsky";
+
+    Q.spd_coleader_1_fullname = "Wladimir Woytinsky";
+
+} else if (Q.labor_leader == "Mierendorff") {
+
+    Q.spd_coleader_1 = "Mierendorff";
+
+    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+
+} else if (Q.labor_leader == "Schumacher") {
+
+    Q.spd_coleader_1 = "Schumacher";
+
+    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+
+} else if (Q.labor_leader == "Leber") {
+
+    Q.spd_coleader_1 = "Leber";
+
+    Q.spd_coleader_1_fullname = "Julius Leber";
+
+} else if (Q.labor_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.labor_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.labor_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.labor_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.labor_leader = "vacant";
+
+Q.labor_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Labor faction!
 
@@ -558,7 +1316,81 @@ on-arrival: (spd_coleader_3 = "Leipart" and spd_coleader_3_fullname = "Theodor L
 @reformist_3
 view-if: spd_coleader_3_faction != "reformist"
 choose-if: (reformist_c >= 50) or (reformist_c >= neorevisionist_c and (reformist_c+neorevisionist_c) >= 50) or (reformist_c >= neorevisionist_c and reformist_c >= labor_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (reformist_leader == "Baade") or (reformist_leader == "Hirschfeld") or (reformist_leader == "Radbruch") or (reformist_leader == "Stampfer")
-on-arrival: (spd_coleader_3 = "Severing" and spd_coleader_3_fullname = "Carl Severing" if reformist_leader = "Severing") or (spd_coleader_3 = "Braun" and spd_coleader_3_fullname = "Otto Braun" if reformist_leader = "Braun") or (spd_coleader_3 = "Juchacz" and spd_coleader_3_fullname = "Marie Juchacz" if reformist_leader = "Juchacz") or (spd_coleader_3 = "Pfülf" and spd_coleader_3_fullname = "Antonie Pfülf" if reformist_leader = "Pfülf") or ( spd_coleader_3 = "Mierendorff" and spd_coleader_3_fullname = "Carlo Mierendorff" if reformist_leader = "Mierendorff") or (spd_coleader_3 = "Schumacher" and spd_coleader_3_fullname = "Kurt Schumacher" if reformist_leader = "Schumacher") or (spd_coleader_3 = "Schumacher" and spd_coleader_3_fullname = "Kurt Schumacher" if reformist_leader = "Leber") or (spd_coleader_3 = "Stampfer" and spd_coleader_3_fullname = "Friedrich Stampfer" if reformist_leader = "Stampfer") or (spd_coleader_3 = "Radbruch" and spd_coleader_3_fullname = "Gustav Radbruch" if reformist_leader = "Radbruch") or (spd_coleader_3 = "Hirschfeld" and spd_coleader_3_fullname = "Magnus Hirschfeld" if reformist_leader = "Hirschfeld") or (spd_coleader_3 = "Baade" and spd_coleader_3_fullname = "Fritz Baade" if reformist_leader = "Baade") or (reformist_leader = “vacant”) and (reformist_leader_fullname = “vacant”) and (spd_coleader_3_faction = "reformist")
+on-arrival: {!
+
+if (Q.reformist_leader == "Severing") {
+
+    Q.spd_coleader_1 = "Severing";
+
+    Q.spd_coleader_1_fullname = "Carl Severing";
+
+} else if (Q.reformist_leader == "Braun") {
+
+    Q.spd_coleader_1 = "Braun";
+
+    Q.spd_coleader_1_fullname = "Otto Braun";
+
+} else if (Q.reformist_leader == "Juchacz") {
+
+    Q.spd_coleader_1 = "Juchacz";
+
+    Q.spd_coleader_1_fullname = "Marie Juchacz";
+
+} else if (Q.reformist_leader == "Pfülf") {
+
+    Q.spd_coleader_1 = "Pfülf";
+
+    Q.spd_coleader_1_fullname = "Antonie Pfülf";
+
+} else if (Q.reformist_leader == "Mierendorff") {
+
+    Q.spd_coleader_1 = "Mierendorff";
+
+    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+
+} else if (Q.reformist_leader == "Schumacher") {
+
+    Q.spd_coleader_1 = "Schumacher";
+
+    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+
+} else if (Q.reformist_leader == "Leber") {
+
+    Q.spd_coleader_1 = "Leber";
+
+    Q.spd_coleader_1_fullname = "Julius Leber";
+
+} else if (Q.reformist_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.reformist_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.reformist_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.reformist_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.reformist_leader = "vacant";
+
+Q.reformist_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Reformist faction!
 
@@ -567,7 +1399,57 @@ on-arrival: (spd_coleader_3 = "Severing" and spd_coleader_3_fullname = "Carl Sev
 @neorevisionist_3
 view-if: spd_coleader_3_faction != "neorevisionist" and neorevisionism == 3
 choose-if: (neorevisionist_c >= 50) or (neorevisionist_c >= reformist_c and (reformist_c+neorevisionist_c) >= 50) or (neorevisionist_c >= reformist_c and neorevisionist_c >= labor_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer")
-on-arrival: (spd_coleader_3 = "Mierendorff" and spd_coleader_3_fullname = "Carlo Mierendorff" if neorevisionist_leader = "Mierendorff") or (spd_coleader_3 = "Schumacher" and spd_coleader_3_fullname = "Kurt Schumacher" if neorevisionist_leader = "Schumacher") or (spd_coleader_3 = "Leber" and spd_coleader_3_fullname = "Julius Leber" if neorevisionist_leader = "Leber") or (spd_coleader_3 = "Stampfer" and spd_coleader_3_fullname = "Friedrich Stampfer" if neorevisionist_leader = "Stampfer") or (spd_coleader_3 = "Radbruch" and spd_coleader_3_fullname = "Gustav Radbruch" if neorevisionist_leader = "Radbruch") or (spd_coleader_3 = "Hirschfeld" and spd_coleader_3_fullname = "Magnus Hirschfeld" if neorevisionist_leader = "Hirschfeld") or (spd_coleader_3 = "Baade" and spd_coleader_3_fullname = "Fritz Baade" if neorevisionist_leader = "Baade") or (neorevisionist_leader = “vacant”) and (neorevisionist_leader_fullname = “vacant”) and (spd_coleader_3_faction = "neorevisionist")
+on-arrival: {!
+
+if (Q.revisionist_leader == "Mierendorff") {
+
+    Q.spd_coleader_1 = "Mierendorff";
+
+    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+
+} else if (Q.revisionist_leader == "Schumacher") {
+
+    Q.spd_coleader_1 = "Schumacher";
+
+    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+
+} else if (Q.revisionist_leader == "Leber") {
+
+    Q.spd_coleader_1 = "Leber";
+
+    Q.spd_coleader_1_fullname = "Julius Leber";
+
+} else if (Q.revisionist_leader == "Stampfer") {
+
+    Q.spd_coleader_1 = "Stampfer";
+
+    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+
+} else if (Q.revisionist_leader == "Radbruch") {
+
+    Q.spd_coleader_1 = "Radbruch";
+
+    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+
+} else if (Q.revisionist_leader == "Hirschfeld") {
+
+    Q.spd_coleader_1 = "Hirschfeld";
+
+    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+
+} else if (Q.revisionist_leader == "Baade") {
+
+    Q.spd_coleader_1 = "Baade";
+
+    Q.spd_coleader_1_fullname = "Fritz Baade";
+
+}
+
+Q.revisionist_leader = "vacant";
+
+Q.revisionist_leader_fullname = "vacant";
+
+!}
 
 [+ spd_coleader_3_fullname +] wins in a victory for the Neorevisionist faction!
 
