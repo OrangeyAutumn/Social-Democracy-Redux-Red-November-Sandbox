@@ -724,7 +724,7 @@ How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] fact
 - @co_leader_2_no_challenge: [+ spd_coleader_2_fullname +] faces no challenge.
 
 @co_leader_2_challenge
-view-if: center_c < 50 and spd_coleader_2_faction == "center") or (left_c < 50 and spd_coleader_2_faction == "left") or (reformist_c < 50 and spd_coleader_2_faction == "reformist") or (labor_c < 50 and spd_coleader_2_faction == "labor") or (neorevisionist_c < 50 and spd_coleader_2_faction == "neorevisionist") or (spd_coleader_2_faction == "non-factional"
+view-if: center_c < 50 and spd_coleader_2_faction == "center") or (left_c < 50 and spd_coleader_2_faction == "left") or (reformist_c < 50 and spd_coleader_2_faction == "reformist") or (labor_c < 50 and spd_coleader_2_faction == "labor") or (neorevisionist_c < 50 and spd_coleader_2_faction == "neorevisionist") or (spd_coleader_2_faction == "non-factional")
 
 [+ spd_coleader_2_fullname +] has come under challenge at the Conference! They will attempt to survive the challenge, but their victory is far from guaranteed. Who wins the vote?
 
@@ -1097,7 +1097,7 @@ How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] fact
 - @co_leader_3_no_challenge: [+ spd_coleader_3_fullname +] faces no challenge.
 
 @co_leader_3_challenge
-view-if: center_c < 50 and spd_coleader_3_faction == "center") or (left_c < 50 and spd_coleader_3_faction == "left") or (reformist_c < 50 and spd_coleader_3_faction == "reformist") or (labor_c < 50 and spd_coleader_3_faction == "labor") or (neorevisionist_c < 50 and spd_coleader_3_faction == "neorevisionist") or (spd_coleader_3_faction == "non-factional"
+view-if: center_c < 50 and spd_coleader_3_faction == "center") or (left_c < 50 and spd_coleader_3_faction == "left") or (reformist_c < 50 and spd_coleader_3_faction == "reformist") or (labor_c < 50 and spd_coleader_3_faction == "labor") or (neorevisionist_c < 50 and spd_coleader_3_faction == "neorevisionist") or (spd_coleader_3_faction == "non-factional")
 
 [+ spd_coleader_3_fullname +] has come under challenge at the Conference! They will attempt to survive the challenge, but their victory is far from guaranteed. Who wins the vote?
 
