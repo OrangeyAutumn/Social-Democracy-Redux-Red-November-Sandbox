@@ -29,7 +29,6 @@ As with the state police units and the Reichswehr, the internal police tends to 
 - @root: Take no action for now.
 
 @banning_menu
-
 view-if: constitutional_protection == 1
 
 - @ban_uspd: Ban USPD
