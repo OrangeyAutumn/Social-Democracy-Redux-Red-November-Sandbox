@@ -548,6 +548,7 @@ Q.economic_records = [];
 
 // State of the government
 Q.president = "Ebert";
+Q.president_party = "SPD";
 // starting chancellor: Wilhelm Marx;
 Q.chancellor = "Luther";
 Q.chancellor_party = 'DVP';
