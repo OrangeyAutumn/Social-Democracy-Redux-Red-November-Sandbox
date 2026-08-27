@@ -10,7 +10,7 @@ The Reformist faction holds many of our most notable members. How shall we make 
 -	@use_severing: We will use the talents of the Reformist leader, Carl Severing
 -	@use_braun: We will use the talents of the Reformist leader, Otto Braun
 -	@use_juchacz: We will use the talents of the Reformist leader, Marie Juchacz
--	@use_pfülf: We will use the talents of the Reformist leader, Antonie Pfülf
+-	@use_pfulf: We will use the talents of the Reformist leader, Antonie Pfülf
 -	@use_baade: We will use the talents of the Reformist leader, Fritz Baade
 -	@use_hirschfeld: We will use the talents of the Reformist leader, Magnus Hirschfeld
 -	@use_radbruch: We will use the talents of the Reformist leader, Gustav Radbruch
@@ -39,9 +39,9 @@ go-to: braun
 view-if: reformist_leader == "Juchacz"
 go-to: juchacz
 
-@use_pfülf
+@use_pfulf
 view-if: reformist_leader == "Pfülf"
-go-to: pfülf
+go-to: pfulf
 
 @use_mierendorff
 view-if: reformist_leader == "Mierendorff"
