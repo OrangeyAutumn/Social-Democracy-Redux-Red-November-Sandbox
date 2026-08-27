@@ -269,6 +269,8 @@ Q.inflation = -3.8;
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
 Q.economic_growth = -1.5;
 
+// economic expansion timer
+Q.economic_expansion = 0;
 
 Q.strife = 2;
 
