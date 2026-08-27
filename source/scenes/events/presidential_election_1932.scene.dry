@@ -619,7 +619,7 @@ go-to: hindenburg_wins if hindenburg_plurality == 1; thalmann_wins if thalmann_p
 
 
 @hindenburg_wins
-on-arrival: president = "Hindenburg"; {!
+on-arrival: president = "Hindenburg"; president_party = "Independent"; {!
 if (Q.braun_campaign && Q.hitler_support_hindenburg) {
     Q.workers_spd += 5*(1-Q.dissent);
     Q.new_middle_spd += 3*(1-Q.dissent);
@@ -635,14 +635,14 @@ if (Q.braun_campaign && Q.hitler_support_hindenburg) {
 As expected, the incumbent Hindenburg wins the presidency[? if braun_campaign and hitler_support_hindenburg :, though our ability to unite the reactionaries behind Hindenburg and become the main opposition has bolstered morale in the party?]. Let's hope he continues to keep the Nazis out of power.
 
 @thalmann_wins
-on-arrival: president = "Thälmann"; uspd_relation = 80;
+on-arrival: president = "Thälmann"; uspd_relation = 80; president_party = "KPD";
 
 Ernst Thälmann of the USPD has won the presidency. Immediately, the far-right launches a coup attempt against the government. We have no choice but to unite with the USPD against the fascists...
 
 - @civil_war: This is civil war.
 
 @hitler_wins
-on-arrival: president = nsdap_candidate; chancellor = "Hitler" if presidential_powers != 1; chancellor_party = "NSDAP" if presidential_powers != 1
+on-arrival: president = nsdap_candidate; chancellor = "Hitler" if presidential_powers != 1; president_party = "NSDAP"; chancellor_party = "NSDAP" if presidential_powers != 1
 
 [? if nsdap_candidate == "Hitler" : Adolf Hitler of the NSDAP has won the presidency. He wastes no time in consolidating power. ?]
 [? if nsdap_candidate != "Hitler" : The NSDAP candidate [+ president +] has won. The first action President [+ president +] takes is inviting Hitler back into Germany, and appointing him chancellor. The Nazis waste no time in consolidating power. ?]
@@ -668,7 +668,7 @@ Thanks to our reforms weakening the presidency's powers and the banning of the S
 
 
 @braun_wins
-on-arrival: president = "Braun"; coup_progress += 0.5; coup_progress += 1 if sa_force + sh_force >= 50; reformist_dissent -= 15; center_dissent -= 15; labor_dissent -= 15; left_dissent -= 5; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent);
+on-arrival: president = "Braun"; president_party = "SPD"; coup_progress += 0.5; coup_progress += 1 if sa_force + sh_force >= 50; reformist_dissent -= 15; center_dissent -= 15; labor_dissent -= 15; left_dissent -= 5; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent);
 
 Otto Braun of the SPD has won the presidency! This is a moment of celebration for our party, and his victory is able to bolster our support.
 
@@ -688,19 +688,19 @@ on-arrival: president = "Eckener"; pro_republic += 5; reformist_dissent -= 5
 Hugo Eckener has won the presidency! Though he is a nationalist, he hates Nazism enough to hopefully commit strongly to the Republic and its institutions.
 
 @gessler_wins
-on-arrival: president = "Gessler"; new_middle_dvp += 2; old_middle_dvp += 5; new_middle_ddp += 3; pro_republic += 5
+on-arrival: president = "Gessler"; president_party = "Indepdendent"; new_middle_dvp += 2; old_middle_dvp += 5; new_middle_ddp += 3; pro_republic += 5
 
 Otto Gessler has won the presidency! Though he is a bourgeois liberal with strong militarist tendencies, he can be trusted to at least uphold the constitution.
 
 @seldte_wins
-on-arrival: president = "Seldte"; chancellor = "Hitler" if presidential_powers != 1; chancellor_party = "NSDAP" if presidential_powers != 1; old_middle_dnvp += 3; rural_dnvp += 3; stalhelm_strength += 50
+on-arrival: president = "Seldte"; president_party = "NSDAP"; chancellor = "Hitler" if presidential_powers != 1; chancellor_party = "NSDAP" if presidential_powers != 1; old_middle_dnvp += 3; rural_dnvp += 3; stalhelm_strength += 50
 
 Franz Seldte of the Stalhelm has somehow won the Presidency. [? if presidential_powers != 1 : His first act is to depose the current Chancellor and appoint Adolf Hitler. ?][? if presidential_powers : Luckily, the limits on his powers prevent him from doing anything too radical. ?]
 
 - @hitler_victory: What do we do now?
 
 @duesterburg_wins
-on-arrival: president = "Hindenburg"; pro_republic -= 10
+on-arrival: president = "Hindenburg"; president_party = "Independent"; pro_republic -= 10
 
 Somehow, despite the revelation of his Jewishness, Duesterburg has won the Presidency. However, incapable of imagining a Jew as President of Germany, and still reeling from the shock, Duesterburg has refused to take the oath of office.
 
