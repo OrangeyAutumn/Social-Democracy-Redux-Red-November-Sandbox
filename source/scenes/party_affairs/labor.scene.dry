@@ -7,16 +7,17 @@ card-image: img/portraits/LeipartTheodor.jpg
 
 The Labor wing are our strongest connection to our grassroots. How shall we make use of their talents?
 
-- @use_crispien: We will use the talents of the Left leader, Arthur Crispien
-- @use_levi: We will use the talents of the Left leader, Paul Levi
-- @use_sender: We will use the talents of the Left leader, Toni Sender
-- @use_rosenfeld: We will use the talents of the Left leader, Kurt Rosenfeld
-- @use_seydewitz: We will use the talents of the Left leader, Max Seydewitz
-- @use_siemsen: We will use the talents of the Left leader, Anna Siemsen
-- @use_baade: We will use the talents of the Left leader, Fritz Baade
-- @use_hirschfeld: We will use the talents of the Left leader, Magnus Hirschfeld
-- @use_radbruch: We will use the talents of the Left leader, Gustav Radbruch
-- @use_stampfer: We will use the talents of the Left leader, Friedrich Stampfer
+-	@use_leipart: We will use the talents of the Labor leader, Theodor Leipart
+-	@use_aufhäuser: We will use the talents of the Labor leader, Siegfried Aufhäuser
+-	@use_wissell: We will use the talents of the Labor leader, Rudolf Wissell
+-	@use_woytinsky: We will use the talents of the Labor leader, Wladimir Woytinsky
+-	@use_baade: We will use the talents of the Labor leader, Fritz Baade
+-	@use_hirschfeld: We will use the talents of the Labor leader, Magnus Hirschfeld
+-	@use_radbruch: We will use the talents of the Labor leader, Gustav Radbruch
+-	@use_stampfer: We will use the talents of the Labor leader, Friedrich Stampfer
+-	@use_mierendorff: We will use the talents of the Labor leader, Carlo Mierendorff
+-	@use_schumacher: We will use the talents of the Labor leader, Kurt Schumacher
+-	@use_leber: We will use the talents of the Labor leader, Julius Leber
 - @boost_labor_influence_subtle: We will subtly promote the Labor faction as not to anger any of the other factions.
 - @boost_labor_influence_blatant: We will openly promote the Labor faction.
 - @welfare: We will use Labor’s connections to promote mutual aid programs for the workers.
@@ -27,44 +28,48 @@ The Labor wing are our strongest connection to our grassroots. How shall we make
 - @root: We will do none of these things.
 - @easy_discard: We will consider this at a later time.
 
-@use_crispien
-view-if: left_leader == "Crispien"
-go-to: crispien
+@use_leipart
+view-if: labor_leader == "Leipart"
+go-to: leipart
 
-@use_levi
-view-if: left_leader == "Levi"
-go-to: levi
+@use_aufhäuser
+view-if: labor_leader == "Aufhäuser"
+go-to: aufhäuser
 
-@use_sender
-view-if: left_leader == "Sender"
-go-to: sender
+@use_wissell
+view-if: labor_leader == "Wissell"
+go-to: wissell
 
-@use_rosenfeld
-view-if: left_leader == "Rosenfeld"
-go-to: rosenfeld
+@use_woytinsky
+view-if: labor_leader == "Woytinsky"
+go-to: woytinsky
 
-@use_seydewitz
-view-if: left_leader == "Seydewitz"
-go-to: seydewitz
+@use_mierendorff
+view-if: labor_leader == "Mierendorff"
+go-to: mierendorff
 
-@use_siemsen
-view-if: left_leader == "Siemsen"
-go-to: siemsen
+@use_schumacher
+view-if: labor_leader == "Schumacher
+go-to: schumacher
+
+@use_leber
+view-if: labor_leader == "Leber"
+go-to: leber
 
 @use_baade
-view-if: left_leader == "Baade"
+view-if: labor_leader == “Baade”
 go-to: baade
 
 @use_hirschfeld
-view-if: left_leader == "Hirschfeld"
+view-if: labor_leader == “Hirschfeld”
 go-to: hirschfeld
 
 @use_radbruch
-view-if: left_leader == "Radbruch"
+view-if: labor_leader == “Rabdruch”
 go-to: radbruch
 
 @use_stampfer
-view-if: left_leader == "Stampfer"
+view-if: labor_leader == “Stampfer”
 go-to: stampfer
 
 @boost_labor_influence_subtle
