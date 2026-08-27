@@ -48,7 +48,7 @@ view-if: reformist_leader == "Mierendorff"
 go-to: mierendorff
 
 @use_schumacher
-view-if: reformist_leader == "Schumacher
+view-if: reformist_leader == "Schumacher"
 go-to: schumacher
 
 @use_leber
