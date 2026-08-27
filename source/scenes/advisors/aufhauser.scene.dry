@@ -7,7 +7,7 @@ new-page: true
 
 = Siegfried Aufhäuser
 
-Aufhäuser is a leader of the AfA-Bund, the federation of socialist white-collar trade unions.
+Aufhäuser is [? if chancellor = "Aufhäuser": the current Chancellor and ?] [? if president = "Aufhäuser": the current President and ?] a leader of the AfA-Bund, the federation of socialist white-collar trade unions.
 
 - @white_collar
 - @union_unity
