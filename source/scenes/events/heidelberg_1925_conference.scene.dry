@@ -331,8 +331,8 @@ The next issue for the conference is what should be done about Saxony, where the
 - @who_cares: We cannot afford to indulge in this petty intraparty infighting.
 
 @get_him_lads
-view-if: reformists_c < 50
-on_arrival: left_strength += 5; left_dissent -= 5; reformist_strength -= 10; reformist_dissent += 10; center_dissent += 5; labor_dissent += 5; in_saxony_spd = 0
+view-if: reformist_c < 50
+on-arrival: left_strength += 5; left_dissent -= 5; reformist_strength -= 10; reformist_dissent += 10; center_dissent += 5; labor_dissent += 5; in_saxony_spd = 0
 
 A motion to expel Heldt from the party passes. Unfortunately, expelling Heldt from the party does not expel him from the Saxon government and he, alongside a small group styling themselves as the ‘ASPD’, continue in their coalition with the DVP, while our loyalists return to opposition.
 
@@ -412,7 +412,7 @@ Q.left_leader_fullname = "vacant";
 
 [+ spd_coleader_1_fullname +] wins in a victory for the Left faction!
 
-- @co_leader_2: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
+- @co_leader_2: How does [+ spd_coleader_2_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @center_1
 view-if: spd_coleader_1_faction != "center"
@@ -711,7 +711,7 @@ Q.revisionist_leader_fullname = "vacant";
 - @co_leader_2: How does [+ spd_coleader_1_fullname +], of the [+ spd_coleader_2_faction +] faction, fare?
 
 @co_leader_1_no_challenge
-view-if: (spd_coleader_1 != "vacant") and (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist")
+view-if: (spd_coleader_1 != "vacant") and ((center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist"))
 
 [+ spd_coleader_1_fullname +] does not face a challenge.
 
@@ -1083,7 +1083,7 @@ Q.revisionist_leader_fullname = "vacant";
 - @co_leader_3: How does [+ spd_coleader_3_fullname +], of the [+ spd_coleader_3_faction +] faction, fare?
 
 @co_leader_2_no_challenge
-view-if: (spd_coleader_2 != "vacant") and (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist")
+view-if: (spd_coleader_2 != "vacant") and ((center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist"))
 
 [+ spd_coleader_2_fullname +] does not face a challenge.
 
@@ -1456,7 +1456,7 @@ Q.revisionist_leader_fullname = "vacant";
 - @root: The conference is concluded.
 
 @co_leader_3_no_challenge
-view-if: (spd_coleader_3 != "vacant") and (center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist")
+view-if: (spd_coleader_3 != "vacant") and ((center_c >= 50 and spd_coleader_2_faction == "center") or (left_c >= 50 and spd_coleader_2_faction == "left") or (labor_c >= 50 and spd_coleader_2_faction == "labor") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "reformist") or ((reformist_c+neorevisionist_c) >= 50 and spd_coleader_2_faction == "neorevisionist"))
 
 [+ spd_coleader_3_fullname +] does not face a challenge.
 
