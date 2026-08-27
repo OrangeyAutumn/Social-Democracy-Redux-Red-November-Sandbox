@@ -1,4 +1,4 @@
-title: Labor
+title: The Labor Wing
 new-page: true
 is-card: true
 tags: party_affairs
@@ -8,7 +8,7 @@ card-image: img/portraits/LeipartTheodor.jpg
 The Labor wing are our strongest connection to our grassroots. How shall we make use of their talents?
 
 -	@use_leipart: We will use the talents of the Labor leader, Theodor Leipart
--	@use_aufhäuser: We will use the talents of the Labor leader, Siegfried Aufhäuser
+-	@use_aufhauser: We will use the talents of the Labor leader, Siegfried Aufhäuser
 -	@use_wissell: We will use the talents of the Labor leader, Rudolf Wissell
 -	@use_woytinsky: We will use the talents of the Labor leader, Wladimir Woytinsky
 -	@use_baade: We will use the talents of the Labor leader, Fritz Baade
@@ -32,7 +32,7 @@ The Labor wing are our strongest connection to our grassroots. How shall we make
 view-if: labor_leader == "Leipart"
 go-to: leipart
 
-@use_aufhäuser
+@use_aufhauser
 view-if: labor_leader == "Aufhäuser"
 go-to: aufhäuser
 
