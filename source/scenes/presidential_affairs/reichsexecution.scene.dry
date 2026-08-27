@@ -1,10 +1,11 @@
 title: Reichsexekution
 new-page: true
 tags: pres_affairs
-view-if: president == "Ebert" or president == "Braun" or president == "Schumacher" or president == "Juchacz"
+view-if: president_party == "SPD" and reichsexekution_timer <= 0
 is-card: true
 card-image: img/reichsexekution.jpg
 subtitle: Article 48 Paragraph 1 gives the President the power to order a Reichsexekution - the federal intervention against a state government, including even the use of military force. 
+on-arrival: reichsexekution_timer += 3
 
 = Reichsexekution
 
