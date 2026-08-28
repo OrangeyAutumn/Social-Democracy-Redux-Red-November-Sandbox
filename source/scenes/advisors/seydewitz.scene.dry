@@ -7,11 +7,13 @@ new-page: true
 
 = Max Seydewitz
 
-Max Seydewitz is a former leader of the youth wing, current supporter of the left wing of the SPD, and advocates for class struggle.
+Max Seydewitz is [? if chancellor = "Seydewitz": the current Chancellor and ?][? if president = "Seydewitz": the current President and ?] a former leader of the youth wing, current supporter of the left wing of the SPD, and advocates for class struggle.
 
 - @class_struggle
 - @socialist_youth
 - @against_toleration
+- @chancellor
+- @president
 - @root: Return to main
 
 @class_struggle
@@ -44,3 +46,48 @@ on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_elec
 We have grown tired of the burdens of toleration, and have called a vote of no confidence in the current minority government.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+
+@chancellor
+title: Use the Chancellorship
+subtitle: As the current Chancellor, Seydewitz can make use of their position to further our goals.
+view-if: chancellor == "Seydewitz"
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+go-to: chancellor
+
+@president
+title: Use the Presidency
+subtitle: As the current President, Seydewitz can make use of their position to further our goals.
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+view if: president == "Seydewitz"
+
+- @article_48: We can use Article 48!
+- @military_relations: We can improve our relations with the Reichswehr.
+- @on_the_world_stage: We can improve our relations on the world stage.
+- @presidential_snap_election: We can call snap elections!
+- @reichsexecution: We can order a Reichsexekution!
+
+@article_48
+choose-if: chancellor_party == "SPD" and not presidential_powers and article_48_timer <= 8 and judicial_reform >= 3 and ((neorevisionist_strength+left_strength+unemployed >= 50) or in_emergency_government)
+unavailable-subtitle: [? if judicial_reform < 3 : The reactionary judiciary would strike them down as unconstitutional. ?][? if neorevisionist_strength+left_strength+unemployed < 50 : The party views these decrees as unecessary. ?][? if article_48_timer > 8 : [+ article_48_timer +] months before we can next take this action. ?]
+go-to: article_48
+
+@military_relations
+view-if: not victory_republic
+choose-if: military_relations_timer <= 0
+unavailable-subtitle: [+ military_relations_timer +] months before we can next take this action.
+go-to: military_relations
+
+@on_the_world_stage
+choose-if: on_the_world_stage_timer <= 0
+unavailable-subtitle: [+ on_the_world_stage_timer +] months before we can next take this action.
+go-to: on_the_world_stage
+
+@presidential_snap_election
+go-to: presidential_snap_election
+
+@reichsexekution
+choose-if: reichsexekution_timer <= 0
+unavailable-subtitle: [+ reichsexekution_timer +] months before we can next take this action.
+go-to: reichsexekution
