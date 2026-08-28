@@ -288,5 +288,5 @@ view-if: year == 1928
 @1930_althist
 view-if: year == 1930
 
-- @menu: VSPD formed - Not implemented yet
-- @menu: RDP formed - Not implemented yet
+- @menu: VSPD/RDP formed - Not implemented yet
+
