@@ -657,7 +657,8 @@ Q.hilferding_advisor = 0 // Rudolf Hilferding
 Q.severing_advisor = 0; // Carl Severing
 Q.braun_advisor = 0; // Otto Braun
 Q.juchacz_advisor = 0; // Marie Juchacz
-Q.baade_advisor = 0; // Fritz Baade
+Q.ebert_advisor = 0; // Friedrich Ebert
+Q.scheidemann_advisor = 0; // Phillip Scheidemann
 
 // Labor advisors
 Q.leipart_advisor = 0; // Theodor Leipart
@@ -665,12 +666,14 @@ Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
 Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
 Q.wissell_advisor = 0; // Rudolf Wissell
 
-// Revisionist advisors
+// Neorevisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
 Q.leber_advisor = 0; // Julius Leber (post-1930)
 Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
+Q.noske_advisor = 0; // Gustav Noske (post-1930 - suprise!)
 
 // Nonfactional advisors
+Q.baade_advisor = 0; // Fritz Baade
 Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
