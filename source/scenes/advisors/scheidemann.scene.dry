@@ -9,14 +9,14 @@ new-page: true
 
 Phillip Scheidemann is [? if chancellor = "Scheidemann": the current Chancellor and ?][? if president = "Scheidemann": the current President and ?] the former Reich Minister President and the man who proclaimed the Republic.
 
-- @expose_rearmament:
+- @expose_rearmament
 - @democratic_rally
 - @weimar_relations
 - @chancellor
 - @president
 - @root: Return to main
 
-@expose
+@expose_rearmament
 title: Expose the secret rearmament plans of the [? if spd_in_government : previous ?] foreign ministry!
 view-if: rearmament_exposed == 0
 on-arrival: west_relation += 2; east_relation += 1; nationalism -= 5*(1-dissent); pro_republic += 5*(1-dissent); rearmament_exposed += 1; reparations_negotiation += 3; coup_progress += 2
