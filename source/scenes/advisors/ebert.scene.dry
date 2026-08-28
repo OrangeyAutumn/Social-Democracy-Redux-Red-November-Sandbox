@@ -13,7 +13,6 @@ Ebert is [? if chancellor = "Ebert": the current Chancellor and ?][? if presiden
 - @party_discipline
 - @reichsexecution_lefties
 - @democratic_rally
-- @weimar_relations
 - @bourgeois_relations
 - @military_affairs
 - @boost_reformists_influence_blatant: Ebert will openly promote the Reformist faction.
