@@ -2,7 +2,8 @@ title: The Labor Wing
 new-page: true
 is-card: true
 tags: party_affairs
-on-arrival: month_activities += 1;
+view-if: labor_timer <= 0
+on-arrival: month_activities += 1; labor_timer += 6
 card-image: img/portraits/LeipartTheodor.jpg
 
 The Labor wing are our strongest connection to our grassroots. How shall we make use of their talents?
