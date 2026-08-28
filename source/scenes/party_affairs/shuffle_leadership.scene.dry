@@ -91,6 +91,24 @@ go-to: rm_main
 
 Severing has been removed as an advisor. The Reformist faction disapproves.
 
+@remove_ebert
+title: Remove Ebert
+view-if: ebert_advisor = 1
+tags: remove_advisor
+on-arrival: ebert_advisor = 0; reformist_dissent += 5; reformist_strength -= 2; n_advisors -= 1
+go-to: rm_main
+
+Ebert has been removed as an advisor. The Reformist faction disapproves.
+
+@remove_scheidemann
+title: Remove Scheidemann
+view-if: scheidemann_advisor = 1
+tags: remove_advisor
+on-arrival: scheidemann_advisor = 0; reformist_dissent += 5; reformist_strength -= 2; n_advisors -= 1
+go-to: rm_main
+
+Scheidemann has been removed as an advisor. The Reformist faction disapproves.
+
 @remove_braun
 title: Remove Braun
 view-if: braun_advisor = 1
@@ -234,6 +252,15 @@ on-arrival: leber_advisor = 0; neorevisionist_dissent += 3; neorevisionist_stren
 go-to: rm_main
 
 Leber has been removed as an advisor. The Neorevisionist faction disapproves.
+
+@remove_noske
+title: Remove Noske
+view-if: noske_advisor = 1
+tags: remove_advisor
+on-arrival: noske_advisor = 0; neorevisionist_dissent += 3; neorevisionist_strength -= 2; n_advisors -= 1
+go-to: rm_main
+
+Noske has been removed as an advisor. The Neorevisionist faction disapproves.
 
 @remove_schumacher
 title: Remove Schumacher
@@ -420,6 +447,30 @@ go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of
 
 Carl Severing is now an advisor.
 
+@add_ebert
+title: Carl Severing
+subtitle: Carl Severing is the first President of the Republic.
+is-card: true
+card-image: img/portraits/EbertFriedrich.jpg
+tags: reformist_advisor
+view-if: ebert_advisor = 0 and n_advisors < 3
+on-arrival: ebert_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Carl Severing is now an advisor.
+
+@add_scheidemann
+title: Phillip Scheidemann
+subtitle: Phillip Scheidemann is the former Reich Minister President and the man who proclaimed the Republic.
+is-card: true
+card-image: img/portraits/ScheidemannPhillip.jpg
+tags: reformist_advisor
+view-if: severing_advisor = 0 and n_advisors < 3
+on-arrival: scheidemann_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Phillip Scheidemann is now an advisor.
+
 @add_braun
 title: Otto Braun
 subtitle: Otto Braun is the Minister-President of Prussia, and one of the most recognizable and well-known Social Democratic leaders.
@@ -597,6 +648,18 @@ go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of
 tags: neorev_advisor
 
 Carlo Mierendorff is now an advisor.
+
+@add_noske
+title: Gustav Noske
+subtitle: Gustav Noske is the 'Bloodhound' and a former Reichswehr minister.
+is-card: true
+card-image: img/portraits/NoskeGustav.jpg
+view-if: noske_advisor = 0 and n_advisors < 3
+on-arrival: noske_advisor = 1; n_advisors += 1; neorevisionist_strength += 5; neorevisionist_dissent -= 2; center_dissent += 2
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+tags: neorev_advisor
+
+Gustav Noske is now an advisor.
 
 @add_schumacher
 title: Kurt Schumacher
