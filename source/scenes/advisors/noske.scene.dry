@@ -2,7 +2,7 @@ title: Gustav Noske
 is-pinned-card: true
 tags: advisor, neorevisionist
 card-image: img/portraits/NoskeGustav.jpg
-card-image: img/portraits/NoskeGustav.jpg
+face-image: img/portraits/NoskeGustav.jpg
 view-if: noske_advisor = 1
 new-page: true
 
