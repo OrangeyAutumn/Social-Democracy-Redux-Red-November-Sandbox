@@ -1,7 +1,8 @@
 title: sandbox
 new-page: true
-is-special: true
-is-hand: true
+tags: sandbox
+is-card: true
+card-image: img/EbertSandcastle.jpg
 go-to: sandbox_menu
 
 = Sandbox Menu
@@ -23,7 +24,7 @@ go-to: sandbox_menu
 - @editironfront: Edit Iron Front
 - @editparamilitary: Edit Paramilitary Groups
 - @editreichswehr: Edit Reichswehr and Police
-- @backSpecialScene: Exit Sandbox Menu
+- @root: Exit Sandbox Menu
 
 @disable_end
 view-if: end_disabled != 1
