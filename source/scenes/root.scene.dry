@@ -221,6 +221,8 @@ For other, non-difficulty related tweaks.
 
 - @enable_end: Enable end in 1934.
 - @disable_end: Disable end in 1934.
+- @enable_sandbox: Enable sandbox
+- @disable_sandbox: Disable sandbox
 - @start_menu_2: Back.
 - @menu: Proceed to Game.
 
@@ -235,6 +237,18 @@ view-if: end_disabled = 1
 on-arrival: end_disabled = 0
 
 The end date has been enabled.
+
+@enable_sandbox
+view-if: sandbox_enabled = 0
+on_arrival: sandbox_enabled = 1
+
+The Sandbox card has been enabled. Enjoy!
+
+@disable_sandbox
+view-if: sandbox_enabled = 1
+on_arrival: sandbox_enabled = 0
+
+The Sandbox card has been disabled.
 
 @1925_main
 view-if: year == 1925
