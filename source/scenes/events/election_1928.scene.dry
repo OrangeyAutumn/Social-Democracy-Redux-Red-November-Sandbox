@@ -2796,6 +2796,14 @@ go-to: ministries
 - @majority_chancellor_juchacz
 - @chancellor_pfulf
 - @majority_chancellor_pfulf
+- @chancellor_ebert
+- @majority_chancellor_ebert
+- @chancellor_scheidemann
+- @majority_chancellor_scheidemann
+- @chancellor_tarnow
+- @majority_chancellor_tarnow
+- @chancellor_noske
+- @majority_chancellor_nosle
 
 @chancellor_levi
 view-if: levi_advisor = 1 and levi_dead = 0 and spd_r < 50 or uspd_tolerated_spd_minority < 50
@@ -3285,5 +3293,89 @@ subtitle: Pfülf’s appointment would send a reassuring message of about the ki
 on-arrival: chancellor = "Pfülf "
 
 Antonie Pfülf, a key figure of our party’s right wing, has been appointed Chancellor. Despite her reformist leanings, social conservatives across parties, including our own, are already up in arms over the appointment of a woman Chancellor.
+
+go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@chancellor_ebert
+view-if: ebert_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50 and ebert_dead == 0
+title: Friedrich Ebert for Chancellor
+subtitle: Ebert’s appointment would send a reassuring message about the kind of government we intend to lead.
+on-arrival: spd_in_government = 1; chancellor = "Ebert"; chancellor_party = "SPD";
+
+[? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Friedrich Ebert, a key figure of our party’s right wing, has been appointed Chancellor.
+
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@majority_chancellor_ebert
+view-if: ebert_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50 and ebert_dead == 0
+title: Friedrich Ebert for Chancellor
+subtitle: Ebert’s appointment would send a reassuring message of about the kind of government we intend to lead.
+on-arrival: chancellor = "Ebert "
+
+Friedrich Ebert, a key figure of our party’s right wing, has been appointed Chancellor.
+
+go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@chancellor_scheidemann
+view-if: scheidemann_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+title: Phillip Scheidemann for Chancellor
+subtitle: Scheidemann’s appointment would send a reassuring message about the kind of government we intend to lead.
+on-arrival: spd_in_government = 1; chancellor = "Scheidemann"; chancellor_party = "SPD";
+
+[? if in_left_front : To the disappointment of our coalition partners, ?] [? if not in_left_front : To the relief of our coalition partners, ?]  Phillip Scheidemann, a key figure of our party’s right wing, has been appointed Chancellor.
+
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@majority_chancellor_scheidemann
+view-if: scheidemann_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+title: Phillip Scheidemann for Chancellor
+subtitle: Scheidemann’s appointment would send a reassuring message of about the kind of government we intend to lead.
+on-arrival: chancellor = "Scheidemann "
+
+Phillip Scheidemann, a key figure of our party’s right wing, has been appointed Chancellor.
+
+go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@chancellor_tarnow
+view-if: tarnow_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+title: Fritz Tarnow for Chancellor
+subtitle: Tarnow is a key figure in the ADGB and a proponent of economic democracy.
+on-arrival: spd_in_government = 1; chancellor = "Tarnow"; chancellor_party = "SPD";
+
+Fritz Tarnow, a key figure of our party’s labor wing, has been appointed Chancellor.
+
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@majority_chancellor_tarnow
+view-if: tarnow_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+title: Fritz Tarnow for Chancellor
+subtitle: Tarnow is a key figure in the ADGB and a proponent of economic democracy.
+on-arrival: chancellor = "Tarnow "
+
+Fritz Tarnow, a key figure of our party’s right wing, has been appointed Chancellor.
+
+go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@chancellor_noske
+view-if: noske_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+choose-if: spd_name == "RDP"
+unavailable-subtitle: The present [+ spd_name +] caucus would never accept Noske as Chancellor.
+title: Gustav Noske for Chancellor
+subtitle: Noske is a highly controversial figure within the party 
+on-arrival: spd_in_government = 1; chancellor = "Noske"; chancellor_party = "SPD";
+
+Gustav Noske, a key figure of our party’s labor wing, has been appointed Chancellor.
+
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@majority_chancellor_noske
+view-if: noske_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+choose-if: spd_name == "RDP"
+unavailable-subtitle: The present [+ spd_name +] caucus would never accept Noske as Chancellor.
+title: Gustav Noske for Chancellor
+subtitle: Noske is a highly controversial figure within the party.
+on-arrival: chancellor = "Noske "
+
+Gustav Noske, a key figure of our party’s right wing, has been appointed Chancellor.
 
 go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
