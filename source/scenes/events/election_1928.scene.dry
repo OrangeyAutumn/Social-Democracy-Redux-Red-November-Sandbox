@@ -2803,7 +2803,7 @@ go-to: ministries
 - @chancellor_tarnow
 - @majority_chancellor_tarnow
 - @chancellor_noske
-- @majority_chancellor_nosle
+- @majority_chancellor_noske
 
 @chancellor_levi
 view-if: levi_advisor = 1 and levi_dead = 0 and spd_r < 50 or uspd_tolerated_spd_minority < 50
