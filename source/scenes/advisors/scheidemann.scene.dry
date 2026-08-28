@@ -35,6 +35,8 @@ on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; n
 Scheidemann helps us to rally the people in defense of democracy.
 
 @weimar_relations
+title: Reach out to the Weimar parties
+subtitle: Use Scheidemann's connections to reach out to the Weimar parties.
 on-arrival: z_relation += 10; ddp_relation += 10
 
 Scheidemann uses his connections to boost relations with the Zentrum and DDP.
