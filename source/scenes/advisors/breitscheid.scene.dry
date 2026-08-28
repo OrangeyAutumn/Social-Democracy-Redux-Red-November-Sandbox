@@ -7,12 +7,13 @@ view-if: breitscheid_advisor = 1
 
 = Rudolf Breitscheid
 
-Breitscheid is a long-time SPD leader, who was at one time part of the anti-war USPD. He came from a working-class family, but has a doctorate degree and started his political career as a liberal.
+Breitscheid is [? if chancellor = "": the current Chancellor and ?][? if president = "": the current President and ?] a long-time SPD leader, who was at one time part of the anti-war USPD. He came from a working-class family, but has a doctorate degree and started his political career as a liberal.
 
 - @breitscheid_international
 - @breitscheid_foreign
 - @party_discipline
-- @snap_election
+- @chancellor
+- @president
 - @end_game
 - @root: Return to main
 
@@ -43,19 +44,51 @@ on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; ce
 We have enforced party discipline to reduce dissent across all factions.
 
 
-@snap_election
-title: Snap Election
-subtitle: Call a snap election.
-unavailable-subtitle: [? if chancellor != "Breitscheid" : Breitscheid must be Chancellor. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and chancellor == "Breitscheid"
-on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+@chancellor
+title: Use the Chancellorship
+subtitle: As the current Chancellor, ... can make use of their position to further our goals.
+view-if: chancellor == ""
+go-to: chancellor
 
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+@president
+title: Use the Presidency
+subtitle: As the current President, ... can make use of their position to further our goals.
+view if: president == ""
+
+- @article_48: We can use Article 48!
+- @military_relations: We can improve our relations with the Reichswehr.
+- @on_the_world_stage: We can improve our relations on the world stage.
+- @presidential_snap_election: We can call snap elections!
+- @reichsexecution: We can order a Reichsexekution!
+
+@article_48
+choose-if: chancellor_party == "SPD" and not presidential_powers and article_48_timer <= 8 and judicial_reform >= 3 and ((neorevisionist_strength+left_strength+unemployed >= 50) or in_emergency_government)
+unavailable-subtitle: [? if judicial_reform < 3 : The reactionary judiciary would strike them down as unconstitutional. ?][? if neorevisionist_strength+left_strength+unemployed < 50 : The party views these decrees as unecessary. ?][? if article_48_timer > 8 : We have already taken such action too recently. ?]
+go-to: article_48
+
+@military_relations
+view-if: not victory_republic
+choose-if: military_relations_timer <= 0
+unavailable-subtitle: We have already taken such action too recently.
+go-to: military_relations
+
+@on_the_world_stage
+choose-if: on_the_world_stage_timer <= 0
+unavailable-subtitle: We have already taken such action too recently.
+go-to: on_the_world_stage
+
+@presidential_snap_election
+go-to: presidential_snap_election
+
+@reichsexekution
+choose-if: reichsexekution_timer <= 0
+unavailable-subtitle: We have already taken such action too recently.
+go-to: reichsexekution
 
 @end_game
 title: End the game.
 view-if: end_disabled
-choose-if: year >= 1935
+choose-if: year >= 1932
 subtitle: We can end the game now.
 unavailable-subtitle: Breitscheid wants to keep playing.
 go-to: 1934_end
