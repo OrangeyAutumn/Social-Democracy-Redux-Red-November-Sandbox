@@ -8,7 +8,7 @@ new-page: true
 
 = Carlo Mierendorff
 
-Carlo Mierendorff is [? if chancellor = "": the current Chancellor and ?][? if president = "": the current President and ?] the founder of the neo-revisionist ideological tendency, and supports both democratic reforms and extra-parliamentary action to combat the Nazis and authoritarian parties. He is from a middle-class, academic background, and is one of our youngest leaders.
+Carlo Mierendorff is [? if chancellor = "Mierendorff": the current Chancellor and ?][? if president = "Mierendorff": the current President and ?] the founder of the neo-revisionist ideological tendency, and supports both democratic reforms and extra-parliamentary action to combat the Nazis and authoritarian parties. He is from a middle-class, academic background, and is one of our youngest leaders.
 
 - @iron_front_buildup
 - @form_iron_front
@@ -46,18 +46,18 @@ We have begun a propaganda campaign to warn our members away from the Nazis.
 
 @chancellor
 title: Use the Chancellorship
-subtitle: As the current Chancellor, ... can make use of their position to further our goals.
-view-if: chancellor == ""
+subtitle: As the current Chancellor, Mierendorff can make use of their position to further our goals.
+view-if: chancellor == "Mierendorff"
 choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 go-to: chancellor
 
 @president
 title: Use the Presidency
-subtitle: As the current President, ... can make use of their position to further our goals.
+subtitle: As the current President, Mierendorff can make use of their position to further our goals.
 choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-view if: president == ""
+view if: president == "Mierendorff"
 
 - @article_48: We can use Article 48!
 - @military_relations: We can improve our relations with the Reichswehr.
