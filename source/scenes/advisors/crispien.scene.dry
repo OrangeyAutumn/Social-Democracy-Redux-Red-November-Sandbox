@@ -7,7 +7,7 @@ new-page: true
 
 = Arthur Crispien
 
-Crispien is [? if chancellor = "Crispien": the current Chancellor and ?][? if president = "Crispien": the current President and ?] a former leader of the USPD who was expelled over his opposition to the merger between the USPD and USPD.
+Crispien is [? if chancellor = "Crispien": the current Chancellor and ?][? if president = "Crispien": the current President and ?] a former leader of the USPD who was expelled over his opposition to the merger between the USPD and KPD.
 
 - @left_unity
 - @uspd_cooperation
@@ -27,12 +27,12 @@ We have reduced dissent among the party's factions.
 
 @uspd_cooperation
 title: Cooperation with the USPD
-subtitle: Any cooperation between the parties requires compromise from the USPD as well as the SPD.
+subtitle: Any cooperation between the parties requires compromise from the [+ uspd_name +] as well as the SPD.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_strength += 5; uspd_relation += 6*(1-dissent); reformist_dissent += 3; spartacist_coalition += 1 if uspd_cooperation_seen <= 1; uspd_cooperation_seen += 1
 
-Crispien attempts to reach out to his former colleagues in the USPD. Some concessions are extracted.
+Crispien attempts to reach out to his former colleagues in the [+ uspd_name +]. Some concessions are extracted.
 
 @campaign_pacifism
 title: Rally for pacifism.
