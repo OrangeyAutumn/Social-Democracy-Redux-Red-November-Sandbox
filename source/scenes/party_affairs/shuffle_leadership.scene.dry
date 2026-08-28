@@ -175,6 +175,15 @@ go-to: rm_main
 
 Woytinsky has been removed as an advisor. The Labor faction disapproves.
 
+@remove_tarnow
+title: Remove Tarnow
+view-if: tarnow_advisor = 1
+tags: remove_advisor
+on-arrival: tarnow_advisor = 0; labor_dissent += 3; labor_strength -= 1; n_advisors -= 1
+go-to: rm_main
+
+Tarnow has been removed as an advisor. The Labor faction disapproves.
+
 # left
 
 @remove_crispien
@@ -634,6 +643,17 @@ go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of
 
 Wladimir Woytinsky is now an advisor.
 
+@add_tarnow
+title: Fritz Tarnow
+subtitle: Fritz Tarnow is a major figure in the ADGB and a proponent of economic democracy.
+is-card: true
+card-image: img/portraits/TarnowFritz.jpg
+tags: labor_advisor
+view-if: tarnow_advisor = 0 and n_advisors < 3 and unions_independent = 0
+on-arrival: tarnow_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 1; center_dissent += 1
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Fritz Tarnow
 
 # neorevisionist leaders
 
