@@ -9,6 +9,7 @@ card-image: img/portraits/BraunOtto.jpg
 The Reformist faction holds many of our most notable members. How shall we make use of their talents?
 
 -	@use_ebert: We will use the talents of the Reformist leader, Friedrich Ebert
+- @use_scheidemann: We will use the talents of the Reformist leader, Phillip Scheidemann
 -	@use_severing: We will use the talents of the Reformist leader, Carl Severing
 -	@use_braun: We will use the talents of the Reformist leader, Otto Braun
 -	@use_juchacz: We will use the talents of the Reformist leader, Marie Juchacz
@@ -29,9 +30,13 @@ The Reformist faction holds many of our most notable members. How shall we make 
 - @root: We will do none of these things.
 - @easy_discard: We will consider this at a later time.
 
-@use_severing
+@use_ebert
 view-if: reformist_leader == "Ebert"
 go-to: ebert
+
+@use_scheidemann
+view-if: reformist_leader == "Scheidemann"
+go-to: scheidemann
 
 @use_severing
 view-if: reformist_leader == "Severing"
