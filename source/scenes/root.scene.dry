@@ -17,6 +17,7 @@ go-to: start_menu_2
 @start_menu_2
 
 - @start: Start game
+- @context: Context and Mechanics
 - @election_simulation: Election simulation
 - @credits: Credits
 - @mod_info: Mod info
@@ -219,10 +220,6 @@ For other, non-difficulty related tweaks.
 
 - @enable_end: Enable end in 1934.
 - @disable_end: Disable end in 1934.
-- @enable_landtags: Enable landtags.
-- @disable_landtags: Disable landtags.
-- @enable_legislature: Enable legislative rework
-- @disable_legislature: Disable legislative rework
 - @start_menu_2: Back.
 - @menu: Proceed to Game.
 
@@ -237,30 +234,6 @@ view-if: end_disabled = 1
 on-arrival: end_disabled = 0
 
 The end date has been enabled.
-
-@enable_landtags
-view-if: landtags_enabled != 1
-on-arrival: landtags_enabled = 1
-
-Landtags have been enabled.
-
-@disable_landtags
-view-if: landtags_enabled
-on-arrival: landtags_enabled = 0
-
-Landtags have been disabled.
-
-@enable_legislature
-view-if: legislature_enabled != 1
-on-arrival: legislature_enabled = 1
-
-The legislative rework have been enabled.
-
-@disable_legislature
-view-if: legislature_enabled
-on-arrival: legislature_enabled = 0
-
-The legislative rework has been disabled.
 
 @1925_main
 view-if: year == 1925
@@ -301,14 +274,18 @@ It is a grim time for German democracy. Following the largest crash in the stock
 
 It will be our responsibility to ensure that this crisis of capitalism will not end so badly for the working class.
 
-@1930_althist
-view-if: year == 1930
+@1925_althist
+view-if: year == 1925
 
-// VSPD_formed; RDP_formed; Any_Others???
-
-- @menu: Not implemented yet
+- @menu: Ebert Lives! (Longer) - Not implemented yet
 
 @1928_althist
 view-if: year == 1928
 
-- @menu: Not implemented yet
+- @menu: Marx Elected - Not implemented yet
+
+@1930_althist
+view-if: year == 1930
+
+- @menu: VSPD formed - Not implemented yet
+- @menu: RDP formed - Not implemented yet
