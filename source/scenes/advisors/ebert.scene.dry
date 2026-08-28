@@ -1,0 +1,122 @@
+Title: Friedrich Ebert
+is-pinned-card: true
+tags: advisor, reformist
+card-image: img/portraits/EbertFriedrich.jpg
+view-if: ebert_advisor = 1
+new-page: true
+
+= Friedrich Ebert
+
+Ebert is [? if chancellor = "Ebert": the current Chancellor and ?][? if president = "Ebert": the current President and ?] the first President of the Republic. He is a controversial figure – to the Reformists, he is the Father of the Republic. To the Left faction and the [+ uspd_name +], he is a traitor to Socialism. He is currently in ill health, but refusing treatment while he defends himself amid a Defamation case.
+
+- @get_medical_help
+- @party_discipline
+- @reichsexecution_lefties
+- @democratic_rally
+- @weimar_relations
+- @bourgeois_relations
+- @military_affairs
+- @boost_reformists_influence_blatant: Ebert will openly promote the Reformist faction.
+- @grand_coalition_relations: Ebert will use his connections to attempt to come to an understanding with the bourgeois parties.
+- @reduce_reformists_dissent: Ebert will work to reduce dissent within the Reformist faction.
+- @chancellor
+- @president
+- @root: Return to main
+
+@get_medical_help
+title: Push Ebert to get medical treatment.
+subtitle: We cannot risk the health of our President and one of our most notable figures.
+choose-if: never
+unavailable-subtitle: Ebert refuses.
+
+@party_discipline
+title: Party Discipline
+subtitle: Reduce dissent across the party.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
+
+Despite his ill health, Ebert has enforced party discipline to reduce dissent across all factions.
+
+@reichsexecution_lefties
+title: The Watchful Eye
+subtitle: Ebert is prepared to Reichsexekute any radical left state government.
+choose-if: never
+unavailable-subtitle: There are no radical left state governments at the current time.
+
+@democratic_rally
+title: Rally for democracy
+subtitle: Rally our party and the German people to defend democracy and freedom.
+choose-if: advisor_action_timer == 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; neorevisionist_strength += 5; reformist_strength += 3; workers_spd += 4*(1-dissent) if democratization >= 4; new_middle_spd += 3*(1-dissent) if democratization >= 4
+
+Despite his ill-health, Ebert helps us to rally the people in defense of democracy.
+
+@military_affairs
+title: Military affairs
+subtitle: We can set our military policy.
+choose-if: advisor_action_timer == 0 and spd_in_government and reichswehr_minister_party == "SPD"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not in government. ?][? if reichswehr_minister_party != "SPD": The SPD does not have the Reichswehr ministry. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: military_policy
+
+@boost_reformists_influence_blatant
+on-arrival: reformists_strength += 10; reformists_dissent -= 5; center_dissent += 3; labor_dissent += 3; left_dissent += 3
+
+Ebert has openly promoted the Reformist faction, to the anger of the other factions.
+
+@grand_coalition_relations
+on-arrival: z_relation += 3; ddp_relation += 3 ; dvp_relation += 3 ;
+
+Despite his ill-health, Ebert has used his connections to try to come to an understanding with the Bourgeois parties.
+
+@reduce_reformists_dissent
+on-arrival: reformists_dissent -= 10
+
+Despite his ill-health, Ebert has worked to reduce dissent within the Reformist faction.
+
+@chancellor
+title: Use the Chancellorship
+subtitle: As the current Chancellor, Ebert can make use of their position to further our goals.
+view-if: chancellor == "Ebert"
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+go-to: chancellor
+
+@president
+title: Use the Presidency
+subtitle: As the current President, Ebert can make use of their position to further our goals.
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+view if: president == "Ebert"
+
+- @article_48: We can use Article 48!
+- @military_relations: We can improve our relations with the Reichswehr.
+- @on_the_world_stage: We can improve our relations on the world stage.
+- @presidential_snap_election: We can call snap elections!
+- @reichsexecution: We can order a Reichsexekution!
+
+@article_48
+choose-if: chancellor_party == "SPD" and not presidential_powers and article_48_timer <= 8 and judicial_reform >= 3 and ((neorevisionist_strength+left_strength+unemployed >= 50) or in_emergency_government)
+unavailable-subtitle: [? if judicial_reform < 3 : The reactionary judiciary would strike them down as unconstitutional. ?][? if neorevisionist_strength+left_strength+unemployed < 50 : The party views these decrees as unecessary. ?][? if article_48_timer > 8 : [+ article_48_timer +] months before we can next take this action. ?]
+go-to: article_48
+
+@military_relations
+view-if: not victory_republic
+choose-if: military_relations_timer <= 0
+unavailable-subtitle: [+ military_relations_timer +] months before we can next take this action.
+go-to: military_relations
+
+@on_the_world_stage
+choose-if: on_the_world_stage_timer <= 0
+unavailable-subtitle: [+ on_the_world_stage_timer +] months before we can next take this action.
+go-to: on_the_world_stage
+
+@presidential_snap_election
+go-to: presidential_snap_election
+
+@reichsexekution
+choose-if: reichsexekution_timer <= 0
+unavailable-subtitle: [+ reichsexekution_timer +] months before we can next take this action.
+go-to: reichsexekution
