@@ -12,6 +12,7 @@ The Labor wing are our strongest connection to our grassroots. How shall we make
 -	@use_aufhauser: We will use the talents of the Labor leader, Siegfried Aufhäuser
 -	@use_wissell: We will use the talents of the Labor leader, Rudolf Wissell
 -	@use_woytinsky: We will use the talents of the Labor leader, Wladimir Woytinsky
+- @use_tarnow: We will use the talents of the Labor leader, Fritz Tarnow
 -	@use_baade: We will use the talents of the Labor leader, Fritz Baade
 -	@use_hirschfeld: We will use the talents of the Labor leader, Magnus Hirschfeld
 -	@use_radbruch: We will use the talents of the Labor leader, Gustav Radbruch
@@ -44,6 +45,10 @@ go-to: wissell
 @use_woytinsky
 view-if: labor_leader == "Woytinsky"
 go-to: woytinsky
+
+@use_tarnow
+view-if: labor_leader == "Tarnow"
+go-to: tarnow
 
 @use_mierendorff
 view-if: labor_leader == "Mierendorff"
