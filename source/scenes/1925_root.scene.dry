@@ -533,7 +533,8 @@ Q.old_other_r = 9;
 Q.ddp_name = "DDP";
 Q.bvp_name = "BVP";
 Q.spd_name = "SPD";
-Q.uspd_name = "USPD";
+Q.uspd_name = "Spartakusbund";
+Q.uspd_name_short = "SB";
 
 // nazis have not peaked..
 Q.nazi_peaked = 0;
