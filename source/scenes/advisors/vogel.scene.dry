@@ -7,7 +7,7 @@ new-page: true
 
 = Hans Vogel
 
-Vogel is [? if chancellor = "": the current Chancellor and ?][? if president = "": the current President and ?] a gifted organizer and a member of the centrist faction.
+Vogel is [? if chancellor = "Vogel": the current Chancellor and ?][? if president = "Vogel": the current President and ?] a gifted organizer and a member of the centrist faction.
 
 - @clear_agenda
 - @party_discipline
@@ -52,18 +52,18 @@ We have reduced dissent among the anti-toleration factions.
 
 @chancellor
 title: Use the Chancellorship
-subtitle: As the current Chancellor, ... can make use of their position to further our goals.
-view-if: chancellor == ""
+subtitle: As the current Chancellor, Vogel can make use of their position to further our goals.
+view-if: chancellor == "Vogel"
 choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 go-to: chancellor
 
 @president
 title: Use the Presidency
-subtitle: As the current President, ... can make use of their position to further our goals.
+subtitle: As the current President, Vogel can make use of their position to further our goals.
 choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-view if: president == ""
+view if: president == "Vogel"
 
 - @article_48: We can use Article 48!
 - @military_relations: We can improve our relations with the Reichswehr.
