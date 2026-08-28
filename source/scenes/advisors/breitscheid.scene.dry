@@ -7,7 +7,7 @@ view-if: breitscheid_advisor = 1
 
 = Rudolf Breitscheid
 
-Breitscheid is [? if chancellor = "": the current Chancellor and ?][? if president = "": the current President and ?] a long-time SPD leader, who was at one time part of the anti-war USPD. He came from a working-class family, but has a doctorate degree and started his political career as a liberal.
+Breitscheid is [? if chancellor = "Breitscheid": the current Chancellor and ?][? if president = "Breitscheid": the current President and ?] a long-time SPD leader, who was at one time part of the anti-war USPD. He came from a working-class family, but has a doctorate degree and started his political career as a liberal.
 
 - @breitscheid_international
 - @breitscheid_foreign
@@ -46,14 +46,14 @@ We have enforced party discipline to reduce dissent across all factions.
 
 @chancellor
 title: Use the Chancellorship
-subtitle: As the current Chancellor, ... can make use of their position to further our goals.
-view-if: chancellor == ""
+subtitle: As the current Chancellor, Breitscheid can make use of their position to further our goals.
+view-if: chancellor == "Breitscheid"
 go-to: chancellor
 
 @president
 title: Use the Presidency
-subtitle: As the current President, ... can make use of their position to further our goals.
-view if: president == ""
+subtitle: As the current President, Breitscheid can make use of their position to further our goals.
+view if: president == "Breitscheid"
 
 - @article_48: We can use Article 48!
 - @military_relations: We can improve our relations with the Reichswehr.
