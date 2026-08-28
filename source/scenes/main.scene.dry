@@ -22,6 +22,7 @@ max-cards: 6
 - @cabinet
 - @landtag_affairs
 - @pres
+- @sandbox
 - @shuffle_leadership_pinned
 
 @main_easy
@@ -90,8 +91,16 @@ is-deck: true
 
 @pres
 title: Presidential Affairs
-view-if: president == "Ebert" or president == "Braun" or president == "Schumacher" or president == "Juchacz"
+view-if: president_party == "SPD"
 card-image: img/presidential_affairs.jpg
 is-deck: true
 
 - #pres_affairs
+
+@sandbox
+title: Sandbox menu
+view-if: sandbox_enabled == 1
+card-image: img/EbertSandcastle.jpg
+is-deck: true
+
+- #sandbox
