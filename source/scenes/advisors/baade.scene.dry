@@ -47,12 +47,16 @@ The WTB-Plan, standing for its primary supporters Woytinsky, Tarnow, and Baade, 
 title: Use the Chancellorship
 subtitle: As the current Chancellor, Baade can make use of their position to further our goals.
 view-if: chancellor == "Baade"
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 go-to: chancellor
 
 @president
 title: Use the Presidency
 subtitle: As the current President, Baade can make use of their position to further our goals.
 view if: president == "Baade"
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 
 - @article_48: We can use Article 48!
 - @military_relations: We can improve our relations with the Reichswehr.
@@ -62,18 +66,18 @@ view if: president == "Baade"
 
 @article_48
 choose-if: chancellor_party == "SPD" and not presidential_powers and article_48_timer <= 8 and judicial_reform >= 3 and ((neorevisionist_strength+left_strength+unemployed >= 50) or in_emergency_government)
-unavailable-subtitle: [? if judicial_reform < 3 : The reactionary judiciary would strike them down as unconstitutional. ?][? if neorevisionist_strength+left_strength+unemployed < 50 : The party views these decrees as unecessary. ?][? if article_48_timer > 8 : We have already taken such action too recently. ?]
+unavailable-subtitle: [? if judicial_reform < 3 : The reactionary judiciary would strike them down as unconstitutional. ?][? if neorevisionist_strength+left_strength+unemployed < 50 : The party views these decrees as unecessary. ?][? if article_48_timer > 8 : [+ article_48_timer +] months before we can next take this action. ?]
 go-to: article_48
 
 @military_relations
 view-if: not victory_republic
 choose-if: military_relations_timer <= 0
-unavailable-subtitle: We have already taken such action too recently.
+unavailable-subtitle: [+ military_relations_timer +] months before we can next take this action.
 go-to: military_relations
 
 @on_the_world_stage
 choose-if: on_the_world_stage_timer <= 0
-unavailable-subtitle: We have already taken such action too recently.
+unavailable-subtitle: [+ on_the_world_stage_timer +] months before we can next take this action.
 go-to: on_the_world_stage
 
 @presidential_snap_election
@@ -81,5 +85,5 @@ go-to: presidential_snap_election
 
 @reichsexekution
 choose-if: reichsexekution_timer <= 0
-unavailable-subtitle: We have already taken such action too recently.
+unavailable-subtitle: [+ reichsexekution_timer +] months before we can next take this action.
 go-to: reichsexekution
