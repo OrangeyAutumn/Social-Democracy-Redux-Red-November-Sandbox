@@ -621,6 +621,18 @@ if (Q.reformist_leader == "Severing") {
 
     Q.spd_coleader_1_fullname = "Antonie Pfülf";
 
+} else if (Q.reformist_leader == "Ebert") {
+
+    Q.spd_coleader_1 = "Ebert";
+
+    Q.spd_coleader_1_fullname = "Friedrich Ebert";
+
+} else if (Q.reformist_leader == "Scheidemann") {
+
+    Q.spd_coleader_1 = "Scheidemann";
+
+    Q.spd_coleader_1_fullname = "Phillip Scheidemann";
+
 } else if (Q.reformist_leader == "Mierendorff") {
 
     Q.spd_coleader_1 = "Mierendorff";
@@ -680,43 +692,49 @@ view-if: spd_coleader_1_faction != "neorevisionist" and neorevisionism == 1
 choose-if: (neorevisionist_c >= 50) or (neorevisionist_c >= reformist_c and (reformist_c+neorevisionist_c) >= 50) or (neorevisionist_c >= reformist_c and neorevisionist_c >= labor_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer")
 on-arrival: {!
 
-if (Q.revisionist_leader == "Mierendorff") {
+if (Q.neorevisionist_leader == "Mierendorff") {
 
     Q.spd_coleader_1 = "Mierendorff";
 
     Q.spd_coleader_1_fullname = "Carlo Mierendorff";
 
-} else if (Q.revisionist_leader == "Schumacher") {
+} else if (Q.neorevisionist_leader == "Schumacher") {
 
     Q.spd_coleader_1 = "Schumacher";
 
     Q.spd_coleader_1_fullname = "Kurt Schumacher";
 
-} else if (Q.revisionist_leader == "Leber") {
+} else if (Q.neorevisionist_leader == "Leber") {
 
     Q.spd_coleader_1 = "Leber";
 
     Q.spd_coleader_1_fullname = "Julius Leber";
 
-} else if (Q.revisionist_leader == "Stampfer") {
+} else if (Q.neorevisionist_leader == "Gustav Noske") {
+
+    Q.spd_coleader_1 = "Noske";
+
+    Q.spd_coleader_1_fullname = "Gustav Noske";
+
+} else if (Q.neorevisionist_leader == "Stampfer") {
 
     Q.spd_coleader_1 = "Stampfer";
 
     Q.spd_coleader_1_fullname = "Friedrich Stampfer";
 
-} else if (Q.revisionist_leader == "Radbruch") {
+} else if (Q.neorevisionist_leader == "Radbruch") {
 
     Q.spd_coleader_1 = "Radbruch";
 
     Q.spd_coleader_1_fullname = "Gustav Radbruch";
 
-} else if (Q.revisionist_leader == "Hirschfeld") {
+} else if (Q.neorevisionist_leader == "Hirschfeld") {
 
     Q.spd_coleader_1 = "Hirschfeld";
 
     Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
 
-} else if (Q.revisionist_leader == "Baade") {
+} else if (Q.neorevisionist_leader == "Baade") {
 
     Q.spd_coleader_1 = "Baade";
 
@@ -724,9 +742,9 @@ if (Q.revisionist_leader == "Mierendorff") {
 
 }
 
-Q.revisionist_leader = "vacant";
+Q.neorevisionist_leader = "vacant";
 
-Q.revisionist_leader_fullname = "vacant";
+Q.neorevisionist_leader_fullname = "vacant";
 
 !}
 
@@ -772,35 +790,35 @@ view-if: spd_coleader_2_faction != "left"
 choose-if: (left_c >= 50) or (left_c >= labor_c and (left_c+labor_c) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
 on-arrival: {!
 if (Q.left_leader == "Crispien") {
-    Q.spd_coleader_1 = "Crispien";
-    Q.spd_coleader_1_fullname = "Arthur Crispien";
+    Q.spd_coleader_2 = "Crispien";
+    Q.spd_coleader_2_fullname = "Arthur Crispien";
 } else if (Q.left_leader == "Levi") {
-    Q.spd_coleader_1 = "Levi";
-    Q.spd_coleader_1_fullname = "Paul Levi";
+    Q.spd_coleader_2 = "Levi";
+    Q.spd_coleader_2_fullname = "Paul Levi";
 } else if (Q.left_leader == "Sender") {
-    Q.spd_coleader_1 = "Sender";
-    Q.spd_coleader_1_fullname = "Toni Sender";
+    Q.spd_coleader_2 = "Sender";
+    Q.spd_coleader_2_fullname = "Toni Sender";
 } else if (Q.left_leader == "Rosenfeld") {
-    Q.spd_coleader_1 = "Rosenfeld";
-    Q.spd_coleader_1_fullname = "Kurt Rosenfeld";
+    Q.spd_coleader_2 = "Rosenfeld";
+    Q.spd_coleader_2_fullname = "Kurt Rosenfeld";
 } else if (Q.left_leader == "Seydewitz") {
-    Q.spd_coleader_1 = "Seydewitz";
-    Q.spd_coleader_1_fullname = "Max Seydewitz";
+    Q.spd_coleader_2 = "Seydewitz";
+    Q.spd_coleader_2_fullname = "Max Seydewitz";
 } else if (Q.left_leader == "Siemsen") {
-    Q.spd_coleader_1 = "Siemsen";
-    Q.spd_coleader_1_fullname = "Anna Siemsen";
+    Q.spd_coleader_2 = "Siemsen";
+    Q.spd_coleader_2_fullname = "Anna Siemsen";
 } else if (Q.left_leader == "Stampfer") {
-    Q.spd_coleader_1 = "Stampfer";
-    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+    Q.spd_coleader_2 = "Stampfer";
+    Q.spd_coleader_2_fullname = "Friedrich Stampfer";
 } else if (Q.left_leader == "Radbruch") {
-    Q.spd_coleader_1 = "Radbruch";
-    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+    Q.spd_coleader_2 = "Radbruch";
+    Q.spd_coleader_2_fullname = "Gustav Radbruch";
 } else if (Q.left_leader == "Hirschfeld") {
-    Q.spd_coleader_1 = "Hirschfeld";
-    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+    Q.spd_coleader_2 = "Hirschfeld";
+    Q.spd_coleader_2_fullname = "Magnus Hirschfeld";
 } else if (Q.left_leader == "Baade") {
-    Q.spd_coleader_1 = "Baade";
-    Q.spd_coleader_1_fullname = "Fritz Baade";
+    Q.spd_coleader_2 = "Baade";
+    Q.spd_coleader_2_fullname = "Fritz Baade";
 }
 Q.left_leader = "vacant";
 Q.left_leader_fullname = "vacant";
@@ -817,57 +835,57 @@ on-arrival: {!
 
 if (Q.center_leader == "Hilferding") {
 
-    Q.spd_coleader_1 = "Hilferding";
+    Q.spd_coleader_2 = "Hilferding";
 
-    Q.spd_coleader_1_fullname = "Rudolf Hilferding";
+    Q.spd_coleader_2_fullname = "Rudolf Hilferding";
 
 } else if (Q.center_leader == "Wels") {
 
-    Q.spd_coleader_1 = "Wels";
+    Q.spd_coleader_2 = "Wels";
 
-    Q.spd_coleader_1_fullname = "Otto Wels";
+    Q.spd_coleader_2_fullname = "Otto Wels";
 
 } else if (Q.center_leader == "Vogel") {
 
-    Q.spd_coleader_1 = "Vogel";
+    Q.spd_coleader_2 = "Vogel";
 
-    Q.spd_coleader_1_fullname = "Hans Vogel";
+    Q.spd_coleader_2_fullname = "Hans Vogel";
 
 } else if (Q.center_leader == "Müller") {
 
-    Q.spd_coleader_1 = "Müller";
+    Q.spd_coleader_2 = "Müller";
 
-    Q.spd_coleader_1_fullname = "Hermann Müller";
+    Q.spd_coleader_2_fullname = "Hermann Müller";
 
 } else if (Q.center_leader == "Breitscheid") {
 
-    Q.spd_coleader_1 = "Breitscheid";
+    Q.spd_coleader_2 = "Breitscheid";
 
-    Q.spd_coleader_1_fullname = "Rudolf Breitscheid";
+    Q.spd_coleader_2_fullname = "Rudolf Breitscheid";
 
 } else if (Q.center_leader == "Stampfer") {
 
-    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_2 = "Stampfer";
 
-    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+    Q.spd_coleader_2_fullname = "Friedrich Stampfer";
 
 } else if (Q.center_leader == "Radbruch") {
 
-    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_2 = "Radbruch";
 
-    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+    Q.spd_coleader_2_fullname = "Gustav Radbruch";
 
 } else if (Q.center_leader == "Hirschfeld") {
 
-    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_2 = "Hirschfeld";
 
-    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+    Q.spd_coleader_2_fullname = "Magnus Hirschfeld";
 
 } else if (Q.center_leader == "Baade") {
 
-    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_2 = "Baade";
 
-    Q.spd_coleader_1_fullname = "Fritz Baade";
+    Q.spd_coleader_2_fullname = "Fritz Baade";
 
 }
 
@@ -888,69 +906,69 @@ on-arrival: {!
 
 if (Q.labor_leader == "Leipart") {
 
-    Q.spd_coleader_1 = "Leipart";
+    Q.spd_coleader_2 = "Leipart";
 
-    Q.spd_coleader_1_fullname = "Theodor Leipart";
+    Q.spd_coleader_2_fullname = "Theodor Leipart";
 
 } else if (Q.labor_leader == "Aufhäuser") {
 
-    Q.spd_coleader_1 = "Aufhäuser";
+    Q.spd_coleader_2 = "Aufhäuser";
 
-    Q.spd_coleader_1_fullname = "Siegfried Aufhäuser";
+    Q.spd_coleader_2_fullname = "Siegfried Aufhäuser";
 
 } else if (Q.labor_leader == "Wissell") {
 
-    Q.spd_coleader_1 = "Wissell";
+    Q.spd_coleader_2 = "Wissell";
 
-    Q.spd_coleader_1_fullname = "Rudolf Wissell";
+    Q.spd_coleader_2_fullname = "Rudolf Wissell";
 
 } else if (Q.labor_leader == "Woytinsky") {
 
-    Q.spd_coleader_1 = "Woytinsky";
+    Q.spd_coleader_2 = "Woytinsky";
 
-    Q.spd_coleader_1_fullname = "Wladimir Woytinsky";
+    Q.spd_coleader_2_fullname = "Wladimir Woytinsky";
 
 } else if (Q.labor_leader == "Mierendorff") {
 
-    Q.spd_coleader_1 = "Mierendorff";
+    Q.spd_coleader_2 = "Mierendorff";
 
-    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+    Q.spd_coleader_2_fullname = "Carlo Mierendorff";
 
 } else if (Q.labor_leader == "Schumacher") {
 
-    Q.spd_coleader_1 = "Schumacher";
+    Q.spd_coleader_2 = "Schumacher";
 
-    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+    Q.spd_coleader_2_fullname = "Kurt Schumacher";
 
 } else if (Q.labor_leader == "Leber") {
 
-    Q.spd_coleader_1 = "Leber";
+    Q.spd_coleader_2 = "Leber";
 
-    Q.spd_coleader_1_fullname = "Julius Leber";
+    Q.spd_coleader_2_fullname = "Julius Leber";
 
 } else if (Q.labor_leader == "Stampfer") {
 
-    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_2 = "Stampfer";
 
-    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+    Q.spd_coleader_2_fullname = "Friedrich Stampfer";
 
 } else if (Q.labor_leader == "Radbruch") {
 
-    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_2 = "Radbruch";
 
-    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+    Q.spd_coleader_2_fullname = "Gustav Radbruch";
 
 } else if (Q.labor_leader == "Hirschfeld") {
 
-    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_2 = "Hirschfeld";
 
-    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+    Q.spd_coleader_2_fullname = "Magnus Hirschfeld";
 
 } else if (Q.labor_leader == "Baade") {
 
-    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_2 = "Baade";
 
-    Q.spd_coleader_1_fullname = "Fritz Baade";
+    Q.spd_coleader_2_fullname = "Fritz Baade";
 
 }
 
@@ -971,69 +989,81 @@ on-arrival: {!
 
 if (Q.reformist_leader == "Severing") {
 
-    Q.spd_coleader_1 = "Severing";
+    Q.spd_coleader_2 = "Severing";
 
-    Q.spd_coleader_1_fullname = "Carl Severing";
+    Q.spd_coleader_2_fullname = "Carl Severing";
 
 } else if (Q.reformist_leader == "Braun") {
 
-    Q.spd_coleader_1 = "Braun";
+    Q.spd_coleader_2 = "Braun";
 
-    Q.spd_coleader_1_fullname = "Otto Braun";
+    Q.spd_coleader_2_fullname = "Otto Braun";
 
 } else if (Q.reformist_leader == "Juchacz") {
 
-    Q.spd_coleader_1 = "Juchacz";
+    Q.spd_coleader_2 = "Juchacz";
 
-    Q.spd_coleader_1_fullname = "Marie Juchacz";
+    Q.spd_coleader_2_fullname = "Marie Juchacz";
 
 } else if (Q.reformist_leader == "Pfülf") {
 
-    Q.spd_coleader_1 = "Pfülf";
+    Q.spd_coleader_2 = "Pfülf";
 
-    Q.spd_coleader_1_fullname = "Antonie Pfülf";
+    Q.spd_coleader_2_fullname = "Antonie Pfülf";
+
+} else if (Q.reformist_leader == "Ebert") {
+
+    Q.spd_coleader_2 = "Ebert";
+
+    Q.spd_coleader_2_fullname = "Friedrich Ebert";
+
+} else if (Q.reformist_leader == "Scheidemann") {
+
+    Q.spd_coleader_2 = "Scheidemann";
+
+    Q.spd_coleader_2_fullname = "Phillip Scheidemann";
 
 } else if (Q.reformist_leader == "Mierendorff") {
 
-    Q.spd_coleader_1 = "Mierendorff";
+    Q.spd_coleader_2 = "Mierendorff";
 
-    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+    Q.spd_coleader_2_fullname = "Carlo Mierendorff";
 
 } else if (Q.reformist_leader == "Schumacher") {
 
-    Q.spd_coleader_1 = "Schumacher";
+    Q.spd_coleader_2 = "Schumacher";
 
-    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+    Q.spd_coleader_2_fullname = "Kurt Schumacher";
 
 } else if (Q.reformist_leader == "Leber") {
 
-    Q.spd_coleader_1 = "Leber";
+    Q.spd_coleader_2 = "Leber";
 
-    Q.spd_coleader_1_fullname = "Julius Leber";
+    Q.spd_coleader_2_fullname = "Julius Leber";
 
 } else if (Q.reformist_leader == "Stampfer") {
 
-    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_2 = "Stampfer";
 
-    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+    Q.spd_coleader_2_fullname = "Friedrich Stampfer";
 
 } else if (Q.reformist_leader == "Radbruch") {
 
-    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_2 = "Radbruch";
 
-    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+    Q.spd_coleader_2_fullname = "Gustav Radbruch";
 
 } else if (Q.reformist_leader == "Hirschfeld") {
 
-    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_2 = "Hirschfeld";
 
-    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+    Q.spd_coleader_2_fullname = "Magnus Hirschfeld";
 
 } else if (Q.reformist_leader == "Baade") {
 
-    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_2 = "Baade";
 
-    Q.spd_coleader_1_fullname = "Fritz Baade";
+    Q.spd_coleader_2_fullname = "Fritz Baade";
 
 }
 
@@ -1052,53 +1082,59 @@ view-if: spd_coleader_2_faction != "neorevisionist" and neorevisionism == 2
 choose-if: (neorevisionist_c >= 50) or (neorevisionist_c >= reformist_c and (reformist_c+neorevisionist_c) >= 50) or (neorevisionist_c >= reformist_c and neorevisionist_c >= labor_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer")
 on-arrival: {!
 
-if (Q.revisionist_leader == "Mierendorff") {
+if (Q.neorevisionist_leader == "Mierendorff") {
 
-    Q.spd_coleader_1 = "Mierendorff";
+    Q.spd_coleader_2 = "Mierendorff";
 
-    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+    Q.spd_coleader_2_fullname = "Carlo Mierendorff";
 
-} else if (Q.revisionist_leader == "Schumacher") {
+} else if (Q.neorevisionist_leader == "Schumacher") {
 
-    Q.spd_coleader_1 = "Schumacher";
+    Q.spd_coleader_2 = "Schumacher";
 
-    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+    Q.spd_coleader_2_fullname = "Kurt Schumacher";
 
-} else if (Q.revisionist_leader == "Leber") {
+} else if (Q.neorevisionist_leader == "Leber") {
 
-    Q.spd_coleader_1 = "Leber";
+    Q.spd_coleader_2 = "Leber";
 
-    Q.spd_coleader_1_fullname = "Julius Leber";
+    Q.spd_coleader_2_fullname = "Julius Leber";
 
-} else if (Q.revisionist_leader == "Stampfer") {
+} else if (Q.neorevisionist_leader == "Gustav Noske") {
 
-    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_2 = "Noske";
 
-    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+    Q.spd_coleader_2_fullname = "Gustav Noske";
 
-} else if (Q.revisionist_leader == "Radbruch") {
+} else if (Q.neorevisionist_leader == "Stampfer") {
 
-    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_2 = "Stampfer";
 
-    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+    Q.spd_coleader_2_fullname = "Friedrich Stampfer";
 
-} else if (Q.revisionist_leader == "Hirschfeld") {
+} else if (Q.neorevisionist_leader == "Radbruch") {
 
-    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_2 = "Radbruch";
 
-    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+    Q.spd_coleader_2_fullname = "Gustav Radbruch";
 
-} else if (Q.revisionist_leader == "Baade") {
+} else if (Q.neorevisionist_leader == "Hirschfeld") {
 
-    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_2 = "Hirschfeld";
 
-    Q.spd_coleader_1_fullname = "Fritz Baade";
+    Q.spd_coleader_2_fullname = "Magnus Hirschfeld";
+
+} else if (Q.neorevisionist_leader == "Baade") {
+
+    Q.spd_coleader_2 = "Baade";
+
+    Q.spd_coleader_2_fullname = "Fritz Baade";
 
 }
 
-Q.revisionist_leader = "vacant";
+Q.neorevisionist_leader = "vacant";
 
-Q.revisionist_leader_fullname = "vacant";
+Q.neorevisionist_leader_fullname = "vacant";
 
 !}
 
@@ -1145,35 +1181,35 @@ view-if: spd_coleader_3_faction != "left"
 choose-if: (left_c >= 50) or (left_c >= labor_c and (left_c+labor_c) >= 50) or (left_leader == "Baade") or (left_leader == "Hirschfeld") or (left_leader == "Radbruch") or (left_leader == "Stampfer")
 on-arrival: {!
 if (Q.left_leader == "Crispien") {
-    Q.spd_coleader_1 = "Crispien";
-    Q.spd_coleader_1_fullname = "Arthur Crispien";
+    Q.spd_coleader_3 = "Crispien";
+    Q.spd_coleader_3_fullname = "Arthur Crispien";
 } else if (Q.left_leader == "Levi") {
-    Q.spd_coleader_1 = "Levi";
-    Q.spd_coleader_1_fullname = "Paul Levi";
+    Q.spd_coleader_3 = "Levi";
+    Q.spd_coleader_3_fullname = "Paul Levi";
 } else if (Q.left_leader == "Sender") {
-    Q.spd_coleader_1 = "Sender";
-    Q.spd_coleader_1_fullname = "Toni Sender";
+    Q.spd_coleader_3 = "Sender";
+    Q.spd_coleader_3_fullname = "Toni Sender";
 } else if (Q.left_leader == "Rosenfeld") {
-    Q.spd_coleader_1 = "Rosenfeld";
-    Q.spd_coleader_1_fullname = "Kurt Rosenfeld";
+    Q.spd_coleader_3 = "Rosenfeld";
+    Q.spd_coleader_3_fullname = "Kurt Rosenfeld";
 } else if (Q.left_leader == "Seydewitz") {
-    Q.spd_coleader_1 = "Seydewitz";
-    Q.spd_coleader_1_fullname = "Max Seydewitz";
+    Q.spd_coleader_3 = "Seydewitz";
+    Q.spd_coleader_3_fullname = "Max Seydewitz";
 } else if (Q.left_leader == "Siemsen") {
-    Q.spd_coleader_1 = "Siemsen";
-    Q.spd_coleader_1_fullname = "Anna Siemsen";
+    Q.spd_coleader_3 = "Siemsen";
+    Q.spd_coleader_3_fullname = "Anna Siemsen";
 } else if (Q.left_leader == "Stampfer") {
-    Q.spd_coleader_1 = "Stampfer";
-    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+    Q.spd_coleader_3 = "Stampfer";
+    Q.spd_coleader_3_fullname = "Friedrich Stampfer";
 } else if (Q.left_leader == "Radbruch") {
-    Q.spd_coleader_1 = "Radbruch";
-    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+    Q.spd_coleader_3 = "Radbruch";
+    Q.spd_coleader_3_fullname = "Gustav Radbruch";
 } else if (Q.left_leader == "Hirschfeld") {
-    Q.spd_coleader_1 = "Hirschfeld";
-    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+    Q.spd_coleader_3 = "Hirschfeld";
+    Q.spd_coleader_3_fullname = "Magnus Hirschfeld";
 } else if (Q.left_leader == "Baade") {
-    Q.spd_coleader_1 = "Baade";
-    Q.spd_coleader_1_fullname = "Fritz Baade";
+    Q.spd_coleader_3 = "Baade";
+    Q.spd_coleader_3_fullname = "Fritz Baade";
 }
 Q.left_leader = "vacant";
 Q.left_leader_fullname = "vacant";
@@ -1190,57 +1226,57 @@ on-arrival: {!
 
 if (Q.center_leader == "Hilferding") {
 
-    Q.spd_coleader_1 = "Hilferding";
+    Q.spd_coleader_3 = "Hilferding";
 
-    Q.spd_coleader_1_fullname = "Rudolf Hilferding";
+    Q.spd_coleader_3_fullname = "Rudolf Hilferding";
 
 } else if (Q.center_leader == "Wels") {
 
-    Q.spd_coleader_1 = "Wels";
+    Q.spd_coleader_3 = "Wels";
 
-    Q.spd_coleader_1_fullname = "Otto Wels";
+    Q.spd_coleader_3_fullname = "Otto Wels";
 
 } else if (Q.center_leader == "Vogel") {
 
-    Q.spd_coleader_1 = "Vogel";
+    Q.spd_coleader_3 = "Vogel";
 
-    Q.spd_coleader_1_fullname = "Hans Vogel";
+    Q.spd_coleader_3_fullname = "Hans Vogel";
 
 } else if (Q.center_leader == "Müller") {
 
-    Q.spd_coleader_1 = "Müller";
+    Q.spd_coleader_3 = "Müller";
 
-    Q.spd_coleader_1_fullname = "Hermann Müller";
+    Q.spd_coleader_3_fullname = "Hermann Müller";
 
 } else if (Q.center_leader == "Breitscheid") {
 
-    Q.spd_coleader_1 = "Breitscheid";
+    Q.spd_coleader_3 = "Breitscheid";
 
-    Q.spd_coleader_1_fullname = "Rudolf Breitscheid";
+    Q.spd_coleader_3_fullname = "Rudolf Breitscheid";
 
 } else if (Q.center_leader == "Stampfer") {
 
-    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_3 = "Stampfer";
 
-    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+    Q.spd_coleader_3_fullname = "Friedrich Stampfer";
 
 } else if (Q.center_leader == "Radbruch") {
 
-    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_3 = "Radbruch";
 
-    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+    Q.spd_coleader_3_fullname = "Gustav Radbruch";
 
 } else if (Q.center_leader == "Hirschfeld") {
 
-    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_3 = "Hirschfeld";
 
-    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+    Q.spd_coleader_3_fullname = "Magnus Hirschfeld";
 
 } else if (Q.center_leader == "Baade") {
 
-    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_3 = "Baade";
 
-    Q.spd_coleader_1_fullname = "Fritz Baade";
+    Q.spd_coleader_3_fullname = "Fritz Baade";
 
 }
 
@@ -1261,69 +1297,69 @@ on-arrival: {!
 
 if (Q.labor_leader == "Leipart") {
 
-    Q.spd_coleader_1 = "Leipart";
+    Q.spd_coleader_3 = "Leipart";
 
-    Q.spd_coleader_1_fullname = "Theodor Leipart";
+    Q.spd_coleader_3_fullname = "Theodor Leipart";
 
 } else if (Q.labor_leader == "Aufhäuser") {
 
-    Q.spd_coleader_1 = "Aufhäuser";
+    Q.spd_coleader_3 = "Aufhäuser";
 
-    Q.spd_coleader_1_fullname = "Siegfried Aufhäuser";
+    Q.spd_coleader_3_fullname = "Siegfried Aufhäuser";
 
 } else if (Q.labor_leader == "Wissell") {
 
-    Q.spd_coleader_1 = "Wissell";
+    Q.spd_coleader_3 = "Wissell";
 
-    Q.spd_coleader_1_fullname = "Rudolf Wissell";
+    Q.spd_coleader_3_fullname = "Rudolf Wissell";
 
 } else if (Q.labor_leader == "Woytinsky") {
 
-    Q.spd_coleader_1 = "Woytinsky";
+    Q.spd_coleader_3 = "Woytinsky";
 
-    Q.spd_coleader_1_fullname = "Wladimir Woytinsky";
+    Q.spd_coleader_3_fullname = "Wladimir Woytinsky";
 
 } else if (Q.labor_leader == "Mierendorff") {
 
-    Q.spd_coleader_1 = "Mierendorff";
+    Q.spd_coleader_3 = "Mierendorff";
 
-    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+    Q.spd_coleader_3_fullname = "Carlo Mierendorff";
 
 } else if (Q.labor_leader == "Schumacher") {
 
-    Q.spd_coleader_1 = "Schumacher";
+    Q.spd_coleader_3 = "Schumacher";
 
-    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+    Q.spd_coleader_3_fullname = "Kurt Schumacher";
 
 } else if (Q.labor_leader == "Leber") {
 
-    Q.spd_coleader_1 = "Leber";
+    Q.spd_coleader_3 = "Leber";
 
-    Q.spd_coleader_1_fullname = "Julius Leber";
+    Q.spd_coleader_3_fullname = "Julius Leber";
 
 } else if (Q.labor_leader == "Stampfer") {
 
-    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_3 = "Stampfer";
 
-    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+    Q.spd_coleader_3_fullname = "Friedrich Stampfer";
 
 } else if (Q.labor_leader == "Radbruch") {
 
-    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_3 = "Radbruch";
 
-    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+    Q.spd_coleader_3_fullname = "Gustav Radbruch";
 
 } else if (Q.labor_leader == "Hirschfeld") {
 
-    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_3 = "Hirschfeld";
 
-    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+    Q.spd_coleader_3_fullname = "Magnus Hirschfeld";
 
 } else if (Q.labor_leader == "Baade") {
 
-    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_3 = "Baade";
 
-    Q.spd_coleader_1_fullname = "Fritz Baade";
+    Q.spd_coleader_3_fullname = "Fritz Baade";
 
 }
 
@@ -1344,69 +1380,81 @@ on-arrival: {!
 
 if (Q.reformist_leader == "Severing") {
 
-    Q.spd_coleader_1 = "Severing";
+    Q.spd_coleader_3 = "Severing";
 
-    Q.spd_coleader_1_fullname = "Carl Severing";
+    Q.spd_coleader_3_fullname = "Carl Severing";
 
 } else if (Q.reformist_leader == "Braun") {
 
-    Q.spd_coleader_1 = "Braun";
+    Q.spd_coleader_3 = "Braun";
 
-    Q.spd_coleader_1_fullname = "Otto Braun";
+    Q.spd_coleader_3_fullname = "Otto Braun";
 
 } else if (Q.reformist_leader == "Juchacz") {
 
-    Q.spd_coleader_1 = "Juchacz";
+    Q.spd_coleader_3 = "Juchacz";
 
-    Q.spd_coleader_1_fullname = "Marie Juchacz";
+    Q.spd_coleader_3_fullname = "Marie Juchacz";
 
 } else if (Q.reformist_leader == "Pfülf") {
 
-    Q.spd_coleader_1 = "Pfülf";
+    Q.spd_coleader_3 = "Pfülf";
 
-    Q.spd_coleader_1_fullname = "Antonie Pfülf";
+    Q.spd_coleader_3_fullname = "Antonie Pfülf";
+
+} else if (Q.reformist_leader == "Ebert") {
+
+    Q.spd_coleader_3 = "Ebert";
+
+    Q.spd_coleader_3_fullname = "Friedrich Ebert";
+
+} else if (Q.reformist_leader == "Scheidemann") {
+
+    Q.spd_coleader_3 = "Scheidemann";
+
+    Q.spd_coleader_3_fullname = "Phillip Scheidemann";
 
 } else if (Q.reformist_leader == "Mierendorff") {
 
-    Q.spd_coleader_1 = "Mierendorff";
+    Q.spd_coleader_3 = "Mierendorff";
 
-    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+    Q.spd_coleader_3_fullname = "Carlo Mierendorff";
 
 } else if (Q.reformist_leader == "Schumacher") {
 
-    Q.spd_coleader_1 = "Schumacher";
+    Q.spd_coleader_3 = "Schumacher";
 
-    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+    Q.spd_coleader_3_fullname = "Kurt Schumacher";
 
 } else if (Q.reformist_leader == "Leber") {
 
-    Q.spd_coleader_1 = "Leber";
+    Q.spd_coleader_3 = "Leber";
 
-    Q.spd_coleader_1_fullname = "Julius Leber";
+    Q.spd_coleader_3_fullname = "Julius Leber";
 
 } else if (Q.reformist_leader == "Stampfer") {
 
-    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_3 = "Stampfer";
 
-    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+    Q.spd_coleader_3_fullname = "Friedrich Stampfer";
 
 } else if (Q.reformist_leader == "Radbruch") {
 
-    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_3 = "Radbruch";
 
-    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+    Q.spd_coleader_3_fullname = "Gustav Radbruch";
 
 } else if (Q.reformist_leader == "Hirschfeld") {
 
-    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_3 = "Hirschfeld";
 
-    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+    Q.spd_coleader_3_fullname = "Magnus Hirschfeld";
 
 } else if (Q.reformist_leader == "Baade") {
 
-    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_3 = "Baade";
 
-    Q.spd_coleader_1_fullname = "Fritz Baade";
+    Q.spd_coleader_3_fullname = "Fritz Baade";
 
 }
 
@@ -1425,53 +1473,59 @@ view-if: spd_coleader_3_faction != "neorevisionist" and neorevisionism == 3
 choose-if: (neorevisionist_c >= 50) or (neorevisionist_c >= reformist_c and (reformist_c+neorevisionist_c) >= 50) or (neorevisionist_c >= reformist_c and neorevisionist_c >= labor_c and (labor_c+reformist_c+neorevisionist_c) >= 50) or (neorevisionist_leader == "Baade") or (neorevisionist_leader == "Hirschfeld") or (neorevisionist_leader == "Radbruch") or (neorevisionist_leader == "Stampfer")
 on-arrival: {!
 
-if (Q.revisionist_leader == "Mierendorff") {
+if (Q.neorevisionist_leader == "Mierendorff") {
 
-    Q.spd_coleader_1 = "Mierendorff";
+    Q.spd_coleader_3 = "Mierendorff";
 
-    Q.spd_coleader_1_fullname = "Carlo Mierendorff";
+    Q.spd_coleader_3_fullname = "Carlo Mierendorff";
 
-} else if (Q.revisionist_leader == "Schumacher") {
+} else if (Q.neorevisionist_leader == "Schumacher") {
 
-    Q.spd_coleader_1 = "Schumacher";
+    Q.spd_coleader_3 = "Schumacher";
 
-    Q.spd_coleader_1_fullname = "Kurt Schumacher";
+    Q.spd_coleader_3_fullname = "Kurt Schumacher";
 
-} else if (Q.revisionist_leader == "Leber") {
+} else if (Q.neorevisionist_leader == "Leber") {
 
-    Q.spd_coleader_1 = "Leber";
+    Q.spd_coleader_3 = "Leber";
 
-    Q.spd_coleader_1_fullname = "Julius Leber";
+    Q.spd_coleader_3_fullname = "Julius Leber";
 
-} else if (Q.revisionist_leader == "Stampfer") {
+} else if (Q.neorevisionist_leader == "Gustav Noske") {
 
-    Q.spd_coleader_1 = "Stampfer";
+    Q.spd_coleader_3 = "Noske";
 
-    Q.spd_coleader_1_fullname = "Friedrich Stampfer";
+    Q.spd_coleader_3_fullname = "Gustav Noske";
 
-} else if (Q.revisionist_leader == "Radbruch") {
+} else if (Q.neorevisionist_leader == "Stampfer") {
 
-    Q.spd_coleader_1 = "Radbruch";
+    Q.spd_coleader_3 = "Stampfer";
 
-    Q.spd_coleader_1_fullname = "Gustav Radbruch";
+    Q.spd_coleader_3_fullname = "Friedrich Stampfer";
 
-} else if (Q.revisionist_leader == "Hirschfeld") {
+} else if (Q.neorevisionist_leader == "Radbruch") {
 
-    Q.spd_coleader_1 = "Hirschfeld";
+    Q.spd_coleader_3 = "Radbruch";
 
-    Q.spd_coleader_1_fullname = "Magnus Hirschfeld";
+    Q.spd_coleader_3_fullname = "Gustav Radbruch";
 
-} else if (Q.revisionist_leader == "Baade") {
+} else if (Q.neorevisionist_leader == "Hirschfeld") {
 
-    Q.spd_coleader_1 = "Baade";
+    Q.spd_coleader_3 = "Hirschfeld";
 
-    Q.spd_coleader_1_fullname = "Fritz Baade";
+    Q.spd_coleader_3_fullname = "Magnus Hirschfeld";
+
+} else if (Q.neorevisionist_leader == "Baade") {
+
+    Q.spd_coleader_3 = "Baade";
+
+    Q.spd_coleader_3_fullname = "Fritz Baade";
 
 }
 
-Q.revisionist_leader = "vacant";
+Q.neorevisionist_leader = "vacant";
 
-Q.revisionist_leader_fullname = "vacant";
+Q.neorevisionist_leader_fullname = "vacant";
 
 !}
 
@@ -1485,3 +1539,4 @@ view-if: (spd_coleader_3 != "vacant") and ((center_c >= 50 and spd_coleader_2_fa
 [+ spd_coleader_3_fullname +] does not face a challenge.
 
 - @root: The conference is concluded.
+
