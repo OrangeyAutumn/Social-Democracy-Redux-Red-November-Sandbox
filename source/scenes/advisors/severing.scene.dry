@@ -7,7 +7,7 @@ new-page: true
 
 = Carl Severing
 
-[? if chancellor = "": The current Chancellor ?][? if president = "": The current President ?]Severing has been Interior Minister for both the German Republic and for the state of Prussia, and his priority is using the security services to target the enemies of the republic.
+[? if chancellor = "Severing": The current Chancellor ?][? if president = "Severing": The current President ?]Severing has been Interior Minister for both the German Republic and for the state of Prussia, and his priority is using the security services to target the enemies of the republic.
 
 - @prussian_bulwark
 - @police_affairs
@@ -34,18 +34,18 @@ go-to: police
 
 @chancellor
 title: Use the Chancellorship
-subtitle: As the current Chancellor, ... can make use of their position to further our goals.
-view-if: chancellor == ""
+subtitle: As the current Chancellor, Severing can make use of their position to further our goals.
+view-if: chancellor == "Severing"
 choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 go-to: chancellor
 
 @president
 title: Use the Presidency
-subtitle: As the current President, ... can make use of their position to further our goals.
+subtitle: As the current President, Severing can make use of their position to further our goals.
 choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-view if: president == ""
+view if: president == "Severing"
 
 - @article_48: We can use Article 48!
 - @military_relations: We can improve our relations with the Reichswehr.
