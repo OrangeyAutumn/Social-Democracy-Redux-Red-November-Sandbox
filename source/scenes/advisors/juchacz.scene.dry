@@ -42,6 +42,10 @@ choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: womens_rights += 1; workers_spd += 4*(1-dissent); rural_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); advisor_action_timer = 6
 
+Juchacz's strategies for organizing women are aimed at working-class housewives, and acknowledge women's traditional household roles. We argue that our economic welfare programs will improve the livelihoods of women and their families.
+
+[? if spd_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+
 @chancellor
 title: Use the Chancellorship
 subtitle: As the current Chancellor, Juchacz can make use of their position to further our goals.
@@ -83,6 +87,4 @@ choose-if: reichsexekution_timer <= 0
 unavailable-subtitle: We have already taken such action too recently.
 go-to: reichsexekution
 
-Juchacz's strategies for organizing women are aimed at working-class housewives, and acknowledge women's traditional household roles. We argue that our economic welfare programs will improve the livelihoods of women and their families.
 
-[? if spd_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
