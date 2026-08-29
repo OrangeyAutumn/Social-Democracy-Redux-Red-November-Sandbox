@@ -61,7 +61,7 @@ choose-if: never
 unavailable-subtitle: President Ebert is unwilling to call fresh elections so soon after the last ones.
 
 @stresermann
-on-arrival: chancellor = "Stresermann"; chancellor_party = "DVP"; spd_in_government = 1; in_grand_coalition = 1; Q.leverage = Q.spd_r
+on-arrival: chancellor = "Stresermann"; chancellor_party = "DVP"; spd_in_government = 1; in_grand_coalition = 1; leverage = spd_r
 go-to: election_1928.ministries
 
 The DVP agree and a new Grand Coalition is formed under Stresermann.
@@ -71,7 +71,7 @@ choose-if: never
 unavailable-subtitle: The DVP know that President Ebert is unwilling to call fresh elections so soon after the last ones.
 
 @bluff2
-on-arrival: spd_in_government = 1; in_grand_coalition = 1; Q.leverage = Q.spd_r
+on-arrival: spd_in_government = 1; in_grand_coalition = 1; leverage = spd_r
 go-to: election_1928.ministries
 
 The DVP fold and agree to form a Grand Coalition under Marx.
