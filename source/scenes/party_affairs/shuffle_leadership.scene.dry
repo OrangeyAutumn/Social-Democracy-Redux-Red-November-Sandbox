@@ -324,7 +324,14 @@ go-to: rm_main
 
 Radbruch has been removed as an advisor. 
 
+@remove_lobe
+title: Remove Löbe
+view-if: lobe_advisor = 1
+tags: remove_advisor
+on-arrival: lobe_advisor = 0; n_advisors -= 1
+go-to: rm_main
 
+Löbe has been removed as an advisor. 
 
 
 
@@ -759,4 +766,14 @@ tags: nonfactional_advisor
 
 Friedrich Stampfer is now an advisor.
 
+@add_lobe
+title: Paul Löbe
+subtitle: Löbe is the President of the Reichstag.
+is-card: true
+card-image: img/portraits/LöbePaul.jpg
+view-if: lobe_advisor = 0 and n_advisors < 3
+on-arrival: lobe_advisor = 1; n_advisors += 1
+go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+tags: nonfactional_advisor
 
+Paul Löbe is now an advisor.
