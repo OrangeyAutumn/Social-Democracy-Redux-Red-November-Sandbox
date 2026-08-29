@@ -7,6 +7,8 @@ max-visits: 1
 
 The December 1924 elections produced a divided Reichstag and the current Chancellor, Wilhelm Marx, has thus far proved unable to find a majority. We must decide which course to take to restore a stable government.
 
+- @appointment_menu: Let us begin.
+
 @appointment_menu
 
 - @luther: Hans Luther (I), in a five-party coalition (This is the historical option.)
