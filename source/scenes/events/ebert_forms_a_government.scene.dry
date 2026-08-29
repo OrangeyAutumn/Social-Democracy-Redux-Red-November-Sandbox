@@ -37,7 +37,7 @@ Despite our pressure, the DVP is reluctant to enter a grand coalition. How will 
 - @bluff2: Threaten to invoke Article 48 and rule by decree.
 - @appointment_menu: This isn’t working. Let Marx’s government fall and consider an alternative Chancellor.
 
-@toleration: Provide SPD votes to prop up a minority Bourgeois coalition.
+@toleration
 
 Despite our pressure, the SPD is reluctant to enter into such an arrangement. How will we overcome their objections?
 
@@ -48,7 +48,7 @@ Despite our pressure, the SPD is reluctant to enter into such an arrangement. Ho
 - @grand_coalition: Offer a Grand Coalition instead.
 - @appointment_menu: This isn’t working. Let Marx’s government fall and consider an alternative Chancellor.
 
-@article_48: Invoke Article 48 and rule by decree
+@article_48
 choose-if: never
 unavailable-subtitle: President Ebert is unwilling to take such action until all other paths fail.
 
