@@ -14,7 +14,7 @@ The December 1924 elections produced a divided Reichstag and the current Chancel
 - @alternative: Let us attempt to find an alternative Chancellor.
 
 @luther
-on-arrival: chancellor = "Luther"; chancellor_party = "I"; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Schiele; interior_minister_party = 'DNVP'; justice_minister = ‘Frenken'; justice_minister_party = 'Z; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Gessler'; reichswehr_minister_party = 'ddp_name'; economic_minister = 'Neuhaus; economic_minister_party = 'DNVP'; finance_minister = Schlieben'; finance_minister_party = 'DNVP'; agriculture_minister = 'von Kanitz'; agriculture_minister_party = 'I';
+on-arrival: chancellor = "Luther"; chancellor_party = "I"; foreign_minister = "Stresemann"; foreign_minister_party = "DVP"; interior_minister = "Schiele"; interior_minister_party = "DNVP"; justice_minister = "Frenken"; justice_minister_party = "Z"; labor_minister = "Brauns"; labor_minister_party = "Z"; reichswehr_minister = "Gessler"; reichswehr_minister_party = "DDP"; economic_minister = "Neuhaus"; economic_minister_party = "DNVP"; finance_minister = Schlieben"; finance_minister_party = "DNVP"; agriculture_minister = "von Kanitz"; agriculture_minister_party = "I";
 
 We agree to appoint Hans Luther as Chancellor, even though it means the reactionary DNVP entering government. Our Left Wing are outraged by this action.
 
@@ -57,7 +57,7 @@ choose-if: never
 unavailable-subtitle: President Ebert is unwilling to call fresh elections so soon after the last ones.
 
 @stresermann
-on-arrival: chancellor = "Stresermann"; chancellor_party = 'DVP'; spd_in_government = 1; in_grand_coalition = 1
+on-arrival: chancellor = "Stresermann"; chancellor_party = "DVP"; spd_in_government = 1; in_grand_coalition = 1
 
 The DVP agree and a new Grand Coalition is formed under Stresermann.
 
@@ -91,7 +91,7 @@ on-arrival: spd_toleration = 1
 The SPD finally agrees and a minority coalition is formed under Wilhelm Marx.
 
 @gessler
-on-arrival: chancellor = "Gessler"; chancellor_party = 'DDP; spd_toleration = 1; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Külz'; interior_minister_party = 'DDP'; justice_minister = 'Marx'; justice_minister_party = 'Z'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Gessler'; reichswehr_minister_party = Q.ddp_name; economic_minister = 'Curtius'; economic_minister_party = 'DVP'; finance_minister = 'Luther'; finance_minister_party = 'I'; agriculture_minister = 'Haslinde; agriculture_minister_party = 'Z'
+on-arrival: chancellor = "Gessler"; chancellor_party = "DDP"; spd_toleration = 1; foreign_minister = "Stresemann"; foreign_minister_party = "DVP"; interior_minister = "Külz"; interior_minister_party = "DDP"; justice_minister = "Marx"; justice_minister_party = "Z"; labor_minister = "Brauns"; labor_minister_party = "Z"; reichswehr_minister = "Gessler"; reichswehr_minister_party = "DDP"; economic_minister = "Curtius"; economic_minister_party = "DVP"; finance_minister = "Luther"; finance_minister_party = "I"; agriculture_minister = "Haslinde"; agriculture_minister_party = "Z"
 
 The SPD finally agrees and a minority coalition is formed under Otto Gessler.
 
