@@ -83,7 +83,7 @@ choose-if: never
 unavailable-subtitle: The SPD finds this no worse than toleration.
 
 @alternative
-go-to: 1928.coalition_menu
+go-to: election_1928.coalition_menu
 
 @concessions2
 on-arrival: spd_toleration = 1 
