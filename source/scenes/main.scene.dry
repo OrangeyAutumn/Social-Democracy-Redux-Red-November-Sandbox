@@ -23,6 +23,10 @@ max-cards: 6
 - @landtag_affairs
 - @pres
 - @sandbox
+- @the_left_pinned
+- @the_center_pinned
+- @the_labor_wing_pinned
+- @the_reformists_pinned
 - @shuffle_leadership_pinned
 
 @main_easy
@@ -42,15 +46,19 @@ max-cards: 6
 
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
 
+- #advisor
 - @party
 - @inter_party_affairs
 - @govt
 - @cabinet
 - @landtag_affairs
 - @pres
-- #advisor
+- @sandbox
+- @the_left_pinned
+- @the_center_pinned
+- @the_labor_wing_pinned
+- @the_reformists_pinned
 - @shuffle_leadership_pinned
-
 
 @party
 title: Party Affairs
