@@ -17,6 +17,7 @@ The Labor wing are our strongest connection to our grassroots. How shall we make
 -	@use_hirschfeld: We will use the talents of the Labor leader, Magnus Hirschfeld
 -	@use_radbruch: We will use the talents of the Labor leader, Gustav Radbruch
 -	@use_stampfer: We will use the talents of the Labor leader, Friedrich Stampfer
+- @use_lobe: We will use the talents of the Labor leader, Paul Löbe
 -	@use_mierendorff: We will use the talents of the Labor leader, Carlo Mierendorff
 -	@use_schumacher: We will use the talents of the Labor leader, Kurt Schumacher
 -	@use_leber: We will use the talents of the Labor leader, Julius Leber
@@ -29,6 +30,10 @@ The Labor wing are our strongest connection to our grassroots. How shall we make
 - @new_labor_leader: [+ labor_leader +] has served well, but new leadership is required.
 - @root: We will do none of these things.
 - @easy_discard: We will consider this at a later time.
+
+@use_lobe
+view-if: labor_leader == "Löbe"
+go-to: lobe
 
 @use_leipart
 view-if: labor_leader == "Leipart"
@@ -122,6 +127,7 @@ We must now select a new leader for the Labor Faction.
 - @labor_leader_hirschfeld
 - @labor_leader_radbruch
 - @labor_leader_stampfer
+- @labor_leader_lobe
 - @labor_leader_mierendorff
 - @labor_leader_schumacher
 - @labor_leader_leber
@@ -251,3 +257,13 @@ go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_mull
 
 Julius Leber has been agreed as faction leader.
 
+@labor_leader_lobe
+title: Paul Löbe – Perhaps a Non-factional Pick could broaden our appeal?
+subtitle: Paul Löbe is the President of the Reichstag.
+is-card: true
+card-image: img/portraits/LöbePaul.jpg
+view-if: labor_leader != "Löbe" and spd_coleader_1 != "Löbe" and spd_coleader_2 != "Löbe" and spd_coleader_3 != "Löbe" and reformists_leader != "Löbe" and center_leader != "Löbe" and left_leader != "Löbe"
+on-arrival: labor_leader = "Löbe"; labor_leader_fullname = "Paul Löbe"
+go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Paul Löbe has been agreed as faction leader.
