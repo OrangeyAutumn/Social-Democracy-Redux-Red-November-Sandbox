@@ -18,6 +18,7 @@ The Left faction is the fire that drives our party forwards. How shall we make u
 -	@use_hirschfeld: We will use the talents of the Left leader, Magnus Hirschfeld
 -	@use_radbruch: We will use the talents of the Left leader, Gustav Radbruch
 -	@use_stampfer: We will use the talents of the Left leader, Friedrich Stampfer
+- @use_lobe: We will use the talents of the Left leader, Paul Löbe
 - @boost_left_influence_subtle: We will subtly promote the Left faction as not to anger any of the other factions.
 - @boost_left_influence_blatant: We will openly promote the Left faction.
 - @youth: We will use the Left’s connections to boost youth recruitment to the party.
@@ -26,6 +27,10 @@ The Left faction is the fire that drives our party forwards. How shall we make u
 - @new_left_leader: [+ left_leader +] has served well, but new leadership is required.
 - @root: We will do none of these things.
 - @easy_discard: We will consider this at a later time.
+
+@use_lobe
+view-if: left_leader == "Löbe"
+go-to: lobe
 
 @use_crispien
 view-if: left_leader == "Crispien"
@@ -106,6 +111,7 @@ We must now select a new leader for the Left Faction.
 - @left_leader_hirschfeld
 - @left_leader_radbruch
 - @left_leader_stampfer
+- @left_leader_lobe
 - @root: We have changed our minds.
 - @easy_discard: We will consider this at a later time.
 
@@ -218,3 +224,14 @@ on-arrival: left_leader = "Stampfer"; left_leader_fullname = "Friedrich Stampfer
 go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Friedrich Stampfer has been agreed as faction leader.
+
+@left_leader_lobe
+title: Paul Löbe – Perhaps a Non-factional Pick could broaden our appeal?
+subtitle: Paul Löbe is the President of the Reichstag.
+is-card: true
+card-image: img/portraits/LöbePaul.jpg
+view-if: left_leader != "Löbe" and spd_coleader_1 != "Löbe" and spd_coleader_2 != "Löbe" and spd_coleader_3 != "Löbe" and reformists_leader != "Löbe" and center_leader != "Löbe" and labor_leader != "Löbe"
+on-arrival: left_leader = "Löbe"; left_leader_fullname = "Paul Löbe"
+go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Paul Löbe has been agreed as faction leader.
