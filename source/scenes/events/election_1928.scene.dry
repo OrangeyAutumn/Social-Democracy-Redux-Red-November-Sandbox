@@ -2788,6 +2788,8 @@ go-to: ministries
 - @majority_chancellor_radbruch
 - @chancellor_stampfer
 - @majority_chancellor_stampfer
+- @chancellor_lobe
+- @majority_chancellor_lobe
 - @chancellor_severing
 - @majority_chancellor_severing
 - @chancellor_braun
@@ -3193,6 +3195,25 @@ subtitle: A New(s) Chancellor
 on-arrival: chancellor = "Stampfer"
 
 Friedrich Stampfer, long-time editor of our party newspaper, has become chancellor of the SPD majority. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
+
+go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+@chancellor_lobe
+title: Paul Löbe for Chancellor
+view-if: lobe_advisor = 1 and spd_r < 50 or uspd_tolerated_spd_minority < 50
+subtitle: The President of the Reichstag for Chancellor?
+on-arrival: spd_in_government = 1; chancellor = "Löbe"; chancellor_party = "SPD"
+go-to: ministries if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Paul Löbe, the President of the Reichstag. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
+
+@majority_chancellor_lobe
+title: Paul Löbe for Chancellor
+view-if: lobe_advisor = 1 and spd_r >= 50 or uspd_tolerated_spd_minority >= 50
+subtitle: The President of the Reichstag for Chancellor?
+on-arrival: chancellor = "Löbe"
+
+Paul Löbe, the President of the Reichstag. His non-factional nature means many across the other parties, and even within our own, are unsure quite what to make of the appointment.
 
 go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
