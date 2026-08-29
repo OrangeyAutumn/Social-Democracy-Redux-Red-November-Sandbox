@@ -18,6 +18,7 @@ The Reformist faction holds many of our most notable members. How shall we make 
 -	@use_hirschfeld: We will use the talents of the Reformist leader, Magnus Hirschfeld
 -	@use_radbruch: We will use the talents of the Reformist leader, Gustav Radbruch
 -	@use_stampfer: We will use the talents of the Reformist leader, Friedrich Stampfer
+- @use_lobe: We will use the talents of the Reformist leader, Paul Löbe
 -	@use_mierendorff: We will use the talents of the Reformist leader, Carlo Mierendorff
 -	@use_schumacher: We will use the talents of the Reformist leader, Kurt Schumacher
 -	@use_leber: We will use the talents of the Reformist leader, Julius Leber
@@ -82,6 +83,10 @@ go-to: radbruch
 view-if: reformist_leader == "Stampfer"
 go-to: stampfer
 
+@use_lobe
+view-if: reformist_leader == "Löbe"
+go-to: lobe
+
 @boost_reformists_influence_subtle
 on-arrival: reformists_strength += 5; reformists_dissent -= 3
 
@@ -120,6 +125,7 @@ We must now select a new leader for the Reformist Faction.
 - @reformists_leader_hirschfeld
 - @reformists_leader_radbruch
 - @reformists_leader_stampfer
+- @reformists_leader_lobe
 - @reformists_leader_mierendorff
 - @reformists_leader_schumacher
 - @reformists_leader_leber
@@ -215,6 +221,17 @@ on-arrival: reformists_leader = "Stampfer"; reformists_leader_fullname = "Friedr
 go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
 Friedrich Stampfer has been agreed as faction leader.
+
+@reformists_leader_lobe
+title: Paul Löbe – Perhaps a Non-factional Pick could broaden our appeal?
+subtitle: Paul Löbe is the President of the Reichstag.
+is-card: true
+card-image: img/portraits/LöbePaul.jpg
+view-if: reformists_leader != "Löbe" and spd_coleader_1 != "Löbe" and spd_coleader_2 != "Löbe" and spd_coleader_3 != "Löbe" and left_leader != "Löbe" and center_leader != "Löbe" and labor_leader != "Löbe"
+on-arrival: reformists_leader = "Löbe"; reformists_leader_fullname = "Paul Löbe"
+go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
+
+Paul Löbe has been agreed as faction leader.
 
 @reformists_leader_mierendorff
 title: Carlo Mierendorff – Perhaps his new ideas are what we need to address the current crisis?
