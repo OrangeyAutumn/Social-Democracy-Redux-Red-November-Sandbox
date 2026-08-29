@@ -13,6 +13,7 @@ go-to: sandbox_menu
 - @enable_end: Enable End In 1932
 - @clear_hand: Clear Cards
 - @make_adv_available: Make Advisors Available
+- @realive: Trigger or undo scripted deaths
 - @editresources: Edit Resources
 - @editbudget: Edit Budget
 - @editeconomy: Edit Economy
@@ -25,6 +26,17 @@ go-to: sandbox_menu
 - @editparamilitary: Edit Paramilitary Groups
 - @editreichswehr: Edit Reichswehr and Police
 - @root: Exit Sandbox Menu
+
+@realive
+
+Please choose which figure you would like to either unalive or realive?
+
+- @ebert_unalive
+- @ebert_realive
+- @muller_unalive
+- @muller_realive
+- @levi_unalive
+- @levi_realive
 
 @disable_end
 view-if: end_disabled != 1
