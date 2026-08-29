@@ -90,7 +90,7 @@ on-arrival: spd_toleration = 1
 
 The SPD finally agrees and a minority coalition is formed under Wilhelm Marx.
 
-@gessler:
+@gessler
 on-arrival: chancellor = "Gessler"; chancellor_party = 'DDP; spd_toleration = 1; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Külz'; interior_minister_party = 'DDP'; justice_minister = 'Marx'; justice_minister_party = 'Z'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Gessler'; reichswehr_minister_party = Q.ddp_name; economic_minister = 'Curtius'; economic_minister_party = 'DVP'; finance_minister = 'Luther'; finance_minister_party = 'I'; agriculture_minister = 'Haslinde; agriculture_minister_party = 'Z'
 
 The SPD finally agrees and a minority coalition is formed under Otto Gessler.
