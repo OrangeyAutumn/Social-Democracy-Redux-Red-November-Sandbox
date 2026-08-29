@@ -18,7 +18,7 @@ The December 1924 elections produced a divided Reichstag and the current Chancel
 - @alternative: Let us attempt to find an alternative Chancellor.
 
 @luther
-on-arrival: chancellor = "Luther"; chancellor_party = "I"; foreign_minister = "Stresemann"; foreign_minister_party = "DVP"; interior_minister = "Schiele"; interior_minister_party = "DNVP"; justice_minister = "Frenken"; justice_minister_party = "Z"; labor_minister = "Brauns"; labor_minister_party = "Z"; reichswehr_minister = "Gessler"; reichswehr_minister_party = "DDP"; economic_minister = "Neuhaus"; economic_minister_party = "DNVP"; finance_minister = "Schlieben"; finance_minister_party = "DNVP"; agriculture_minister = "von Kanitz"; agriculture_minister_party = "I";
+on-arrival: chancellor = "Luther"; chancellor_party = "I"; right_coalition = 1; DNVP_in_government = 1; foreign_minister = "Stresemann"; foreign_minister_party = "DVP"; interior_minister = "Schiele"; interior_minister_party = "DNVP"; justice_minister = "Frenken"; justice_minister_party = "Z"; labor_minister = "Brauns"; labor_minister_party = "Z"; reichswehr_minister = "Gessler"; reichswehr_minister_party = "DDP"; economic_minister = "Neuhaus"; economic_minister_party = "DNVP"; finance_minister = "Schlieben"; finance_minister_party = "DNVP"; agriculture_minister = "von Kanitz"; agriculture_minister_party = "I";
 
 We agree to appoint Hans Luther as Chancellor, even though it means the reactionary DNVP entering government. Our Left Wing are outraged by this action.
 
