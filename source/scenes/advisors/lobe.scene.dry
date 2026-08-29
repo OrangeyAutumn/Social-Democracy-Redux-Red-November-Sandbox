@@ -1,0 +1,49 @@
+title: Paul Löbe
+is-pinned-card: true 
+tags: advisor, non-factional
+card-image: img/portraits/LöbePaul.jpg
+new-page: true
+view-if: lobe_advisor = 1
+
+= Paul Löbe
+
+
+Löbe is [? if chancellor = "Löbe": the Chancellor and former ?] President of the Reichstag.
+
+- @foreign_policy
+- @media
+- @reichsbanner
+- @chancellor
+- @root: Return to main
+
+@reichsbanner
+title: Reichsbanner
+subtitle: Löbe is a supporter of the Reichsbanner.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: media
+
+@media
+title: Media
+subtitle: Manage our party's newspapers and media.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
+go-to: media
+
+@foreign_policy
+title: Foreign Policy
+subtitle: Löbe can make use of his national and international connections to push for a new foreign policy direction.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
+go-to: foreign_policy
+
+@chancellor
+title: Use the Chancellorship
+subtitle: As the current Chancellor, Löbe can make use of their position to further our goals.
+view-if: chancellor == "Löbe"
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+go-to: chancellor
