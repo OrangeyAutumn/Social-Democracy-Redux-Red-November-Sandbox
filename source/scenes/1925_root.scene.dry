@@ -2,9 +2,9 @@ title: 1925 root
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
-Q.time = -36;
-Q.year = 1925;
-Q.month = 1;
+Q.time = -38;
+Q.year = 1924;
+Q.month = 11;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
@@ -729,7 +729,7 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 0;
-Q.next_election_year = 1928;
+Q.next_election_year = 1924;
 Q.next_election_month = 12;
 Q.next_election_time = 12;
 // government affairs timers
@@ -802,6 +802,7 @@ Q.leipart_advisor = 0; // Theodor Leipart
 Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
 Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
 Q.wissell_advisor = 0; // Rudolf Wissell
+Q.lobe_advisor = 0; // Paul Lobe
 
 // Neorevisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
