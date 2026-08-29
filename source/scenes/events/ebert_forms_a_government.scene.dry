@@ -1,5 +1,5 @@
 title: President Ebert must appoint a new government!
-subtitle: Our military buildup has caused sanctions from France and other countries.
+subtitle: Hopefully this new government will last...
 new-page: true
 tags: event
 view-if: year = 1925 and month >= 1
@@ -62,10 +62,9 @@ unavailable-subtitle: President Ebert is unwilling to call fresh elections so so
 
 @stresermann
 on-arrival: chancellor = "Stresermann"; chancellor_party = "DVP"; spd_in_government = 1; in_grand_coalition = 1
+go-to: election_1928.ministries
 
 The DVP agree and a new Grand Coalition is formed under Stresermann.
-
-go-to: election_1928.ministries
 
 @bluff
 choose-if: never
@@ -73,10 +72,9 @@ unavailable-subtitle: The DVP know that President Ebert is unwilling to call fre
 
 @bluff2
 on-arrival: spd_in_government = 1; in_grand_coalition = 1
+go-to: election_1928.ministries
 
 The DVP fold and agree to form a Grand Coalition under Marx.
-
-go-to: election_1928.ministries
 
 @bluff3
 choose-if: never
