@@ -1,0 +1,7 @@
+title: The Reformists
+new-page: true
+is-card: true
+is-pinned-card: true
+on-arrival: month_activities += 1;
+card-image: img/portraits/BraunOtto.jpg
+go-to: the_reformists
