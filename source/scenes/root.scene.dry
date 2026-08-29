@@ -40,7 +40,7 @@ For more information on the politics and government of the German Republic, see 
 
 Please select your desired start date.
 
-- @1925_start: 1925: The Death of Ebert - Recommended
+- @1925_start: November 1924: The Death of Ebert - Recommended
 - @1928_start: 1928: The Age of Catastrophe
 - @1930_start: 1930: In This Historic Hour
 - @settings: Settings.
@@ -50,16 +50,16 @@ set-bg: img/hindenburg_election.jpg
 new-page: true
 go-to: 1925_root
 
-= 1925: The Death of Ebert
+= November 1924: The Death of Ebert
 
 *"You will understand and know the German Republic better when it elects Hindenburg president."*
 - Jacques Bainville, November 1918
 
 <img src="img/hindenburg_election.jpg" alt="A Hindenburg Election Poster">
 
-It is an uncertain time for German democracy. Though the crises of 1923 have subsided and given way to a stabilization and normalization, the bourgeois parties continue to shift to the right to exclude us from government, even including the anticonstitutional DNVP in the form of the Luther cabinet which has just assumed power.
+It is an uncertain time for German democracy. Though the crises of 1923 have subsided and given way to a stabilization and normalization, the bourgeois parties continue to shift to the right to exclude us from government, even attempting to include the anticonstitutional DNVP in a failed Right Coalition. Fresh elections have been called, though they are unlikely to shift the situation dramatically.
 
-The task of Social Democracy is to prepare itself so that when the government inevitably falls due to disagreements between the left and right of the bourgeois parties, we will be seen by the workers of Germany a viable alternative.
+The task of Social Democracy is to prepare itself so that when any Right government inevitably falls due to disagreements between the left and right of the bourgeois parties, we will be seen by the workers of Germany a viable alternative.
 
 Please select your desired difficulty to begin.
 
