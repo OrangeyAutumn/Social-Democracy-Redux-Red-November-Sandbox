@@ -5,6 +5,8 @@ max-visits: 1
 tags: event
 new-page: true
 
+= Hindenburg’s inauguration
+
 Paul von Hindenburg has now been inaugurated as President of the Republic, placing many crucial levers of government in the hands of an ardent reactionary. We must wait and see what his first actions shall be.
 
 - @luther: Leading a Right Coalition, Luther finds he has Hindenburg’s full support.
@@ -25,9 +27,9 @@ Hindenburg pressures Marx into allowing the DNVP into the Coalition.
 
 @gessler
 view-if: chancellor == "Gessler"
-on-arrival: chancellor = "Marx"; chancellor_party = "Z"; dnvp_in_government = 1; spd_toleration = 0; right_coalition = 1
+on-arrival: chancellor = "Luther"; chancellor_party = "I"; dnvp_in_government = 1; spd_toleration = 0; right_coalition = 1
 
-Hindenburg sacks Gessler, viewing him as too liberal. To succeed Gessler, Hindenburg re-appoints Wilhelm Marx at the head of a Right Coalition including the DNVP.
+Hindenburg sacks Gessler, viewing him as too liberal. To succeed Gessler, Hindenburg has appointed Hans Luther, who the late President Ebert refused to appoint earlier in the year, at the head of a Right Coalition including the DNVP.
 
 @stresemann
 view-if: chancellor == "Stresemann"
