@@ -2659,9 +2659,925 @@ Lowered Catholics support for Other.
 
 You alone can decide the President. How democratic...
 
+- @uspd_pres: A [+ uspd_name +] President
+- @spd_pres: A [+ spd_name +] President
+- @ddp_pres: A [+ ddp_name +] President
+- @z_pres: A Z President
+- @dvp_pres: A DVP President
+- @dnvp_pres: A DNVP President
+- @indy_pres: An Independent President
+- @nsdap_pres: A Nazi President
+
+@uspd_pres
+
+- @president_liebknecht: Make Karl Liebknecht President
+- @president_luxemburg: Make Rosa Luxemburg President
+- @president_thalmann: Make Ernst Thälmann President
+- @president_fischer: Make Ruth Fischer President
+- @president_petroff: Make Peter Petroff President
+
+@president_liebknecht
+view-if: president != "Liebknecht"
+on-arrival: president = "Liebknecht"; president_party = "SB"
+go-to: sandbox_menu
+
+Karl Liebknecht has been made President.
+
+@president_luxemburg
+view-if: president != "Luxemburg"
+on-arrival: president = "Luxemburg"; president_party = "SB"
+go-to: sandbox_menu
+
+Rosa Luxemburg has been made President.
+
+@president_thalmann
+view-if: president != "Thälmann"
+on-arrival: president = "Thälmann"; president_party = "SB"
+go-to: sandbox_menu
+
+Ernst Thälmann has been made President.
+
+@president_fischer
+view-if: president != "Fischer"
+on-arrival: president = "Fischer"; president_party = "SB"
+go-to: sandbox_menu
+
+Ruth Fischer has been made President.
+
+@president_petroff
+view-if: president != "Petroff"
+on-arrival: president = "Petroff"; president_party = "SB"
+go-to: sandbox_menu
+
+Peter Petroff has been made President.
+
+@spd_pres: A [+ spd_name +] President
+
+- @president_hilferding: Make Rudolf Hilferding President
+- @president_wels: Make Otto Wels President
+- @president_vogel: Make Hans Vogel President
+- @president_muller: Make Hermann Müller President
+- @president_breitscheid: Make Rudolf Breitscheid President
+- @president_crispien: Make Arthur Crispien President
+- @president_levi: Make Paul Levi President
+- @president_sender: Make Toni Sender President
+- @president_rosenfeld: Make Kurt Rosenfeld President
+- @president_seydewitz: Make Max Seydewitz President
+- @president_siemsen: Make Anna Siemsen President
+- @president_ebert: Make Friedrich Ebert President
+- @president_severing: Make Carl Severing President
+- @president_scheidemann: Make Phillip Scheidemann President
+- @president_braun: Make Otto Braun President
+- @president_juchacz: Make Marie Juchacz President
+- @president_pfulf: Make Antonie Pfülf President
+- @president_leipart: Make Theodor Leipart President
+- @president_aufhauser: Make Siegfried Aufhäuser President
+- @president_wissell: Make Rudolf Wissell President
+- @president_woytinsky: Make Wladimir Woytinsky President
+- @president_tarnow: Make Fritz Tarnow President
+- @president_baade: Make Fritz Baade President
+- @president_hirschfeld: Make Magnus Hirschfeld President
+- @president_radbruch: Make Gustav Radbruch President
+- @president_stampfer: Make Friedrich Stampfer President
+- @president_lobe: Make Paul Löbe President
+- @president_mierendorff: Make Carlo Mierendorff President
+- @president_schumacher: Make Kurt Schumacher President
+- @president_leber: Make Julius Leber President
+- @president_noske: Make Gustav Noske President
+
+@president_hilferding
+view-if: president != "Hilferding"
+on-arrival: president = "Hilferding"; president_party = "SPD"
+go-to: sandbox_menu
+
+Rudolf Hilferding has been made President.
+
+@president_wels
+view-if: president != "Wels"
+on-arrival: president = "Wels"; president_party = "SPD"
+go-to: sandbox_menu
+
+Otto Wels has been made President.
+
+@president_vogel
+view-if: president != "Vogel"
+on-arrival: president = "Vogel"; president_party = "SPD"
+go-to: sandbox_menu
+
+Hans Vogel has been made President.
+
+@president_muller
+view-if: president != "Müller"
+on-arrival: president = "Müller"; president_party = "SPD"
+go-to: sandbox_menu
+
+Hermann Müller has been made President.
+
+@president_breitscheid
+view-if: president != "Breitscheid"
+on-arrival: president = "Breitscheid"; president_party = "SPD"
+go-to: sandbox_menu
+
+Rudolf Breitscheid has been made President.
+
+@president_crispien
+view-if: president != "Crispien"
+on-arrival: president = "Crispien"; president_party = "SPD"
+go-to: sandbox_menu
+
+Arthur Crispien has been made President.
+
+@president_levi
+view-if: president != "Levi"
+on-arrival: president = "Levi"; president_party = "SPD"
+go-to: sandbox_menu
+
+Paul Levi has been made President.
+
+@president_sender
+view-if: president != "Sender"
+on-arrival: president = "Sender"; president_party = "SPD"
+go-to: sandbox_menu
+
+Toni Sender has been made President.
+
+@president_rosenfeld
+view-if: president != "Rosenfeld"
+on-arrival: president = "Rosenfeld"; president_party = "SPD"
+go-to: sandbox_menu
+
+Kurt Rosenfeld has been made President.
+
+@president_seydewitz
+view-if: president != "Seydewitz"
+on-arrival: president = "Seydewitz"; president_party = "SPD"
+go-to: sandbox_menu
+
+Max Seydewitz has been made President.
+
+@president_siemsen
+view-if: president != "Siemsen"
+on-arrival: president = "Siemsen"; president_party = "SPD"
+go-to: sandbox_menu
+
+Anna Siemsen has been made President.
+
+@president_ebert
+view-if: president != "Ebert"
+on-arrival: president = "Ebert"; president_party = "SPD"
+go-to: sandbox_menu
+
+Friedrich Ebert has been made President.
+
+@president_severing
+view-if: president != "Severing"
+on-arrival: president = "Severing"; president_party = "SPD"
+go-to: sandbox_menu
+
+Carl Severing has been made President.
+
+@president_scheidemann
+view-if: president != "Scheidemann"
+on-arrival: president = "Scheidemann"; president_party = "SPD"
+go-to: sandbox_menu
+
+Phillip Scheidemann has been made President.
+
+@president_braun
+view-if: president != "Braun"
+on-arrival: president = "Braun"; president_party = "SPD"
+go-to: sandbox_menu
+
+Otto Braun has been made President.
+
+@president_juchacz
+view-if: president != "Juchacz"
+on-arrival: president = "Juchacz"; president_party = "SPD"
+go-to: sandbox_menu
+
+Marie Juchacz has been made President.
+
+@president_pfulf
+view-if: president != "Pfülf"
+on-arrival: president = "Pfülf"; president_party = "SPD"
+go-to: sandbox_menu
+
+Antonie Pfülf has been made President.
+
+@president_leipart
+view-if: president != "Leipart"
+on-arrival: president = "Leipart"; president_party = "SPD"
+go-to: sandbox_menu
+
+Theodor Leipart has been made President.
+
+@president_aufhäuser
+view-if: president != "Aufhäuser"
+on-arrival: president = "Aufhäuser"; president_party = "SPD"
+go-to: sandbox_menu
+
+Siegfried Aufhäuser has been made President.
+
+@president_wissell
+view-if: president != "Wissell"
+on-arrival: president = "Wissell"; president_party = "SPD"
+go-to: sandbox_menu
+
+Rudolf Wissell has been made President.
+
+@president_woytinsky
+view-if: president != "Woytinsky"
+on-arrival: president = "Woytinsky"; president_party = "SPD"
+go-to: sandbox_menu
+
+Wladimir Woytinsky has been made President.
+
+@president_tarnow
+view-if: president != "Tarnow"
+on-arrival: president = "Tarnow"; president_party = "SPD"
+go-to: sandbox_menu
+
+Fritz Tarnow has been made President.
+
+@president_baade
+view-if: president != "Baade"
+on-arrival: president = "Baade"; president_party = "SPD"
+go-to: sandbox_menu
+
+Fritz Baade has been made President.
+
+@president_hirschfeld
+view-if: president != "Hirschfeld"
+on-arrival: president = "Hirschfeld"; president_party = "SPD"
+go-to: sandbox_menu
+
+Magnus Hirschfeld has been made President.
+
+@president_radbruch
+view-if: president != "Radbruch"
+on-arrival: president = "Radbruch"; president_party = "SPD"
+go-to: sandbox_menu
+
+Gustav Radbruch has been made President.
+
+@president_stampfer
+view-if: president != "Stampfer"
+on-arrival: president = "Stampfer"; president_party = "SPD"
+go-to: sandbox_menu
+
+Friedrich Stampfer has been made President.
+
+@president_lobe
+view-if: president != "Löbe"
+on-arrival: president = "Löbe"; president_party = "SPD"
+go-to: sandbox_menu
+
+Paul Löbe has been made President.
+
+@president_mierendorff
+view-if: president != "Mierendorff"
+on-arrival: president = "Mierendorff"; president_party = "SPD"
+go-to: sandbox_menu
+
+Carlo Mierendorff has been made President.
+
+@president_schumacher
+view-if: president != "Schumacher"
+on-arrival: president = "Schumacher"; president_party = "SPD"
+go-to: sandbox_menu
+
+Kurt Schumacher has been made President.
+
+@president_leber
+view-if: president != "Leber"
+on-arrival: president = "Leber"; president_party = "SPD"
+go-to: sandbox_menu
+
+Julius Leber has been made President.
+
+@president_noske
+view-if: president != "Noske"
+on-arrival: president = "Noske"; president_party = "SPD"
+go-to: sandbox_menu
+
+Gustav Noske has been made President.
+ 
+@ddp_pres: A [+ ddp_name +] President
+
+- @president_gessler: Make Otto Gessler President
+- @president_hellpach: Make Willy Hellpach President
+
+@president_gessler
+view-if: president != "Gessler"
+on-arrival: president = "Gessler"; president_party = "DDP"
+go-to: sandbox_menu
+
+Otto Gessler has been made President.
+
+@president_hellpach
+view-if: president != "Hellpach"
+on-arrival: president = "Hellpach"; president_party = "DDP"
+go-to: sandbox_menu
+
+Willy Hellpach has been made President.
+
+@z_pres: A Z President
+
+- @president_marx: Make Wilhelm Marx President
+- @president_wirth: Make Josef Wirth President
+- @president_stegerwald: Make Adam Stegerwald President
+- @president_bruning: Make Heinrich Brüning President
+
+@president_marx
+view-if: president != "Marx"
+on-arrival: president = "Marx"; president_party = "Z"
+go-to: sandbox_menu
+
+Wilhelm Marx has been made President.
+
+@president_wirth
+view-if: president != "Wirth"
+on-arrival: president = "Wirth"; president_party = "Z"
+go-to: sandbox_menu
+
+Josef Wirth has been made President.
+
+@president_stegerwald
+view-if: president != "Stegerwald"
+on-arrival: president = "Stegerwald"; president_party = "Z"
+go-to: sandbox_menu
+
+Adam Stegerwald has been made President.
+
+@president_bruning
+
+view-if: president != "Brüning"
+on-arrival: president = "Brüning"; president_party = "Z"
+go-to: sandbox_menu
+
+Heinrich Brüning has been made President. President Brüning's response is, as always, more austerity.
+
+@dvp_pres: A DVP President
+
+- @president_stresemann: Make Gustav Stresemann President
+- @president_scholz: Make Ernst Scholz President
+
+@president_stresemann
+view-if: president != "Stresemann"
+on-arrival: president = "Stresemann"; president_party = "DVP"
+go-to: sandbox_menu
+
+Gustav Stresemann has been made President.
+
+@president_scholz
+view-if: president != "Scholz"
+on-arrival: president = "Scholz"; president_party = "DVP"
+go-to: sandbox_menu
+
+Ernst Scholz has been made President.
+
+@dnvp_pres: A DNVP President
+
+- @president_von_westarp: Make Kuno von Westarp President
+- @president_treviranus: Make Gottfried Treviranus President
+- @president_hugenburg: Make Alfred Hugenburg President
+- @president_lambach: Make Walter Lambach President
+
+@president_von_westarp
+view-if: president != "von Westarp"
+on-arrival: president = "von Westarp"; president_party = "DNVP"
+go-to: sandbox_menu
+
+Kuno von Westarp has been made President.
+
+@president_treviranus
+view-if: president != "Treviranus"
+on-arrival: president = "Treviranus"; president_party = "DNVP"
+go-to: sandbox_menu
+
+Gottfried Treviranus has been made President.
+
+@president_hugenburg
+view-if: president != "Hugenburg"
+on-arrival: president = "Hugenburg"; president_party = "DNVP"
+go-to: sandbox_menu
+
+Alfred Hugenburg has been made President. I'm sure that'll be great for his ego.
+
+@president_lambach
+view-if: president != "Lambach"
+on-arrival: president = "Lambach"; president_party = "DNVP"
+go-to: sandbox_menu
+
+Walter Lambach has been made President.
+
+@indy_pres: An Independent President
+
+- @president_hindenburg: Make Paul von Hindenburg President
+- @president_luther: Make Hans Luther President
+- @president_von_papen: Make Franz von Papen President
+- @president_von_schleicher: Make Kurt von Schleicher President
+- @president_cuno: Make Wilhelm Cuno President
+
+@president_hindenburg
+view-if: president != "Hindenburg"
+on-arrival: president = "Hindenburg"; president_party = "I"
+go-to: sandbox_menu
+
+Paul von Hindenburg has been made President... Why, just why?
+
+@president_luther
+view-if: president != "Luther"
+on-arrival: president = "Luther"; president_party = "I"
+go-to: sandbox_menu
+
+Hans Luther has been made President.
+
+@president_von_papen
+view-if: president != "von Papen"
+on-arrival: president = "von Papen"; president_party = "I"
+go-to: sandbox_menu
+
+Franz von Papen has been made President... Yeah, Franz, we know it's you.
+
+@president_von_schleicher
+view-if: president != "von Schleicher"
+on-arrival: president = "von Schleicher"; president_party = "I"
+go-to: sandbox_menu
+Kurt von Schleicher has been made President.
+
+@president_cuno
+view-if: president != "Cuno"
+on-arrival: president = "Cuno"; president_party = "I"
+go-to: sandbox_menu
+
+Wilhelm Cuno has been made President.
+
+@nsdap_pres: A Nazi President
+choose-if: never
+unavailable-subtitle: Yeah, no. Not happening.
+
 @chancellor
 
 You alone can decide the Chancellor. How democratic...
+
+- @uspd_chancellor: A [+ uspd_name +] Chancellor
+- @spd_chancellor: A [+ spd_name +] Chancellor
+- @ddp_chancellor: A [+ ddp_name +] Chancellor
+- @z_chancellor: A Z Chancellor
+- @dvp_chancellor: A DVP Chancellor
+- @dnvp_chancellor: A DNVP Chancellor
+- @indy_chancellor: An Independent Chancellor
+- @nsdap_chancellor: A Nazi Chancellor
+
+@uspd_pres
+
+- @chancellor_liebknecht: Make Karl Liebknecht Chancellor
+- @chancellor_luxemburg: Make Rosa Luxemburg Chancellor
+- @chancellor_thalmann: Make Ernst Thälmann Chancellor
+- @chancellor_fischer: Make Ruth Fischer Chancellor
+- @chancellor_petroff: Make Peter Petroff Chancellor
+
+@chancellor_liebknecht
+view-if: chancellor != "Liebknecht"
+on-arrival: chancellor = "Liebknecht"; chancellor_party = "SB"
+go-to: sandbox_menu
+
+Karl Liebknecht has been made Chancellor.
+
+@chancellor_luxemburg
+view-if: chancellor != "Luxemburg"
+on-arrival: chancellor = "Luxemburg"; chancellor_party = "SB"
+go-to: sandbox_menu
+
+Rosa Luxemburg has been made Chancellor.
+
+@chancellor_thalmann
+view-if: chancellor != "Thälmann"
+on-arrival: chancellor = "Thälmann"; chancellor_party = "SB"
+go-to: sandbox_menu
+
+Ernst Thälmann has been made Chancellor.
+
+@chancellor_fischer
+view-if: chancellor != "Fischer"
+on-arrival: chancellor = "Fischer"; chancellor_party = "SB"
+go-to: sandbox_menu
+
+Ruth Fischer has been made Chancellor.
+
+@chancellor_petroff
+view-if: chancellor != "Petroff"
+on-arrival: chancellor = "Petroff"; chancellor_party = "SB"
+go-to: sandbox_menu
+
+Peter Petroff has been made Chancellor.
+
+@spd_chancellor: A [+ spd_name +] Chancellor
+
+- @chancellor_hilferding: Make Rudolf Hilferding Chancellor
+- @chancellor_wels: Make Otto Wels Chancellor
+- @chancellor_vogel: Make Hans Vogel Chancellor
+- @chancellor_muller: Make Hermann Müller Chancellor
+- @chancellor_breitscheid: Make Rudolf Breitscheid Chancellor
+- @chancellor_crispien: Make Arthur Crispien Chancellor
+- @chancellor_levi: Make Paul Levi Chancellor
+- @chancellor_sender: Make Toni Sender Chancellor
+- @chancellor_rosenfeld: Make Kurt Rosenfeld Chancellor
+- @chancellor_seydewitz: Make Max Seydewitz Chancellor
+- @chancellor_siemsen: Make Anna Siemsen Chancellor
+- @chancellor_ebert: Make Friedrich Ebert Chancellor
+- @chancellor_severing: Make Carl Severing Chancellor
+- @chancellor_scheidemann: Make Phillip Scheidemann Chancellor
+- @chancellor_braun: Make Otto Braun Chancellor
+- @chancellor_juchacz: Make Marie Juchacz Chancellor
+- @chancellor_pfulf: Make Antonie Pfülf Chancellor
+- @chancellor_leipart: Make Theodor Leipart Chancellor
+- @chancellor_aufhauser: Make Siegfried Aufhäuser Chancellor
+- @chancellor_wissell: Make Rudolf Wissell Chancellor
+- @chancellor_woytinsky: Make Wladimir Woytinsky Chancellor
+- @chancellor_tarnow: Make Fritz Tarnow Chancellor
+- @chancellor_baade: Make Fritz Baade Chancellor
+- @chancellor_hirschfeld: Make Magnus Hirschfeld Chancellor
+- @chancellor_radbruch: Make Gustav Radbruch Chancellor
+- @chancellor_stampfer: Make Friedrich Stampfer Chancellor
+- @chancellor_lobe: Make Paul Löbe Chancellor
+- @chancellor_mierendorff: Make Carlo Mierendorff Chancellor
+- @chancellor_schumacher: Make Kurt Schumacher Chancellor
+- @chancellor_leber: Make Julius Leber Chancellor
+- @chancellor_noske: Make Gustav Noske Chancellor
+
+@chancellor_hilferding
+view-if: chancellor != "Hilferding"
+on-arrival: chancellor = "Hilferding"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Rudolf Hilferding has been made Chancellor.
+
+@chancellor_wels
+view-if: chancellor != "Wels"
+on-arrival: chancellor = "Wels"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Otto Wels has been made Chancellor.
+
+@chancellor_vogel
+view-if: chancellor != "Vogel"
+on-arrival: chancellor = "Vogel"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Hans Vogel has been made Chancellor.
+
+@chancellor_muller
+view-if: chancellor != "Müller"
+on-arrival: chancellor = "Müller"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Hermann Müller has been made Chancellor.
+
+@chancellor_breitscheid
+view-if: chancellor != "Breitscheid"
+on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Rudolf Breitscheid has been made Chancellor.
+
+@chancellor_crispien
+view-if: chancellor != "Crispien"
+on-arrival: chancellor = "Crispien"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Arthur Crispien has been made Chancellor.
+
+@chancellor_levi
+view-if: chancellor != "Levi"
+on-arrival: chancellor = "Levi"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Paul Levi has been made Chancellor.
+
+@chancellor_sender
+view-if: chancellor != "Sender"
+on-arrival: chancellor = "Sender"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Toni Sender has been made Chancellor.
+
+@chancellor_rosenfeld
+view-if: chancellor != "Rosenfeld"
+on-arrival: chancellor = "Rosenfeld"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Kurt Rosenfeld has been made Chancellor.
+
+@chancellor_seydewitz
+view-if: chancellor != "Seydewitz"
+on-arrival: chancellor = "Seydewitz"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Max Seydewitz has been made Chancellor.
+
+@chancellor_siemsen
+view-if: chancellor != "Siemsen"
+on-arrival: chancellor = "Siemsen"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Anna Siemsen has been made Chancellor.
+
+@chancellor_ebert
+view-if: chancellor != "Ebert"
+on-arrival: chancellor = "Ebert"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Friedrich Ebert has been made Chancellor.
+
+@chancellor_severing
+view-if: chancellor != "Severing"
+on-arrival: chancellor = "Severing"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Carl Severing has been made Chancellor.
+
+@chancellor_scheidemann
+view-if: chancellor != "Scheidemann"
+on-arrival: chancellor = "Scheidemann"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Phillip Scheidemann has been made Chancellor.
+
+@chancellor_braun
+view-if: chancellor != "Braun"
+on-arrival: chancellor = "Braun"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Otto Braun has been made Chancellor.
+
+@chancellor_juchacz
+view-if: chancellor != "Juchacz"
+on-arrival: chancellor = "Juchacz"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Marie Juchacz has been made Chancellor.
+
+@chancellor_pfulf
+view-if: chancellor != "Pfülf"
+on-arrival: chancellor = "Pfülf"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Antonie Pfülf has been made Chancellor.
+
+@chancellor_leipart
+view-if: chancellor != "Leipart"
+on-arrival: chancellor = "Leipart"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Theodor Leipart has been made Chancellor.
+
+@chancellor_aufhäuser
+view-if: chancellor != "Aufhäuser"
+on-arrival: chancellor = "Aufhäuser"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Siegfried Aufhäuser has been made Chancellor.
+
+@chancellor_wissell
+view-if: chancellor != "Wissell"
+on-arrival: chancellor = "Wissell"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Rudolf Wissell has been made Chancellor.
+
+@chancellor_woytinsky
+view-if: chancellor != "Woytinsky"
+on-arrival: chancellor = "Woytinsky"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Wladimir Woytinsky has been made Chancellor.
+
+@chancellor_tarnow
+view-if: chancellor != "Tarnow"
+on-arrival: chancellor = "Tarnow"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Fritz Tarnow has been made Chancellor.
+
+@chancellor_baade
+view-if: chancellor != "Baade"
+on-arrival: chancellor = "Baade"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Fritz Baade has been made Chancellor.
+
+@chancellor_hirschfeld
+view-if: chancellor != "Hirschfeld"
+on-arrival: chancellor = "Hirschfeld"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Magnus Hirschfeld has been made Chancellor.
+
+@chancellor_radbruch
+view-if: chancellor != "Radbruch"
+on-arrival: chancellor = "Radbruch"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Gustav Radbruch has been made Chancellor.
+
+@chancellor_stampfer
+view-if: chancellor != "Stampfer"
+on-arrival: chancellor = "Stampfer"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Friedrich Stampfer has been made Chancellor.
+
+@chancellor_lobe
+view-if: chancellor != "Löbe"
+on-arrival: chancellor = "Löbe"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Paul Löbe has been made Chancellor.
+
+@chancellor_mierendorff
+view-if: chancellor != "Mierendorff"
+on-arrival: chancellor = "Mierendorff"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Carlo Mierendorff has been made Chancellor.
+
+@chancellor_schumacher
+view-if: chancellor != "Schumacher"
+on-arrival: chancellor = "Schumacher"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Kurt Schumacher has been made Chancellor.
+
+@chancellor_leber
+view-if: chancellor != "Leber"
+on-arrival: chancellor = "Leber"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Julius Leber has been made Chancellor.
+
+@chancellor_noske
+view-if: chancellor != "Noske"
+on-arrival: chancellor = "Noske"; chancellor_party = "SPD"
+go-to: sandbox_menu
+
+Gustav Noske has been made Chancellor.
+ 
+@ddp_chancellor: A [+ ddp_name +] Chancellor
+
+- @chancellor_gessler: Make Otto Gessler Chancellor
+- @chancellor_hellpach: Make Willy Hellpach Chancellor
+
+@chancellor_gessler
+view-if: chancellor != "Gessler"
+on-arrival: chancellor = "Gessler"; chancellor_party = "DDP"
+go-to: sandbox_menu
+
+Otto Gessler has been made Chancellor.
+
+@chancellor_hellpach
+view-if: chancellor != "Hellpach"
+on-arrival: chancellor = "Hellpach"; chancellor_party = "DDP"
+go-to: sandbox_menu
+
+Willy Hellpach has been made Chancellor.
+
+@z_chancellor: A Z Chancellor
+
+- @chancellor_marx: Make Wilhelm Marx Chancellor
+- @chancellor_wirth: Make Josef Wirth Chancellor
+- @chancellor_stegerwald: Make Adam Stegerwald Chancellor
+- @chancellor_bruning: Make Heinrich Brüning Chancellor
+
+@chancellor_marx
+view-if: chancellor != "Marx"
+on-arrival: chancellor = "Marx"; chancellor_party = "Z"
+go-to: sandbox_menu
+
+Wilhelm Marx has been made Chancellor.
+
+@chancellor_wirth
+view-if: chancellor != "Wirth"
+on-arrival: chancellor = "Wirth"; chancellor_party = "Z"
+go-to: sandbox_menu
+
+Josef Wirth has been made Chancellor.
+
+@chancellor_stegerwald
+view-if: chancellor != "Stegerwald"
+on-arrival: chancellor = "Stegerwald"; chancellor_party = "Z"
+go-to: sandbox_menu
+
+Adam Stegerwald has been made Chancellor.
+
+@chancellor_bruning
+
+view-if: chancellor != "Brüning"
+on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
+go-to: sandbox_menu
+
+Heinrich Brüning has been made Chancellor. Chancellor Brüning's response is, as always, more austerity.
+
+@dvp_chancellor: A DVP Chancellor
+
+- @chancellor_stresemann: Make Gustav Stresemann Chancellor
+- @chancellor_scholz: Make Ernst Scholz Chancellor
+
+@chancellor_stresemann
+view-if: chancellor != "Stresemann"
+on-arrival: chancellor = "Stresemann"; chancellor_party = "DVP"
+go-to: sandbox_menu
+
+Gustav Stresemann has been made Chancellor.
+
+@chancellor_scholz
+view-if: chancellor != "Scholz"
+on-arrival: chancellor = "Scholz"; chancellor_party = "DVP"
+go-to: sandbox_menu
+
+Ernst Scholz has been made Chancellor.
+
+@dnvp_chancellor: A DNVP Chancellor
+
+- @chancellor_von_westarp: Make Kuno von Westarp Chancellor
+- @chancellor_treviranus: Make Gottfried Treviranus Chancellor
+- @chancellor_hugenburg: Make Alfred Hugenburg Chancellor
+- @chancellor_lambach: Make Walter Lambach Chancellor
+
+@chancellor_von_westarp
+view-if: chancellor != "von Westarp"
+on-arrival: chancellor = "von Westarp"; chancellor_party = "DNVP"
+go-to: sandbox_menu
+
+Kuno von Westarp has been made Chancellor.
+
+@chancellor_treviranus
+view-if: chancellor != "Treviranus"
+on-arrival: chancellor = "Treviranus"; chancellor_party = "DNVP"
+go-to: sandbox_menu
+
+Gottfried Treviranus has been made Chancellor.
+
+@chancellor_hugenburg
+view-if: chancellor != "Hugenburg"
+on-arrival: chancellor = "Hugenburg"; chancellor_party = "DNVP"
+go-to: sandbox_menu
+
+Alfred Hugenburg has been made Chancellor. I'm sure that'll be great for his ego.
+
+@chancellor_lambach
+view-if: chancellor != "Lambach"
+on-arrival: chancellor = "Lambach"; chancellor_party = "DNVP"
+go-to: sandbox_menu
+
+Walter Lambach has been made Chancellor.
+
+@indy_chancellor: An Independent Chancellor
+
+- @chancellor_hindenburg: Make Paul von Hindenburg Chancellor
+- @chancellor_luther: Make Hans Luther Chancellor
+- @chancellor_von_papen: Make Franz von Papen Chancellor
+- @chancellor_von_schleicher: Make Kurt von Schleicher Chancellor
+- @chancellor_cuno: Make Wilhelm Cuno Chancellor
+
+@chancellor_hindenburg
+view-if: chancellor != "Hindenburg"
+on-arrival: chancellor = "Hindenburg"; chancellor_party = "I"
+go-to: sandbox_menu
+
+Paul von Hindenburg has been made Chancellor... Why, just why?
+
+@chancellor_luther
+view-if: chancellor != "Luther"
+on-arrival: chancellor = "Luther"; chancellor_party = "I"
+go-to: sandbox_menu
+
+Hans Luther has been made Chancellor.
+
+@chancellor_von_papen
+view-if: chancellor != "von Papen"
+on-arrival: chancellor = "von Papen"; chancellor_party = "I"
+go-to: sandbox_menu
+
+Franz von Papen has been made Chancellor... Yeah, Franz, we know it's you.
+
+@chancellor_von_schleicher
+view-if: chancellor != "von Schleicher"
+on-arrival: chancellor = "von Schleicher"; chancellor_party = "I"
+go-to: sandbox_menu
+Kurt von Schleicher has been made Chancellor.
+
+@chancellor_cuno
+view-if: chancellor != "Cuno"
+on-arrival: chancellor = "Cuno"; chancellor_party = "I"
+go-to: sandbox_menu
+
+Wilhelm Cuno has been made Chancellor.
+
+@nsdap_chancellor: A Nazi Chancellor
+choose-if: never
+unavailable-subtitle: Yeah, no. Not happening.
 
 @government
 
