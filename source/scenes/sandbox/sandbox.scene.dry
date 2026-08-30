@@ -2871,7 +2871,7 @@ go-to: sandbox_menu
 
 Theodor Leipart has been made President.
 
-@president_aufhäuser
+@president_aufhauser
 view-if: president != "Aufhäuser"
 on-arrival: president = "Aufhäuser"; president_party = "SPD"
 go-to: sandbox_menu
@@ -3333,7 +3333,7 @@ go-to: sandbox_menu
 
 Theodor Leipart has been made Chancellor.
 
-@chancellor_aufhäuser
+@chancellor_aufhauser
 view-if: chancellor != "Aufhäuser"
 on-arrival: chancellor = "Aufhäuser"; chancellor_party = "SPD"
 go-to: sandbox_menu
