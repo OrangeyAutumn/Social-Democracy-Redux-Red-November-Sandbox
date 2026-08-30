@@ -36,15 +36,15 @@ go-to: sandbox_menu
 Please choose which figure you would like to either unalive or re-alive?
 
 - @ebert_unalive
-- @ebert_re-alive
+- @ebert_re_alive
 - @muller_unalive
-- @muller_re-alive
+- @muller_re_alive
 - @levi_unalive
-- @levi_re-alive
+- @levi_re_alive
 - @stresemann_unalive
-- @stresemann_re-alive
+- @stresemann_re_alive
 - @hindenburg_unalive
-- @hindenburg_re-alive
+- @hindenburg_re_alive
 - @sandbox_menu: Go back
 
 @ebert_unalive
@@ -55,8 +55,8 @@ go-to: re_alive
 
 Ebert is dead. But violence is always reactionary...
 
-@ebert_unalive
-title: Unalive Ebert
+@ebert_re_alive
+title: Re-alive Ebert
 view-if: ebert_dead == 1
 on-arrival: ebert_dead = 0
 go-to: re_alive
@@ -71,8 +71,8 @@ go-to: re_alive
 
 Muller is dead. Not much to say really...
 
-@muller_unalive
-title: Unalive Muller
+@muller_re_alive
+title: Re-alive Muller
 view-if: muller_dead == 1
 on-arrival: muller_dead = 0
 go-to: re_alive
@@ -87,8 +87,8 @@ go-to: re_alive
 
 Levi is dead. The first former Communist to fall out of a window in a genuine accident...
 
-@levi_unalive
-title: Unalive Levi
+@levi_re_alive
+title: Re-alive Levi
 view-if: levi_dead == 1
 on-arrival: levi_dead = 0
 go-to: re_alive
@@ -103,8 +103,8 @@ go-to: re_alive
 
 Stresemann is dead.
 
-@stresemann_unalive
-title: Unalive Stresemann
+@stresemann_re_alive
+title: Re-alive Stresemann
 view-if: stresemann_dead == 1
 on-arrival: stresemann_dead = 0
 go-to: re_alive
@@ -119,8 +119,8 @@ go-to: re_alive
 
 Hindenburg is dead. But violence is always reactionary...
 
-@hindenburg_unalive
-title: Unalive Hindenburg
+@hindenburg_re_alive
+title: Re-alive Hindenburg
 view-if: hindenburg_dead == 1
 on-arrival: hindenburg_dead = 0
 go-to: re_alive
