@@ -14,7 +14,6 @@ The Left faction is the fire that drives our party forwards. How shall we make u
 -	@use_rosenfeld: We will use the talents of the Left leader, Kurt Rosenfeld
 -	@use_seydewitz: We will use the talents of the Left leader, Max Seydewitz
 -	@use_siemsen: We will use the talents of the Left leader, Anna Siemsen
--	@use_baade: We will use the talents of the Left leader, Fritz Baade
 -	@use_hirschfeld: We will use the talents of the Left leader, Magnus Hirschfeld
 -	@use_radbruch: We will use the talents of the Left leader, Gustav Radbruch
 -	@use_stampfer: We will use the talents of the Left leader, Friedrich Stampfer
@@ -55,10 +54,6 @@ go-to: seydewitz
 @use_siemsen
 view-if: left_leader == "Siemsen"
 go-to: siemsen
-
-@use_baade
-view-if: left_leader == "Baade"
-go-to: baade
 
 @use_hirschfeld
 view-if: left_leader == "Hirschfeld"
@@ -107,7 +102,6 @@ We must now select a new leader for the Left Faction.
 - @left_leader_seydewitz
 - @left_leader_sender
 - @left_leader_siemsen
-- @left_leader_baade
 - @left_leader_hirschfeld
 - @left_leader_radbruch
 - @left_leader_stampfer
@@ -178,18 +172,6 @@ card-image: img/portraits/SeydewitzMax.jpg
 view-if: left_leader != "Seydewitz" and spd_coleader_1 != "Seydewitz" and spd_coleader_2 != "Seydewitz" and spd_coleader_3 != "Seydewitz"
 on-arrival: left_leader = "Seydewitz"; left_leader_fullname = "Max Seydewitz"
 go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
-
-@left_leader_baade
-title: Fritz Baade – Perhaps a Non-factional Pick could broaden our appeal?
-subtitle: Fritz Baade is one of the few agricultural policy experts in the SPD.
-is-card: true
-card-image: img/portraits/BaadeFritz.jpg
-view-if: left_leader != "Baade" and spd_coleader_1 != "Baade" and spd_coleader_2 != "Baade" and spd_coleader_3 != "Baade" and reformist_leader != "Baade" and center_leader != "Baade" and labor_leader != "Baade"
-on-arrival: left_leader = "Baade"; left_leader_fullname = "Fritz Baade"
-go-to: death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
-
-Fritz Baade has been agreed as faction leader.
-
 
 @left_leader_hirschfeld
 title: Magnus Hirschfeld – Perhaps a Non-factional Pick could broaden our appeal?
