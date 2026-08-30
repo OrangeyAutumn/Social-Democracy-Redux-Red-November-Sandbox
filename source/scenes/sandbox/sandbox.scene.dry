@@ -3104,6 +3104,7 @@ Franz von Papen has been made President... Yeah, Franz, we know it's you.
 view-if: president != "von Schleicher"
 on-arrival: president = "von Schleicher"; president_party = "I"
 go-to: sandbox_menu
+
 Kurt von Schleicher has been made President.
 
 @president_cuno
@@ -3566,6 +3567,7 @@ Franz von Papen has been made Chancellor... Yeah, Franz, we know it's you.
 view-if: chancellor != "von Schleicher"
 on-arrival: chancellor = "von Schleicher"; chancellor_party = "I"
 go-to: sandbox_menu
+
 Kurt von Schleicher has been made Chancellor.
 
 @chancellor_cuno
