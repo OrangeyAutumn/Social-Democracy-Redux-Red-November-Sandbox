@@ -464,8 +464,8 @@ go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of
 Carl Severing is now an advisor.
 
 @add_ebert
-title: Carl Severing
-subtitle: Carl Severing is the first President of the Republic.
+title: Friedrich Ebert
+subtitle: Friedrich Ebert is the first President of the Republic.
 is-card: true
 card-image: img/portraits/EbertFriedrich.jpg
 tags: reformist_advisor
@@ -473,7 +473,7 @@ view-if: ebert_advisor = 0 and n_advisors < 3
 on-arrival: ebert_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
 go-to: advisor_menu if succession_levi == 0 and muller_succession == 0; death_of_levi if succession_levi == 1; death_of_muller if succession_muller == 1
 
-Carl Severing is now an advisor.
+Friedrich Ebert is now an advisor.
 
 @add_scheidemann
 title: Phillip Scheidemann
