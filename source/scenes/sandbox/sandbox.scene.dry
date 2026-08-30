@@ -2711,7 +2711,7 @@ go-to: sandbox_menu
 
 Peter Petroff has been made President.
 
-@spd_pres: A [+ spd_name +] President
+@spd_pres
 
 - @president_hilferding: Make Rudolf Hilferding President
 - @president_wels: Make Otto Wels President
@@ -2962,7 +2962,7 @@ go-to: sandbox_menu
 
 Gustav Noske has been made President.
  
-@ddp_pres: A [+ ddp_name +] President
+@ddp_pres
 
 - @president_gessler: Make Otto Gessler President
 - @president_hellpach: Make Willy Hellpach President
@@ -2981,7 +2981,7 @@ go-to: sandbox_menu
 
 Willy Hellpach has been made President.
 
-@z_pres: A Z President
+@z_pres
 
 - @president_marx: Make Wilhelm Marx President
 - @president_wirth: Make Josef Wirth President
@@ -3017,7 +3017,7 @@ go-to: sandbox_menu
 
 Heinrich Brüning has been made President. President Brüning's response is, as always, more austerity.
 
-@dvp_pres: A DVP President
+@dvp_pres
 
 - @president_stresemann: Make Gustav Stresemann President
 - @president_scholz: Make Ernst Scholz President
@@ -3036,7 +3036,7 @@ go-to: sandbox_menu
 
 Ernst Scholz has been made President.
 
-@dnvp_pres: A DNVP President
+@dnvp_pres
 
 - @president_von_westarp: Make Kuno von Westarp President
 - @president_treviranus: Make Gottfried Treviranus President
@@ -3071,7 +3071,7 @@ go-to: sandbox_menu
 
 Walter Lambach has been made President.
 
-@indy_pres: An Independent President
+@indy_pres
 
 - @president_hindenburg: Make Paul von Hindenburg President
 - @president_luther: Make Hans Luther President
@@ -3113,7 +3113,7 @@ go-to: sandbox_menu
 
 Wilhelm Cuno has been made President.
 
-@nsdap_pres: A Nazi President
+@nsdap_pres
 choose-if: never
 unavailable-subtitle: Yeah, no. Not happening.
 
@@ -3173,7 +3173,7 @@ go-to: sandbox_menu
 
 Peter Petroff has been made Chancellor.
 
-@spd_chancellor: A [+ spd_name +] Chancellor
+@spd_chancellor
 
 - @chancellor_hilferding: Make Rudolf Hilferding Chancellor
 - @chancellor_wels: Make Otto Wels Chancellor
@@ -3424,7 +3424,7 @@ go-to: sandbox_menu
 
 Gustav Noske has been made Chancellor.
  
-@ddp_chancellor: A [+ ddp_name +] Chancellor
+@ddp_chancellor
 
 - @chancellor_gessler: Make Otto Gessler Chancellor
 - @chancellor_hellpach: Make Willy Hellpach Chancellor
@@ -3443,7 +3443,7 @@ go-to: sandbox_menu
 
 Willy Hellpach has been made Chancellor.
 
-@z_chancellor: A Z Chancellor
+@z_chancellor
 
 - @chancellor_marx: Make Wilhelm Marx Chancellor
 - @chancellor_wirth: Make Josef Wirth Chancellor
@@ -3479,7 +3479,7 @@ go-to: sandbox_menu
 
 Heinrich Brüning has been made Chancellor. Chancellor Brüning's response is, as always, more austerity.
 
-@dvp_chancellor: A DVP Chancellor
+@dvp_chancellor
 
 - @chancellor_stresemann: Make Gustav Stresemann Chancellor
 - @chancellor_scholz: Make Ernst Scholz Chancellor
@@ -3498,7 +3498,7 @@ go-to: sandbox_menu
 
 Ernst Scholz has been made Chancellor.
 
-@dnvp_chancellor: A DNVP Chancellor
+@dnvp_chancellor
 
 - @chancellor_von_westarp: Make Kuno von Westarp Chancellor
 - @chancellor_treviranus: Make Gottfried Treviranus Chancellor
@@ -3533,7 +3533,7 @@ go-to: sandbox_menu
 
 Walter Lambach has been made Chancellor.
 
-@indy_chancellor: An Independent Chancellor
+@indy_chancellor
 
 - @chancellor_hindenburg: Make Paul von Hindenburg Chancellor
 - @chancellor_luther: Make Hans Luther Chancellor
@@ -3575,7 +3575,7 @@ go-to: sandbox_menu
 
 Wilhelm Cuno has been made Chancellor.
 
-@nsdap_chancellor: A Nazi Chancellor
+@nsdap_chancellor
 choose-if: never
 unavailable-subtitle: Yeah, no. Not happening.
 
