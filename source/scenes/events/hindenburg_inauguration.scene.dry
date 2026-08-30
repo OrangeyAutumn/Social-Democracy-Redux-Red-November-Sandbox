@@ -10,7 +10,7 @@ Paul von Hindenburg has now been inaugurated as President of the Republic, placi
 - @luther: Leading a Right Coalition, Luther finds he has Hindenburg’s full support.
 - @marx: Hindenburg pressures Marx into allowing the DNVP into the Coalition.
 - @gessler: Hindenburg sacks Gessler!
-- @stresseman: With Hindenburg’s express approval, Stresemann expels us from the Coalition in favor of the DNVP.
+- @stresemann: With Hindenburg’s express approval, Stresemann expels us from the Coalition in favor of the DNVP.
 
 @luther
 view-if: chancellor == "Luther"
