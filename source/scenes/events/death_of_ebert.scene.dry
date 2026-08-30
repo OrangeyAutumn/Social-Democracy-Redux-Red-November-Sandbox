@@ -20,7 +20,7 @@ Now, new presidential elections have been scheduled. It is expected that a wide 
 
 @back_gessler
 subtitle: -1 resource - The party's left-wing will likely revolt.
-choose-if: left_strength+labor_strength < reformist_strength and dvp_relation >= 50 and resources >= 1
+choose-if: (left_strength+labor_strength < reformist_strength and dvp_relation >= 50 and resources >= 1) or (chancellor == "Gessler" and resources >= 1)
 unavailable-subtitle: -1 resource. [? if left_strength+labor_strength < reformist_strength : The party refuses. ?][? if dvp_relation < 50 : The DVP itself is unwilling. ?][? if resources < 1 : The DVP wants us to front the resources for a campaign. ?]
 on-arrival: gessler_campaign = 1; hergt25_campaign = 1; jarres_campaign = 0; marx_campaign = 0; hellpach_campaign = 0; resources -= 1; left_dissent += 20; workers_spd -= 6; workers_uspd += 6; unemployed_spd -= 6; unemployed_uspd += 6; old_middle_dvp -= 5; rural_dvp -= 5
 
