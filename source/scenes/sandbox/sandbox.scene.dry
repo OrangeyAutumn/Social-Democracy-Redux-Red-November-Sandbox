@@ -13,7 +13,11 @@ go-to: sandbox_menu
 - @enable_end: Enable End In 1932
 - @clear_hand: Clear Cards
 - @make_adv_available: Make Advisors Available
-- @realive: Trigger or undo scripted deaths
+- @re_alive: Trigger or undo scripted deaths
+- @president: Change the President
+- @chancellor: Change the Chancellor
+- @government: Change the Government Coalition
+- @co-leaders: Change the SPD Co-leaders
 - @editresources: Edit Resources
 - @editbudget: Edit Budget
 - @editeconomy: Edit Economy
@@ -27,16 +31,101 @@ go-to: sandbox_menu
 - @editreichswehr: Edit Reichswehr and Police
 - @root: Exit Sandbox Menu
 
-@realive
+@re_alive
 
-Please choose which figure you would like to either unalive or realive?
+Please choose which figure you would like to either unalive or re-alive?
 
 - @ebert_unalive
-- @ebert_realive
+- @ebert_re-alive
 - @muller_unalive
-- @muller_realive
+- @muller_re-alive
 - @levi_unalive
-- @levi_realive
+- @levi_re-alive
+- @stresemann_unalive
+- @stresemann_re-alive
+- @hindenburg_unalive
+- @hindenburg_re-alive
+- @sandbox_menu: Go back
+
+@ebert_unalive
+title: Unalive Ebert
+view-if: ebert_dead == 0
+on-arrival: ebert_dead = 1
+go-to: re_alive
+
+Ebert is dead. But violence is always reactionary...
+
+@ebert_unalive
+title: Unalive Ebert
+view-if: ebert_dead == 1
+on-arrival: ebert_dead = 0
+go-to: re_alive
+
+Ebert is alive again. Yay?
+
+@muller_unalive
+title: Unalive Muller
+view-if: muller_dead == 0
+on-arrival: muller_dead = 1
+go-to: re_alive
+
+Muller is dead. Not much to say really...
+
+@muller_unalive
+title: Unalive Muller
+view-if: muller_dead == 1
+on-arrival: muller_dead = 0
+go-to: re_alive
+
+Muller is alive again. Spooky...
+
+@levi_unalive
+title: Unalive Levi
+view-if: levi_dead == 0
+on-arrival: levi_dead = 1
+go-to: re_alive
+
+Levi is dead. The first former Communist to fall out of a window in a genuine accident...
+
+@levi_unalive
+title: Unalive Levi
+view-if: levi_dead == 1
+on-arrival: levi_dead = 0
+go-to: re_alive
+
+Levi is alive again. Spooky... Hopefully he won't fall out of a window this time.
+
+@stresemann_unalive
+title: Unalive Stresemann
+view-if: stresemann_dead == 0
+on-arrival: stresemann_dead = 1
+go-to: re_alive
+
+Stresemann is dead.
+
+@stresemann_unalive
+title: Unalive Stresemann
+view-if: stresemann_dead == 1
+on-arrival: stresemann_dead = 0
+go-to: re_alive
+
+Stresemann is alive again. He can't be worse than Scholz and Dingeldy, right?
+
+@hindenburg_unalive
+title: Unalive Hindenburg
+view-if: hindenburg_dead == 0
+on-arrival: hindenburg_dead = 1
+go-to: re_alive
+
+Hindenburg is dead. But violence is always reactionary...
+
+@hindenburg_unalive
+title: Unalive Hindenburg
+view-if: hindenburg_dead == 1
+on-arrival: hindenburg_dead = 0
+go-to: re_alive
+
+WHAT DID YOU BRING HIM BACK FOR?
 
 @disable_end
 view-if: end_disabled != 1
@@ -2565,3 +2654,18 @@ Q.catholics_other -= 20;
 !}
 
 Lowered Catholics support for Other.
+
+@president
+
+You alone can decide the President. How democratic...
+
+@chancellor
+
+You alone can decide the Chancellor. How democratic...
+
+@government
+
+You alone can decide the Government. How democratic...
+
+@co-leaders
+go-to: shuffle_leadership
