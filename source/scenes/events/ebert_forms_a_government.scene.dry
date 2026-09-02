@@ -2,7 +2,7 @@ title: President Ebert must appoint a new government!
 subtitle: Hopefully this new government will last...
 new-page: true
 tags: event
-view-if: year = 1925 and month >= 1
+view-if: year = 1925 and month >= 1 and weimar_coalition = 0
 max-visits: 1
 
 = President Ebert must appoint a new government!
